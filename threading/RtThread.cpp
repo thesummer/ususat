@@ -1,8 +1,7 @@
 #include "RtThread.h"
-#include <iostream>
-#include <string.h>
 using namespace USU;
-using namespace std;
+
+#include <stdio.h>
 
 
 RtThread::RtThread(int priority):
@@ -11,13 +10,13 @@ RtThread::RtThread(int priority):
     int ret;
     if (ret = pthread_attr_init(&mAttr) != 0)
     {
-        cout << "phtread_attr_init " << strerror(ret) << endl;
+        perror("phtread_attr_init ");
         throw "Error";
     }
     // Set scheduler to (realtime) FIFO
     if (ret = pthread_attr_setschedpolicy(&mAttr, SCHED_FIFO) != 0)
     {
-        cout << "pthread_attr_setschedpolicy" << strerror(ret) << endl;
+        perror("pthread_attr_setschedpolicy");
         throw "Error";
     }
 
@@ -25,14 +24,14 @@ RtThread::RtThread(int priority):
     struct sched_param param;
     if (ret = pthread_attr_getschedparam(&mAttr, &param) != 0)
     {
-        cout << "pthread_attr_getschedparam" << strerror(ret) << endl;
+        perror("pthread_attr_getschedparam");
         throw "Error";
     }
     param.__sched_priority = mPriority;
 
     if (ret = pthread_attr_setschedparam(&mAttr, &param) != 0)
     {
-        cout << "pthread_attr_setschedparam" << strerror(ret) << endl;
+        perror("pthread_attr_setschedparam");
         throw "Error";
     }
 
@@ -43,7 +42,7 @@ RtThread::RtThread(int priority):
      */
     if (ret = pthread_attr_setinheritsched(&mAttr, PTHREAD_EXPLICIT_SCHED) != 0)
     {
-        cout << "pthread_attr_setinheritsched " << strerror(ret) << endl;
+        perror("pthread_attr_setinheritsched ");
         throw "Error";
     }
 }
@@ -58,7 +57,7 @@ RtThread::~RtThread()
     int ret;
     if (ret = pthread_attr_destroy(&mAttr) != 0)
     {
-        cout << "pthread_attr_destroy " << strerror(ret) << endl;
+        perror("pthread_attr_destroy");
         throw "Error";
     }
 }
@@ -90,7 +89,7 @@ void RtThread::start(void *arg)
 
     if ((ret = pthread_create(&mId, &mAttr, &RtThread::exec, this)) !=0)
     {
-        cout << "pthread_create " << strerror(ret) << endl;
+        perror("thread_create ");
         throw "Error";
     }
     mStarted = true;

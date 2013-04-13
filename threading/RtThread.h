@@ -11,13 +11,13 @@ class RtThread
 private:
     pthread_attr_t mAttr;
     int mPriority;
-    pthread_t mId;
 
     // Prevent copying or assignment
     RtThread(const RtThread& thread);
     RtThread& operator=(const RtThread& rhs);
 
 protected:
+    pthread_t mId;
     bool mStarted;
     void *mArgs;
     static void *exec(void * thr);

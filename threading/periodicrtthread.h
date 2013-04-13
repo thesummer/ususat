@@ -11,6 +11,8 @@ private:
     int mTimerFd;
     unsigned long long mMissedWakeUps; /* type expected by read in waitPeriod() */
     unsigned int mPeriod_us;
+
+protected:
     void makeThreadPeriodic(); //TODO: create exception
     void waitPeriod();
 
