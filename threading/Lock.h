@@ -27,7 +27,7 @@ inline
 Lock::Lock()
 {
     int ret;
-    if (ret = pthread_mutex_init(&mMutex, NULL) != 0)
+    if ( (ret = pthread_mutex_init(&mMutex, NULL)) != 0)
     {
         perror("pthread_mutex_init ");
     }
@@ -37,7 +37,7 @@ inline
 Lock::~Lock()
 {
     int ret;
-    if (ret = pthread_mutex_destroy(&mMutex) != 0)
+    if ( (ret = pthread_mutex_destroy(&mMutex) ) != 0)
     {
         perror("pthread_mutex_destroy ");
     }

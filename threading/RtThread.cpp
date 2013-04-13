@@ -5,16 +5,16 @@ using namespace USU;
 
 
 RtThread::RtThread(int priority):
-    mStarted(false), mPriority(priority)
+    mPriority(priority), mStarted(false)
 {
     int ret;
-    if (ret = pthread_attr_init(&mAttr) != 0)
+    if ( (ret = pthread_attr_init(&mAttr)) != 0)
     {
         perror("phtread_attr_init ");
         throw "Error";
     }
     // Set scheduler to (realtime) FIFO
-    if (ret = pthread_attr_setschedpolicy(&mAttr, SCHED_FIFO) != 0)
+    if ( (ret = pthread_attr_setschedpolicy(&mAttr, SCHED_FIFO)) != 0)
     {
         perror("pthread_attr_setschedpolicy");
         throw "Error";
@@ -22,14 +22,14 @@ RtThread::RtThread(int priority):
 
     // Change priority for the thread to mPriority
     struct sched_param param;
-    if (ret = pthread_attr_getschedparam(&mAttr, &param) != 0)
+    if ( (ret = pthread_attr_getschedparam(&mAttr, &param)) != 0)
     {
         perror("pthread_attr_getschedparam");
         throw "Error";
     }
     param.__sched_priority = mPriority;
 
-    if (ret = pthread_attr_setschedparam(&mAttr, &param) != 0)
+    if ( (ret = pthread_attr_setschedparam(&mAttr, &param)) != 0)
     {
         perror("pthread_attr_setschedparam");
         throw "Error";
@@ -40,7 +40,7 @@ RtThread::RtThread(int priority):
      * otherwise the schedule attributes in mAttr will be ignored
      * and the same settings as the main thread will be inherited.
      */
-    if (ret = pthread_attr_setinheritsched(&mAttr, PTHREAD_EXPLICIT_SCHED) != 0)
+    if ( (ret = pthread_attr_setinheritsched(&mAttr, PTHREAD_EXPLICIT_SCHED)) != 0)
     {
         perror("pthread_attr_setinheritsched ");
         throw "Error";
@@ -55,7 +55,7 @@ RtThread::~RtThread()
      */
     this->join();
     int ret;
-    if (ret = pthread_attr_destroy(&mAttr) != 0)
+    if ( (ret = pthread_attr_destroy(&mAttr)) != 0)
     {
         perror("pthread_attr_destroy");
         throw "Error";
@@ -87,7 +87,7 @@ void RtThread::start(void *arg)
     * of the Thread class.
     */
 
-    if ((ret = pthread_create(&mId, &mAttr, &RtThread::exec, this)) !=0)
+    if ( (ret = pthread_create(&mId, &mAttr, &RtThread::exec, this)) !=0)
     {
         perror("thread_create ");
         throw "Error";
@@ -108,6 +108,7 @@ void RtThread::join()
 void * RtThread::exec(void *thr)
 {
     reinterpret_cast<RtThread *> (thr)->run();
+    return NULL;
 }
 
 

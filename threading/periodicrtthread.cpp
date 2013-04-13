@@ -20,8 +20,7 @@ void PeriodicRtThread::makeThreadPeriodic()
     unsigned int sec;
     struct itimerspec itval;
     /* Create the timer */
-    mTimerFd = timerfd_create (CLOCK_MONOTONIC, 0);
-    if(mTimerFd == -1)
+    if ( (mTimerFd = timerfd_create (CLOCK_MONOTONIC, 0)) == -1)
     {
         perror("timer_create ");
         return;
@@ -34,7 +33,7 @@ void PeriodicRtThread::makeThreadPeriodic()
     itval.it_interval.tv_nsec = ns;
     itval.it_value.tv_sec = sec;
     itval.it_value.tv_nsec = ns;
-    if (ret = timerfd_settime(mTimerFd, 0, &itval, NULL) != 0)
+    if ( (ret = timerfd_settime(mTimerFd, 0, &itval, NULL)) != 0)
     {
         perror("timerfd_settime ");
         return;
@@ -48,8 +47,7 @@ void PeriodicRtThread::waitPeriod()
 
     /* Wait for the next timer event. If we have missed any the
            number is written to "missed" */
-    ret = read (mTimerFd, &missed, sizeof (missed));
-    if (ret == -1)
+    if ( (ret = read (mTimerFd, &missed, sizeof (missed)) ) == -1)
     {
         perror("read ");
         return;

@@ -4,3 +4,15 @@ threading/RtThread.cpp
 threading/main.cpp.example
 threading/periodicrtthread.h
 threading/periodicrtthread.cpp
+minimu/vector.h
+minimu/LSM303.h
+minimu/L3G.h
+minimu/IMU.h
+minimu/I2CBus.h
+minimu/exceptions.h
+minimu/LSM303.cpp
+minimu/L3G.cpp
+minimu/I2CBus.cpp
+minimu/minimu.h
+minimu/minimu.cpp
+minimu/main.cpp
