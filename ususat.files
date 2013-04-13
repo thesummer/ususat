@@ -1,6 +1,6 @@
 threading/RtThread.h
 threading/Lock.h
 threading/RtThread.cpp
-threading/main.cpp
+threading/main.cpp.example
 threading/periodicrtthread.h
 threading/periodicrtthread.cpp
