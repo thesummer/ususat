@@ -76,7 +76,7 @@ void LSM303::enable(void)
     if (device == Device::LSM303DLHC)
     {    
         writeAccReg(LSM303_CTRL_REG1_A, 0b01000111); // Normal power mode, all axes enabled, 50 Hz
-        writeAccReg(LSM303_CTRL_REG4_A, 0x28); // 8 g full scale: FS = 10 on DLHC, high resolution output mode
+        writeAccReg(LSM303_CTRL_REG4_A, 0b00001000); // 2 g full scale: FS = 00 on DLHC, high resolution output mode
     }
     else
     {
