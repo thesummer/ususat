@@ -11,9 +11,9 @@ public:
     L3G gyro;
 
     MinImu(const char * i2cDeviceName);
-    virtual vector readMag() = 0;  // In body coords, currently without scaling
-    virtual vector readAcc() = 0;  // In body coords, with units = g
-    virtual vector readGyro() = 0; // In body coords, with units = rad/sec
+    virtual vector readMag();  // In body coords, currently without scaling
+    virtual vector readAcc();  // In body coords, with units = g
+    virtual vector readGyro(); // In body coords, with units = rad/sec
 
     virtual void enable();
 };

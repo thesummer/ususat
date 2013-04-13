@@ -15,11 +15,9 @@ void MinImu::enable()
 
 vector MinImu::readGyro()
 {
-    // At the full-scale=2000 dps setting, the gyro datasheet says
-    // we get 0.07 dps/digit.
-    //TODO: check datasheet again
-    //      maybe smaller full scale is sufficient.
-    const float gyro_scale = 0.07 * 3.14159265 / 180;
+    // At the full-scale=250 dps setting, the gyro datasheet says
+    // we get 8.75 mdps/digit.
+    const float gyro_scale = 0.00875 * 3.14159265 / 180;
 
     gyro.read();
     IMU::raw_g = int_vector_from_ints(&gyro.g);
