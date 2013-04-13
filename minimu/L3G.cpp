@@ -29,7 +29,7 @@ void L3G::detectAddress()
 void L3G::enable()
 {
     writeReg(L3G_CTRL_REG1, 0b00001111); // Normal power mode, all axes enabled
-    writeReg(L3G_CTRL_REG4, 0b00100000); // 2000 dps full scale
+    writeReg(L3G_CTRL_REG4, 0b00000000); // 250 dps full scale
 }
 
 void L3G::writeReg(uint8_t reg, uint8_t value)
