@@ -3,3 +3,5 @@ threading/Lock.h
 threading/RtThread.cpp
 threading/main.cpp
 threading/Lock.cpp
+threading/periodicrtthread.h
+threading/periodicrtthread.cpp
