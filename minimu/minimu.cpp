@@ -26,11 +26,9 @@ vector MinImu::readGyro()
 
 vector MinImu::readAcc()
 {
-    // LSM303 accelerometer: At 8 g sensitivity, the datasheet says
-    // we get 3.9 mg/digit.
-    // TODO: double check this figure using the correct datasheet
-    //       check which sensitivity is set. +-2 g may be enough
-    const float accel_scale = 0.0039;
+    // LSM303 accelerometer: At 2 g sensitivity, the datasheet says
+    // we get 1 mg/digit.
+    const float accel_scale = 0.0010;
 
     compass.readAcc();
     IMU::raw_a = int_vector_from_ints(&compass.a);
