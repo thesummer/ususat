@@ -32,6 +32,9 @@ private:
     unsigned int mMissedWakeUps;
     unsigned int mPeriod_us; /*!< The periodic time in us */
 
+    PeriodicRtThread(const PeriodicRtThread& thread); /*!< Copy constructor made inaccessible by declaring it private */
+    PeriodicRtThread& operator=(const PeriodicRtThread& rhs); /*!< Assignment constructor made inaccessible by declaring it private */
+
 protected:
     /*!
      \brief Registers the Periodic timer
