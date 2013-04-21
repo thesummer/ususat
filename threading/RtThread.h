@@ -22,14 +22,8 @@ private:
     pthread_attr_t mAttr; /*!< Attributes of the thread, used to set the scheduler and priority */
     int mPriority; /*!< Priority of the thread*/
 
-   /*!
-     \brief Copy constructor made inaccessible by declaring it private
-   */
-    RtThread(const RtThread& thread);
-    /*!
-     \brief Assignment constructor made inaccessible by declaring it private
-    */
-    RtThread& operator=(const RtThread& rhs);
+    RtThread(const RtThread& thread); /*!< Copy constructor made inaccessible by declaring it private */
+    RtThread& operator=(const RtThread& rhs); /*!< Assignment constructor made inaccessible by declaring it private */
 
 protected:
     pthread_t mId; /*!< The thread handle */
