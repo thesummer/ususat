@@ -5,19 +5,27 @@ namespace USU {
 
 #include <pthread.h>
 
+/*!
+ \brief Wrapper class for pthread mutexes
+
+*/
 class Lock
 {
 private:
-    // Prevent copying or assignment
-    Lock(const Lock& arg);
-    Lock& operator=(const Lock& rhs);
-    pthread_mutex_t mMutex;
+    pthread_mutex_t mMutex; /*!< pthread mutex handle */
+
+    Lock(const Lock& arg);/*!< Copy constructor made inaccessible by declaring it private */
+    Lock& operator=(const Lock& rhs);/*!< Assignment constructor made inaccessible by declaring it private */
 
 public:
-    Lock();
-    virtual ~Lock();
-    void lock();
-    void unlock();
+
+    Lock(); /*!< Constructor: Creates the pthread-mutex */
+
+    virtual ~Lock(); /*!< Destructor: Frees the pthread-mutex */
+
+    void lock(); /*!< Locks the mutex */
+
+    void unlock(); /*!< Unlocks the mutex */
 };
 
 
@@ -58,13 +66,35 @@ void Lock::unlock()
 
 ///////////////////////////////=============================/////////////////////////
 
+/*!
+ \brief Provides a helper class for Scoped Mutexes
+
+ Create this object by passing a reference to a Lock object.
+ It will lock the mutex when created and unlock it when destroyed, i.e.
+ when going out of scope at the end of the "}".
+ Can make it more convenient than manual (un)locking.
+
+ TODO: Test if it works correctly with a getter-method
+*/
 class ScopedLock
 {
 private:
-    Lock &mLock;
+    Lock &mLock; /*!< Reference to the mutex which is locked */
+
+    ScopedLock(const ScopedLock& thread); /*!< Copy constructor made inaccessible by declaring it private */
+    ScopedLock& operator=(const ScopedLock& rhs); /*!< Assignment constructor made inaccessible by declaring it private */
 
 public:
+    /*!
+     \brief Constructor: will lock the mutex
+
+     \param lock Reference to the Lock it needs to hold
+    */
     ScopedLock(Lock &lock);
+
+    /*!
+     \brief Destructor: will unlock the mutex
+    */
     virtual ~ScopedLock();
 };
 
