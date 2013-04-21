@@ -15,4 +15,12 @@ minimu/L3G.cpp
 minimu/I2CBus.cpp
 minimu/minimu.h
 minimu/minimu.cpp
-minimu/main.cpp
+minimu/main.cpp.example
+pwm/setPWMReg.py
+pwm/README.md
+pwm/cPWM.h
+pwm/cPWM.cpp
+pwm/example.cpp.example
+main.cpp
+kalmanfilter.h
+kalmanfilter.cpp

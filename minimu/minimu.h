@@ -1,8 +1,10 @@
 #ifndef MINIMU_H
 #define MINIMU_H
 
+#include "IMU.h"
 #include "LSM303.h"
 #include "L3G.h"
+#include "vector.h"
 
 class MinImu : public IMU
 {
