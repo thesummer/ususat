@@ -5,7 +5,7 @@ using namespace USU;
 
 
 RtThread::RtThread(int priority):
-    mPriority(priority), mStarted(false)
+    mPriority(priority), mStarted(false), mId(-1)
 {
     int ret;
     if ( (ret = pthread_attr_init(&mAttr)) != 0)
