@@ -17,7 +17,7 @@ vector MinImu::readGyro()
 {
     // At the full-scale=250 dps setting, the gyro datasheet says
     // we get 8.75 mdps/digit.
-    const float gyro_scale = 0.00875 * 3.14159265 / 180;
+    const float gyro_scale = 0.00875; // in °/s
 
     gyro.read();
     IMU::raw_g = int_vector_from_ints(&gyro.g);
@@ -40,5 +40,5 @@ vector MinImu::readMag()
     compass.readMag();
     IMU::raw_m = int_vector_from_ints(&compass.m);
 
-    return IMU::raw_m;
+    return vector_from_ints(&compass.m);
 }
