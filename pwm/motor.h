@@ -20,10 +20,10 @@ typedef void (cPWM::*SetDutyCyle)(unsigned int);
 namespace USU
 {
 
-class motor
+class Motor
 {
 public:
-    motor(Beagle_GPIO& beagleGpio, Beagle_GPIO::GPIO_Pins clockwise,  Beagle_GPIO::GPIO_Pins counterClockwise,
+    Motor(Beagle_GPIO& beagleGpio, Beagle_GPIO::GPIO_Pins clockwise,  Beagle_GPIO::GPIO_Pins counterClockwise,
           SetDutyCyle dutyCycle);
     void setSpeed(int speed);
     int getSpeed() const { return mSpeed; }

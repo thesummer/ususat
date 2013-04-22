@@ -11,7 +11,7 @@
 #include "motor.h"
 using namespace USU;
 
-motor::motor(Beagle_GPIO &beagleGpio, Beagle_GPIO::GPIO_Pins clockwise, Beagle_GPIO::GPIO_Pins counterClockwise, SetDutyCyle dutyCycle)
+Motor::Motor(Beagle_GPIO &beagleGpio, Beagle_GPIO::GPIO_Pins clockwise, Beagle_GPIO::GPIO_Pins counterClockwise, SetDutyCyle dutyCycle)
     :mBeagleGpio(beagleGpio), mClockwise(clockwise),
      mCounterClockwise(counterClockwise), mSetDutyCycle(dutyCycle), mSpeed(0)
 {
@@ -26,7 +26,7 @@ motor::motor(Beagle_GPIO &beagleGpio, Beagle_GPIO::GPIO_Pins clockwise, Beagle_G
     setSpeed(mSpeed);
 }
 
-void motor::setSpeed(int speed)
+void Motor::setSpeed(int speed)
 {
     if (mSpeed > 0)
     {

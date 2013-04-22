@@ -1,3 +1,16 @@
+/**
+ * @file kalmanfilter.h
+ *
+ * C++ class for the sensor fusion and stated estimated.
+ * Based on the PeriodicRtThread class.
+ *
+ * @author Jan Sommer
+ *  Created on: Apr 20, 2013
+ *
+ */
+
+
+
 #ifndef KALMANFILTER_H
 #define KALMANFILTER_H
 
