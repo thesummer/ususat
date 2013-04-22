@@ -24,7 +24,9 @@ pwm/example.cpp.example
 main.cpp
 kalmanfilter.h
 kalmanfilter.cpp
-pwm/motor.h
-pwm/motor.cpp
 pwm/Beagle_GPIO.h
 pwm/Beagle_GPIO.cpp
+motorcontrol.h
+motorcontrol.cpp
+pwm/motor.h
+pwm/motor.cpp
