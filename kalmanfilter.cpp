@@ -13,8 +13,8 @@
 #include "minimu/vector.h"
 using namespace USU;
 
-KalmanFilter::KalmanFilter(char *i2cBus, USU::SharedState &state)
-    :mImu(i2cBus), mState(state), mKeepRunning(false)
+KalmanFilter::KalmanFilter(int priority, unsigned int period_us, char *i2cBus)
+    :PeriodicRtThread(priority, period_us), mImu(i2cBus), mKeepRunning(false)
 {
 }
 
@@ -31,6 +31,11 @@ void KalmanFilter::run()
         gyro = mImu.readGyro();
 
         ///TODO: Do some Kalman-Filtering magic here
+
+        // Alwasy use mutex, when changing state
+        mStateLock.lock();
+            mState = !mState;
+        mStateLock.unlock();
 
         waitPeriod();
     }

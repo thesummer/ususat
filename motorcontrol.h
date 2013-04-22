@@ -55,7 +55,7 @@ public:
     void stop() { mKeepRunning = false; }
 
     /*!
-     \brief Thread routing
+     \brief Thread routine
 
      - Gets the newest estimate from KalmanFilter
      - Calculate the control response
