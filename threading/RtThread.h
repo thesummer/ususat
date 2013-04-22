@@ -1,3 +1,14 @@
+/**
+ * @file RtThread.h
+ *
+ * Small C++ wrapper class to create a realtime scheduled pthread
+ *
+ * @author Jan Sommer
+ *  Created on: Apr 10, 2013
+ *
+ */
+
+
 #ifndef RTTHREAD_H
 #define RTTHREAD_H
 

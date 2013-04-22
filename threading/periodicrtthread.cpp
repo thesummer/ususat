@@ -1,3 +1,14 @@
+/**
+ * @file periodicrtthread.cpp
+ *
+ * Small C++ wrapper class to create a realtime scheduled pthread
+ * with periodic timer events.
+ *
+ * @author Jan Sommer
+ *  Created on: Apr 10, 2013
+ *
+ */
+
 #include "periodicrtthread.h"
 using namespace USU;
 

@@ -1,3 +1,14 @@
+/**
+ * @file kalmanfilter.cpp
+ *
+ * C++ class for the sensor fusion and stated estimated.
+ * Based on the PeriodicRtThread class.
+ *
+ * @author Jan Sommer
+ *  Created on: Apr 20, 2013
+ *
+ */
+
 #include "kalmanfilter.h"
 #include "minimu/vector.h"
 using namespace USU;

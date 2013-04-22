@@ -1,3 +1,13 @@
+/**
+ * @file Lock.h
+ *
+ * Small C++ wrapper classes for pthread mutexes
+ *
+ * @author Jan Sommer
+ *  Created on: Apr 10, 2013
+ *
+ */
+
 #ifndef LOCK_H
 #define LOCK_H
 
