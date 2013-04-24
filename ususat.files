@@ -30,3 +30,4 @@ motorcontrol.h
 motorcontrol.cpp
 pwm/motor.h
 pwm/motor.cpp
+3dm/messages.h
