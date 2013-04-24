@@ -45,21 +45,21 @@ public:
         keepRunning = true;
         mIMU.enable();
         struct timeval start, now, elapsed;
+        gettimeofday(&start, NULL);
 
         while(keepRunning)
         {
-            gettimeofday(&start, NULL);
             vector acc, mag, gyro;
             acc  = mIMU.readAcc();
             mag  = mIMU.readMag();
             gyro = mIMU.readGyro();
             gettimeofday(&now, NULL);
             timeval_subtract(&elapsed, &now, &start);
-            cout << elapsed.tv_usec << endl;
-//            unsigned long long timestamp = elapsed.tv_sec * 1000 + elapsed.tv_usec / 1000; // in ms since start
-//            std::cout << timestamp << "," << acc[0] << "," << acc[1] << "," << acc[2]
-//                                   << "," << mag[0] << "," << mag[1] << "," << mag[2]
-//                                   << "," << gyro[0] << "," << gyro[1] << "," << gyro[2] << std::endl;
+
+            unsigned long long timestamp = elapsed.tv_sec * 1000 + elapsed.tv_usec / 1000; // in ms since start
+            std::cout << timestamp << "," << acc[0] << "," << acc[1] << "," << acc[2]
+                                   << "," << mag[0] << "," << mag[1] << "," << mag[2]
+                                   << "," << gyro[0] << "," << gyro[1] << "," << gyro[2] << std::endl;
 
             waitPeriod();
         }
@@ -75,7 +75,7 @@ public:
 int main()
 {
 
-    DataCollector dc(5, 20000, "/dev/i2c-3");
+    DataCollector dc(5, 20000, "/dev/i2c-0");
     dc.start();
     dc.join();
 
