@@ -1,0 +1,159 @@
+\hypertarget{class_u_s_u_1_1_kalman_filter}{\section{\-U\-S\-U\-:\-:\-Kalman\-Filter \-Class \-Reference}
+\label{class_u_s_u_1_1_kalman_filter}\index{\-U\-S\-U\-::\-Kalman\-Filter@{\-U\-S\-U\-::\-Kalman\-Filter}}
+}
+
+
+\-Represents the \-Periodic class for state estimation.  
+
+
+
+
+{\ttfamily \#include $<$kalmanfilter.\-h$>$}
+
+
+
+\-Inheritance diagram for \-U\-S\-U\-:\-:\-Kalman\-Filter\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{class_u_s_u_1_1_kalman_filter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+\-Collaboration diagram for \-U\-S\-U\-:\-:\-Kalman\-Filter\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{class_u_s_u_1_1_kalman_filter__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_u_s_u_1_1_kalman_filter_acbde9bd0fafa0e6c1aa078d392b28a6d}{\-Kalman\-Filter} (int priority, unsigned int period\-\_\-us, char $\ast$i2c\-Bus)
+\begin{DoxyCompactList}\small\item\em \-Constructor of the class. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_u_s_u_1_1_kalman_filter_a47cc7f620b57b25133289e61dbf2a7be}{run} ()
+\begin{DoxyCompactList}\small\item\em \-Thread routine. \end{DoxyCompactList}\item 
+void \hyperlink{class_u_s_u_1_1_kalman_filter_a3f8b3ce719dcb24745150f8c4ef361b8}{stop} ()
+\begin{DoxyCompactList}\small\item\em \-Signals the thread to stop. \end{DoxyCompactList}\item 
+bool \hyperlink{class_u_s_u_1_1_kalman_filter_ab1259296dd62ed5958f9b3dd88622f73}{get\-State} () const 
+\begin{DoxyCompactList}\small\item\em \-Returns the current system state estimate. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Represents the \-Periodic class for state estimation. 
+
+\-This class is derived from \hyperlink{class_u_s_u_1_1_periodic_rt_thread}{\-Periodic\-Rt\-Thread}. \-It initializes the interface to the \-Min\-I\-M\-U9v2 and estimates the system state using \-Kalman filtering techniques. \-The state estimate can be accessed from other threads (protected by mutex).
+
+\-T\-O\-D\-O\-:
+\begin{DoxyItemize}
+\item \-Add interface to 3\-D\-M-\/\-G\-X3-\/25
+\item \-Add interface to star camera 
+\end{DoxyItemize}
+
+\-Definition at line 35 of file kalmanfilter.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{class_u_s_u_1_1_kalman_filter_acbde9bd0fafa0e6c1aa078d392b28a6d}{\index{\-U\-S\-U\-::\-Kalman\-Filter@{\-U\-S\-U\-::\-Kalman\-Filter}!\-Kalman\-Filter@{\-Kalman\-Filter}}
+\index{\-Kalman\-Filter@{\-Kalman\-Filter}!USU::KalmanFilter@{\-U\-S\-U\-::\-Kalman\-Filter}}
+\subsubsection[{\-Kalman\-Filter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Kalman\-Filter\-::\-Kalman\-Filter} (
+\begin{DoxyParamCaption}
+\item[{int}]{priority, }
+\item[{unsigned int}]{period\-\_\-us, }
+\item[{char $\ast$}]{i2c\-Bus}
+\end{DoxyParamCaption}
+)}}\label{class_u_s_u_1_1_kalman_filter_acbde9bd0fafa0e6c1aa078d392b28a6d}
+
+
+\-Constructor of the class. 
+
+\-Initializes the interface to the \-Min\-I\-M\-U9 sensors
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em priority} & priority of the underlying periodic thread \\
+\hline
+{\em period\-\_\-us} & period (in us) of the underlying periodic thread \\
+\hline
+{\em i2c\-Bus} & name of the \-I2\-C-\/device (e.\-g. /dev/i2c-\/1) \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 16 of file kalmanfilter.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{class_u_s_u_1_1_kalman_filter_ab1259296dd62ed5958f9b3dd88622f73}{\index{\-U\-S\-U\-::\-Kalman\-Filter@{\-U\-S\-U\-::\-Kalman\-Filter}!get\-State@{get\-State}}
+\index{get\-State@{get\-State}!USU::KalmanFilter@{\-U\-S\-U\-::\-Kalman\-Filter}}
+\subsubsection[{get\-State}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Kalman\-Filter\-::get\-State} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_u_s_u_1_1_kalman_filter_ab1259296dd62ed5958f9b3dd88622f73}
+
+
+\-Returns the current system state estimate. 
+
+\-Copies the current system state estimate. \-Acquires mutex before acessing the internal variable to avoid read/write-\/conflicts.
+
+\begin{DoxyReturn}{\-Returns}
+bool \-Current system state \-T\-O\-D\-O\-: \-Currently only dummy variable. \-Replace with actual state representation (quaternion?) 
+\end{DoxyReturn}
+
+
+\-Definition at line 45 of file kalmanfilter.\-cpp.
+
+\hypertarget{class_u_s_u_1_1_kalman_filter_a47cc7f620b57b25133289e61dbf2a7be}{\index{\-U\-S\-U\-::\-Kalman\-Filter@{\-U\-S\-U\-::\-Kalman\-Filter}!run@{run}}
+\index{run@{run}!USU::KalmanFilter@{\-U\-S\-U\-::\-Kalman\-Filter}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Kalman\-Filter\-::run} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{class_u_s_u_1_1_kalman_filter_a47cc7f620b57b25133289e61dbf2a7be}
+
+
+\-Thread routine. 
+
+
+\begin{DoxyItemize}
+\item \-Gets sensor data from \-Min\-I\-M\-U9
+\item \-Calculate state estimate
+\item wait for next timer event
+\end{DoxyItemize}
+
+\-T\-O\-D\-O\-: \-Its only an idea no actual implementation yet. \-T\-O\-D\-O\-: \-Do some \-Kalman-\/\-Filtering magic here 
+
+\-Implements \hyperlink{class_u_s_u_1_1_periodic_rt_thread_ac9146b3088a9b268594ce41d002d020a}{\-U\-S\-U\-::\-Periodic\-Rt\-Thread}.
+
+
+
+\-Definition at line 21 of file kalmanfilter.\-cpp.
+
+\hypertarget{class_u_s_u_1_1_kalman_filter_a3f8b3ce719dcb24745150f8c4ef361b8}{\index{\-U\-S\-U\-::\-Kalman\-Filter@{\-U\-S\-U\-::\-Kalman\-Filter}!stop@{stop}}
+\index{stop@{stop}!USU::KalmanFilter@{\-U\-S\-U\-::\-Kalman\-Filter}}
+\subsubsection[{stop}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-U\-S\-U\-::\-Kalman\-Filter\-::stop} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_u_s_u_1_1_kalman_filter_a3f8b3ce719dcb24745150f8c4ef361b8}
+
+
+\-Signals the thread to stop. 
+
+
+
+\-Definition at line 64 of file kalmanfilter.\-h.
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{kalmanfilter_8h}{kalmanfilter.\-h}\item 
+\hyperlink{kalmanfilter_8cpp}{kalmanfilter.\-cpp}\end{DoxyCompactItemize}

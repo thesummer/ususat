@@ -1,0 +1,12 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$periodicrtthread_8h.html" title="threading/periodicrtthread.h" alt="" coords="553,83,732,112"/>
+<area shape="rect" id="node9" href="$minimu_8h.html" title="minimu/minimu.h" alt="" coords="244,83,364,112"/>
+<area shape="rect" id="node36" href="$_lock_8h.html" title="threading/Lock.h" alt="" coords="412,83,529,112"/>
+<area shape="rect" id="node5" href="$_rt_thread_8h.html" title="RtThread.h" alt="" coords="599,160,684,189"/>
+<area shape="rect" id="node11" href="$_i_m_u_8h.html" title="IMU.h" alt="" coords="143,160,201,189"/>
+<area shape="rect" id="node13" href="$vector_8h.html" title="vector.h" alt="" coords="137,237,207,267"/>
+<area shape="rect" id="node19" href="$_l_s_m303_8h.html" title="LSM303.h" alt="" coords="356,160,436,189"/>
+<area shape="rect" id="node32" href="$_l3_g_8h.html" title="L3G.h" alt="" coords="276,160,332,189"/>
+<area shape="rect" id="node23" href="$_i2_c_bus_8h.html" title="I2CBus.h" alt="" coords="275,237,352,267"/>
+<area shape="rect" id="node26" href="$exceptions_8h.html" title="exceptions.h" alt="" coords="253,315,349,344"/>
+</map>

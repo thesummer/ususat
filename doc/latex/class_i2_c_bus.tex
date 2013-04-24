@@ -1,0 +1,123 @@
+\hypertarget{class_i2_c_bus}{\section{\-I2\-C\-Bus \-Class \-Reference}
+\label{class_i2_c_bus}\index{\-I2\-C\-Bus@{\-I2\-C\-Bus}}
+}
+
+
+{\ttfamily \#include $<$\-I2\-C\-Bus.\-h$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_i2_c_bus_afc250c51eed417b2726c53353cae4083}{\-I2\-C\-Bus} (const char $\ast$device\-Name)
+\item 
+\hyperlink{class_i2_c_bus_a70dac2923cd16ce06f0e73f7fc5bca89}{$\sim$\-I2\-C\-Bus} ()
+\item 
+void \hyperlink{class_i2_c_bus_a3df26769808e1e948dda57cd02680c3d}{address\-Set} (uint8\-\_\-t address)
+\item 
+void \hyperlink{class_i2_c_bus_a0f9c9c32bff6152119b4ee79f003a1bd}{write\-Byte} (uint8\-\_\-t command, uint8\-\_\-t data)
+\item 
+uint8\-\_\-t \hyperlink{class_i2_c_bus_a3b7cd32f752e2a5eeb6a5bdaf9267282}{read\-Byte} (uint8\-\_\-t command)
+\item 
+int \hyperlink{class_i2_c_bus_a9aefab7f4230de3dc45385d1c79d4fe5}{try\-Read\-Byte} (uint8\-\_\-t command)
+\item 
+void \hyperlink{class_i2_c_bus_a3f0bed946e8431cacbac1f214ba03232}{read\-Block} (uint8\-\_\-t command, uint8\-\_\-t size, uint8\-\_\-t $\ast$data)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+
+
+\-Definition at line 7 of file \-I2\-C\-Bus.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{class_i2_c_bus_afc250c51eed417b2726c53353cae4083}{\index{\-I2\-C\-Bus@{\-I2\-C\-Bus}!\-I2\-C\-Bus@{\-I2\-C\-Bus}}
+\index{\-I2\-C\-Bus@{\-I2\-C\-Bus}!I2CBus@{\-I2\-C\-Bus}}
+\subsubsection[{\-I2\-C\-Bus}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-I2\-C\-Bus\-::\-I2\-C\-Bus} (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{device\-Name}
+\end{DoxyParamCaption}
+)}}\label{class_i2_c_bus_afc250c51eed417b2726c53353cae4083}
+
+
+\-Definition at line 7 of file \-I2\-C\-Bus.\-cpp.
+
+\hypertarget{class_i2_c_bus_a70dac2923cd16ce06f0e73f7fc5bca89}{\index{\-I2\-C\-Bus@{\-I2\-C\-Bus}!$\sim$\-I2\-C\-Bus@{$\sim$\-I2\-C\-Bus}}
+\index{$\sim$\-I2\-C\-Bus@{$\sim$\-I2\-C\-Bus}!I2CBus@{\-I2\-C\-Bus}}
+\subsubsection[{$\sim$\-I2\-C\-Bus}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-I2\-C\-Bus\-::$\sim$\-I2\-C\-Bus} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_i2_c_bus_a70dac2923cd16ce06f0e73f7fc5bca89}
+
+
+\-Definition at line 16 of file \-I2\-C\-Bus.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{class_i2_c_bus_a3df26769808e1e948dda57cd02680c3d}{\index{\-I2\-C\-Bus@{\-I2\-C\-Bus}!address\-Set@{address\-Set}}
+\index{address\-Set@{address\-Set}!I2CBus@{\-I2\-C\-Bus}}
+\subsubsection[{address\-Set}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-I2\-C\-Bus\-::address\-Set} (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{address}
+\end{DoxyParamCaption}
+)}}\label{class_i2_c_bus_a3df26769808e1e948dda57cd02680c3d}
+
+
+\-Definition at line 21 of file \-I2\-C\-Bus.\-cpp.
+
+\hypertarget{class_i2_c_bus_a3f0bed946e8431cacbac1f214ba03232}{\index{\-I2\-C\-Bus@{\-I2\-C\-Bus}!read\-Block@{read\-Block}}
+\index{read\-Block@{read\-Block}!I2CBus@{\-I2\-C\-Bus}}
+\subsubsection[{read\-Block}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-I2\-C\-Bus\-::read\-Block} (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{command, }
+\item[{uint8\-\_\-t}]{size, }
+\item[{uint8\-\_\-t $\ast$}]{data}
+\end{DoxyParamCaption}
+)}}\label{class_i2_c_bus_a3f0bed946e8431cacbac1f214ba03232}
+
+
+\-Definition at line 54 of file \-I2\-C\-Bus.\-cpp.
+
+\hypertarget{class_i2_c_bus_a3b7cd32f752e2a5eeb6a5bdaf9267282}{\index{\-I2\-C\-Bus@{\-I2\-C\-Bus}!read\-Byte@{read\-Byte}}
+\index{read\-Byte@{read\-Byte}!I2CBus@{\-I2\-C\-Bus}}
+\subsubsection[{read\-Byte}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t {\bf \-I2\-C\-Bus\-::read\-Byte} (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{command}
+\end{DoxyParamCaption}
+)}}\label{class_i2_c_bus_a3b7cd32f752e2a5eeb6a5bdaf9267282}
+
+
+\-Definition at line 39 of file \-I2\-C\-Bus.\-cpp.
+
+\hypertarget{class_i2_c_bus_a9aefab7f4230de3dc45385d1c79d4fe5}{\index{\-I2\-C\-Bus@{\-I2\-C\-Bus}!try\-Read\-Byte@{try\-Read\-Byte}}
+\index{try\-Read\-Byte@{try\-Read\-Byte}!I2CBus@{\-I2\-C\-Bus}}
+\subsubsection[{try\-Read\-Byte}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-I2\-C\-Bus\-::try\-Read\-Byte} (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{command}
+\end{DoxyParamCaption}
+)}}\label{class_i2_c_bus_a9aefab7f4230de3dc45385d1c79d4fe5}
+
+
+\-Definition at line 49 of file \-I2\-C\-Bus.\-cpp.
+
+\hypertarget{class_i2_c_bus_a0f9c9c32bff6152119b4ee79f003a1bd}{\index{\-I2\-C\-Bus@{\-I2\-C\-Bus}!write\-Byte@{write\-Byte}}
+\index{write\-Byte@{write\-Byte}!I2CBus@{\-I2\-C\-Bus}}
+\subsubsection[{write\-Byte}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-I2\-C\-Bus\-::write\-Byte} (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{command, }
+\item[{uint8\-\_\-t}]{data}
+\end{DoxyParamCaption}
+)}}\label{class_i2_c_bus_a0f9c9c32bff6152119b4ee79f003a1bd}
+
+
+\-Definition at line 30 of file \-I2\-C\-Bus.\-cpp.
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+minimu/\hyperlink{_i2_c_bus_8h}{\-I2\-C\-Bus.\-h}\item 
+minimu/\hyperlink{_i2_c_bus_8cpp}{\-I2\-C\-Bus.\-cpp}\end{DoxyCompactItemize}

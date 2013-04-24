@@ -1,0 +1,132 @@
+\hypertarget{class_u_s_u_1_1_motor_control}{\section{\-U\-S\-U\-:\-:\-Motor\-Control \-Class \-Reference}
+\label{class_u_s_u_1_1_motor_control}\index{\-U\-S\-U\-::\-Motor\-Control@{\-U\-S\-U\-::\-Motor\-Control}}
+}
+
+
+\-Represents the \-Periodic task for motor control.  
+
+
+
+
+{\ttfamily \#include $<$motorcontrol.\-h$>$}
+
+
+
+\-Inheritance diagram for \-U\-S\-U\-:\-:\-Motor\-Control\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{class_u_s_u_1_1_motor_control__inherit__graph}
+\end{center}
+\end{figure}
+
+
+\-Collaboration diagram for \-U\-S\-U\-:\-:\-Motor\-Control\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{class_u_s_u_1_1_motor_control__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_u_s_u_1_1_motor_control_a62a00e1dc61fec92cef7879c2d90cc9a}{\-Motor\-Control} (int priority=0, unsigned int period\-\_\-us=1000000, \hyperlink{class_u_s_u_1_1_kalman_filter}{\-Kalman\-Filter} \&kalmanfilter)
+\begin{DoxyCompactList}\small\item\em \-Constructor of the class. \end{DoxyCompactList}\item 
+void \hyperlink{class_u_s_u_1_1_motor_control_aa317c39d73f244913c54c80284130eab}{stop} ()
+\begin{DoxyCompactList}\small\item\em \-Signals the thread to stop. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_u_s_u_1_1_motor_control_a1c7a621170352b9bdd4e5a60feee24c8}{run} ()
+\begin{DoxyCompactList}\small\item\em \-Thread routine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Represents the \-Periodic task for motor control. 
+
+\-This class is derived from \hyperlink{class_u_s_u_1_1_periodic_rt_thread}{\-Periodic\-Rt\-Thread}. \-It initializes the interface to the 4 motors. \-In a periodic loop it takes the last system state estimate from the \-Kalman filter, calculates the appropiate control response and sets the speed (duty cycle) of the motors. 
+
+\-Definition at line 34 of file motorcontrol.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{class_u_s_u_1_1_motor_control_a62a00e1dc61fec92cef7879c2d90cc9a}{\index{\-U\-S\-U\-::\-Motor\-Control@{\-U\-S\-U\-::\-Motor\-Control}!\-Motor\-Control@{\-Motor\-Control}}
+\index{\-Motor\-Control@{\-Motor\-Control}!USU::MotorControl@{\-U\-S\-U\-::\-Motor\-Control}}
+\subsubsection[{\-Motor\-Control}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Motor\-Control\-::\-Motor\-Control} (
+\begin{DoxyParamCaption}
+\item[{int}]{priority = {\ttfamily 0}, }
+\item[{unsigned int}]{period\-\_\-us = {\ttfamily 1000000}, }
+\item[{{\bf \-Kalman\-Filter} \&}]{kalmanfilter}
+\end{DoxyParamCaption}
+)}}\label{class_u_s_u_1_1_motor_control_a62a00e1dc61fec92cef7879c2d90cc9a}
+
+
+\-Constructor of the class. 
+
+\-Initializes the underlying \hyperlink{class_u_s_u_1_1_periodic_rt_thread}{\-Periodic\-Rt\-Thread}, the \-G\-P\-I\-O-\/class, the \-P\-W\-Ms and the 4 \-Motors.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em priority} & priority of the periodic pthread \\
+\hline
+{\em period\-\_\-us} & period (in us) of the periodic pthread \\
+\hline
+{\em kalmanfilter} & reference to the \hyperlink{class_u_s_u_1_1_kalman_filter}{\-Kalman\-Filter} to get state estimates \\
+\hline
+\end{DoxyParams}
+\-T\-O\-D\-O\-: use meaningful \-Pin numbers (declare consts) 
+
+\-Definition at line 16 of file motorcontrol.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{class_u_s_u_1_1_motor_control_a1c7a621170352b9bdd4e5a60feee24c8}{\index{\-U\-S\-U\-::\-Motor\-Control@{\-U\-S\-U\-::\-Motor\-Control}!run@{run}}
+\index{run@{run}!USU::MotorControl@{\-U\-S\-U\-::\-Motor\-Control}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Motor\-Control\-::run} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{class_u_s_u_1_1_motor_control_a1c7a621170352b9bdd4e5a60feee24c8}
+
+
+\-Thread routine. 
+
+
+\begin{DoxyItemize}
+\item \-Gets the newest estimate from \hyperlink{class_u_s_u_1_1_kalman_filter}{\-Kalman\-Filter}
+\item \-Calculate the control response
+\item \-Set the motor speed of the 4 \-Motors
+\item wait for the next timer event \-T\-O\-D\-O\-: \-Its only an idea, no actual implementation yet. 
+\end{DoxyItemize}\-T\-O\-D\-O\-: \-Make some control magic
+
+\mbox{[}...\mbox{]} 
+
+\-Implements \hyperlink{class_u_s_u_1_1_periodic_rt_thread_ac9146b3088a9b268594ce41d002d020a}{\-U\-S\-U\-::\-Periodic\-Rt\-Thread}.
+
+
+
+\-Definition at line 27 of file motorcontrol.\-cpp.
+
+\hypertarget{class_u_s_u_1_1_motor_control_aa317c39d73f244913c54c80284130eab}{\index{\-U\-S\-U\-::\-Motor\-Control@{\-U\-S\-U\-::\-Motor\-Control}!stop@{stop}}
+\index{stop@{stop}!USU::MotorControl@{\-U\-S\-U\-::\-Motor\-Control}}
+\subsubsection[{stop}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-U\-S\-U\-::\-Motor\-Control\-::stop} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_u_s_u_1_1_motor_control_aa317c39d73f244913c54c80284130eab}
+
+
+\-Signals the thread to stop. 
+
+
+
+\-Definition at line 55 of file motorcontrol.\-h.
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{motorcontrol_8h}{motorcontrol.\-h}\item 
+\hyperlink{motorcontrol_8cpp}{motorcontrol.\-cpp}\end{DoxyCompactItemize}
