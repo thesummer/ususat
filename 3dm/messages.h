@@ -127,6 +127,35 @@ public:
 
 };
 
+class SetCountinuousMode : public GX3Command
+{
+public:
+    SetCountinuousMode(uint8_t CommandByte)
+    {
+        mComamnd = {SET_CONTINUOUS_MODE, 0xC1, 0x29, CommandByte};
+    }
+
+    bool checkResponse(uint8_t *buffer, unsigned int length)
+    {
+        if(length != 8) return false;
+
+        if(buffer[0] != SET_CONTINUOUS_MODE) return false;
+
+        if(GX3Packet::calculateChecksum(buffer, length) == false)
+            return false;
+
+        if(buffer[1] != mCommand[3]) return false;
+
+        return true;
+    }
+
+    virtual unsigned int size() {return mSize;}
+
+    uint8_t mCommand[mSize];
+private:
+    const static int mSize = 4;
+};
+
 class SamplingSettings : public GX3Command
 {
 public:
