@@ -76,6 +76,10 @@ public:
     bool getState() const;
 
 private:
+
+    KalmanFilter(const KalmanFilter& thread); /*!< Copy constructor made inaccessible by declaring it private */
+    KalmanFilter& operator=(const KalmanFilter& rhs); /*!< Assignment constructor made inaccessible by declaring it private */
+
     MinImu mImu; /*!< Class for accessing the MinIMU9v2*/
     ///TODO: semaphore for 3DM
     ///TODO: semaphore to ethernet
