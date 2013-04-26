@@ -31,3 +31,5 @@ motorcontrol.cpp
 pwm/motor.h
 pwm/motor.cpp
 3dm/messages.h
+3dm/gx3communicator.h
+3dm/gx3communicator.cpp

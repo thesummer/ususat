@@ -1,6 +1,9 @@
 #ifndef MESSAGES_H
 #define MESSAGES_H
 
+#include "../minimu/vector.h"
+#include<stdint.h>
+
 // Command protocol constants
 
 const uint8_t RAW_ACC_ANG                     = 0xC1; /*!< Raw Accelerometer and Angular Rate Sensor Outputs */
@@ -35,17 +38,15 @@ const uint8_t WRITE_WORD_EEPROM               = 0xE4; /*!< Write Word to EEPROM 
 const uint8_t READ_WORD_EEPROM                = 0xE5; /*!< Read Word from EEPROM */
 const uint8_t READ_FIRMWARE_VER               = 0xE9; /*!< Read Firmware Version Number */
 const uint8_t READ_DEVICE_ID                  = 0xEA; /*!< Read Device ID String */
-const uint8_t  STOP_CONTINUOUS                = 0xFA; /*!< Stop Continuous Mode (no reply) */
-const uint8_t  FIRMWARE_UPDATE                = 0xFD; /*!< Firmware Update (no reply) */
-const uint8_t  DEVICE_RESET                   = 0xFE; /*!< Device Reset (no reply) */
+const uint8_t STOP_CONTINUOUS                 = 0xFA; /*!< Stop Continuous Mode (no reply) */
+const uint8_t FIRMWARE_UPDATE                 = 0xFD; /*!< Firmware Update (no reply) */
+const uint8_t DEVICE_RESET                    = 0xFE; /*!< Device Reset (no reply) */
 
-#include "../minimu/vector.h"
-#include<stdint.h>
+#include <iostream>
 
 class GX3Packet
 {
 public:
-    virtual unsigned int size() = 0;
     static bool calculateChecksum(uint8_t * buffer, unsigned int length)
     {
         uint16_t sum = 0;
@@ -53,7 +54,8 @@ public:
         {
             sum += buffer[i];
         }
-        return (sum == (*(uint16_t) &buffer[length-2]) );
+        uint16_t temp = (buffer[length-2] << 8)  + buffer[length-1];
+        return (sum == temp );
     }
 
     static inline vector createVector(uint8_t * buffer)
@@ -82,15 +84,14 @@ public:
         timer = *(unsigned int*) &buffer[25];
     }
 
-    virtual unsigned int size() {return mSize;}
 
     vector acc;
     vector gyro;
 
     unsigned int timer;
+    enum{size = 31};
 
 private:
-    const static int mSize = 31;
 };
 
 
@@ -107,23 +108,20 @@ public:
         timer = *(unsigned int*) &buffer[73];
     }
 
-    virtual unsigned int size() {return mSize;}
-
     vector acc;
     vector gyro;
     vector mag;
 
     matrix orientation;
     unsigned int timer;
+    enum {size = 79};
 
 private:
-    const static int mSize = 79;
 };
 
 class GX3Command
 {
 public:
-    virtual unsigned int size() = 0;
 
 };
 
@@ -132,7 +130,10 @@ class SetCountinuousMode : public GX3Command
 public:
     SetCountinuousMode(uint8_t CommandByte)
     {
-        mComamnd = {SET_CONTINUOUS_MODE, 0xC1, 0x29, CommandByte};
+        mCommand[0] = SET_CONTINUOUS_MODE;
+        mCommand[1] = 0xC1;
+        mCommand[2] = 0x29;
+        mCommand[3] = CommandByte;
     }
 
     bool checkResponse(uint8_t *buffer, unsigned int length)
@@ -149,63 +150,61 @@ public:
         return true;
     }
 
-    virtual unsigned int size() {return mSize;}
-
-    uint8_t mCommand[mSize];
-private:
-    const static int mSize = 4;
+    enum {size = 4};
+    uint8_t mCommand[size];
 };
 
 class SamplingSettings : public GX3Command
 {
+
 public:
     enum FunctionSelector{
         ReturnOnly=0, Change=1,
         ChangeAndSave=2, ChangeWithoutReply=3
     };
     enum DataConditioning{
-        CalcOrientation      = 0x01,
-        EnableConingSculling = 0x02,
-        FloatLittleEndian    = 0x10,
-        SuppressNaN          = 0x20,
-        FiniteSizeCorrection = 0x40,
-        DisableMag           = 0x100,
-        DisableMagNorthComp  = 0x400,
-        DisableGravComp      = 0x800,
-        EnableQuaternion     = 0x1000
+        FlagCalcOrientation      = 0x01,
+        FlagEnableConingSculling = 0x02,
+        FlagDefault              = 0x03,
+        FlagFloatLittleEndian    = 0x10,
+        FlagSuppressNaN          = 0x20,
+        FlagFiniteSizeCorrection = 0x40,
+        FlagDisableMag           = 0x100,
+        FlagDisableMagNorthComp  = 0x400,
+        FlagDisableGravComp      = 0x800,
+        FlagEnableQuaternion     = 0x1000
 
     };
 
     SamplingSettings(FunctionSelector funSel, uint16_t samplingPeriod_ms = 10,
-                     uint16_t dataCondFlags = 0x03, uint8_t gyroAccFilter = 15,
-                     uint8_t magFilter = 17, uint16_t upCompensation = 10,
-                     uint16_t northCompensation = 10, uint8_t magPower = 0)
+                     uint16_t dataCondFlags = SamplingSettings::FlagDefault,
+                     uint8_t gyroAccFilter = 15, uint8_t magFilter = 17,
+                     uint16_t upCompensation = 10, uint16_t northCompensation = 10,
+                     uint8_t magPower = 0)
     {
-        uint16_t *temp16;
         mCommand[0] = SAMPLING_SETTINGS;
         mCommand[1] = 0xA8;
         mCommand[2] = 0xB9;
         mCommand[3] = (uint8_t) funSel;
-        temp16 = (uint16_t*) &mCommand[4];
-        *temp16 = samplingPeriod_ms;
-        temp16 = (uint16_t*) &mCommand[6];
-        *temp16 = dataCondFlags;
-        mCommand[8]  = gyroAccFilter;
-        mCommand[9]  = magFilter;
-        temp16 = (uint16_t*) &mCommand[10];
-        *temp16 = upCompensation;
-        temp16 = (uint16_t*) &mCommand[12];
-        *temp16 = northCompensation;
-        mCommand[14] = magPower;
-        mCommand[15] = 0;
-        mCommand[16] = 0;
-        mCommand[17] = 0;
-        mCommand[18] = 0;
-        mCommand[19] = 0;
+        mCommand[4] = (samplingPeriod_ms & 0xFF00);
+        mCommand[5] = (samplingPeriod_ms & 0x00FF);
+        mCommand[6] = (dataCondFlags & 0xFF00);
+        mCommand[7] = (dataCondFlags& 0x00FF);
+        mCommand[8] = gyroAccFilter;
+        mCommand[9] = magFilter;
+        mCommand[10]= (upCompensation& 0xFF00);
+        mCommand[11]= (upCompensation& 0x00FF);
+        mCommand[12]= (northCompensation& 0xFF00);
+        mCommand[13]= (northCompensation& 0x00FF);
+        mCommand[14]= magPower;
+        mCommand[15]= 0;
+        mCommand[16]= 0;
+        mCommand[17]= 0;
+        mCommand[18]= 0;
+        mCommand[19]= 0;
 
     }
 
-    virtual unsigned int size() {return mSize;}
     bool checkResponse(uint8_t *buffer, unsigned int length)
     {
         if (length != 19) return false;
@@ -214,6 +213,7 @@ public:
             return false;
 
         if(buffer[0] != SAMPLING_SETTINGS) return false;
+
         for(int i=1; i<11; i++)
         {
             if(buffer[i] != mCommand[i+3]) return false;
@@ -222,10 +222,8 @@ public:
         return true;
     }
 
-    uint8_t mCommand[mSize];
-
-private:
-    const static int mSize = 20;
+    enum {size = 20, responseSize = 19};
+    uint8_t mCommand[size];
 };
 
 
