@@ -22,7 +22,7 @@ namespace USU
 {
 
 /*!
- \brief Represents the Periodic class for state estimation
+ \brief Represents the Periodic Thread class for state estimation
 
  This class is derived from PeriodicRtThread. It initializes the interface to the
  MinIMU9v2 and estimates the system state using Kalman filtering techniques. The state

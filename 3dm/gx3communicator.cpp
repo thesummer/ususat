@@ -1,3 +1,14 @@
+/**
+ * @file gx3communicator.cpp
+ *
+ * Contains the thread which handles the communication to the
+ * 3DM-GX3-25.
+ *
+ * @author Jan Sommer
+ *  Created on: Apr 26, 2013
+ *
+ */
+
 #include "gx3communicator.h"
 using namespace USU;
 
