@@ -16,6 +16,9 @@
 #include "../minimu/vector.h"
 #include<stdint.h>
 
+namespace USU
+{
+
 // Command protocol constants
 
 const uint8_t RAW_ACC_ANG                     = 0xC1; /*!< Raw Accelerometer and Angular Rate Sensor Outputs */
@@ -416,4 +419,7 @@ public:
     enum {size = 20, responseSize = 19}; /*!< Size of the command (enum to avoid complications with static consts) */
     uint8_t mCommand[size]; /*!< Buffer which contains the byte array for the command */
 
+};
+
+}
 #endif // MESSAGES_H
