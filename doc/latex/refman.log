@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.1.30)  23 APR 2013 19:23
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.1.30)  27 APR 2013 15:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -857,7 +857,7 @@ File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 
 
 Writing index file refman.idx
-No file refman.aux.
+(./refman.aux)
 \openout1 = `refman.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
@@ -874,7 +874,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 46.
 LaTeX Font Info:    ... okay on input line 46.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 46.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 46.
-(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 46.
@@ -934,6 +934,8 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 46.
 LaTeX Info: Redefining \pageref on input line 46.
 LaTeX Info: Redefining \nameref on input line 46.
+
+(./refman.out) (./refman.out)
 \@outlinefile=\write4
 \openout4 = `refman.out'.
 
@@ -945,8 +947,7 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 10.79993pt on input line 53.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 8.09995pt on input line 55.
-
-[1
+ [1
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
@@ -959,20 +960,68 @@ LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <24.88> not available
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 22.39185pt on input line 60.
 LaTeX Font Info:    Try loading font information for OT1+phv on input line 60.
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1phv.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Font shape `OT1/phv/bc/n' will be
 (Font)              scaled to size 22.39185pt on input line 60.
+
+(./refman.toc
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 1.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 8.99994pt on input line 1.
+LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 1.
+
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
+File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 1.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlztmcm.fd
+File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 1.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsztmcm.fd
+File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 1.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxztmcm.fd
+File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 1.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
+ [1
+
+]
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <7> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 59.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 6.29996pt on input line 59.
+ [2] [3] [4]
+[5]
+Underfull \vbox (badness 4001) has occurred while \output is active []
+
+ [6]
+[7] [8] [9] [10] [11])
 \tf@toc=\write5
 \openout5 = `refman.toc'.
 
- [1
-
-] [2
-
-]
+ [12]
 Package hyperref Info: Option `pageanchor' set `true' on input line 63.
 
 Chapter 1.
@@ -991,120 +1040,45 @@ LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 12.9599pt on input line 1.
 LaTeX Font Info:    Font shape `OT1/phv/bc/n' will be
 (Font)              scaled to size 12.9599pt on input line 1.
-LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 3.
-
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
-File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
-)
-LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 3.
-
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlztmcm.fd
-File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
-)
-LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 3.
-
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsztmcm.fd
-File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
-)
-LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 3.
-
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxztmcm.fd
-File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
-)
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 3.
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
-File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
-)
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
-LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 3.
-LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 8.99994pt on input line 3.
-
-
-LaTeX Warning: Reference `namespacec_p_w_m' on page 1 undefined on input line 3
-.
-
-
-LaTeX Warning: Reference `namespaceset_p_w_m_reg' on page 1 undefined on input 
-line 4.
-
-
-LaTeX Warning: Reference `namespace_u_s_u' on page 1 undefined on input line 5.
-
-
 ) [1
 
-]
-LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <7> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 66.
-LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 6.29996pt on input line 66.
- [2
+
+] [2
 
 ]
 Chapter 2.
 (./hierarchy.tex
 
-LaTeX Warning: Reference `class_beagle___g_p_i_o' on page 3 undefined on input 
-line 3.
+LaTeX Warning: Reference `class_u_s_u_1_1_g_x3_command' on page 3 undefined on 
+input line 5.
 
 
-LaTeX Warning: Reference `classc_p_w_m_1_1c_p_w_m' on page 3 undefined on input
- line 4.
+LaTeX Warning: Reference `class_u_s_u_1_1_sampling_settings' on page 3 undefine
+d on input line 7.
 
 
-LaTeX Warning: Reference `class_i2_c_bus' on page 3 undefined on input line 5.
+LaTeX Warning: Reference `class_u_s_u_1_1_set_countinuous_mode' on page 3 undef
+ined on input line 8.
 
 
-LaTeX Warning: Reference `class_i_m_u' on page 3 undefined on input line 6.
+LaTeX Warning: Reference `class_u_s_u_1_1_g_x3_packet' on page 3 undefined on i
+nput line 10.
 
 
-LaTeX Warning: Reference `class_min_imu' on page 3 undefined on input line 8.
+LaTeX Warning: Reference `class_u_s_u_1_1_acc_ang_mag' on page 3 undefined on i
+nput line 12.
 
 
-LaTeX Warning: Reference `class_l3_g' on page 3 undefined on input line 10.
+LaTeX Warning: Reference `class_u_s_u_1_1_acc_ang_mag_orientation_mat' on page 
+3 undefined on input line 13.
 
 
-LaTeX Warning: Reference `class_u_s_u_1_1_lock' on page 3 undefined on input li
-ne 11.
+LaTeX Warning: Reference `class_u_s_u_1_1_raw_acc_ang' on page 3 undefined on i
+nput line 14.
 
 
-LaTeX Warning: Reference `class_l_s_m303' on page 3 undefined on input line 12.
-
-
-
-LaTeX Warning: Reference `class_u_s_u_1_1_motor' on page 3 undefined on input l
-ine 13.
-
-
-LaTeX Warning: Reference `class_u_s_u_1_1_rt_thread' on page 3 undefined on inp
-ut line 14.
-
-
-LaTeX Warning: Reference `class_u_s_u_1_1_periodic_rt_thread' on page 3 undefin
-ed on input line 16.
-
-
-LaTeX Warning: Reference `class_u_s_u_1_1_kalman_filter' on page 3 undefined on
- input line 18.
-
-
-LaTeX Warning: Reference `class_u_s_u_1_1_motor_control' on page 3 undefined on
- input line 19.
-
-
-LaTeX Warning: Reference `class_u_s_u_1_1_scoped_lock' on page 3 undefined on i
-nput line 22.
+LaTeX Warning: Reference `class_u_s_u_1_1_g_x3_communicator' on page 3 undefine
+d on input line 27.
 
 ) [3] [4
 
@@ -1112,163 +1086,61 @@ nput line 22.
 Chapter 3.
 (./annotated.tex
 
-LaTeX Warning: Reference `class_beagle___g_p_i_o' on page 5 undefined on input 
-line 3.
+LaTeX Warning: Reference `class_u_s_u_1_1_acc_ang_mag' on page 5 undefined on i
+nput line 3.
 
 
-LaTeX Warning: Reference `classc_p_w_m_1_1c_p_w_m' on page 5 undefined on input
- line 4.
+LaTeX Warning: Reference `class_u_s_u_1_1_acc_ang_mag_orientation_mat' on page 
+5 undefined on input line 4.
 
 
-LaTeX Warning: Reference `class_i2_c_bus' on page 5 undefined on input line 5.
+LaTeX Warning: Reference `class_u_s_u_1_1_g_x3_command' on page 5 undefined on 
+input line 7.
 
 
-LaTeX Warning: Reference `class_i_m_u' on page 5 undefined on input line 6.
+LaTeX Warning: Reference `class_u_s_u_1_1_g_x3_communicator' on page 5 undefine
+d on input line 8.
 
 
-LaTeX Warning: Reference `class_u_s_u_1_1_kalman_filter' on page 5 undefined on
- input line 7.
+LaTeX Warning: Reference `class_u_s_u_1_1_g_x3_packet' on page 5 undefined on i
+nput line 9.
 
 
-LaTeX Warning: Reference `class_l3_g' on page 5 undefined on input line 8.
+Underfull \vbox (badness 7814) has occurred while \output is active []
+
+ [5]
+
+LaTeX Warning: Reference `class_u_s_u_1_1_raw_acc_ang' on page 6 undefined on i
+nput line 20.
 
 
-LaTeX Warning: Reference `class_u_s_u_1_1_lock' on page 5 undefined on input li
-ne 9.
+LaTeX Warning: Reference `class_u_s_u_1_1_sampling_settings' on page 6 undefine
+d on input line 22.
 
 
-LaTeX Warning: Reference `class_l_s_m303' on page 5 undefined on input line 10.
+LaTeX Warning: Reference `class_u_s_u_1_1_set_countinuous_mode' on page 6 undef
+ined on input line 24.
 
-
-
-LaTeX Warning: Reference `class_min_imu' on page 5 undefined on input line 11.
-
-
-LaTeX Warning: Reference `class_u_s_u_1_1_motor' on page 5 undefined on input l
-ine 12.
-
-
-LaTeX Warning: Reference `class_u_s_u_1_1_motor_control' on page 5 undefined on
- input line 13.
-
-
-LaTeX Warning: Reference `class_u_s_u_1_1_periodic_rt_thread' on page 5 undefin
-ed on input line 14.
-
-
-LaTeX Warning: Reference `class_u_s_u_1_1_rt_thread' on page 5 undefined on inp
-ut line 15.
-
-
-LaTeX Warning: Reference `class_u_s_u_1_1_scoped_lock' on page 5 undefined on i
-nput line 16.
-
-) [5] [6
-
-]
+) [6]
 Chapter 4.
 (./files.tex
 
-LaTeX Warning: Reference `kalmanfilter_8cpp' on page 7 undefined on input line 
-3.
+LaTeX Warning: Reference `gx3communicator_8cpp' on page 7 undefined on input li
+ne 8.
 
 
-LaTeX Warning: Reference `kalmanfilter_8h' on page 7 undefined on input line 4.
+LaTeX Warning: Reference `gx3communicator_8h' on page 7 undefined on input line
+ 9.
 
 
-
-LaTeX Warning: Reference `main_8cpp' on page 7 undefined on input line 5.
-
-
-LaTeX Warning: Reference `motorcontrol_8cpp' on page 7 undefined on input line 
-6.
+LaTeX Warning: Reference `messages_8h' on page 7 undefined on input line 10.
 
 
-LaTeX Warning: Reference `motorcontrol_8h' on page 7 undefined on input line 7.
+LaTeX Warning: Reference `test_8cpp' on page 7 undefined on input line 11.
 
+[7
 
-
-LaTeX Warning: Reference `exceptions_8h' on page 7 undefined on input line 8.
-
-
-LaTeX Warning: Reference `_i2_c_bus_8cpp' on page 7 undefined on input line 9.
-
-
-LaTeX Warning: Reference `_i2_c_bus_8h' on page 7 undefined on input line 10.
-
-
-LaTeX Warning: Reference `_i_m_u_8h' on page 7 undefined on input line 11.
-
-
-LaTeX Warning: Reference `_l3_g_8cpp' on page 7 undefined on input line 12.
-
-
-LaTeX Warning: Reference `_l3_g_8h' on page 7 undefined on input line 13.
-
-
-LaTeX Warning: Reference `_l_s_m303_8cpp' on page 7 undefined on input line 14.
-
-
-
-LaTeX Warning: Reference `_l_s_m303_8h' on page 7 undefined on input line 15.
-
-
-LaTeX Warning: Reference `minimu_8cpp' on page 7 undefined on input line 16.
-
-
-LaTeX Warning: Reference `minimu_8h' on page 7 undefined on input line 17.
-
-
-LaTeX Warning: Reference `vector_8h' on page 7 undefined on input line 18.
-
-
-LaTeX Warning: Reference `_beagle___g_p_i_o_8cpp' on page 7 undefined on input 
-line 19.
-
-
-LaTeX Warning: Reference `_beagle___g_p_i_o_8h' on page 7 undefined on input li
-ne 20.
-
-
-LaTeX Warning: Reference `c_p_w_m_8cpp' on page 7 undefined on input line 21.
-
-
-LaTeX Warning: Reference `c_p_w_m_8h' on page 7 undefined on input line 22.
-
-
-LaTeX Warning: Reference `motor_8cpp' on page 7 undefined on input line 23.
-
-
-LaTeX Warning: Reference `motor_8h' on page 7 undefined on input line 24.
-
-
-LaTeX Warning: Reference `set_p_w_m_8c' on page 7 undefined on input line 25.
-
-
-LaTeX Warning: Reference `set_p_w_m_reg_8py' on page 7 undefined on input line 
-26.
-
-
-LaTeX Warning: Reference `_lock_8h' on page 7 undefined on input line 27.
-
-
-LaTeX Warning: Reference `periodicrtthread_8cpp' on page 7 undefined on input l
-ine 28.
-
-
-LaTeX Warning: Reference `periodicrtthread_8h' on page 7 undefined on input lin
-e 29.
-
-
-LaTeX Warning: Reference `_rt_thread_8cpp' on page 7 undefined on input line 30
-.
-
-
-LaTeX Warning: Reference `_rt_thread_8h' on page 7 undefined on input line 31.
-
-) [7] [8
-
-]
+]) [8]
 Chapter 5.
 (./namespacec_p_w_m.tex
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
@@ -1288,33 +1160,107 @@ LaTeX Font Info:    Font shape `TS1/phv/m/n' will be
 (./namespaceset_p_w_m_reg.tex
 LaTeX Font Info:    Font shape `OT1/phv/bc/n' will be
 (Font)              scaled to size 8.99994pt on input line 28.
- [9]) (./namespace_u_s_u.tex
+ [9
+
+]) (./namespace_u_s_u.tex
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 13.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 (Font)              scaled to size 8.09995pt on input line 13.
- [10]) [11] [12
-
-]
+ [10] [11] [12]
+[13] [14] [15]) [16]
 Chapter 6.
-(./class_beagle___g_p_i_o.tex
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 6.
+(./class_u_s_u_1_1_acc_ang_mag.tex
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 11.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-) [13]
+)
+<class_u_s_u_1_1_acc_ang_mag__inherit__graph.pdf, id=2296, 178.6675pt x 160.6pt
+>
+File: class_u_s_u_1_1_acc_ang_mag__inherit__graph.pdf Graphic file (type pdf)
+ <use class_u_s_u_1_1_acc_ang_mag__inherit__graph.pdf>
+Package pdftex.def Info: class_u_s_u_1_1_acc_ang_mag__inherit__graph.pdf used o
+n input line 20.
+(pdftex.def)             Requested size: 178.0pt x 160.009pt.
+
+<class_u_s_u_1_1_acc_ang_mag__coll__graph.pdf, id=2297, 178.6675pt x 160.6pt>
+File: class_u_s_u_1_1_acc_ang_mag__coll__graph.pdf Graphic file (type pdf)
+
+<use class_u_s_u_1_1_acc_ang_mag__coll__graph.pdf>
+Package pdftex.def Info: class_u_s_u_1_1_acc_ang_mag__coll__graph.pdf used on i
+nput line 30.
+(pdftex.def)             Requested size: 178.0pt x 160.009pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [17
+
+ <./class_u_s_u_1_1_acc_ang_mag__inherit__graph.pdf>] [18 <./class_u_s_u_1_1_ac
+c_ang_mag__coll__graph.pdf>]
+LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <10> not available
+(Font)              Font shape `T1/phv/b/it' tried instead on input line 78.
+LaTeX Font Info:    Font shape `T1/phv/b/it' in size <10> not available
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 78.
+LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
+(Font)              scaled to size 8.99994pt on input line 78.
+LaTeX Font Info:    Font shape `OT1/phv/bc/it' in size <10> not available
+(Font)              Font shape `OT1/phv/bc/sl' tried instead on input line 94.
+LaTeX Font Info:    Font shape `OT1/phv/bc/sl' will be
+(Font)              scaled to size 8.99994pt on input line 94.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 94.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+
+LaTeX Font Warning: Font shape `OT1/pcr/bc/n' undefined
+(Font)              using `OT1/pcr/m/n' instead on input line 94.
+
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 103.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 8.99994pt on input line 103.
+
+Underfull \vbox (badness 10000) detected at line 105
+ []
+
+[19]) (./class_u_s_u_1_1_acc_ang_mag_orientation_mat.tex
+<class_u_s_u_1_1_acc_ang_mag_orientation_mat__inherit__graph.pdf, id=2354, 240.
+9pt x 160.6pt>
+File: class_u_s_u_1_1_acc_ang_mag_orientation_mat__inherit__graph.pdf Graphic f
+ile (type pdf)
+
+<use class_u_s_u_1_1_acc_ang_mag_orientation_mat__inherit__graph.pdf>
+Package pdftex.def Info: class_u_s_u_1_1_acc_ang_mag_orientation_mat__inherit__
+graph.pdf used on input line 20.
+(pdftex.def)             Requested size: 240.0pt x 160.0041pt.
+
+<class_u_s_u_1_1_acc_ang_mag_orientation_mat__coll__graph.pdf, id=2355, 240.9pt
+ x 160.6pt>
+File: class_u_s_u_1_1_acc_ang_mag_orientation_mat__coll__graph.pdf Graphic file
+ (type pdf)
+ <use class_u_s_u_1_1_acc_ang_mag_orientation_mat__coll__graph.pdf>
+Package pdftex.def Info: class_u_s_u_1_1_acc_ang_mag_orientation_mat__coll__gra
+ph.pdf used on input line 30.
+(pdftex.def)             Requested size: 240.0pt x 160.0041pt.
+
+[20 <./class_u_s_u_1_1_acc_ang_mag_orientation_mat__inherit__graph.pdf> <./clas
+s_u_s_u_1_1_acc_ang_mag_orientation_mat__coll__graph.pdf
+
+pdfTeX warning: pdflatex (file ./class_u_s_u_1_1_acc_ang_mag_orientation_mat__c
+oll__graph.pdf): PDF inclusion: multiple pdfs with page group included in a sin
+gle page
+>] [21]
+Underfull \vbox (badness 10000) detected at line 107
+ []
+
+) (./class_beagle___g_p_i_o.tex [22]
 Underfull \hbox (badness 4792) in paragraph at lines 177--179
 [][][]\T1/phv/m/n/10 -Beagle-_--G-P-I-O-_--Status[][] [][]configure-Pin[][] (un
 -signed short -_-pin, [][]-Beagle-_--G-P-I-O-_--
  []
 
-LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <10> not available
-(Font)              Font shape `T1/phv/b/it' tried instead on input line 229.
-LaTeX Font Info:    Font shape `T1/phv/b/it' in size <10> not available
-(Font)              Font shape `T1/phv/b/sl' tried instead on input line 229.
-LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
-(Font)              scaled to size 8.99994pt on input line 229.
-[14] [15] [16] [17]
+[23] [24] [25] [26] [27]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 533.
@@ -1327,28 +1273,14 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 533.
 
-LaTeX Font Info:    Font shape `OT1/phv/bc/it' in size <10> not available
-(Font)              Font shape `OT1/phv/bc/sl' tried instead on input line 559.
-
-LaTeX Font Info:    Font shape `OT1/phv/bc/sl' will be
-(Font)              scaled to size 8.99994pt on input line 559.
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 582.
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
-File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-)
-
-LaTeX Font Warning: Font shape `OT1/pcr/bc/n' undefined
-(Font)              using `OT1/pcr/m/n' instead on input line 582.
-
-[18]
 
 LaTeX Font Warning: Font shape `OT1/pcr/bc/it' undefined
 (Font)              using `OT1/pcr/bc/n' instead on input line 596.
 
+[28]
 LaTeX Font Info:    Try loading font information for OMS+phv on input line 641.
 
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsphv.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsphv.fd
 File: omsphv.fd 
 )
 
@@ -1362,16 +1294,10 @@ LaTeX Font Info:    Font shape `OMS/phv/bc/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 641.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 7.19995pt on input line 646.
-[19] [20]) (./classc_p_w_m_1_1c_p_w_m.tex [21]
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 87.
-LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 8.99994pt on input line 87.
-
+[29] [30]) (./classc_p_w_m_1_1c_p_w_m.tex [31]
 Underfull \vbox (badness 10000) detected at line 89
  []
 
-[22]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 103.
@@ -1384,7 +1310,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 103.
 
-
+[32]
 Overfull \hbox (7.14717pt too wide) in paragraph at lines 122--122
  \T1/phv/m/sl/10 nanoseconds,-
  []
@@ -1406,7 +1332,7 @@ Overfull \hbox (7.14717pt too wide) in paragraph at lines 158--158
 Underfull \vbox (badness 10000) detected at line 160
  []
 
-[23]
+
 Underfull \vbox (badness 10000) detected at line 178
  []
 
@@ -1415,6 +1341,9 @@ Underfull \vbox (badness 10000) detected at line 196
  []
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [33]
 Overfull \hbox (7.14717pt too wide) in paragraph at lines 212--212
  \T1/phv/m/sl/10 nanoseconds,-
  []
@@ -1431,11 +1360,77 @@ Underfull \vbox (badness 10000) detected at line 232
 Underfull \vbox (badness 10000) detected at line 250
  []
 
+[34]) (./class_u_s_u_1_1_g_x3_command.tex
+<class_u_s_u_1_1_g_x3_command__inherit__graph.pdf, id=2845, 357.335pt x 160.6pt
+>
+File: class_u_s_u_1_1_g_x3_command__inherit__graph.pdf Graphic file (type pdf)
+ <use class_u_s_u_1_1_g_x3_command__inherit__graph.pdf>
+Package pdftex.def Info: class_u_s_u_1_1_g_x3_command__inherit__graph.pdf used 
+on input line 20.
+(pdftex.def)             Requested size: 350.0pt x 157.31094pt.
 
-Underfull \vbox (badness 2334) has occurred while \output is active []
+Overfull \hbox (5.0pt too wide) in paragraph at lines 19--21
+ [] 
+ []
 
- [24])
-(./class_i2_c_bus.tex [25]
+) (./class_u_s_u_1_1_g_x3_communicator.tex [35 <./class_u_s_u_1_1_g_x3_command_
+_inherit__graph.pdf>]
+<class_u_s_u_1_1_g_x3_communicator__inherit__graph.pdf, id=2861, 208.78pt x 160
+.6pt>
+File: class_u_s_u_1_1_g_x3_communicator__inherit__graph.pdf Graphic file (type 
+pdf)
+ <use class_u_s_u_1_1_g_x3_communicator__inherit__graph.pdf>
+Package pdftex.def Info: class_u_s_u_1_1_g_x3_communicator__inherit__graph.pdf 
+used on input line 20.
+(pdftex.def)             Requested size: 208.0pt x 160.009pt.
+
+<class_u_s_u_1_1_g_x3_communicator__coll__graph.pdf, id=2862, 208.78pt x 160.6p
+t>
+File: class_u_s_u_1_1_g_x3_communicator__coll__graph.pdf Graphic file (type pdf
+)
+ <use class_u_s_u_1_1_g_x3_communicator__coll__graph.pdf>
+Package pdftex.def Info: class_u_s_u_1_1_g_x3_communicator__coll__graph.pdf use
+d on input line 30.
+(pdftex.def)             Requested size: 208.0pt x 160.009pt.
+ [36 <./class_u_s_u_1_1_g_x3_communicator__inherit__graph.pdf> <./class_u_s_u_1
+_1_g_x3_communicator__coll__graph.pdf
+
+pdfTeX warning: pdflatex (file ./class_u_s_u_1_1_g_x3_communicator__coll__graph
+.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>]
+Underfull \vbox (badness 10000) detected at line 77
+ []
+
+[37]) (./class_u_s_u_1_1_g_x3_packet.tex
+<class_u_s_u_1_1_g_x3_packet__inherit__graph.pdf, id=2900, 473.77pt x 160.6pt>
+File: class_u_s_u_1_1_g_x3_packet__inherit__graph.pdf Graphic file (type pdf)
+
+<use class_u_s_u_1_1_g_x3_packet__inherit__graph.pdf>
+Package pdftex.def Info: class_u_s_u_1_1_g_x3_packet__inherit__graph.pdf used o
+n input line 20.
+(pdftex.def)             Requested size: 350.0pt x 118.64853pt.
+
+Overfull \hbox (5.0pt too wide) in paragraph at lines 19--21
+ [] 
+ []
+
+[38 <./class_u_s_u_1_1_g_x3_packet__inherit__graph.pdf>]
+Underfull \vbox (badness 10000) detected at line 64
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 92
+ []
+
+[39]
+Underfull \vbox (badness 10000) detected at line 112
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 137
+ []
+
+) (./class_i2_c_bus.tex [40]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 52.
@@ -1448,44 +1443,42 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 52.
 
-) (./class_i_m_u.tex
-<class_i_m_u__inherit__graph.pdf, id=699, 128.48pt x 160.6pt>
+) (./class_i_m_u.tex [41]
+<class_i_m_u__inherit__graph.pdf, id=2966, 128.48pt x 160.6pt>
 File: class_i_m_u__inherit__graph.pdf Graphic file (type pdf)
 
 <use class_i_m_u__inherit__graph.pdf>
-Package pdftex.def Info: class_i_m_u__inherit__graph.pdf used on input line 15.
+Package pdftex.def Info: class_i_m_u__inherit__graph.pdf used on input line 14.
 
 (pdftex.def)             Requested size: 128.0pt x 160.01146pt.
- [26] [27 <./class_i_m_u__inherit__graph.pdf>]) (./class_u_s_u_1_1_kalman_filte
-r.tex
-<class_u_s_u_1_1_kalman_filter__inherit__graph.pdf, id=764, 200.75pt x 218.8175
-pt>
+ [42 <./class_i_m_u__inherit__graph.pdf>]) (./class_u_s_u_1_1_kalman_filter.tex
+
+<class_u_s_u_1_1_kalman_filter__inherit__graph.pdf, id=3010, 200.75pt x 218.817
+5pt>
 File: class_u_s_u_1_1_kalman_filter__inherit__graph.pdf Graphic file (type pdf)
 
  <use class_u_s_u_1_1_kalman_filter__inherit__graph.pdf>
 Package pdftex.def Info: class_u_s_u_1_1_kalman_filter__inherit__graph.pdf used
- on input line 20.
+ on input line 19.
 (pdftex.def)             Requested size: 200.0pt x 218.01561pt.
-
-Underfull \vbox (badness 3049) has occurred while \output is active []
-
- [28]
-<class_u_s_u_1_1_kalman_filter__coll__graph.pdf, id=780, 200.75pt x 218.8175pt>
+ [43]
+<class_u_s_u_1_1_kalman_filter__coll__graph.pdf, id=3023, 200.75pt x 218.8175pt
+>
 File: class_u_s_u_1_1_kalman_filter__coll__graph.pdf Graphic file (type pdf)
-<use class_u_s_u_1_1_kalman_filter__coll__graph.pdf>
+ <use class_u_s_u_1_1_kalman_filter__coll__graph.pdf>
 Package pdftex.def Info: class_u_s_u_1_1_kalman_filter__coll__graph.pdf used on
- input line 30.
+ input line 28.
 (pdftex.def)             Requested size: 200.0pt x 218.01561pt.
- [29 <./class_u_s_u_1_1_kalman_filter__inherit__graph.pdf> <./class_u_s_u_1_1_k
+ [44 <./class_u_s_u_1_1_kalman_filter__inherit__graph.pdf> <./class_u_s_u_1_1_k
 alman_filter__coll__graph.pdf
 
 pdfTeX warning: pdflatex (file ./class_u_s_u_1_1_kalman_filter__coll__graph.pdf
 ): PDF inclusion: multiple pdfs with page group included in a single page
 >]
-Underfull \vbox (badness 10000) detected at line 85
+Underfull \vbox (badness 10000) detected at line 83
  []
 
-[30]) (./class_l3_g.tex [31]) (./class_u_s_u_1_1_lock.tex [32]
+[45]) (./class_l3_g.tex [46]) (./class_u_s_u_1_1_lock.tex [47]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 51.
@@ -1498,65 +1491,65 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 51.
 
-[33]) (./class_l_s_m303.tex [34]) (./class_min_imu.tex
-<class_min_imu__inherit__graph.pdf, id=922, 128.48pt x 160.6pt>
+[48]) (./class_l_s_m303.tex [49]) (./class_min_imu.tex
+<class_min_imu__inherit__graph.pdf, id=3138, 128.48pt x 160.6pt>
 File: class_min_imu__inherit__graph.pdf Graphic file (type pdf)
 
 <use class_min_imu__inherit__graph.pdf>
 Package pdftex.def Info: class_min_imu__inherit__graph.pdf used on input line 1
-5.
+4.
 (pdftex.def)             Requested size: 128.0pt x 160.01146pt.
- [35]
-<class_min_imu__coll__graph.pdf, id=938, 241.90375pt x 174.6525pt>
+ [50]
+<class_min_imu__coll__graph.pdf, id=3145, 241.90375pt x 174.6525pt>
 File: class_min_imu__coll__graph.pdf Graphic file (type pdf)
 
 <use class_min_imu__coll__graph.pdf>
-Package pdftex.def Info: class_min_imu__coll__graph.pdf used on input line 25.
+Package pdftex.def Info: class_min_imu__coll__graph.pdf used on input line 23.
 (pdftex.def)             Requested size: 241.0pt x 174.00714pt.
- [36 <./class_min_imu__inherit__graph.pdf> <./class_min_imu__coll__graph.pdf
+ [51 <./class_min_imu__inherit__graph.pdf> <./class_min_imu__coll__graph.pdf
 
 pdfTeX warning: pdflatex (file ./class_min_imu__coll__graph.pdf): PDF inclusion
 : multiple pdfs with page group included in a single page
->] [37]) (./class_u_s_u_1_1_motor.tex
+>] [52]) (./class_u_s_u_1_1_motor.tex
 Underfull \hbox (badness 2065) in paragraph at lines 11--13
 [][][]\T1/phv/m/n/10 -Motor[][] ([][]-Beagle-_--G-P-I-O[][] &beagle-Gpio, [][]-
 Beagle-_--G-P-I-O-::-G-P-I-O-_--Pins[][] clock-wise, [][]-
  []
 
-) (./class_u_s_u_1_1_motor_control.tex [38]
-<class_u_s_u_1_1_motor_control__inherit__graph.pdf, id=1023, 200.75pt x 218.817
+) (./class_u_s_u_1_1_motor_control.tex [53]
+<class_u_s_u_1_1_motor_control__inherit__graph.pdf, id=3228, 200.75pt x 218.817
 5pt>
 File: class_u_s_u_1_1_motor_control__inherit__graph.pdf Graphic file (type pdf)
 
  <use class_u_s_u_1_1_motor_control__inherit__graph.pdf>
 Package pdftex.def Info: class_u_s_u_1_1_motor_control__inherit__graph.pdf used
- on input line 20.
+ on input line 19.
 (pdftex.def)             Requested size: 200.0pt x 218.01561pt.
 
-<class_u_s_u_1_1_motor_control__coll__graph.pdf, id=1024, 200.75pt x 218.8175pt
+<class_u_s_u_1_1_motor_control__coll__graph.pdf, id=3229, 200.75pt x 218.8175pt
 >
 File: class_u_s_u_1_1_motor_control__coll__graph.pdf Graphic file (type pdf)
  <use class_u_s_u_1_1_motor_control__coll__graph.pdf>
 Package pdftex.def Info: class_u_s_u_1_1_motor_control__coll__graph.pdf used on
- input line 30.
+ input line 28.
 (pdftex.def)             Requested size: 200.0pt x 218.01561pt.
 
-Underfull \hbox (badness 1077) in paragraph at lines 36--37
+Underfull \hbox (badness 1077) in paragraph at lines 34--35
 [][][]\T1/phv/m/n/10 -Motor-Control[][] (int pri-or-ity=0, un-signed int period
 -_-us=1000000, [][]-Kalman-Filter[][]
  []
 
-[39 <./class_u_s_u_1_1_motor_control__inherit__graph.pdf> <./class_u_s_u_1_1_mo
+[54 <./class_u_s_u_1_1_motor_control__inherit__graph.pdf> <./class_u_s_u_1_1_mo
 tor_control__coll__graph.pdf
 
 pdfTeX warning: pdflatex (file ./class_u_s_u_1_1_motor_control__coll__graph.pdf
 ): PDF inclusion: multiple pdfs with page group included in a single page
 >]
-Underfull \vbox (badness 10000) detected at line 77
+Underfull \vbox (badness 10000) detected at line 75
  []
 
-[40]) (./class_u_s_u_1_1_periodic_rt_thread.tex
-<class_u_s_u_1_1_periodic_rt_thread__inherit__graph.pdf, id=1071, 297.11pt x 21
+[55]) (./class_u_s_u_1_1_periodic_rt_thread.tex
+<class_u_s_u_1_1_periodic_rt_thread__inherit__graph.pdf, id=3275, 297.11pt x 21
 8.8175pt>
 File: class_u_s_u_1_1_periodic_rt_thread__inherit__graph.pdf Graphic file (type
  pdf)
@@ -1565,30 +1558,66 @@ Package pdftex.def Info: class_u_s_u_1_1_periodic_rt_thread__inherit__graph.pdf
  used on input line 20.
 (pdftex.def)             Requested size: 296.0pt x 218.00894pt.
 
-<class_u_s_u_1_1_periodic_rt_thread__coll__graph.pdf, id=1072, 200.75pt x 160.6
+<class_u_s_u_1_1_periodic_rt_thread__coll__graph.pdf, id=3276, 200.75pt x 160.6
 pt>
 File: class_u_s_u_1_1_periodic_rt_thread__coll__graph.pdf Graphic file (type pd
 f)
  <use class_u_s_u_1_1_periodic_rt_thread__coll__graph.pdf>
 Package pdftex.def Info: class_u_s_u_1_1_periodic_rt_thread__coll__graph.pdf us
-ed on input line 30.
+ed on input line 29.
 (pdftex.def)             Requested size: 200.0pt x 160.01146pt.
- [41 <./class_u_s_u_1_1_periodic_rt_thread__inherit__graph.pdf>] [42 <./class_u
+ [56 <./class_u_s_u_1_1_periodic_rt_thread__inherit__graph.pdf>] [57 <./class_u
 _s_u_1_1_periodic_rt_thread__coll__graph.pdf>]
-Underfull \vbox (badness 10000) detected at line 81
+Underfull \vbox (badness 10000) detected at line 80
  []
 
-) (./class_u_s_u_1_1_rt_thread.tex [43]
-<class_u_s_u_1_1_rt_thread__inherit__graph.pdf, id=1131, 297.11pt x 218.8175pt>
+) (./class_u_s_u_1_1_raw_acc_ang.tex [58]
+<class_u_s_u_1_1_raw_acc_ang__inherit__graph.pdf, id=3335, 178.6675pt x 160.6pt
+>
+File: class_u_s_u_1_1_raw_acc_ang__inherit__graph.pdf Graphic file (type pdf)
+ <use class_u_s_u_1_1_raw_acc_ang__inherit__graph.pdf>
+Package pdftex.def Info: class_u_s_u_1_1_raw_acc_ang__inherit__graph.pdf used o
+n input line 20.
+(pdftex.def)             Requested size: 178.0pt x 160.009pt.
+
+<class_u_s_u_1_1_raw_acc_ang__coll__graph.pdf, id=3336, 178.6675pt x 160.6pt>
+File: class_u_s_u_1_1_raw_acc_ang__coll__graph.pdf Graphic file (type pdf)
+
+<use class_u_s_u_1_1_raw_acc_ang__coll__graph.pdf>
+Package pdftex.def Info: class_u_s_u_1_1_raw_acc_ang__coll__graph.pdf used on i
+nput line 30.
+(pdftex.def)             Requested size: 178.0pt x 160.009pt.
+ [59 <./class_u_s_u_1_1_raw_acc_ang__inherit__graph.pdf> <./class_u_s_u_1_1_raw
+_acc_ang__coll__graph.pdf
+
+pdfTeX warning: pdflatex (file ./class_u_s_u_1_1_raw_acc_ang__coll__graph.pdf):
+ PDF inclusion: multiple pdfs with page group included in a single page
+>]
+Underfull \vbox (badness 10000) detected at line 102
+ []
+
+[60]) (./class_u_s_u_1_1_rt_thread.tex
+<class_u_s_u_1_1_rt_thread__inherit__graph.pdf, id=3386, 395.4775pt x 218.8175p
+t>
 File: class_u_s_u_1_1_rt_thread__inherit__graph.pdf Graphic file (type pdf)
-<use class_u_s_u_1_1_rt_thread__inherit__graph.pdf>
+ <use class_u_s_u_1_1_rt_thread__inherit__graph.pdf>
 Package pdftex.def Info: class_u_s_u_1_1_rt_thread__inherit__graph.pdf used on 
 input line 20.
-(pdftex.def)             Requested size: 296.0pt x 218.00894pt.
- [44 <./class_u_s_u_1_1_rt_thread__inherit__graph.pdf>]
+(pdftex.def)             Requested size: 350.0pt x 193.65848pt.
+
+Overfull \hbox (5.0pt too wide) in paragraph at lines 19--21
+ [] 
+ []
+
+[61 <./class_u_s_u_1_1_rt_thread__inherit__graph.pdf>]
 Underfull \vbox (badness 10000) detected at line 83
  []
 
+
+Overfull \vbox (0.31554pt too high) has occurred while \output is active []
+
+
+[62]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 94.
@@ -1601,19 +1630,80 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 94.
 
-[45]
+
 Underfull \vbox (badness 10000) detected at line 123
  []
 
-
+[63]
 Underfull \vbox (badness 10000) detected at line 211
  []
 
+) (./class_u_s_u_1_1_sampling_settings.tex [64]
+<class_u_s_u_1_1_sampling_settings__inherit__graph.pdf, id=3467, 200.75pt x 160
+.6pt>
+File: class_u_s_u_1_1_sampling_settings__inherit__graph.pdf Graphic file (type 
+pdf)
+ <use class_u_s_u_1_1_sampling_settings__inherit__graph.pdf>
+Package pdftex.def Info: class_u_s_u_1_1_sampling_settings__inherit__graph.pdf 
+used on input line 20.
+(pdftex.def)             Requested size: 200.0pt x 160.01146pt.
 
-Overfull \vbox (10.01756pt too high) has occurred while \output is active []
+<class_u_s_u_1_1_sampling_settings__coll__graph.pdf, id=3468, 200.75pt x 160.6p
+t>
+File: class_u_s_u_1_1_sampling_settings__coll__graph.pdf Graphic file (type pdf
+)
+ <use class_u_s_u_1_1_sampling_settings__coll__graph.pdf>
+Package pdftex.def Info: class_u_s_u_1_1_sampling_settings__coll__graph.pdf use
+d on input line 30.
+(pdftex.def)             Requested size: 200.0pt x 160.01146pt.
+
+Underfull \hbox (badness 1122) in paragraph at lines 42--56
+[]\T1/phv/m/n/10 enum [][]-Data-Conditioning[][] { \OMS/ztmcm/m/n/10 ^^B [][]\T
+1/phv/m/n/10 -Flag-Calc-Orientation[][] = 0x01, [][]-Flag-Enable-Coning-
+ []
 
 
-[46]) (./class_u_s_u_1_1_scoped_lock.tex [47]
+Underfull \hbox (badness 914) in paragraph at lines 42--56
+\T1/phv/m/n/10 Suppress-Na-N[][] = 0x20, [][]-Flag-Finite-Size-Correction[][] =
+ 0x40, [][]-Flag-Disable-Mag[][] =
+ []
+
+[65 <./class_u_s_u_1_1_sampling_settings__inherit__graph.pdf> <./class_u_s_u_1_
+1_sampling_settings__coll__graph.pdf
+
+pdfTeX warning: pdflatex (file ./class_u_s_u_1_1_sampling_settings__coll__graph
+.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>]
+Underfull \hbox (badness 845) in paragraph at lines 64--65
+[][][]\T1/phv/m/n/10 -Sampling-Settings[][] ([][]-Function-Selector[][] fun-Sel
+, uint16-_-t sampling-Period-_-ms=10,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--65
+\T1/phv/m/n/10 uint16-_-t data-Cond-Flags=[][]-Sampling-Settings-::-Flag-Defaul
+t[][], uint8-_-t gyro-Acc-
+ []
+
+[66] [67]
+Overfull \hbox (6.2741pt too wide) in paragraph at lines 201--201
+ \T1/phv/m/sl/10 Compensation|
+ []
+
+
+Overfull \hbox (6.2741pt too wide) in paragraph at lines 203--203
+ \T1/phv/m/sl/10 Compensation|
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 207
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 233
+ []
+
+) (./class_u_s_u_1_1_scoped_lock.tex [68]
 Underfull \vbox (badness 10000) detected at line 49
  []
 
@@ -1629,51 +1719,169 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 60.
 
-) [48]
-Chapter 7.
-(./kalmanfilter_8cpp.tex) (./kalmanfilter_8h.tex
-<kalmanfilter_8h__incl.pdf, id=1229, 627.34375pt x 393.47pt>
-File: kalmanfilter_8h__incl.pdf Graphic file (type pdf)
+) (./class_u_s_u_1_1_set_countinuous_mode.tex [69]
+<class_u_s_u_1_1_set_countinuous_mode__inherit__graph.pdf, id=3589, 218.8175pt 
+x 160.6pt>
+File: class_u_s_u_1_1_set_countinuous_mode__inherit__graph.pdf Graphic file (ty
+pe pdf)
+ <use class_u_s_u_1_1_set_countinuous_mode__inherit__graph.pdf>
+Package pdftex.def Info: class_u_s_u_1_1_set_countinuous_mode__inherit__graph.p
+df used on input line 20.
+(pdftex.def)             Requested size: 218.0pt x 160.00165pt.
 
-<use kalmanfilter_8h__incl.pdf>
-Package pdftex.def Info: kalmanfilter_8h__incl.pdf used on input line 12.
-(pdftex.def)             Requested size: 350.0pt x 219.52516pt.
+<class_u_s_u_1_1_set_countinuous_mode__coll__graph.pdf, id=3590, 218.8175pt x 1
+60.6pt>
+File: class_u_s_u_1_1_set_countinuous_mode__coll__graph.pdf Graphic file (type 
+pdf)
+ <use class_u_s_u_1_1_set_countinuous_mode__coll__graph.pdf>
+Package pdftex.def Info: class_u_s_u_1_1_set_countinuous_mode__coll__graph.pdf 
+used on input line 30.
+(pdftex.def)             Requested size: 218.0pt x 160.00165pt.
+ [70 <./class_u_s_u_1_1_set_countinuous_mode__inherit__graph.pdf> <./class_u_s_
+u_1_1_set_countinuous_mode__coll__graph.pdf
 
-Overfull \hbox (5.0pt too wide) in paragraph at lines 11--13
- [] 
- []
-
-
-Overfull \hbox (40.90797pt too wide) in paragraph at lines 4--14
-\T1/pcr/m/n/10 #include "threading/periodicrtthread.-h"\OMS/ztmcm/m/n/10 ^^B \T
-1/pcr/m/n/10 #include "minimu/minimu.-
+pdfTeX warning: pdflatex (file ./class_u_s_u_1_1_set_countinuous_mode__coll__gr
+aph.pdf): PDF inclusion: multiple pdfs with page group included in a single pag
+e
+>]
+Underfull \vbox (badness 10000) detected at line 94
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [49
+ [71]
+Underfull \vbox (badness 10000) detected at line 120
+ []
 
-]
-<kalmanfilter_8h__dep__incl.pdf, id=1239, 268.00125pt x 218.8175pt>
+) [72]
+Chapter 7.
+(./gx3communicator_8cpp.tex) (./gx3communicator_8h.tex
+<gx3communicator_8h__incl.pdf, id=3646, 283.0575pt x 218.8175pt>
+File: gx3communicator_8h__incl.pdf Graphic file (type pdf)
+
+<use gx3communicator_8h__incl.pdf>
+Package pdftex.def Info: gx3communicator_8h__incl.pdf used on input line 11.
+(pdftex.def)             Requested size: 282.0pt x 218.01895pt.
+
+Underfull \hbox (badness 776) in paragraph at lines 4--13
+\T1/pcr/m/n/10 #include $\OML/ztmcm/m/it/10 <$\T1/pcr/m/n/10 -Serial-Port.-h$\O
+ML/ztmcm/m/it/10 >$\OMS/ztmcm/m/n/10 ^^B \T1/pcr/m/n/10 #include "../threading/
+-Rt-Thread.-
+ []
+
+[73
+
+] <gx3communicator_8h__dep__incl.pdf, id=3657, 307.1475pt x 160.6pt>
+File: gx3communicator_8h__dep__incl.pdf Graphic file (type pdf)
+
+<use gx3communicator_8h__dep__incl.pdf>
+Package pdftex.def Info: gx3communicator_8h__dep__incl.pdf used on input line 1
+9.
+(pdftex.def)             Requested size: 306.0pt x 160.009pt.
+ [74 <./gx3communicator_8h__incl.pdf> <./gx3communicator_8h__dep__incl.pdf
+
+pdfTeX warning: pdflatex (file ./gx3communicator_8h__dep__incl.pdf): PDF inclus
+ion: multiple pdfs with page group included in a single page
+>]) (./messages_8h.tex
+<messages_8h__incl.pdf, id=3681, 344.28625pt x 218.8175pt>
+File: messages_8h__incl.pdf Graphic file (type pdf)
+
+<use messages_8h__incl.pdf>
+Package pdftex.def Info: messages_8h__incl.pdf used on input line 12.
+(pdftex.def)             Requested size: 343.0pt x 218.00226pt.
+
+<messages_8h__dep__incl.pdf, id=3682, 214.8025pt x 160.6pt>
+File: messages_8h__dep__incl.pdf Graphic file (type pdf)
+
+<use messages_8h__dep__incl.pdf>
+Package pdftex.def Info: messages_8h__dep__incl.pdf used on input line 20.
+(pdftex.def)             Requested size: 214.0pt x 160.00165pt.
+
+Underfull \vbox (badness 6477) has occurred while \output is active []
+
+ [75 <./messages_8h__incl.pdf>] [76 <./messages_8h__dep__incl.pdf>]) (./test_8c
+pp.tex
+<test_8cpp__incl.pdf, id=3756, 451.6875pt x 277.035pt>
+File: test_8cpp__incl.pdf Graphic file (type pdf)
+
+<use test_8cpp__incl.pdf>
+Package pdftex.def Info: test_8cpp__incl.pdf used on input line 14.
+(pdftex.def)             Requested size: 350.0pt x 214.67876pt.
+
+Overfull \hbox (5.0pt too wide) in paragraph at lines 13--15
+ [] 
+ []
+
+
+Overfull \hbox (49.89554pt too wide) in paragraph at lines 4--16
+\T1/pcr/m/n/10 #include $\OML/ztmcm/m/it/10 <$\T1/pcr/m/n/10 iostream$\OML/ztmc
+m/m/it/10 >$\OMS/ztmcm/m/n/10 ^^B \T1/pcr/m/n/10 #include $\OML/ztmcm/m/it/10 <
+$\T1/pcr/m/n/10 iomanip$\OML/ztmcm/m/it/10 >$\OMS/ztmcm/m/n/10 ^^B \T1/pcr/m/n/
+10 #include "gx3communicator.-
+ []
+
+
+Underfull \hbox (badness 4886) in paragraph at lines 4--16
+\T1/pcr/m/n/10 h"\OMS/ztmcm/m/n/10 ^^B \T1/pcr/m/n/10 #include $\OML/ztmcm/m/it
+/10 <$\T1/pcr/m/n/10 stdint.-h$\OML/ztmcm/m/it/10 >$\OMS/ztmcm/m/n/10 ^^B \T1/p
+cr/m/n/10 #include $\OML/ztmcm/m/it/10 <$\T1/pcr/m/n/10 time.-h$\OML/ztmcm/m/it
+/10 >$\OMS/ztmcm/m/n/10 ^^B \T1/phv/m/n/10 -Include de-pen-dency
+ []
+
+[77]) (./kalmanfilter_8cpp.tex
+<kalmanfilter_8cpp__incl.pdf, id=3764, 577.15625pt x 451.6875pt>
+File: kalmanfilter_8cpp__incl.pdf Graphic file (type pdf)
+
+<use kalmanfilter_8cpp__incl.pdf>
+Package pdftex.def Info: kalmanfilter_8cpp__incl.pdf used on input line 11.
+(pdftex.def)             Requested size: 350.0pt x 273.92308pt.
+
+Overfull \hbox (5.0pt too wide) in paragraph at lines 10--12
+ [] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [78 <./test_8cpp__incl.pdf>]) (./kalmanfilter_8h.tex
+<kalmanfilter_8h__incl.pdf, id=3783, 627.34375pt x 393.47pt>
+File: kalmanfilter_8h__incl.pdf Graphic file (type pdf)
+
+<use kalmanfilter_8h__incl.pdf>
+Package pdftex.def Info: kalmanfilter_8h__incl.pdf used on input line 11.
+(pdftex.def)             Requested size: 350.0pt x 219.52516pt.
+
+Overfull \hbox (5.0pt too wide) in paragraph at lines 10--12
+ [] 
+ []
+
+
+Overfull \hbox (40.90797pt too wide) in paragraph at lines 4--13
+\T1/pcr/m/n/10 #include "threading/periodicrtthread.-h"\OMS/ztmcm/m/n/10 ^^B \T
+1/pcr/m/n/10 #include "minimu/minimu.-
+ []
+
+[79 <./kalmanfilter_8cpp__incl.pdf>]
+<kalmanfilter_8h__dep__incl.pdf, id=3798, 268.00125pt x 218.8175pt>
 File: kalmanfilter_8h__dep__incl.pdf Graphic file (type pdf)
 
 <use kalmanfilter_8h__dep__incl.pdf>
-Package pdftex.def Info: kalmanfilter_8h__dep__incl.pdf used on input line 20.
+Package pdftex.def Info: kalmanfilter_8h__dep__incl.pdf used on input line 18.
 (pdftex.def)             Requested size: 267.0pt x 217.99892pt.
- [50 <./kalmanfilter_8h__incl.pdf> <./kalmanfilter_8h__dep__incl.pdf
+ [80 <./kalmanfilter_8h__incl.pdf> <./kalmanfilter_8h__dep__incl.pdf
 
 pdfTeX warning: pdflatex (file ./kalmanfilter_8h__dep__incl.pdf): PDF inclusion
 : multiple pdfs with page group included in a single page
 >]) (./main_8cpp.tex) (./exceptions_8h.tex
-<exceptions_8h__incl.pdf, id=1265, 216.81pt x 160.6pt>
+<exceptions_8h__incl.pdf, id=3823, 216.81pt x 160.6pt>
 File: exceptions_8h__incl.pdf Graphic file (type pdf)
 
 <use exceptions_8h__incl.pdf>
-Package pdftex.def Info: exceptions_8h__incl.pdf used on input line 11.
+Package pdftex.def Info: exceptions_8h__incl.pdf used on input line 10.
 (pdftex.def)             Requested size: 216.0pt x 160.009pt.
 
-Underfull \hbox (badness 2096) in paragraph at lines 4--13
+Underfull \hbox (badness 2096) in paragraph at lines 4--12
 \T1/pcr/m/n/10 #include $\OML/ztmcm/m/it/10 <$\T1/pcr/m/n/10 cerrno$\OML/ztmcm/
 m/it/10 >$\OMS/ztmcm/m/n/10 ^^B \T1/pcr/m/n/10 #include $\OML/ztmcm/m/it/10 <$\
 T1/pcr/m/n/10 system-_-error$\OML/ztmcm/m/it/10 >$\OMS/ztmcm/m/n/10 ^^B \T1/phv
@@ -1683,35 +1891,35 @@ T1/pcr/m/n/10 system-_-error$\OML/ztmcm/m/it/10 >$\OMS/ztmcm/m/n/10 ^^B \T1/phv
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [51]
-<exceptions_8h__dep__incl.pdf, id=1280, 459.7175pt x 451.6875pt>
+ [81]
+<exceptions_8h__dep__incl.pdf, id=3835, 459.7175pt x 451.6875pt>
 File: exceptions_8h__dep__incl.pdf Graphic file (type pdf)
 
 <use exceptions_8h__dep__incl.pdf>
-Package pdftex.def Info: exceptions_8h__dep__incl.pdf used on input line 19.
+Package pdftex.def Info: exceptions_8h__dep__incl.pdf used on input line 17.
 (pdftex.def)             Requested size: 350.0pt x 343.90636pt.
 
-Overfull \hbox (5.0pt too wide) in paragraph at lines 18--20
+Overfull \hbox (5.0pt too wide) in paragraph at lines 16--18
  [] 
  []
 
 ) (./_i2_c_bus_8cpp.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [52 <./exceptions_8h__incl.pdf>]
-<_i2_c_bus_8cpp__incl.pdf, id=1293, 401.5pt x 277.035pt>
+ [82 <./exceptions_8h__incl.pdf>]
+<_i2_c_bus_8cpp__incl.pdf, id=3848, 401.5pt x 277.035pt>
 File: _i2_c_bus_8cpp__incl.pdf Graphic file (type pdf)
 
 <use _i2_c_bus_8cpp__incl.pdf>
-Package pdftex.def Info: _i2_c_bus_8cpp__incl.pdf used on input line 13.
+Package pdftex.def Info: _i2_c_bus_8cpp__incl.pdf used on input line 12.
 (pdftex.def)             Requested size: 350.0pt x 241.5173pt.
 
-Overfull \hbox (5.0pt too wide) in paragraph at lines 12--14
+Overfull \hbox (5.0pt too wide) in paragraph at lines 11--13
  [] 
  []
 
 
-Overfull \hbox (42.12564pt too wide) in paragraph at lines 4--15
+Overfull \hbox (42.12564pt too wide) in paragraph at lines 4--14
 \T1/pcr/m/n/10 #include "-I2-C-Bus.-h"\OMS/ztmcm/m/n/10 ^^B \T1/pcr/m/n/10 #inc
 lude $\OML/ztmcm/m/it/10 <$\T1/pcr/m/n/10 unistd.-h$\OML/ztmcm/m/it/10 >$\OMS/z
 tmcm/m/n/10 ^^B \T1/pcr/m/n/10 #include $\OML/ztmcm/m/it/10 <$\T1/pcr/m/n/10 li
@@ -1721,142 +1929,142 @@ nux/i2c-dev.-
 ) (./_i2_c_bus_8h.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [53 <./exceptions_8h__dep__incl.pdf>]
-<_i2_c_bus_8h__incl.pdf, id=1307, 257.96375pt x 218.8175pt>
+ [83 <./exceptions_8h__dep__incl.pdf>]
+<_i2_c_bus_8h__incl.pdf, id=3862, 257.96375pt x 218.8175pt>
 File: _i2_c_bus_8h__incl.pdf Graphic file (type pdf)
 
 <use _i2_c_bus_8h__incl.pdf>
-Package pdftex.def Info: _i2_c_bus_8h__incl.pdf used on input line 11.
+Package pdftex.def Info: _i2_c_bus_8h__incl.pdf used on input line 10.
 (pdftex.def)             Requested size: 257.0pt x 218.01895pt.
 
-<_i2_c_bus_8h__dep__incl.pdf, id=1308, 459.7175pt x 393.47pt>
+<_i2_c_bus_8h__dep__incl.pdf, id=3863, 459.7175pt x 393.47pt>
 File: _i2_c_bus_8h__dep__incl.pdf Graphic file (type pdf)
 
 <use _i2_c_bus_8h__dep__incl.pdf>
-Package pdftex.def Info: _i2_c_bus_8h__dep__incl.pdf used on input line 19.
+Package pdftex.def Info: _i2_c_bus_8h__dep__incl.pdf used on input line 17.
 (pdftex.def)             Requested size: 350.0pt x 299.58064pt.
 
-Overfull \hbox (5.0pt too wide) in paragraph at lines 18--20
+Overfull \hbox (5.0pt too wide) in paragraph at lines 16--18
  [] 
  []
 
-[54 <./_i2_c_bus_8cpp__incl.pdf> <./_i2_c_bus_8h__incl.pdf
+[84 <./_i2_c_bus_8cpp__incl.pdf> <./_i2_c_bus_8h__incl.pdf
 
 pdfTeX warning: pdflatex (file ./_i2_c_bus_8h__incl.pdf): PDF inclusion: multip
 le pdfs with page group included in a single page
->]) (./_i_m_u_8h.tex <_i_m_u_8h__incl.pdf, id=1330, 248.93pt x 218.8175pt>
+>]) (./_i_m_u_8h.tex <_i_m_u_8h__incl.pdf, id=3884, 248.93pt x 218.8175pt>
 File: _i_m_u_8h__incl.pdf Graphic file (type pdf)
 
 <use _i_m_u_8h__incl.pdf>
-Package pdftex.def Info: _i_m_u_8h__incl.pdf used on input line 10.
+Package pdftex.def Info: _i_m_u_8h__incl.pdf used on input line 9.
 (pdftex.def)             Requested size: 248.0pt x 218.0056pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [55 <./_i2_c_bus_8h__dep__incl.pdf>]
-<_i_m_u_8h__dep__incl.pdf, id=1345, 329.23pt x 335.2525pt>
+ [85 <./_i2_c_bus_8h__dep__incl.pdf>]
+<_i_m_u_8h__dep__incl.pdf, id=3899, 329.23pt x 335.2525pt>
 File: _i_m_u_8h__dep__incl.pdf Graphic file (type pdf)
 
 <use _i_m_u_8h__dep__incl.pdf>
-Package pdftex.def Info: _i_m_u_8h__dep__incl.pdf used on input line 18.
+Package pdftex.def Info: _i_m_u_8h__dep__incl.pdf used on input line 16.
 (pdftex.def)             Requested size: 328.0pt x 334.00859pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [56 <./_i_m_u_8h__incl.pdf>]) (./_l3_g_8cpp.tex
-<_l3_g_8cpp__incl.pdf, id=1359, 257.96375pt x 335.2525pt>
+ [86 <./_i_m_u_8h__incl.pdf>]) (./_l3_g_8cpp.tex
+<_l3_g_8cpp__incl.pdf, id=3913, 257.96375pt x 335.2525pt>
 File: _l3_g_8cpp__incl.pdf Graphic file (type pdf)
 
 <use _l3_g_8cpp__incl.pdf>
-Package pdftex.def Info: _l3_g_8cpp__incl.pdf used on input line 11.
+Package pdftex.def Info: _l3_g_8cpp__incl.pdf used on input line 10.
 (pdftex.def)             Requested size: 257.0pt x 334.02905pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [57 <./_i_m_u_8h__dep__incl.pdf>] [58 <./_l3_g_8cpp__incl.pdf>]) (./_l3_g_8h.t
+ [87 <./_i_m_u_8h__dep__incl.pdf>] [88 <./_l3_g_8cpp__incl.pdf>]) (./_l3_g_8h.t
 ex
-<_l3_g_8h__incl.pdf, id=1400, 257.96375pt x 277.035pt>
+<_l3_g_8h__incl.pdf, id=3951, 257.96375pt x 277.035pt>
 File: _l3_g_8h__incl.pdf Graphic file (type pdf)
 
 <use _l3_g_8h__incl.pdf>
-Package pdftex.def Info: _l3_g_8h__incl.pdf used on input line 10.
+Package pdftex.def Info: _l3_g_8h__incl.pdf used on input line 9.
 (pdftex.def)             Requested size: 257.0pt x 276.024pt.
 
-<_l3_g_8h__dep__incl.pdf, id=1401, 377.41pt x 335.2525pt>
+<_l3_g_8h__dep__incl.pdf, id=3952, 377.41pt x 335.2525pt>
 File: _l3_g_8h__dep__incl.pdf Graphic file (type pdf)
 
 <use _l3_g_8h__dep__incl.pdf>
-Package pdftex.def Info: _l3_g_8h__dep__incl.pdf used on input line 18.
+Package pdftex.def Info: _l3_g_8h__dep__incl.pdf used on input line 16.
 (pdftex.def)             Requested size: 350.0pt x 310.90173pt.
 
-Overfull \hbox (5.0pt too wide) in paragraph at lines 17--19
+Overfull \hbox (5.0pt too wide) in paragraph at lines 15--17
  [] 
  []
 
 
 Underfull \vbox (badness 6032) has occurred while \output is active []
 
- [59 <./_l3_g_8h__incl.pdf>] [60 <./_l3_g_8h__dep__incl.pdf>] [61] [62])
+ [89 <./_l3_g_8h__incl.pdf>] [90 <./_l3_g_8h__dep__incl.pdf>] [91] [92])
 (./_l_s_m303_8cpp.tex
-<_l_s_m303_8cpp__incl.pdf, id=1510, 258.9675pt x 335.2525pt>
+<_l_s_m303_8cpp__incl.pdf, id=4061, 258.9675pt x 335.2525pt>
 File: _l_s_m303_8cpp__incl.pdf Graphic file (type pdf)
 
 <use _l_s_m303_8cpp__incl.pdf>
-Package pdftex.def Info: _l_s_m303_8cpp__incl.pdf used on input line 10.
+Package pdftex.def Info: _l_s_m303_8cpp__incl.pdf used on input line 9.
 (pdftex.def)             Requested size: 258.0pt x 334.03418pt.
- [63] [64 <./_l_s_m303_8cpp__incl.pdf>])
-(./_l_s_m303_8h.tex <_l_s_m303_8h__incl.pdf, id=1549, 257.96375pt x 277.035pt>
+ [93] [94 <./_l_s_m303_8cpp__incl.pdf>])
+(./_l_s_m303_8h.tex <_l_s_m303_8h__incl.pdf, id=4095, 257.96375pt x 277.035pt>
 File: _l_s_m303_8h__incl.pdf Graphic file (type pdf)
 
 <use _l_s_m303_8h__incl.pdf>
-Package pdftex.def Info: _l_s_m303_8h__incl.pdf used on input line 11.
+Package pdftex.def Info: _l_s_m303_8h__incl.pdf used on input line 10.
 (pdftex.def)             Requested size: 257.0pt x 276.024pt.
 
-<_l_s_m303_8h__dep__incl.pdf, id=1550, 395.4775pt x 335.2525pt>
+<_l_s_m303_8h__dep__incl.pdf, id=4096, 395.4775pt x 335.2525pt>
 File: _l_s_m303_8h__dep__incl.pdf Graphic file (type pdf)
 
 <use _l_s_m303_8h__dep__incl.pdf>
-Package pdftex.def Info: _l_s_m303_8h__dep__incl.pdf used on input line 19.
+Package pdftex.def Info: _l_s_m303_8h__dep__incl.pdf used on input line 17.
 (pdftex.def)             Requested size: 350.0pt x 296.70612pt.
 
-Overfull \hbox (5.0pt too wide) in paragraph at lines 18--20
+Overfull \hbox (5.0pt too wide) in paragraph at lines 16--18
  [] 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [65 <./_l_s_m303_8h__incl.pdf>] [66 <./_l_s_m303_8h__dep__incl.pdf>] [67] [68]
- [69]
-[70] [71] [72]) (./minimu_8cpp.tex
-<minimu_8cpp__incl.pdf, id=1772, 450.68375pt x 393.47pt>
+ [95 <./_l_s_m303_8h__incl.pdf>] [96 <./_l_s_m303_8h__dep__incl.pdf>] [97] [98]
+ [99]
+[100] [101] [102]) (./minimu_8cpp.tex
+<minimu_8cpp__incl.pdf, id=4316, 450.68375pt x 393.47pt>
 File: minimu_8cpp__incl.pdf Graphic file (type pdf)
 
 <use minimu_8cpp__incl.pdf>
-Package pdftex.def Info: minimu_8cpp__incl.pdf used on input line 11.
+Package pdftex.def Info: minimu_8cpp__incl.pdf used on input line 10.
 (pdftex.def)             Requested size: 350.0pt x 305.5845pt.
 
-Overfull \hbox (5.0pt too wide) in paragraph at lines 10--12
+Overfull \hbox (5.0pt too wide) in paragraph at lines 9--11
  [] 
  []
 
 ) (./minimu_8h.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [73]
-<minimu_8h__incl.pdf, id=1785, 450.68375pt x 335.2525pt>
+ [103]
+<minimu_8h__incl.pdf, id=4329, 450.68375pt x 335.2525pt>
 File: minimu_8h__incl.pdf Graphic file (type pdf)
 
 <use minimu_8h__incl.pdf>
-Package pdftex.def Info: minimu_8h__incl.pdf used on input line 13.
+Package pdftex.def Info: minimu_8h__incl.pdf used on input line 12.
 (pdftex.def)             Requested size: 350.0pt x 260.37047pt.
 
-Overfull \hbox (5.0pt too wide) in paragraph at lines 12--14
+Overfull \hbox (5.0pt too wide) in paragraph at lines 11--13
  [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4--15
+Underfull \hbox (badness 10000) in paragraph at lines 4--14
 \T1/pcr/m/n/10 #include "-I-M-U.-h"\OMS/ztmcm/m/n/10 ^^B \T1/pcr/m/n/10 #includ
 e "-L-S-M303.-h"\OMS/ztmcm/m/n/10 ^^B \T1/pcr/m/n/10 #include "-L3-G.-h"\OMS/zt
 mcm/m/n/10 ^^B
@@ -1865,98 +2073,103 @@ mcm/m/n/10 ^^B
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [74 <./minimu_8cpp__incl.pdf>] <minimu_8h__dep__incl.pdf, id=1799, 329.23pt x 
-277.035pt>
+ [104 <./minimu_8cpp__incl.pdf>]
+<minimu_8h__dep__incl.pdf, id=4342, 329.23pt x 277.035pt>
 File: minimu_8h__dep__incl.pdf Graphic file (type pdf)
 
 <use minimu_8h__dep__incl.pdf>
-Package pdftex.def Info: minimu_8h__dep__incl.pdf used on input line 21.
+Package pdftex.def Info: minimu_8h__dep__incl.pdf used on input line 19.
 (pdftex.def)             Requested size: 328.0pt x 276.0071pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [75 <./minimu_8h__incl.pdf>]) (./vector_8h.tex
-<vector_8h__incl.pdf, id=1814, 248.93pt x 160.6pt>
+ [105 <./minimu_8h__incl.pdf>]) (./vector_8h.tex
+<vector_8h__incl.pdf, id=4356, 248.93pt x 160.6pt>
 File: vector_8h__incl.pdf Graphic file (type pdf)
  <use vector_8h__incl.pdf>
-Package pdftex.def Info: vector_8h__incl.pdf used on input line 11.
+Package pdftex.def Info: vector_8h__incl.pdf used on input line 10.
 (pdftex.def)             Requested size: 248.0pt x 160.0041pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [76 <./minimu_8h__dep__incl.pdf>]
-<vector_8h__dep__incl.pdf, id=1830, 309.155pt x 393.47pt>
+ [106 <./minimu_8h__dep__incl.pdf>]
+<vector_8h__dep__incl.pdf, id=4370, 421.575pt x 393.47pt>
 File: vector_8h__dep__incl.pdf Graphic file (type pdf)
 
 <use vector_8h__dep__incl.pdf>
-Package pdftex.def Info: vector_8h__dep__incl.pdf used on input line 19.
-(pdftex.def)             Requested size: 308.0pt x 392.03409pt.
+Package pdftex.def Info: vector_8h__dep__incl.pdf used on input line 18.
+(pdftex.def)             Requested size: 350.0pt x 326.67006pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Overfull \hbox (5.0pt too wide) in paragraph at lines 17--19
+ [] 
+ []
 
- [77 <./vector_8h__incl.pdf>] [78 <./vector_8h__dep__incl.pdf>]) (./motorcontro
-l_8cpp.tex
-<motorcontrol_8cpp__incl.pdf, id=1864, 970.62625pt x 509.905pt>
+[107 <./vector_8h__incl.pdf> <./vector_8h__dep__incl.pdf
+
+pdfTeX warning: pdflatex (file ./vector_8h__dep__incl.pdf): PDF inclusion: mult
+iple pdfs with page group included in a single page
+>]) (./motorcontrol_8cpp.tex
+<motorcontrol_8cpp__incl.pdf, id=4395, 970.62625pt x 509.905pt>
 File: motorcontrol_8cpp__incl.pdf Graphic file (type pdf)
 
 <use motorcontrol_8cpp__incl.pdf>
-Package pdftex.def Info: motorcontrol_8cpp__incl.pdf used on input line 10.
+Package pdftex.def Info: motorcontrol_8cpp__incl.pdf used on input line 9.
 (pdftex.def)             Requested size: 350.0pt x 183.8691pt.
 
-Overfull \hbox (5.0pt too wide) in paragraph at lines 9--11
+Overfull \hbox (5.0pt too wide) in paragraph at lines 8--10
  [] 
  []
 
-[79 <./motorcontrol_8cpp__incl.pdf>]) (./motorcontrol_8h.tex
-<motorcontrol_8h__incl.pdf, id=1883, 970.62625pt x 451.6875pt>
+[108 <./motorcontrol_8cpp__incl.pdf>]) (./motorcontrol_8h.tex
+<motorcontrol_8h__incl.pdf, id=4411, 970.62625pt x 451.6875pt>
 File: motorcontrol_8h__incl.pdf Graphic file (type pdf)
 
 <use motorcontrol_8h__incl.pdf>
-Package pdftex.def Info: motorcontrol_8h__incl.pdf used on input line 14.
+Package pdftex.def Info: motorcontrol_8h__incl.pdf used on input line 13.
 (pdftex.def)             Requested size: 350.0pt x 162.87616pt.
 
-Overfull \hbox (5.0pt too wide) in paragraph at lines 13--15
+Overfull \hbox (5.0pt too wide) in paragraph at lines 12--14
  [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4--16
+Underfull \hbox (badness 10000) in paragraph at lines 4--15
 \T1/pcr/m/n/10 #include "threading/periodicrtthread.-h"\OMS/ztmcm/m/n/10 ^^B \T
 1/pcr/m/n/10 #include "pwm/c-P-
  []
 
 
-Underfull \hbox (badness 3735) in paragraph at lines 4--16
+Underfull \hbox (badness 3735) in paragraph at lines 4--15
 \T1/pcr/m/n/10 W-M.-h"\OMS/ztmcm/m/n/10 ^^B \T1/pcr/m/n/10 #include "pwm/-Beagl
 e-_--G-P-I-O.-h"\OMS/ztmcm/m/n/10 ^^B \T1/pcr/m/n/10 #include "pwm/motor.-h"\OM
 S/ztmcm/m/n/10 ^^B
  []
 
-<motorcontrol_8h__dep__incl.pdf, id=1884, 168.63pt x 160.6pt>
+<motorcontrol_8h__dep__incl.pdf, id=4412, 168.63pt x 160.6pt>
 File: motorcontrol_8h__dep__incl.pdf Graphic file (type pdf)
 
 <use motorcontrol_8h__dep__incl.pdf>
-Package pdftex.def Info: motorcontrol_8h__dep__incl.pdf used on input line 22.
+Package pdftex.def Info: motorcontrol_8h__dep__incl.pdf used on input line 20.
 (pdftex.def)             Requested size: 168.0pt x 160.0041pt.
- [80 <./motorcontrol_8h__incl.pdf> <./motorcontrol_8h__dep__incl.pdf
+ [109 <./motorcontrol_8h__incl.pdf> <./motorcontrol_8h__dep__incl.pdf
 
 pdfTeX warning: pdflatex (file ./motorcontrol_8h__dep__incl.pdf): PDF inclusion
 : multiple pdfs with page group included in a single page
 >]) (./_beagle___g_p_i_o_8cpp.tex
-<_beagle___g_p_i_o_8cpp__incl.pdf, id=1910, 825.0825pt x 218.8175pt>
+<_beagle___g_p_i_o_8cpp__incl.pdf, id=4436, 825.0825pt x 218.8175pt>
 File: _beagle___g_p_i_o_8cpp__incl.pdf Graphic file (type pdf)
 
 <use _beagle___g_p_i_o_8cpp__incl.pdf>
-Package pdftex.def Info: _beagle___g_p_i_o_8cpp__incl.pdf used on input line 17
+Package pdftex.def Info: _beagle___g_p_i_o_8cpp__incl.pdf used on input line 16
 .
 (pdftex.def)             Requested size: 350.0pt x 92.82425pt.
 
-Overfull \hbox (5.0pt too wide) in paragraph at lines 16--18
+Overfull \hbox (5.0pt too wide) in paragraph at lines 15--17
  [] 
  []
 
 
-Overfull \hbox (15.66544pt too wide) in paragraph at lines 4--19
+Overfull \hbox (15.66544pt too wide) in paragraph at lines 4--18
 \T1/pcr/m/n/10 #include $\OML/ztmcm/m/it/10 <$\T1/pcr/m/n/10 stdio.-h$\OML/ztmc
 m/m/it/10 >$\OMS/ztmcm/m/n/10 ^^B \T1/pcr/m/n/10 #include $\OML/ztmcm/m/it/10 <
 $\T1/pcr/m/n/10 stdlib.-h$\OML/ztmcm/m/it/10 >$\OMS/ztmcm/m/n/10 ^^B \T1/pcr/m/
@@ -1964,7 +2177,7 @@ n/10 #include $\OML/ztmcm/m/it/10 <$\T1/pcr/m/n/10 sys/types.-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4--19
+Underfull \hbox (badness 10000) in paragraph at lines 4--18
 \T1/pcr/m/n/10 h$\OML/ztmcm/m/it/10 >$\OMS/ztmcm/m/n/10 ^^B \T1/pcr/m/n/10 #inc
 lude $\OML/ztmcm/m/it/10 <$\T1/pcr/m/n/10 sys/stat.-h$\OML/ztmcm/m/it/10 >$\OMS
 /ztmcm/m/n/10 ^^B \T1/pcr/m/n/10 #include $\OML/ztmcm/m/it/10 <$\T1/pcr/m/n/10 
@@ -1972,7 +2185,7 @@ unistd.-h$\OML/ztmcm/m/it/10 >$\OMS/ztmcm/m/n/10 ^^B \T1/pcr/m/n/10 #include
  []
 
 
-Underfull \hbox (badness 2653) in paragraph at lines 4--19
+Underfull \hbox (badness 2653) in paragraph at lines 4--18
 \OML/ztmcm/m/it/10 <$\T1/pcr/m/n/10 fcntl.-h$\OML/ztmcm/m/it/10 >$\OMS/ztmcm/m/
 n/10 ^^B \T1/pcr/m/n/10 #include $\OML/ztmcm/m/it/10 <$\T1/pcr/m/n/10 sys/mman.
 -h$\OML/ztmcm/m/it/10 >$\OMS/ztmcm/m/n/10 ^^B \T1/pcr/m/n/10 #include "-Beagle-
@@ -1980,111 +2193,111 @@ _--G-P-I-O.-h"\OMS/ztmcm/m/n/10 ^^B
  []
 
 ) (./_beagle___g_p_i_o_8h.tex
-<_beagle___g_p_i_o_8h__incl.pdf, id=1911, 415.5525pt x 160.6pt>
+<_beagle___g_p_i_o_8h__incl.pdf, id=4437, 415.5525pt x 160.6pt>
 File: _beagle___g_p_i_o_8h__incl.pdf Graphic file (type pdf)
 
 <use _beagle___g_p_i_o_8h__incl.pdf>
-Package pdftex.def Info: _beagle___g_p_i_o_8h__incl.pdf used on input line 13.
+Package pdftex.def Info: _beagle___g_p_i_o_8h__incl.pdf used on input line 12.
 (pdftex.def)             Requested size: 350.0pt x 135.27065pt.
 
-Overfull \hbox (5.0pt too wide) in paragraph at lines 12--14
+Overfull \hbox (5.0pt too wide) in paragraph at lines 11--13
  [] 
  []
 
 
-Overfull \hbox (51.66544pt too wide) in paragraph at lines 4--15
+Overfull \hbox (51.66544pt too wide) in paragraph at lines 4--14
 \T1/pcr/m/n/10 #include $\OML/ztmcm/m/it/10 <$\T1/pcr/m/n/10 iostream$\OML/ztmc
 m/m/it/10 >$\OMS/ztmcm/m/n/10 ^^B \T1/pcr/m/n/10 #include $\OML/ztmcm/m/it/10 <
 $\T1/pcr/m/n/10 sys/ioctl.-h$\OML/ztmcm/m/it/10 >$\OMS/ztmcm/m/n/10 ^^B \T1/pcr
 /m/n/10 #include $\OML/ztmcm/m/it/10 <$\T1/pcr/m/n/10 linux/types.-
  []
 
-[81 <./_beagle___g_p_i_o_8cpp__incl.pdf>]
-<_beagle___g_p_i_o_8h__dep__incl.pdf, id=1930, 363.3575pt x 277.035pt>
+[110 <./_beagle___g_p_i_o_8cpp__incl.pdf>]
+<_beagle___g_p_i_o_8h__dep__incl.pdf, id=4454, 363.3575pt x 277.035pt>
 File: _beagle___g_p_i_o_8h__dep__incl.pdf Graphic file (type pdf)
 
 <use _beagle___g_p_i_o_8h__dep__incl.pdf>
 Package pdftex.def Info: _beagle___g_p_i_o_8h__dep__incl.pdf used on input line
- 21.
+ 19.
 (pdftex.def)             Requested size: 350.0pt x 266.85942pt.
 
-Overfull \hbox (5.0pt too wide) in paragraph at lines 20--22
+Overfull \hbox (5.0pt too wide) in paragraph at lines 18--20
  [] 
  []
 
-[82 <./_beagle___g_p_i_o_8h__incl.pdf> <./_beagle___g_p_i_o_8h__dep__incl.pdf
+[111 <./_beagle___g_p_i_o_8h__incl.pdf> <./_beagle___g_p_i_o_8h__dep__incl.pdf
 
 pdfTeX warning: pdflatex (file ./_beagle___g_p_i_o_8h__dep__incl.pdf): PDF incl
 usion: multiple pdfs with page group included in a single page
 >]
-Overfull \hbox (34.20024pt too wide) in paragraph at lines 54--54
+Overfull \hbox (34.20024pt too wide) in paragraph at lines 52--52
 []                        \T1/pcr/m/n/8 GPIO_ERROR( "Assert Failed in file '" <
 < __FILE__ << "'[] 
  []
 
 ) (./c_p_w_m_8cpp.tex
-<c_p_w_m_8cpp__incl.pdf, id=1956, 319.1925pt x 218.8175pt>
+<c_p_w_m_8cpp__incl.pdf, id=4480, 319.1925pt x 218.8175pt>
 File: c_p_w_m_8cpp__incl.pdf Graphic file (type pdf)
 
 <use c_p_w_m_8cpp__incl.pdf>
-Package pdftex.def Info: c_p_w_m_8cpp__incl.pdf used on input line 13.
+Package pdftex.def Info: c_p_w_m_8cpp__incl.pdf used on input line 12.
 (pdftex.def)             Requested size: 318.0pt x 218.00226pt.
 
 Underfull \vbox (badness 3281) has occurred while \output is active []
 
- [83])
-(./c_p_w_m_8h.tex <c_p_w_m_8h__incl.pdf, id=1976, 158.5925pt x 160.6pt>
+ [112])
+(./c_p_w_m_8h.tex <c_p_w_m_8h__incl.pdf, id=4497, 158.5925pt x 160.6pt>
 File: c_p_w_m_8h__incl.pdf Graphic file (type pdf)
 
 <use c_p_w_m_8h__incl.pdf>
-Package pdftex.def Info: c_p_w_m_8h__incl.pdf used on input line 10.
+Package pdftex.def Info: c_p_w_m_8h__incl.pdf used on input line 9.
 (pdftex.def)             Requested size: 158.0pt x 160.0139pt.
 
 Underfull \vbox (badness 1436) has occurred while \output is active []
 
- [84 <./c_p_w_m_8cpp__incl.pdf>]
-<c_p_w_m_8h__dep__incl.pdf, id=1994, 333.245pt x 277.035pt>
+ [113 <./c_p_w_m_8cpp__incl.pdf>]
+<c_p_w_m_8h__dep__incl.pdf, id=4514, 333.245pt x 277.035pt>
 File: c_p_w_m_8h__dep__incl.pdf Graphic file (type pdf)
 
 <use c_p_w_m_8h__dep__incl.pdf>
-Package pdftex.def Info: c_p_w_m_8h__dep__incl.pdf used on input line 18.
+Package pdftex.def Info: c_p_w_m_8h__dep__incl.pdf used on input line 16.
 (pdftex.def)             Requested size: 332.0pt x 276.01978pt.
 
 Underfull \vbox (badness 1454) has occurred while \output is active []
 
- [85 <./c_p_w_m_8h__incl.pdf> <./c_p_w_m_8h__dep__incl.pdf
+ [114 <./c_p_w_m_8h__incl.pdf> <./c_p_w_m_8h__dep__incl.pdf
 
 pdfTeX warning: pdflatex (file ./c_p_w_m_8h__dep__incl.pdf): PDF inclusion: mul
 tiple pdfs with page group included in a single page
->] [86]) (./motor_8cpp.tex
-<motor_8cpp__incl.pdf, id=2051, 483.8075pt x 277.035pt>
+>] [115]) (./motor_8cpp.tex
+<motor_8cpp__incl.pdf, id=4572, 483.8075pt x 277.035pt>
 File: motor_8cpp__incl.pdf Graphic file (type pdf)
 
 <use motor_8cpp__incl.pdf>
-Package pdftex.def Info: motor_8cpp__incl.pdf used on input line 10.
+Package pdftex.def Info: motor_8cpp__incl.pdf used on input line 9.
 (pdftex.def)             Requested size: 350.0pt x 200.42462pt.
 
-Overfull \hbox (5.0pt too wide) in paragraph at lines 9--11
+Overfull \hbox (5.0pt too wide) in paragraph at lines 8--10
  [] 
  []
 
 
 Underfull \vbox (badness 3128) has occurred while \output is active []
 
- [87])
-(./motor_8h.tex <motor_8h__incl.pdf, id=2067, 483.8075pt x 218.8175pt>
+ [116])
+(./motor_8h.tex <motor_8h__incl.pdf, id=4586, 483.8075pt x 218.8175pt>
 File: motor_8h__incl.pdf Graphic file (type pdf)
 
 <use motor_8h__incl.pdf>
-Package pdftex.def Info: motor_8h__incl.pdf used on input line 11.
+Package pdftex.def Info: motor_8h__incl.pdf used on input line 10.
 (pdftex.def)             Requested size: 350.0pt x 158.3064pt.
 
-Overfull \hbox (5.0pt too wide) in paragraph at lines 10--12
+Overfull \hbox (5.0pt too wide) in paragraph at lines 9--11
  [] 
  []
 
 
-Underfull \hbox (badness 2698) in paragraph at lines 4--13
+Underfull \hbox (badness 2698) in paragraph at lines 4--12
 \T1/pcr/m/n/10 #include "c-P-W-M.-h"\OMS/ztmcm/m/n/10 ^^B \T1/pcr/m/n/10 #inclu
 de "-Beagle-_--G-P-I-O.-h"\OMS/ztmcm/m/n/10 ^^B \T1/phv/m/n/10 -Include de-pen-
 dency
@@ -2093,31 +2306,31 @@ dency
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [88 <./motor_8cpp__incl.pdf>]
-<motor_8h__dep__incl.pdf, id=2084, 265.99374pt x 218.8175pt>
+ [117 <./motor_8cpp__incl.pdf>]
+<motor_8h__dep__incl.pdf, id=4600, 265.99374pt x 218.8175pt>
 File: motor_8h__dep__incl.pdf Graphic file (type pdf)
 
 <use motor_8h__dep__incl.pdf>
-Package pdftex.def Info: motor_8h__dep__incl.pdf used on input line 19.
+Package pdftex.def Info: motor_8h__dep__incl.pdf used on input line 17.
 (pdftex.def)             Requested size: 265.0pt x 218.01895pt.
- [89 <./motor_8h__incl.pdf> <./motor_8h__dep__incl.pdf
+ [118 <./motor_8h__incl.pdf> <./motor_8h__dep__incl.pdf
 
 pdfTeX warning: pdflatex (file ./motor_8h__dep__incl.pdf): PDF inclusion: multi
 ple pdfs with page group included in a single page
 >]) (./set_p_w_m_8c.tex
-<set_p_w_m_8c__incl.pdf, id=2109, 708.6475pt x 160.6pt>
+<set_p_w_m_8c__incl.pdf, id=4625, 708.6475pt x 160.6pt>
 File: set_p_w_m_8c__incl.pdf Graphic file (type pdf)
 
 <use set_p_w_m_8c__incl.pdf>
-Package pdftex.def Info: set_p_w_m_8c__incl.pdf used on input line 18.
+Package pdftex.def Info: set_p_w_m_8c__incl.pdf used on input line 17.
 (pdftex.def)             Requested size: 350.0pt x 79.32202pt.
 
-Overfull \hbox (5.0pt too wide) in paragraph at lines 17--19
+Overfull \hbox (5.0pt too wide) in paragraph at lines 16--18
  [] 
  []
 
 
-Underfull \hbox (badness 1337) in paragraph at lines 4--20
+Underfull \hbox (badness 1337) in paragraph at lines 4--19
 \T1/pcr/m/n/10 h$\OML/ztmcm/m/it/10 >$\OMS/ztmcm/m/n/10 ^^B \T1/pcr/m/n/10 #inc
 lude $\OML/ztmcm/m/it/10 <$\T1/pcr/m/n/10 sys/types.-h$\OML/ztmcm/m/it/10 >$\OM
 S/ztmcm/m/n/10 ^^B \T1/pcr/m/n/10 #include $\OML/ztmcm/m/it/10 <$\T1/pcr/m/n/10
@@ -2126,7 +2339,7 @@ S/ztmcm/m/n/10 ^^B \T1/pcr/m/n/10 #include $\OML/ztmcm/m/it/10 <$\T1/pcr/m/n/10
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4--20
+Underfull \hbox (badness 10000) in paragraph at lines 4--19
 \OML/ztmcm/m/it/10 <$\T1/pcr/m/n/10 fcntl.-h$\OML/ztmcm/m/it/10 >$\OMS/ztmcm/m/
 n/10 ^^B \T1/pcr/m/n/10 #include $\OML/ztmcm/m/it/10 <$\T1/pcr/m/n/10 stdint.-h
 $\OML/ztmcm/m/it/10 >$\OMS/ztmcm/m/n/10 ^^B \T1/pcr/m/n/10 #include $\OML/ztmcm
@@ -2134,45 +2347,46 @@ $\OML/ztmcm/m/it/10 >$\OMS/ztmcm/m/n/10 ^^B \T1/pcr/m/n/10 #include $\OML/ztmcm
 B
  []
 
-[90 <./set_p_w_m_8c__incl.pdf>] [91]) (./set_p_w_m_reg_8py.tex [92])
-(./_lock_8h.tex <_lock_8h__incl.pdf, id=2190, 200.75pt x 160.6pt>
+[119 <./set_p_w_m_8c__incl.pdf>] [120]) (./set_p_w_m_reg_8py.tex [121])
+(./_lock_8h.tex <_lock_8h__incl.pdf, id=4703, 200.75pt x 160.6pt>
 File: _lock_8h__incl.pdf Graphic file (type pdf)
 
 <use _lock_8h__incl.pdf>
-Package pdftex.def Info: _lock_8h__incl.pdf used on input line 11.
+Package pdftex.def Info: _lock_8h__incl.pdf used on input line 10.
 (pdftex.def)             Requested size: 200.0pt x 160.01146pt.
 
-<_lock_8h__dep__incl.pdf, id=2191, 268.00125pt x 277.035pt>
+<_lock_8h__dep__incl.pdf, id=4704, 268.00125pt x 277.035pt>
 File: _lock_8h__dep__incl.pdf Graphic file (type pdf)
 
 <use _lock_8h__dep__incl.pdf>
-Package pdftex.def Info: _lock_8h__dep__incl.pdf used on input line 19.
+Package pdftex.def Info: _lock_8h__dep__incl.pdf used on input line 17.
 (pdftex.def)             Requested size: 267.0pt x 275.99864pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [93 <./_lock_8h__incl.pdf>]) (./periodicrtthread_8cpp.tex [94 <./_lock_8h__dep
-__incl.pdf>] <periodicrtthread_8cpp__incl.pdf, id=2226, 459.7175pt x 277.035pt>
+ [122 <./_lock_8h__incl.pdf>]) (./periodicrtthread_8cpp.tex [123 <./_lock_8h__d
+ep__incl.pdf>] <periodicrtthread_8cpp__incl.pdf, id=4736, 459.7175pt x 277.035p
+t>
 File: periodicrtthread_8cpp__incl.pdf Graphic file (type pdf)
 
 <use periodicrtthread_8cpp__incl.pdf>
-Package pdftex.def Info: periodicrtthread_8cpp__incl.pdf used on input line 14.
+Package pdftex.def Info: periodicrtthread_8cpp__incl.pdf used on input line 13.
 
 (pdftex.def)             Requested size: 350.0pt x 210.92923pt.
 
-Overfull \hbox (5.0pt too wide) in paragraph at lines 13--15
+Overfull \hbox (5.0pt too wide) in paragraph at lines 12--14
  [] 
  []
 
 
-Underfull \hbox (badness 7238) in paragraph at lines 4--16
+Underfull \hbox (badness 7238) in paragraph at lines 4--15
 \T1/pcr/m/n/10 #include "periodicrtthread.-h"\OMS/ztmcm/m/n/10 ^^B \T1/pcr/m/n/
 10 #include $\OML/ztmcm/m/it/10 <$\T1/pcr/m/n/10 time.-h$\OML/ztmcm/m/it/10 >$\
 OMS/ztmcm/m/n/10 ^^B \T1/pcr/m/n/10 #include
  []
 
 
-Underfull \hbox (badness 1990) in paragraph at lines 4--16
+Underfull \hbox (badness 1990) in paragraph at lines 4--15
 \OML/ztmcm/m/it/10 <$\T1/pcr/m/n/10 sys/timerfd.-h$\OML/ztmcm/m/it/10 >$\OMS/zt
 mcm/m/n/10 ^^B \T1/pcr/m/n/10 #include $\OML/ztmcm/m/it/10 <$\T1/pcr/m/n/10 std
 io.-h$\OML/ztmcm/m/it/10 >$\OMS/ztmcm/m/n/10 ^^B \T1/pcr/m/n/10 #include $\OML/
@@ -2181,78 +2395,79 @@ ztmcm/m/it/10 <$\T1/pcr/m/n/10 unistd.-h$\OML/ztmcm/m/it/10 >$\OMS/ztmcm/m/n/10
  []
 
 ) (./periodicrtthread_8h.tex
-<periodicrtthread_8h__incl.pdf, id=2228, 214.8025pt x 218.8175pt>
+<periodicrtthread_8h__incl.pdf, id=4738, 214.8025pt x 218.8175pt>
 File: periodicrtthread_8h__incl.pdf Graphic file (type pdf)
 
 <use periodicrtthread_8h__incl.pdf>
-Package pdftex.def Info: periodicrtthread_8h__incl.pdf used on input line 10.
+Package pdftex.def Info: periodicrtthread_8h__incl.pdf used on input line 9.
 (pdftex.def)             Requested size: 214.0pt x 218.00226pt.
 
 Underfull \vbox (badness 6412) has occurred while \output is active []
 
- [95 <./periodicrtthread_8cpp__incl.pdf>]
-<periodicrtthread_8h__dep__incl.pdf, id=2243, 396.48125pt x 277.035pt>
+ [124 <./periodicrtthread_8cpp__incl.pdf>]
+<periodicrtthread_8h__dep__incl.pdf, id=4753, 396.48125pt x 277.035pt>
 File: periodicrtthread_8h__dep__incl.pdf Graphic file (type pdf)
 
 <use periodicrtthread_8h__dep__incl.pdf>
 Package pdftex.def Info: periodicrtthread_8h__dep__incl.pdf used on input line 
-18.
+16.
 (pdftex.def)             Requested size: 350.0pt x 244.5609pt.
 
-Overfull \hbox (5.0pt too wide) in paragraph at lines 17--19
+Overfull \hbox (5.0pt too wide) in paragraph at lines 15--17
  [] 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [96 <./periodicrtthread_8h__incl.pdf>]) (./_rt_thread_8cpp.tex
-<_rt_thread_8cpp__incl.pdf, id=2261, 208.78pt x 218.8175pt>
+ [125 <./periodicrtthread_8h__incl.pdf>]) (./_rt_thread_8cpp.tex
+<_rt_thread_8cpp__incl.pdf, id=4772, 208.78pt x 218.8175pt>
 File: _rt_thread_8cpp__incl.pdf Graphic file (type pdf)
 
 <use _rt_thread_8cpp__incl.pdf>
-Package pdftex.def Info: _rt_thread_8cpp__incl.pdf used on input line 11.
+Package pdftex.def Info: _rt_thread_8cpp__incl.pdf used on input line 10.
 (pdftex.def)             Requested size: 208.0pt x 218.01228pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 4--13
+Underfull \hbox (badness 10000) in paragraph at lines 4--12
 \T1/pcr/m/n/10 #include "-Rt-Thread.-h"\OMS/ztmcm/m/n/10 ^^B \T1/pcr/m/n/10 #in
 clude $\OML/ztmcm/m/it/10 <$\T1/pcr/m/n/10 stdio.-h$\OML/ztmcm/m/it/10 >$\OMS/z
 tmcm/m/n/10 ^^B \T1/phv/m/n/10 -Include de-pen-dency
  []
 
-[97 <./periodicrtthread_8h__dep__incl.pdf>]) (./_rt_thread_8h.tex
-<_rt_thread_8h__incl.pdf, id=2279, 188.705pt x 160.6pt>
+[126 <./periodicrtthread_8h__dep__incl.pdf>]) (./_rt_thread_8h.tex
+<_rt_thread_8h__incl.pdf, id=4791, 188.705pt x 160.6pt>
 File: _rt_thread_8h__incl.pdf Graphic file (type pdf)
 
 <use _rt_thread_8h__incl.pdf>
-Package pdftex.def Info: _rt_thread_8h__incl.pdf used on input line 10.
+Package pdftex.def Info: _rt_thread_8h__incl.pdf used on input line 9.
 (pdftex.def)             Requested size: 188.0pt x 159.9992pt.
 
 Underfull \vbox (badness 7888) has occurred while \output is active []
 
- [98 <./_rt_thread_8cpp__incl.pdf>]
-<_rt_thread_8h__dep__incl.pdf, id=2294, 427.5975pt x 335.2525pt>
+ [127 <./_rt_thread_8cpp__incl.pdf>]
+<_rt_thread_8h__dep__incl.pdf, id=4806, 626.34pt x 335.2525pt>
 File: _rt_thread_8h__dep__incl.pdf Graphic file (type pdf)
 
 <use _rt_thread_8h__dep__incl.pdf>
-Package pdftex.def Info: _rt_thread_8h__dep__incl.pdf used on input line 18.
-(pdftex.def)             Requested size: 350.0pt x 274.41261pt.
+Package pdftex.def Info: _rt_thread_8h__dep__incl.pdf used on input line 17.
+(pdftex.def)             Requested size: 350.0pt x 187.34622pt.
 
-Overfull \hbox (5.0pt too wide) in paragraph at lines 17--19
+Overfull \hbox (5.0pt too wide) in paragraph at lines 16--18
  [] 
  []
 
+[128 <./_rt_thread_8h__incl.pdf> <./_rt_thread_8h__dep__incl.pdf
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [99 <./_rt_thread_8h__incl.pdf>])
+pdfTeX warning: pdflatex (file ./_rt_thread_8h__dep__incl.pdf): PDF inclusion: 
+multiple pdfs with page group included in a single page
+>])
 No file refman.ind.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 122.
-[100 <./_rt_thread_8h__dep__incl.pdf>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 122.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 134.
+[129]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 134.
  (./refman.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 122.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 122.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 134.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 134.
 
 
 Package rerunfilecheck Warning: File `refman.out' has changed.
@@ -2260,8 +2475,8 @@ Package rerunfilecheck Warning: File `refman.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `refman.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  549FED11ED7FC1F68043A48C08F791CC;59276.
+(rerunfilecheck)             Before: 549FED11ED7FC1F68043A48C08F791CC;59276
+(rerunfilecheck)             After:  0040F0F981B372A484C2BCE93D9A9C03;79338.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -2271,16 +2486,16 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 122.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 134.
  ) 
 Here is how much of TeX's memory you used:
- 12352 strings out of 495059
- 213095 string characters out of 3182030
- 268027 words of memory out of 3000000
- 14218 multiletter control sequences out of 15000+200000
+ 13565 strings out of 495059
+ 257464 string characters out of 3182030
+ 295456 words of memory out of 3000000
+ 14904 multiletter control sequences out of 15000+200000
  64960 words of font info for 81 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 41i,13n,58p,871b,516s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,13n,58p,960b,516s stack positions out of 5000i,500n,10000p,200000b,50000s
 pdfTeX warning (dest): name{_rt_thread_8h_source} has been referenced but doe
 s not exist, replaced by a fixed one
 
@@ -2320,6 +2535,567 @@ s not exist, replaced by a fixed one
 pdfTeX warning (dest): name{kalmanfilter_8cpp_source} has been referenced but d
 oes not exist, replaced by a fixed one
 
+pdfTeX warning (dest): name{messages_8h_source} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{gx3communicator_8h_source} has been referenced but 
+does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{gx3communicator_8cpp_source} has been referenced bu
+t does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.7.28.1} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.23.3.1} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.7.23.3} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.23.2.2} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.23.2.1} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.7.23.2} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.23.1.8} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.23.1.7} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.23.1.6} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.23.1.5} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.23.1.4} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.23.1.3} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.23.1.2} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.23.1.1} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.22.2.1} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.7.22.2} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.7.21.1} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.20.2.10} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.20.2.9} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.20.2.8} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.20.2.7} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.20.2.6} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.20.2.5} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.20.2.4} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.20.2.3} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.20.2.2} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.20.2.1} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.7.20.2} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.7.16.1} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.14.1.4} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.57} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.56} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.55} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.54} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.53} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.52} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.51} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.50} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.49} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.48} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.47} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.46} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.45} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.44} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.43} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.42} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.41} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.40} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.39} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.38} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.37} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.36} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.35} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.34} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.33} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.32} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.31} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.30} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.29} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.28} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.27} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.26} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.25} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.24} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.23} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.22} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.21} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.20} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.19} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.18} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.17} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.16} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.15} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.14} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.13} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.12} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.11} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.10} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.9} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.8} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.7} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.6} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.5} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.4} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.3} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.2} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.11.1.1} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.7.11.1} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.10.1.3} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.10.1.2} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.10.1.1} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.7.10.1} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.9.1.26} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.9.1.25} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.9.1.24} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.9.1.23} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.9.1.22} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.9.1.21} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.9.1.20} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.9.1.19} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.9.1.18} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.9.1.17} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.9.1.16} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.9.1.15} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.9.1.14} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.9.1.13} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.9.1.12} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.9.1.11} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.9.1.10} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.9.1.9} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.9.1.8} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.9.1.7} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.9.1.6} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.9.1.5} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.9.1.4} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.9.1.3} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.9.1.2} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.9.1.1} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.7.9.1} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.8.1.4} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.8.1.3} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.8.1.2} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.8.1.1} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.7.8.1} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.7.3.1.1} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.6.14.2.2} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.6.13.4.3} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.6.13.2.2} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.6.12.3.3} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.6.9.4.2} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.6.9.4.1} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.6.9.4} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.6.9.3.4} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.6.8.4.2} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.6.8.4.1} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.6.8.4} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.6.8.3.8} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.6.8.3.7} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.6.8.3.6} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.6.7.3.2} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.6.7.3.1} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.6.7.3} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.6.6.4.1} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.6.6.4} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.6.6.3.4} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.6.6.3.3} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.6.5.3.3} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.6.5.3.2} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.6.5.3.1} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.6.5.3} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.6.5.2.1} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.6.5.2} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.6.4.3.3} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.6.4.2.5} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.6.4.2.4} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.6.4.2.3} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.6.4.2.2} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.6.3.3.5} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.6.3.3.4} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.6.3.3.3} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.6.2.4.12} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.6.2.4.11} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.6.2.4.10} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.6.2.4.9} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.6.2.4.8} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.6.2.4.7} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.6.2.4.6} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.6.2.3.2} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.6.1.5.7} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.6.1.5.6} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.6.1.5.5} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.6.1.5.4} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.6.1.5.3} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.6.1.5.2} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.6.1.5.1} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.6.1.5} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.6.1.4.8} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.6.1.4.7} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.6.1.4.6} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.6.1.4.5} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.6.1.3.2} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.6.1.2.4} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.6.1.2.3} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.6.1.2.2} has been referenced but does
+ not exist, replaced by a fixed one
+
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/f
@@ -2329,10 +3105,10 @@ hvb8ac.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb>
 </usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvbo8ac.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/te
 xmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on refman.pdf (104 pages, 2065068 bytes).
+Output written on refman.pdf (143 pages, 2881835 bytes).
 PDF statistics:
- 2561 PDF objects out of 2984 (max. 8388607)
- 2270 compressed objects within 23 object streams
- 966 named destinations out of 1000 (max. 500000)
- 256 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 5177 PDF objects out of 6186 (max. 8388607)
+ 4762 compressed objects within 48 object streams
+ 1441 named destinations out of 1728 (max. 500000)
+ 3300 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,5 +1,6 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$class_u_s_u_1_1_periodic_rt_thread.html" title="TODO: Make some proper exceptions." alt="" coords="68,83,228,112"/>
-<area shape="rect" id="node5" href="$class_u_s_u_1_1_kalman_filter.html" title="Represents the Periodic class for state estimation." alt="" coords="5,160,136,189"/>
-<area shape="rect" id="node7" href="$class_u_s_u_1_1_motor_control.html" title="Represents the Periodic task for motor control." alt="" coords="160,160,293,189"/>
+<area shape="rect" id="node3" href="$class_u_s_u_1_1_g_x3_communicator.html" title="Represents the Thread class for communication with the 3DM&#45;GX3&#45;25." alt="" coords="5,83,176,112"/>
+<area shape="rect" id="node5" href="$class_u_s_u_1_1_periodic_rt_thread.html" title="TODO: Make some proper exceptions." alt="" coords="200,83,360,112"/>
+<area shape="rect" id="node7" href="$class_u_s_u_1_1_kalman_filter.html" title="Represents the Periodic Thread class for state estimation." alt="" coords="136,160,267,189"/>
+<area shape="rect" id="node9" href="$class_u_s_u_1_1_motor_control.html" title="Represents the Periodic task for motor control." alt="" coords="291,160,424,189"/>
 </map>

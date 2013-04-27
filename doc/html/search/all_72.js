@@ -1,9 +1,15 @@
 var searchData=
 [
   ['raw_5fa',['raw_a',['../class_i_m_u.html#acd6307b0f4f44bd6f057cd8f85080668',1,'IMU']]],
+  ['raw_5facc_5fang',['RAW_ACC_ANG',['../namespace_u_s_u.html#a6bbb473161195a7e10d9f821cece1b04',1,'USU']]],
   ['raw_5fg',['raw_g',['../class_i_m_u.html#aa63b8395ba841c899a926fc47d4a2435',1,'IMU']]],
   ['raw_5fm',['raw_m',['../class_i_m_u.html#ad822d0a58bd3050a42cd377453521b5f',1,'IMU']]],
+  ['rawaccang',['RawAccAng',['../class_u_s_u_1_1_raw_acc_ang.html',1,'USU']]],
+  ['rawaccang',['RawAccAng',['../class_u_s_u_1_1_raw_acc_ang.html#a82449d8083cef930af50e069daff82f7',1,'USU::RawAccAng']]],
   ['read',['read',['../class_i_m_u.html#a1de4cb31f28f71d7cc8b1546ea59b4ab',1,'IMU::read()'],['../class_l3_g.html#a4b1913429824dc07bd2017c3755e7985',1,'L3G::read()'],['../class_l_s_m303.html#a9f40456878f534bba32490d19f3a64ce',1,'LSM303::read()']]],
+  ['read_5fdevice_5fid',['READ_DEVICE_ID',['../namespace_u_s_u.html#ad810b0281ab629302e9fd716374b90ed',1,'USU']]],
+  ['read_5ffirmware_5fver',['READ_FIRMWARE_VER',['../namespace_u_s_u.html#a7d0e77d37d6107d2869c30f57412e8b0',1,'USU']]],
+  ['read_5fword_5feeprom',['READ_WORD_EEPROM',['../namespace_u_s_u.html#ac9d01a02c622d06449580697749db1f5',1,'USU']]],
   ['readacc',['readAcc',['../class_i_m_u.html#a2928cc8a1fc13464ef90da96fd9358b7',1,'IMU::readAcc()'],['../class_l_s_m303.html#ac1396a51b288eadc41fd19fbd79ef68e',1,'LSM303::readAcc()'],['../class_min_imu.html#ac31e697b05053c7535140eabf4f6f06f',1,'MinImu::readAcc()']]],
   ['readaccreg',['readAccReg',['../class_l_s_m303.html#a26ba086aec95c01c05e6b980383d1ed9',1,'LSM303']]],
   ['readblock',['readBlock',['../class_i2_c_bus.html#a3f0bed946e8431cacbac1f214ba03232',1,'I2CBus']]],
@@ -13,11 +19,14 @@ var searchData=
   ['readmagreg',['readMagReg',['../class_l_s_m303.html#a5d6d0b492501b76b7fde821036205bda',1,'LSM303']]],
   ['readpin',['readPin',['../class_beagle___g_p_i_o.html#a698b1f9ef0e609f1b28d823a7d01a8d6',1,'Beagle_GPIO']]],
   ['readreg',['readReg',['../class_l3_g.html#a5791e06a4e63a54300716780818ed726',1,'L3G']]],
-  ['rtthread',['RtThread',['../class_u_s_u_1_1_rt_thread.html#a9b72ca126bc7f53871ec78635540e037',1,'USU::RtThread']]],
+  ['realign_5fup_5fnorth',['REALIGN_UP_NORTH',['../namespace_u_s_u.html#a9c5f8777b9c35aaaa0b64490d1f9a20d',1,'USU']]],
+  ['responsesize',['responseSize',['../class_u_s_u_1_1_sampling_settings.html#a830766db2b979b4f5c7efd1631186852a25cdffdaaa128f54422b2e94d44f3f10',1,'USU::SamplingSettings']]],
+  ['returnonly',['ReturnOnly',['../class_u_s_u_1_1_sampling_settings.html#a7abdcfe4f8f5d0860d1cb66b9eb81528ab33ab46c139a769a37610350d70ad451',1,'USU::SamplingSettings']]],
   ['rtthread',['RtThread',['../class_u_s_u_1_1_rt_thread.html',1,'USU']]],
+  ['rtthread',['RtThread',['../class_u_s_u_1_1_rt_thread.html#a9b72ca126bc7f53871ec78635540e037',1,'USU::RtThread']]],
   ['rtthread_2ecpp',['RtThread.cpp',['../_rt_thread_8cpp.html',1,'']]],
   ['rtthread_2eh',['RtThread.h',['../_rt_thread_8h.html',1,'']]],
-  ['run',['run',['../class_u_s_u_1_1_kalman_filter.html#a47cc7f620b57b25133289e61dbf2a7be',1,'USU::KalmanFilter::run()'],['../class_u_s_u_1_1_motor_control.html#a1c7a621170352b9bdd4e5a60feee24c8',1,'USU::MotorControl::run()'],['../class_u_s_u_1_1_periodic_rt_thread.html#ac9146b3088a9b268594ce41d002d020a',1,'USU::PeriodicRtThread::run()'],['../class_u_s_u_1_1_rt_thread.html#a858a5d475ed5b61759889b6608ff4372',1,'USU::RtThread::run()']]],
+  ['run',['run',['../class_u_s_u_1_1_g_x3_communicator.html#ae7e5cf4c792ca270826dea243abbc5aa',1,'USU::GX3Communicator::run()'],['../class_u_s_u_1_1_kalman_filter.html#a47cc7f620b57b25133289e61dbf2a7be',1,'USU::KalmanFilter::run()'],['../class_u_s_u_1_1_motor_control.html#a1c7a621170352b9bdd4e5a60feee24c8',1,'USU::MotorControl::run()'],['../class_u_s_u_1_1_periodic_rt_thread.html#ac9146b3088a9b268594ce41d002d020a',1,'USU::PeriodicRtThread::run()'],['../class_u_s_u_1_1_rt_thread.html#a858a5d475ed5b61759889b6608ff4372',1,'USU::RtThread::run()']]],
   ['runa',['RunA',['../classc_p_w_m_1_1c_p_w_m.html#ab97deebd2a12697c033d2f0cfad01ffe',1,'cPWM::cPWM']]],
   ['runb',['RunB',['../classc_p_w_m_1_1c_p_w_m.html#aa6dc5671e0c6cf8048c1bccf859b5b66',1,'cPWM::cPWM']]]
 ];

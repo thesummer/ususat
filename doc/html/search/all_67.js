@@ -11,7 +11,14 @@ var searchData=
   ['gpio_5fpad_5fcontrol',['GPIO_Pad_Control',['../class_beagle___g_p_i_o.html#ae4a0a2a56a0ba31145a5f41eb3439886',1,'Beagle_GPIO']]],
   ['gpio_5fpin_5fbank',['GPIO_Pin_Bank',['../class_beagle___g_p_i_o.html#ae7919c981429a17c48c601664a61d64a',1,'Beagle_GPIO']]],
   ['gpio_5fpin_5fid',['GPIO_Pin_Id',['../class_beagle___g_p_i_o.html#a9a48339b54de8e6c884ddad8629a3647',1,'Beagle_GPIO']]],
-  ['gpio_5fpins',['GPIO_Pins',['../class_beagle___g_p_i_o.html#a0806cf8c44549ab348c5f82197e23d9e',1,'Beagle_GPIO']]],
+  ['gpio_5fpins',['GPIO_Pins',['../class_beagle___g_p_i_o.html#aa33c6977896ab86e6b493646fcf6c3eb',1,'Beagle_GPIO']]],
   ['gpio_5fprint',['GPIO_PRINT',['../_beagle___g_p_i_o_8h.html#a3d0c439f7d891ad8c96dcd24f5407ba9',1,'Beagle_GPIO.h']]],
-  ['gyro',['gyro',['../class_min_imu.html#a4d70040f3bc073706b65dbafcf97f7e2',1,'MinImu']]]
+  ['gx3command',['GX3Command',['../class_u_s_u_1_1_g_x3_command.html',1,'USU']]],
+  ['gx3communicator',['GX3Communicator',['../class_u_s_u_1_1_g_x3_communicator.html#a301180f78ea7a1665d05534e08eb1625',1,'USU::GX3Communicator']]],
+  ['gx3communicator',['GX3Communicator',['../class_u_s_u_1_1_g_x3_communicator.html',1,'USU']]],
+  ['gx3communicator_2ecpp',['gx3communicator.cpp',['../gx3communicator_8cpp.html',1,'']]],
+  ['gx3communicator_2eh',['gx3communicator.h',['../gx3communicator_8h.html',1,'']]],
+  ['gx3packet',['GX3Packet',['../class_u_s_u_1_1_g_x3_packet.html',1,'USU']]],
+  ['gyro',['gyro',['../class_u_s_u_1_1_raw_acc_ang.html#aa521338ad25e3fbe78947efa5359c64c',1,'USU::RawAccAng::gyro()'],['../class_u_s_u_1_1_acc_ang_mag.html#a451fc8a109bd5055c3df324b5f433f16',1,'USU::AccAngMag::gyro()'],['../class_u_s_u_1_1_acc_ang_mag_orientation_mat.html#aea3bef7b5fdde5b0682d96a29545ff9e',1,'USU::AccAngMagOrientationMat::gyro()'],['../class_min_imu.html#a4d70040f3bc073706b65dbafcf97f7e2',1,'MinImu::gyro()']]],
+  ['gyro_5fstabil_5facc_5fang_5fmag',['GYRO_STABIL_ACC_ANG_MAG',['../namespace_u_s_u.html#a21b21aa9bf4f65bb8f89f61c853b0d65',1,'USU']]]
 ];
