@@ -65,6 +65,11 @@ public:
                       *(float*) &buffer[8]);
     }
 
+    static inline unsigned int createUInt(uint8_t *buffer)
+    {
+        return ( (buffer[0]<<24) + (buffer[1]<<16) + (buffer[2]<<8) + buffer[3] );
+    }
+
     static void createMatrix(uint8_t * buffer, matrix& mat)
     {
         mat << *(float*) &buffer[0],  *(float*) &buffer[4],  *(float*) &buffer[8],
@@ -81,7 +86,7 @@ public:
         acc  = createVector(&buffer[1]);
         gyro = createVector(&buffer[13]);
 
-        timer = *(unsigned int*) &buffer[25];
+        timer = createUInt(&buffer[25]);
     }
 
 
@@ -90,6 +95,29 @@ public:
 
     unsigned int timer;
     enum{size = 31};
+
+private:
+};
+
+class AccAngMag : public GX3Packet
+{
+public:
+    AccAngMag(uint8_t* buffer)
+    {
+        acc  = createVector(&buffer[1]);
+        gyro = createVector(&buffer[13]);
+        mag  = createVector(&buffer[25]);
+
+        timer = createUInt(&buffer[37]);
+    }
+
+
+    vector acc;
+    vector gyro;
+    vector mag;
+
+    unsigned int timer;
+    enum{size = 43};
 
 private:
 };
@@ -105,7 +133,7 @@ public:
         mag  = createVector(&buffer[25]);
 
         createMatrix(&buffer[37], orientation);
-        timer = *(unsigned int*) &buffer[73];
+        timer = createUInt(&buffer[73]);
     }
 
     vector acc;
