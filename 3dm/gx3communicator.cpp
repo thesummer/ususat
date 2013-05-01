@@ -9,16 +9,18 @@
  *
  */
 
-#include "gx3communicator.h"
-using namespace USU;
-
-#include "messages.h"
 #include <stdint.h>
 #include <iostream>
 #include <iomanip>
 #include <stdexcept>
 
 #include <sys/time.h>
+
+
+#include "gx3communicator.h"
+using namespace USU;
+
+#include "messages.h"
 
 int timeval_subtract (struct timeval * result, struct timeval * x, struct timeval * y)
 {
