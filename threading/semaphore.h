@@ -33,9 +33,9 @@ private:
 
 public:
 
-    Semaphore(); /*!< Constructor: Creates the pthread-mutex */
+    Semaphore(); /*!< Constructor: Creates the pthread-Semaphore */
 
-    virtual ~Semaphore(); /*!< Destructor: Frees the pthread-mutex */
+    virtual ~Semaphore(); /*!< Destructor: Frees the pthread-Semaphore */
 
     void post(); /*!< Increases the semaphore by 1 */
 
