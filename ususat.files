@@ -34,3 +34,4 @@ pwm/motor.cpp
 3dm/gx3communicator.h
 3dm/gx3communicator.cpp
 threading/semaphore.h
+threading/sharedqueue.h
