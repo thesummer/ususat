@@ -12,7 +12,6 @@
 #define MOTOR_H
 
 #include "cPWM.h"
-using namespace cPWM;
 #include "Beagle_GPIO.h"
 
 typedef void (cPWM::*SetDutyCyle)(unsigned int);
@@ -23,18 +22,19 @@ namespace USU
 class Motor
 {
 public:
-    Motor(Beagle_GPIO& beagleGpio, Beagle_GPIO::GPIO_Pins clockwise,  Beagle_GPIO::GPIO_Pins counterClockwise,
-          SetDutyCyle dutyCycle);
+    Motor(Beagle_GPIO& beagleGpio, Beagle_GPIO::Pins clockwise,  Beagle_GPIO::Pins counterClockwise,
+          cPWM& pwm, SetDutyCyle dutyCycle);
     void setSpeed(int speed);
     int getSpeed() const { return mSpeed; }
 
 private:
     Beagle_GPIO& mBeagleGpio;
-    Beagle_GPIO::GPIO_Pins mClockwise;
-    Beagle_GPIO::GPIO_Pins mCounterClockwise;
-    bool mDutyCycleA;
-    int mSpeed;
+    Beagle_GPIO::Pins mClockwise;
+    Beagle_GPIO::Pins mCounterClockwise;
+
+    cPWM &mPwm;
     SetDutyCyle mSetDutyCycle;
+    int mSpeed;
 };
 
 }

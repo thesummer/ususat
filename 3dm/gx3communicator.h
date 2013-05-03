@@ -14,6 +14,9 @@
 
 #include<SerialPort.h>
 #include "../threading/RtThread.h"
+#include "../threading/sharedqueue.h"
+#include "messages.h"
+
 
 namespace USU
 {
@@ -53,11 +56,16 @@ public:
     */
     virtual void run();
 
-
     /*!
      \brief Signals the thread to stop
     */
     void stop() {mKeepRunning = false;}
+
+    void pop() { mQueue.pop();}
+
+    bool isEmpty() {return mQueue.isEmpty(); }
+
+    AccAngMag& front() { return mQueue.front(); }
 
 private:
     GX3Communicator(const GX3Communicator& thread); /*!< Copy constructor made inaccessible by declaring it private */
@@ -65,6 +73,8 @@ private:
     GX3Communicator& operator=(const GX3Communicator& rhs); /*!< Assignment constructor made inaccessible by declaring it private */
 
     SerialPort mSerialPort; /*!< Handles the serial port communication */
+    SharedQueue<AccAngMag> mQueue;
+
     volatile bool mKeepRunning;  /*!< Indicates if the Thread should keep running. volatile to prevent optimizing */
 };
 

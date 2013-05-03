@@ -93,7 +93,7 @@ public:
 	} Beagle_GPIO_Direction;
 	
 	// GPIO Pins
-	enum
+    enum Pins
 	{
 		P8_1,  P8_2,  P8_3,  P8_4,  P8_5,
 		P8_6,  P8_7,  P8_8,  P8_9,  P8_10,

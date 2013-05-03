@@ -59,8 +59,6 @@ const uint8_t STOP_CONTINUOUS                 = 0xFA; /*!< Stop Continuous Mode 
 const uint8_t FIRMWARE_UPDATE                 = 0xFD; /*!< Firmware Update (no reply) */
 const uint8_t DEVICE_RESET                    = 0xFE; /*!< Device Reset (no reply) */
 
-#include <iostream>
-
 /*!
  \brief Abstract base class for received packets
 
@@ -149,18 +147,14 @@ class RawAccAng : public GX3Packet
 {
 public:
    /*!
-    \brief Creates a packet object from the passed buffer
-
-    The checksum should have been tested before.
-
-    \param buffer pointer to the byte array containing the received data
+    \brief Creates an empty packet object
     */
     RawAccAng() {}
 
     bool readFromSerial(SerialPort &serialPort)
     {
         uint8_t buffer[size];
-        buffer[0] = mSerialPort.ReadByte();
+        buffer[0] = serialPort.ReadByte();
         if(buffer[0] != RAW_ACC_ANG || buffer[0] != ACC_ANG) return false;
 
         serialPort.ReadRaw(&buffer[1], size-1);
@@ -197,21 +191,14 @@ class AccAngMag : public GX3Packet
 {
 public:
     /*!
-     \brief Creates a packet object from the passed buffer
-
-     The checksum should have been tested before.
-
-     \param buffer pointer to the byte array containing the received data
+     \brief Creates an empty packet object
      */
-    AccAngMag(uint8_t* buffer)
-    {
-
-    }
+    AccAngMag() {}
 
     bool readFromSerial(SerialPort &serialPort)
     {
         uint8_t buffer[size];
-        buffer[0] = mSerialPort.ReadByte();
+        buffer[0] = serialPort.ReadByte();
         if(buffer[0] != ACC_ANG_MAG_VEC) return false;
 
         serialPort.ReadRaw(&buffer[1], size-1);
@@ -249,21 +236,14 @@ class AccAngMagOrientationMat : public GX3Packet
 {
 public:
     /*!
-     \brief Creates a packet object from the passed buffer
-
-     The checksum should have been tested before.
-
-     \param buffer pointer to the byte array containing the received data
+     \brief Creates an empty packet object
      */
-    AccAngMagOrientationMat(uint8_t* buffer)
-    {
-
-    }
+    AccAngMagOrientationMat() {}
 
     bool readFromSerial(SerialPort &serialPort)
     {
         uint8_t buffer[size];
-        buffer[0] = mSerialPort.ReadByte();
+        buffer[0] = serialPort.ReadByte();
         if(buffer[0] != ACC_ANG_MAG_VEC_ORIENTATION_MAT) return false;
 
         serialPort.ReadRaw(&buffer[1], size-1);
@@ -327,7 +307,7 @@ public:
 
     bool sendCommand(SerialPort &serialPort)
     {
-        mSerialPort.WriteRaw(mCommand, size);
+        serialPort.WriteRaw(mCommand, size);
         uint8_t buffer[size];
         buffer[0] = serialPort.ReadByte();
         if(buffer[0] != SET_CONTINUOUS_MODE) return false;
@@ -345,7 +325,6 @@ public:
     */
     bool checkResponse(uint8_t *buffer)
     {
-        if(length != 8) return false;
 
         if(buffer[0] != SET_CONTINUOUS_MODE) return false;
 
@@ -450,7 +429,7 @@ public:
 
     bool sendCommand(SerialPort &serialPort)
     {
-        mSerialPort.WriteRaw(mCommand, size);
+        serialPort.WriteRaw(mCommand, size);
         uint8_t buffer[size];
         buffer[0] = serialPort.ReadByte();
         if(buffer[0] != SAMPLING_SETTINGS) return false;
@@ -468,8 +447,6 @@ public:
     */
     bool checkResponse(uint8_t *buffer)
     {
-        if (length != 19) return false;
-
         if(GX3Packet::calculateChecksum(buffer, size) == false)
             return false;
 

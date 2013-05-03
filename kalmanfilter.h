@@ -17,6 +17,8 @@
 #include "threading/periodicrtthread.h"
 #include "minimu/minimu.h"
 #include "threading/Lock.h"
+#include "3dm/gx3communicator.h"
+#include "3dm/messages.h"
 
 namespace USU
 {
@@ -73,7 +75,7 @@ public:
      \return bool Current system state
      TODO: Currently only dummy variable. Replace with actual state representation (quaternion?)
     */
-    bool getState() const;
+    bool getState();
 
 private:
 
@@ -81,8 +83,9 @@ private:
     KalmanFilter& operator=(const KalmanFilter& rhs); /*!< Assignment constructor made inaccessible by declaring it private */
 
     MinImu mImu; /*!< Class for accessing the MinIMU9v2*/
-    ///TODO: semaphore for 3DM
-    ///TODO: semaphore to ethernet
+    GX3Communicator mGX3;
+
+    ///TODO: queue to ethernet
     bool mState; ///TODO: Actual representation of the state estimate /*!< TODO */
     Lock mStateLock; /*!< Mutex to access the State variable*/
     volatile bool mKeepRunning; /*!< Indicates if the Thread should keep running. volatile to prevent optimizing */

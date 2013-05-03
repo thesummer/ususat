@@ -46,8 +46,7 @@ public:
      \param period_us   period (in us) of the periodic pthread
      \param kalmanfilter reference to the KalmanFilter to get state estimates
     */
-    MotorControl(int priority = 0 , unsigned int period_us = 1000000,
-                 KalmanFilter& kalmanfilter);
+    MotorControl(KalmanFilter& kalmanfilter, int priority = 0 , unsigned int period_us = 1000000);
 
     /*!
      \brief Signals the thread to stop
@@ -66,11 +65,11 @@ public:
     virtual void run();
 
 private:
-    cPWM::cPWM mPwm1; /*!< First PWM module (has 2 channels) */
-    cPWM::cPWM mPwm2; /*!< Second PwM module (has 2 channels) */
+    cPWM mPwm1; /*!< First PWM module (has 2 channels) */
+    cPWM mPwm2; /*!< Second PwM module (has 2 channels) */
 
     Beagle_GPIO mBeagleGpio; /*!< Representation of the BeagleBoard Gpios (access via mmap) */
-    Motor mMotor[4]; /*!< Array of the 4 motors */
+    Motor *mMotor[4]; /*!< Array of the 4 motors */
     KalmanFilter& mKalmanFilter; /*!< Reference to the KalmanFilter */
     volatile bool mKeepRunning; /*!< Indicates if the Thread should keep running. volatile to prevent optimizing */
 

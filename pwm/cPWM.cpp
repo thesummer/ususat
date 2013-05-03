@@ -17,9 +17,6 @@
 #include <fstream>
 #include <sstream>
 
-namespace cPWM {
-
-
 /**
  * This class wraps the PWMss of the beaglebone,
  * but it accesses the PWMss by means of the sysfs interface,
@@ -267,5 +264,3 @@ cPWM::~cPWM()
 
 	sysfsfid_runB << "0" << std::endl;
 }
-
-} /* namespace cPWM */

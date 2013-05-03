@@ -16,11 +16,9 @@
 using std::queue;
 
 #include "Lock.h"
-#include
 
 namespace USU
 {
-template <class T>
 /*!
  \brief Wrapper class to make std::queue thread safe
 
@@ -30,6 +28,7 @@ template <class T>
  Multiple reader threads could produce race conditions!!!
 
 */
+template <class T>
 class SharedQueue
 {
 public:
@@ -37,7 +36,7 @@ public:
      \brief Constructor, creates an empty queue
 
     */
-    SharedQueue();
+//    SharedQueue();
 
     /*!
      \brief Adds a new element to the back of the queue
@@ -48,7 +47,7 @@ public:
     */
     void push(const T& newElement)
     {
-        ScopedLock(mLock);
+        ScopedLock scLock(mLock);
         mQueue.push(newElement);
     }
 
@@ -61,7 +60,7 @@ public:
     */
     void pop()
     {
-        ScopedLock (mLock);
+        ScopedLock scLock(mLock);
         mQueue.pop();
     }
 
@@ -74,7 +73,7 @@ public:
     */
     T& front()
     {
-        ScopedLock(mLock);
+        ScopedLock scLock(mLock);
         return mQueue.front();
     }
 
@@ -83,9 +82,9 @@ public:
 
      \return bool true if empty, false otherwise
     */
-    bool isEmpty() const
+    bool isEmpty()
     {
-        ScopedLock (mLock);
+        ScopedLock scLock(mLock);
         return mQueue.empty();
     }
 

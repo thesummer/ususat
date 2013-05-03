@@ -18,11 +18,11 @@ INCLUDES =
 CFLAGS   = $(INCLUDES) -Wall -c $(DEBUG)
 
 #Its a static library so maybe different l-option? <-- check
-LDFLAGS  = -lpthread
+LDFLAGS  = -lpthread -lserial
 
 ifeq ($(SRCEXT), cpp)
 CC       = $(CXX)
-CFLAGS  += --std=c++0x
+CFLAGS  += --std=c++11
 # else
 # CFLAGS  += -std=gnu99
 endif

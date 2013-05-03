@@ -11,9 +11,9 @@
 #include "motor.h"
 using namespace USU;
 
-Motor::Motor(Beagle_GPIO &beagleGpio, Beagle_GPIO::GPIO_Pins clockwise, Beagle_GPIO::GPIO_Pins counterClockwise, SetDutyCyle dutyCycle)
-    :mBeagleGpio(beagleGpio), mClockwise(clockwise),
-     mCounterClockwise(counterClockwise), mSetDutyCycle(dutyCycle), mSpeed(0)
+Motor::Motor(Beagle_GPIO &beagleGpio, Beagle_GPIO::Pins clockwise, Beagle_GPIO::Pins counterClockwise, cPWM &pwm, SetDutyCyle dutyCycle)
+    :mBeagleGpio(beagleGpio), mClockwise(clockwise), mCounterClockwise(counterClockwise),
+      mPwm(pwm), mSetDutyCycle(dutyCycle), mSpeed(0)
 {
     mBeagleGpio.configurePin(mClockwise, Beagle_GPIO::kOUTPUT);
     mBeagleGpio.enablePinInterrupts( mClockwise, false );
@@ -32,21 +32,21 @@ void Motor::setSpeed(int speed)
     {
         mBeagleGpio.writePin(mClockwise, 1);
         mBeagleGpio.writePin(mCounterClockwise, 0);
-        mSetDutyCycle(speed);
+        (mPwm.*mSetDutyCycle)(speed);
         mSpeed = speed;
     }
-    else if (dutyCycle < 0)
+    else if (mSpeed < 0)
     {
         mBeagleGpio.writePin(mClockwise, 0);
         mBeagleGpio.writePin(mCounterClockwise, 1);
-        mSetDutyCycle(-speed);
+        (mPwm.*mSetDutyCycle)(-speed);
         mSpeed = speed;
     }
     else
     {
         mBeagleGpio.writePin(mClockwise, 0);
         mBeagleGpio.writePin(mCounterClockwise, 0);
-        mSetDutyCycle(speed);
+        (mPwm.*mSetDutyCycle)(speed);
         mSpeed = 9;
     }
 }

@@ -15,8 +15,6 @@
 
 #include <fstream>
 
-namespace cPWM {
-
 class cPWM {
 
 public:
@@ -103,5 +101,4 @@ public:
     void StopB();
 };
 
-} /* namespace cPWM */
 #endif /* CPWM_H_ */
