@@ -78,6 +78,17 @@ public:
         return mQueue.front();
     }
 
+    /*!
+     \brief Indicates if the queue is empty.
+
+     \return bool true if empty, false otherwise
+    */
+    bool isEmpty() const
+    {
+        ScopedLock (mLock);
+        return mQueue.empty();
+    }
+
 private:
     Lock mLock; /*!< Mutex to protect the queue */
     queue<T> mQueue; /*!< Standard queue to store the data */
