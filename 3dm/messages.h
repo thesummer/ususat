@@ -13,8 +13,10 @@
 #ifndef MESSAGES_H
 #define MESSAGES_H
 
-#include "../minimu/vector.h"
 #include<stdint.h>
+#include<SerialPort.h>
+
+#include "../minimu/vector.h"
 
 namespace USU
 {
@@ -69,6 +71,8 @@ const uint8_t DEVICE_RESET                    = 0xFE; /*!< Device Reset (no repl
 class GX3Packet
 {
 public:
+     virtual bool readFromSerial(SerialPort &serialPort) = 0;
+
     /*!
      \brief Calculates the checksum of a received byte array
 
@@ -151,12 +155,23 @@ public:
 
     \param buffer pointer to the byte array containing the received data
     */
-    RawAccAng(uint8_t* buffer)
+    RawAccAng() {}
+
+    bool readFromSerial(SerialPort &serialPort)
     {
+        uint8_t buffer[size];
+        buffer[0] = mSerialPort.ReadByte();
+        if(buffer[0] != RAW_ACC_ANG || buffer[0] != ACC_ANG) return false;
+
+        serialPort.ReadRaw(&buffer[1], size-1);
+        if(GX3Packet::calculateChecksum(buffer, size) == false) return false;
+
         acc  = createVector(&buffer[1]);
         gyro = createVector(&buffer[13]);
 
         timer = createUInt(&buffer[25]);
+
+        return true;
     }
 
 
@@ -190,11 +205,25 @@ public:
      */
     AccAngMag(uint8_t* buffer)
     {
+
+    }
+
+    bool readFromSerial(SerialPort &serialPort)
+    {
+        uint8_t buffer[size];
+        buffer[0] = mSerialPort.ReadByte();
+        if(buffer[0] != ACC_ANG_MAG_VEC) return false;
+
+        serialPort.ReadRaw(&buffer[1], size-1);
+        if(GX3Packet::calculateChecksum(buffer, size) == false) return false;
+
         acc  = createVector(&buffer[1]);
         gyro = createVector(&buffer[13]);
         mag  = createVector(&buffer[25]);
 
         timer = createUInt(&buffer[37]);
+
+        return true;
     }
 
 
@@ -228,13 +257,28 @@ public:
      */
     AccAngMagOrientationMat(uint8_t* buffer)
     {
+
+    }
+
+    bool readFromSerial(SerialPort &serialPort)
+    {
+        uint8_t buffer[size];
+        buffer[0] = mSerialPort.ReadByte();
+        if(buffer[0] != ACC_ANG_MAG_VEC_ORIENTATION_MAT) return false;
+
+        serialPort.ReadRaw(&buffer[1], size-1);
+        if(GX3Packet::calculateChecksum(buffer, size) == false) return false;
+
         acc  = createVector(&buffer[1]);
         gyro = createVector(&buffer[13]);
         mag  = createVector(&buffer[25]);
 
         createMatrix(&buffer[37], orientation);
         timer = createUInt(&buffer[73]);
+
+        return true;
     }
+
 
     vector acc; /*!< Vector containing the accelerometer data */
     vector gyro; /*!< Vector containing the gyroscope (angular rate) data */
@@ -254,7 +298,8 @@ public:
 class GX3Command
 {
 public:
-
+    virtual bool sendCommand(SerialPort &serialPort) = 0;
+    virtual bool checkResponse(uint8_t *buffer) = 0;
 };
 
 /*!
@@ -280,6 +325,17 @@ public:
         mCommand[3] = CommandByte;
     }
 
+    bool sendCommand(SerialPort &serialPort)
+    {
+        mSerialPort.WriteRaw(mCommand, size);
+        uint8_t buffer[size];
+        buffer[0] = serialPort.ReadByte();
+        if(buffer[0] != SET_CONTINUOUS_MODE) return false;
+
+        serialPort.ReadRaw(&buffer[1], size-1);
+        return checkResponse(buffer);
+    }
+
     /*!
      \brief Checks if the response to this command has the correct setup
 
@@ -287,13 +343,13 @@ public:
      \param length length of the pointer
      \return bool  true if the response is correct, false if it suggests an error
     */
-    bool checkResponse(uint8_t *buffer, unsigned int length)
+    bool checkResponse(uint8_t *buffer)
     {
         if(length != 8) return false;
 
         if(buffer[0] != SET_CONTINUOUS_MODE) return false;
 
-        if(GX3Packet::calculateChecksum(buffer, length) == false)
+        if(GX3Packet::calculateChecksum(buffer, size) == false)
             return false;
 
         if(buffer[1] != mCommand[3]) return false;
@@ -392,6 +448,17 @@ public:
 
     }
 
+    bool sendCommand(SerialPort &serialPort)
+    {
+        mSerialPort.WriteRaw(mCommand, size);
+        uint8_t buffer[size];
+        buffer[0] = serialPort.ReadByte();
+        if(buffer[0] != SAMPLING_SETTINGS) return false;
+
+        serialPort.ReadRaw(&buffer[1], size-1);
+        return checkResponse(buffer);
+    }
+
     /*!
      \brief Checks if the response to this command has the correct setup
 
@@ -399,11 +466,11 @@ public:
      \param length length of the pointer
      \return bool  true if the response is correct, false if it suggests an error
     */
-    bool checkResponse(uint8_t *buffer, unsigned int length)
+    bool checkResponse(uint8_t *buffer)
     {
         if (length != 19) return false;
 
-        if(GX3Packet::calculateChecksum(buffer, length) == false)
+        if(GX3Packet::calculateChecksum(buffer, size) == false)
             return false;
 
         if(buffer[0] != SAMPLING_SETTINGS) return false;
