@@ -1,8 +1,9 @@
-#include "I2CBus.h"
 //#include <sys/ioctl.h>
 #include <unistd.h>
 #include <linux/i2c-dev.h>
 #include <fcntl.h>
+
+#include "I2CBus.h"
 
 I2CBus::I2CBus(const char * deviceName)
 {

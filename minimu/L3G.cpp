@@ -1,5 +1,5 @@
-#include "L3G.h"
 #include <stdexcept>
+#include "L3G.h"
 
 #define L3G4200D_ADDRESS_SA0_LOW  (0xD0 >> 1)
 #define L3G4200D_ADDRESS_SA0_HIGH (0xD2 >> 1)
