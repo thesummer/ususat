@@ -47,10 +47,21 @@ uint8_t I2CBus::readByte(uint8_t command)
     return result;
 }
 
+uint16_t I2CBus::readWord(uint8_t command)
+{
+    int result = i2c_smbus_read_word_data(fd, command);
+    if (result == -1)
+    {
+        throw posix_error("Failed to read word from I2C.");
+    }
+    return result;
+}
+
 int I2CBus::tryReadByte(uint8_t command)
 {
     return i2c_smbus_read_byte_data(fd, command);
 }
+
 
 void I2CBus::readBlock(uint8_t command, uint8_t size, uint8_t * data)
 {
