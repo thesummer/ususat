@@ -14,7 +14,10 @@
 #define MESSAGES_H
 
 #include<stdint.h>
+#include<stdexcept>
 #include<SerialPort.h>
+#include<iostream>
+#include<iomanip>
 
 #include "../minimu/vector.h"
 
@@ -155,10 +158,20 @@ public:
     {
         uint8_t buffer[size];
         buffer[0] = serialPort.ReadByte();
-        if(buffer[0] != RAW_ACC_ANG || buffer[0] != ACC_ANG) return false;
+        if(buffer[0] != RAW_ACC_ANG && buffer[0] != ACC_ANG) return false;
 
         serialPort.ReadRaw(&buffer[1], size-1);
-        if(GX3Packet::calculateChecksum(buffer, size) == false) return false;
+        if(GX3Packet::calculateChecksum(buffer, size) == false)
+        {
+            using namespace std;
+            cout << "Checksum failed" << endl;
+            for (int i = 0; i<size; ++i)
+            {
+                cout << hex <<  setw(2) << setfill('0') << "0x" << (int) buffer[i] << dec << "+ ";
+            }
+            cout << endl;
+            return false;
+        }
 
         acc  = createVector(&buffer[1]);
         gyro = createVector(&buffer[13]);
@@ -199,10 +212,24 @@ public:
     {
         uint8_t buffer[size];
         buffer[0] = serialPort.ReadByte();
-        if(buffer[0] != ACC_ANG_MAG_VEC) return false;
+        if(buffer[0] != ACC_ANG_MAG_VEC)
+        {
+            std::cout << (char) buffer[0] << std::endl;
+            return false; //throw std::runtime_error("Wrong package identifier");
+        }
 
         serialPort.ReadRaw(&buffer[1], size-1);
-        if(GX3Packet::calculateChecksum(buffer, size) == false) return false;
+        if(GX3Packet::calculateChecksum(buffer, size) == false)
+        {
+            using namespace std;
+            cout << "Checksum failed" << endl;
+            for (int i = 0; i<size; ++i)
+            {
+                cout << hex <<  setw(2) << setfill('0') << "0x" << (int) buffer[i] << dec << "+ ";
+            }
+            cout << endl;
+            return false;
+        }
 
         acc  = createVector(&buffer[1]);
         gyro = createVector(&buffer[13]);
@@ -308,11 +335,11 @@ public:
     bool sendCommand(SerialPort &serialPort)
     {
         serialPort.WriteRaw(mCommand, size);
-        uint8_t buffer[size];
+        uint8_t buffer[responseSize];
         buffer[0] = serialPort.ReadByte();
         if(buffer[0] != SET_CONTINUOUS_MODE) return false;
 
-        serialPort.ReadRaw(&buffer[1], size-1);
+        serialPort.ReadRaw(&buffer[1], responseSize-1);
         return checkResponse(buffer);
     }
 
@@ -328,7 +355,7 @@ public:
 
         if(buffer[0] != SET_CONTINUOUS_MODE) return false;
 
-        if(GX3Packet::calculateChecksum(buffer, size) == false)
+        if(GX3Packet::calculateChecksum(buffer, responseSize) == false)
             return false;
 
         if(buffer[1] != mCommand[3]) return false;
@@ -336,7 +363,7 @@ public:
         return true;
     }
 
-    enum {size = 4}; /*!< Size of the command (enum to avoid complications with static consts) */
+    enum {size = 4, responseSize = 8 }; /*!< Size of the command (enum to avoid complications with static consts) */
     uint8_t mCommand[size]; /*!< Buffer which contains the byte array for the command */
 };
 
@@ -430,11 +457,11 @@ public:
     bool sendCommand(SerialPort &serialPort)
     {
         serialPort.WriteRaw(mCommand, size);
-        uint8_t buffer[size];
+        uint8_t buffer[responseSize];
         buffer[0] = serialPort.ReadByte();
         if(buffer[0] != SAMPLING_SETTINGS) return false;
 
-        serialPort.ReadRaw(&buffer[1], size-1);
+        serialPort.ReadRaw(&buffer[1], responseSize-1);
         return checkResponse(buffer);
     }
 
@@ -447,7 +474,7 @@ public:
     */
     bool checkResponse(uint8_t *buffer)
     {
-        if(GX3Packet::calculateChecksum(buffer, size) == false)
+        if(GX3Packet::calculateChecksum(buffer, responseSize) == false)
             return false;
 
         if(buffer[0] != SAMPLING_SETTINGS) return false;
