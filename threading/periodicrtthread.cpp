@@ -9,13 +9,15 @@
  *
  */
 
-#include "periodicrtthread.h"
-using namespace USU;
-
 #include <time.h>
 #include <sys/timerfd.h>
 #include <stdio.h>
 #include <unistd.h>
+#include <cerrno>
+
+#include "periodicrtthread.h"
+using namespace USU;
+
 
 PeriodicRtThread::PeriodicRtThread(int priority, unsigned int period_us)
     :RtThread(priority), mMissedWakeUps(0), mPeriod_us(period_us)
@@ -57,10 +59,12 @@ void PeriodicRtThread::waitPeriod()
     int ret;
 
     /* Wait for the next timer event. If we have missed any the
-           number is written to "missed" */
-    if ( (ret = read (mTimerFd, &missed, sizeof (missed)) ) == -1)
+           number is written to "missed"
+       While loop to continue the wait if interrupted by a signal.
+    */
+    while( (ret = read (mTimerFd, &missed, sizeof (missed)) ) == -1)
     {
-        perror("read ");
+        perror("timer read ");
         return;
     }
 
