@@ -88,6 +88,12 @@ public:
         return mQueue.empty();
     }
 
+    int size()
+    {
+        ScopedLock scLock(mLock);
+        return mQueue.size();
+    }
+
 private:
     Lock mLock; /*!< Mutex to protect the queue */
     queue<T> mQueue; /*!< Standard queue to store the data */
