@@ -37,12 +37,31 @@ void I2CBus::writeByte(uint8_t command, uint8_t data)
     }
 }
 
+void I2CBus::writeByte(uint8_t data)
+{
+    int result = i2c_smbus_write_byte(fd, data);
+    if (result == -1)
+    {
+        throw posix_error("Failed to write raw byte to I2C.");
+    }
+}
+
 uint8_t I2CBus::readByte(uint8_t command)
 {
     int result = i2c_smbus_read_byte_data(fd, command);
     if (result == -1)
     {
         throw posix_error("Failed to read byte from I2C.");
+    }
+    return result;
+}
+
+uint8_t I2CBus::readByte()
+{
+    int result = i2c_smbus_read_byte(fd);
+    if (result == -1)
+    {
+        throw posix_error("Failed to read raw byte from I2C.");
     }
     return result;
 }
@@ -55,6 +74,17 @@ uint16_t I2CBus::readWord(uint8_t command)
         throw posix_error("Failed to read word from I2C.");
     }
     return result;
+}
+
+uint16_t I2CBus::readWord()
+{
+    uint16_t temp;
+    int result = read(fd, &temp, sizeof(uint16_t) );
+    if(result == -1)
+    {
+        throw posix_error("Failed to read raw word from I2C");
+    }
+    return temp;
 }
 
 int I2CBus::tryReadByte(uint8_t command)

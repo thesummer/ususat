@@ -12,8 +12,10 @@ public:
 
     void addressSet(uint8_t address);
     void writeByte(uint8_t command, uint8_t data);
+    void writeByte(uint8_t data);
     uint8_t readByte(uint8_t command);
     uint16_t readWord(uint8_t command);
+    uint16_t readWord();
     int tryReadByte(uint8_t command);
     void readBlock(uint8_t command, uint8_t size, uint8_t * data);
 
