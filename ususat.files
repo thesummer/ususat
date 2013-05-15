@@ -35,3 +35,5 @@ pwm/motor.cpp
 3dm/gx3communicator.cpp
 threading/semaphore.h
 threading/sharedqueue.h
+pwm/max127.h
+pwm/max127.cpp

@@ -6,14 +6,18 @@ Max127::Max127(char *i2cdevice)
     mI2c.addressSet(I2C_ADDRESS);
 }
 
-int16_t Max127::readRaw(uin8_t channel)
+int16_t Max127::readRaw(uint8_t channel)
 {
     // Compile the full control byte by setting the channel bits
-    uint16_t rawValue = (mI2c.readWord(CONTROL_BYTE | (channel << SEL0) ));
+    mI2c.writeByte(CONTROL_BYTE | (channel << SEL0) );
 
-    // direct casting (int16_t) rawValue >> 4 would be possible, but could
-    // produce problems on systems with different endianess
-    return ( (int16_t) ( (rawValue & 0xFF00) | (rawValue & 0x00FF ) ) >> 4 );
+    uint16_t rawValue = mI2c.readWord();
+
+
+    // From the read word use use the high byte as low byte and vice versa
+    // Then move all bits 4 to the left because it is only a 12 bit number.
+    // Could different endianess be a problem here?
+    return ( (int16_t) ( ( (rawValue & 0xFF00)>>8) | ( (rawValue & 0x00FF )<<8) ) >> 4 );
 
 
 }

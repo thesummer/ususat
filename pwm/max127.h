@@ -56,7 +56,7 @@ public:
      \param channel channel to read
      \return int16_t signed integer representing the measurement
     */
-    int16_t readRaw(uin8_t channel);
+    int16_t readRaw(uint8_t channel);
     /*!
      \brief Returns the measurement of the selected channel in volts
 
