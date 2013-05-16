@@ -13,32 +13,20 @@
 using namespace USU;
 
 
-MotorControl::MotorControl(KalmanFilter &kalmanfilter, int priority, unsigned int period_us)
+MotorControl::MotorControl()
     :PeriodicRtThread(priority, period_us), mPwm1(0), mPwm2(1), mKalmanFilter(kalmanfilter)
 {
     // Initizalize the four motors
-    ///TODO: use meaningful Pin numbers (declare consts)
-    mMotor[0] = new Motor(mBeagleGpio, Beagle_GPIO::P8_1,Beagle_GPIO::P8_1, mPwm1, &cPWM::DutyA_percent);
-    mMotor[1] = new Motor(mBeagleGpio, Beagle_GPIO::P8_1,Beagle_GPIO::P8_1, mPwm1, &cPWM::DutyB_percent);
-    mMotor[2] = new Motor(mBeagleGpio, Beagle_GPIO::P8_1,Beagle_GPIO::P8_1, mPwm2, &cPWM::DutyA_percent);
-    mMotor[3] = new Motor(mBeagleGpio, Beagle_GPIO::P8_1,Beagle_GPIO::P8_1, mPwm2, &cPWM::DutyB_percent);
+    mMotor[0] = new Motor(mBeagleGpio, Beagle_GPIO::P8_31,Beagle_GPIO::P8_29, mPwm1, &cPWM::DutyA_percent);
+    mMotor[1] = new Motor(mBeagleGpio, Beagle_GPIO::P8_27,Beagle_GPIO::P8_25, mPwm1, &cPWM::DutyB_percent);
+    mMotor[2] = new Motor(mBeagleGpio, Beagle_GPIO::P8_23,Beagle_GPIO::P8_21, mPwm2, &cPWM::DutyA_percent);
+    mMotor[3] = new Motor(mBeagleGpio, Beagle_GPIO::P8_18,Beagle_GPIO::P8_17, mPwm2, &cPWM::DutyB_percent);
 }
 
-void MotorControl::run()
+void MotorControl::calculateControlResponse(bool state)
 {
-    mKeepRunning = true;
+    /// TODO: Make some control magic
+    mMotor[0]->setSpeed(20);
+    /// [...]
 
-    while(mKeepRunning)
-    {
-        bool temp = mKalmanFilter.getState();
-
-        /// TODO: Make some control magic
-
-        mMotor[0]->setSpeed(20);
-        /// [...]
-
-        waitPeriod();
-    }
 }
-
-

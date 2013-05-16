@@ -31,7 +31,7 @@ namespace USU
  filter, calculates the appropiate control response and sets the speed (duty cycle)
  of the motors.
 */
-class MotorControl: public PeriodicRtThread
+class MotorControl
 {
 public:
 
@@ -46,23 +46,16 @@ public:
      \param period_us   period (in us) of the periodic pthread
      \param kalmanfilter reference to the KalmanFilter to get state estimates
     */
-    MotorControl(KalmanFilter& kalmanfilter, int priority = 0 , unsigned int period_us = 1000000);
+    MotorControl();
 
     /*!
-     \brief Signals the thread to stop
-    */
-    void stop() { mKeepRunning = false; }
+     \brief Calculate the control responste from the current state estimate
 
-    /*!
-     \brief Thread routine
+     TODO: use a proper variable for the state estimate
 
-     - Gets the newest estimate from KalmanFilter
-     - Calculate the control response
-     - Set the motor speed of the 4 Motors
-     - wait for the next timer event
-     TODO: Its only an idea, no actual implementation yet.
-    */
-    virtual void run();
+     \param state the current state estimate from the Kalman filter
+   */
+    void calculateControlResponse(bool state);
 
 private:
     cPWM mPwm1; /*!< First PWM module (has 2 channels) */
@@ -70,8 +63,6 @@ private:
 
     Beagle_GPIO mBeagleGpio; /*!< Representation of the BeagleBoard Gpios (access via mmap) */
     Motor *mMotor[4]; /*!< Array of the 4 motors */
-    KalmanFilter& mKalmanFilter; /*!< Reference to the KalmanFilter */
-    volatile bool mKeepRunning; /*!< Indicates if the Thread should keep running. volatile to prevent optimizing */
 
     MotorControl(const MotorControl& thread); /*!< Copy constructor made inaccessible by declaring it private */
 
