@@ -1,6 +1,6 @@
 #include "max127.h"
 
-Max127::Max127(char *i2cdevice)
+Max127::Max127(const char *i2cdevice)
     :mI2c(i2cdevice)
 {
     mI2c.addressSet(I2C_ADDRESS);

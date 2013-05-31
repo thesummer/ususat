@@ -12,13 +12,10 @@
 #ifndef MOTORCONTROL_H
 #define MOTORCONTROL_H
 
-#include "threading/periodicrtthread.h"
 #include "pwm/cPWM.h"
-//using namespace cPWM;
 #include "pwm/Beagle_GPIO.h"
 #include "pwm/motor.h"
-
-#include "kalmanfilter.h"
+#include "pwm/max127.h"
 
 namespace USU
 {
@@ -46,7 +43,9 @@ public:
      \param period_us   period (in us) of the periodic pthread
      \param kalmanfilter reference to the KalmanFilter to get state estimates
     */
-    MotorControl();
+    MotorControl(const char* i2cdevice="/dev/i2c-3");
+
+    virtual ~MotorControl();
 
     /*!
      \brief Calculate the control responste from the current state estimate
@@ -57,12 +56,18 @@ public:
    */
     void calculateControlResponse(bool state);
 
+    void setMotor(int motor, int dutyCycle);
+
+    void printAnalog(int motor, float &aOut1, float &aOut2);
+
 private:
     cPWM mPwm1; /*!< First PWM module (has 2 channels) */
     cPWM mPwm2; /*!< Second PwM module (has 2 channels) */
 
     Beagle_GPIO mBeagleGpio; /*!< Representation of the BeagleBoard Gpios (access via mmap) */
     Motor *mMotor[4]; /*!< Array of the 4 motors */
+
+    Max127 mAnalog;
 
     MotorControl(const MotorControl& thread); /*!< Copy constructor made inaccessible by declaring it private */
 

@@ -45,7 +45,7 @@ public:
 
     \param i2cdevice device name of the i2c-bus (e.g. /dev/i2c-1)
    */
-    Max127(char *i2cdevice);
+    Max127(const char *i2cdevice);
 
     /*!
      \brief Returns the raw integer measurement of the selected channel

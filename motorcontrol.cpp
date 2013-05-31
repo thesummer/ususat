@@ -12,15 +12,28 @@
 #include "motorcontrol.h"
 using namespace USU;
 
-
-MotorControl::MotorControl()
-    :PeriodicRtThread(priority, period_us), mPwm1(0), mPwm2(1), mKalmanFilter(kalmanfilter)
+MotorControl::MotorControl(const char *i2cdevice)
+    :mPwm1(1), mPwm2(2), mAnalog(i2cdevice)
 {
     // Initizalize the four motors
     mMotor[0] = new Motor(mBeagleGpio, Beagle_GPIO::P8_31,Beagle_GPIO::P8_29, mPwm1, &cPWM::DutyA_percent);
     mMotor[1] = new Motor(mBeagleGpio, Beagle_GPIO::P8_27,Beagle_GPIO::P8_25, mPwm1, &cPWM::DutyB_percent);
     mMotor[2] = new Motor(mBeagleGpio, Beagle_GPIO::P8_23,Beagle_GPIO::P8_21, mPwm2, &cPWM::DutyA_percent);
     mMotor[3] = new Motor(mBeagleGpio, Beagle_GPIO::P8_18,Beagle_GPIO::P8_17, mPwm2, &cPWM::DutyB_percent);
+    mPwm1.Period_freq(100);
+    mPwm2.Period_freq(100);
+    mPwm1.RunA();
+    mPwm1.RunB();
+    mPwm2.RunA();
+    mPwm2.RunB();
+}
+
+MotorControl::~MotorControl()
+{
+    mPwm1.StopA();
+    mPwm1.StopB();
+    mPwm2.StopA();
+    mPwm2.StopB();
 }
 
 void MotorControl::calculateControlResponse(bool state)
@@ -29,4 +42,15 @@ void MotorControl::calculateControlResponse(bool state)
     mMotor[0]->setSpeed(20);
     /// [...]
 
+}
+
+void MotorControl::setMotor(int motor, int dutyCycle)
+{
+    mMotor[motor]->setSpeed(dutyCycle);
+}
+
+void MotorControl::printAnalog(int motor, float& aOut1, float& aOut2)
+{
+    aOut1 =  mAnalog.readVoltage(motor*2);
+    aOut2 =  mAnalog.readVoltage(motor*2 + 1);
 }
