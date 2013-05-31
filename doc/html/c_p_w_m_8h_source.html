@@ -106,96 +106,93 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00015"></a>00015 <span class="preprocessor"></span>
 <a name="l00016"></a>00016 <span class="preprocessor">#include &lt;fstream&gt;</span>
 <a name="l00017"></a>00017 
-<a name="l00018"></a>00018 <span class="keyword">namespace </span>cPWM {
+<a name="l00018"></a><a class="code" href="classc_p_w_m.html">00018</a> <span class="keyword">class </span><a class="code" href="classc_p_w_m.html">cPWM</a> {
 <a name="l00019"></a>00019 
-<a name="l00020"></a><a class="code" href="classc_p_w_m_1_1c_p_w_m.html">00020</a> <span class="keyword">class </span><a class="code" href="classc_p_w_m_1_1c_p_w_m.html">cPWM</a> {
-<a name="l00021"></a>00021 
-<a name="l00022"></a>00022 <span class="keyword">public</span>:
-<a name="l00023"></a><a class="code" href="classc_p_w_m_1_1c_p_w_m.html#af190eac685b62a4a27e3b9b6fc3aba09">00023</a>     <span class="keyword">enum</span> <a class="code" href="classc_p_w_m_1_1c_p_w_m.html#af190eac685b62a4a27e3b9b6fc3aba09">Polarity</a>
-<a name="l00024"></a>00024     {
-<a name="l00025"></a><a class="code" href="classc_p_w_m_1_1c_p_w_m.html#af190eac685b62a4a27e3b9b6fc3aba09a7e9862f0d7812ec1c9c89797aa8abf25">00025</a>         <a class="code" href="classc_p_w_m_1_1c_p_w_m.html#af190eac685b62a4a27e3b9b6fc3aba09a7e9862f0d7812ec1c9c89797aa8abf25">ActiveHigh</a>,
-<a name="l00026"></a><a class="code" href="classc_p_w_m_1_1c_p_w_m.html#af190eac685b62a4a27e3b9b6fc3aba09a94c88fb15c7102bd8e872e84170f69d6">00026</a>         <a class="code" href="classc_p_w_m_1_1c_p_w_m.html#af190eac685b62a4a27e3b9b6fc3aba09a94c88fb15c7102bd8e872e84170f69d6">ActiveLow</a>
-<a name="l00027"></a>00027     };
-<a name="l00028"></a>00028 
-<a name="l00029"></a>00029 <span class="keyword">private</span>:
-<a name="l00030"></a>00030     <span class="keywordtype">int</span> id;
-<a name="l00031"></a>00031     <span class="keywordtype">int</span> dutyA;
-<a name="l00032"></a>00032     <span class="keywordtype">int</span> dutyB;
-<a name="l00033"></a>00033     <span class="keywordtype">int</span> period;
-<a name="l00034"></a>00034     <span class="keywordtype">int</span> freq_Hz;
-<a name="l00035"></a>00035     <span class="keyword">enum</span> <a class="code" href="classc_p_w_m_1_1c_p_w_m.html#af190eac685b62a4a27e3b9b6fc3aba09">cPWM::Polarity</a> polarityA;
-<a name="l00036"></a>00036     <span class="keyword">enum</span> <a class="code" href="classc_p_w_m_1_1c_p_w_m.html#af190eac685b62a4a27e3b9b6fc3aba09">cPWM::Polarity</a> polarityB;
-<a name="l00037"></a>00037     <span class="keywordtype">int</span> runA;
-<a name="l00038"></a>00038     <span class="keywordtype">int</span> runB;
-<a name="l00039"></a>00039     <span class="comment">/*****************************************</span>
+<a name="l00020"></a>00020 <span class="keyword">public</span>:
+<a name="l00021"></a><a class="code" href="classc_p_w_m.html#a4e92531076ad9cf56c1df16b1028ce64">00021</a>     <span class="keyword">enum</span> <a class="code" href="classc_p_w_m.html#a4e92531076ad9cf56c1df16b1028ce64">Polarity</a>
+<a name="l00022"></a>00022     {
+<a name="l00023"></a><a class="code" href="classc_p_w_m.html#a4e92531076ad9cf56c1df16b1028ce64ae92ac1e728039ef28b065c617d793058">00023</a>         <a class="code" href="classc_p_w_m.html#a4e92531076ad9cf56c1df16b1028ce64ae92ac1e728039ef28b065c617d793058">ActiveHigh</a>,
+<a name="l00024"></a><a class="code" href="classc_p_w_m.html#a4e92531076ad9cf56c1df16b1028ce64ad35a0e12428b4c290597f1621a061718">00024</a>         <a class="code" href="classc_p_w_m.html#a4e92531076ad9cf56c1df16b1028ce64ad35a0e12428b4c290597f1621a061718">ActiveLow</a>
+<a name="l00025"></a>00025     };
+<a name="l00026"></a>00026 
+<a name="l00027"></a>00027 <span class="keyword">private</span>:
+<a name="l00028"></a>00028     <span class="keywordtype">int</span> id;
+<a name="l00029"></a>00029     <span class="keywordtype">int</span> dutyA;
+<a name="l00030"></a>00030     <span class="keywordtype">int</span> dutyB;
+<a name="l00031"></a>00031     <span class="keywordtype">int</span> period;
+<a name="l00032"></a>00032     <span class="keywordtype">int</span> freq_Hz;
+<a name="l00033"></a>00033     <span class="keyword">enum</span> <a class="code" href="classc_p_w_m.html#a4e92531076ad9cf56c1df16b1028ce64">cPWM::Polarity</a> polarityA;
+<a name="l00034"></a>00034     <span class="keyword">enum</span> <a class="code" href="classc_p_w_m.html#a4e92531076ad9cf56c1df16b1028ce64">cPWM::Polarity</a> polarityB;
+<a name="l00035"></a>00035     <span class="keywordtype">int</span> runA;
+<a name="l00036"></a>00036     <span class="keywordtype">int</span> runB;
+<a name="l00037"></a>00037     <span class="comment">/*****************************************</span>
+<a name="l00038"></a>00038 <span class="comment">         *</span>
+<a name="l00039"></a>00039 <span class="comment">         * sysfs tree:</span>
 <a name="l00040"></a>00040 <span class="comment">         *</span>
-<a name="l00041"></a>00041 <span class="comment">         * sysfs tree:</span>
-<a name="l00042"></a>00042 <span class="comment">         *</span>
-<a name="l00043"></a>00043 <span class="comment">ehrpwm.0:0</span>
-<a name="l00044"></a>00044 <span class="comment">│   ├── duty_ns</span>
-<a name="l00045"></a>00045 <span class="comment">│   ├── period_ns</span>
-<a name="l00046"></a>00046 <span class="comment">│   ├── polarity</span>
-<a name="l00047"></a>00047 <span class="comment">│   ├── request</span>
-<a name="l00048"></a>00048 <span class="comment">│   ├── run</span>
-<a name="l00049"></a>00049 <span class="comment">├── ehrpwm.0:1 -&gt; ../../devices/platform/omap/ehrpwm.0/pwm/ehrpwm.0:1</span>
-<a name="l00050"></a>00050 <span class="comment">│   ├── duty_ns</span>
-<a name="l00051"></a>00051 <span class="comment">│   ├── period_ns</span>
-<a name="l00052"></a>00052 <span class="comment">│   ├── polarity</span>
-<a name="l00053"></a>00053 <span class="comment">│   ├── request</span>
-<a name="l00054"></a>00054 <span class="comment">│   ├── run</span>
-<a name="l00055"></a>00055 <span class="comment">         *</span>
-<a name="l00056"></a>00056 <span class="comment">std::stringstream sysfs_file;</span>
-<a name="l00057"></a>00057 <span class="comment"></span>
-<a name="l00058"></a>00058 <span class="comment">Define files to match sysfs tree:</span>
-<a name="l00059"></a>00059 <span class="comment">         */</span>
-<a name="l00060"></a><a class="code" href="c_p_w_m_8h.html#a1ba5819c7195dec86e01a33333f73727">00060</a> <span class="preprocessor">                #define SYSFS_EHRPWM_PREFIX &quot;/sys/class/pwm/ehrpwm.&quot;</span>
-<a name="l00061"></a><a class="code" href="c_p_w_m_8h.html#a77695d0078bb8734c092fea1153789b8">00061</a> <span class="preprocessor"></span><span class="preprocessor">                #define SYSFS_EHRPWM_SUFFIX_A &quot;:0&quot;</span>
-<a name="l00062"></a><a class="code" href="c_p_w_m_8h.html#a7c349d0a2ba14e6a0c0d78f354939bb2">00062</a> <span class="preprocessor"></span><span class="preprocessor">                #define SYSFS_EHRPWM_SUFFIX_B &quot;:1&quot;</span>
-<a name="l00063"></a><a class="code" href="c_p_w_m_8h.html#a3ae008f737a3f27bd780490363c2267a">00063</a> <span class="preprocessor"></span><span class="preprocessor">        #define SYSFS_EHRPWM_DUTY_NS &quot;duty_ns&quot;</span>
-<a name="l00064"></a><a class="code" href="c_p_w_m_8h.html#afd2b94988d056d78a4e2c75acc7e454e">00064</a> <span class="preprocessor"></span><span class="preprocessor">        #define SYSFS_EHRPWM_DUTY_PERCENT &quot;duty_percent&quot;</span>
-<a name="l00065"></a><a class="code" href="c_p_w_m_8h.html#add4a08ceb1db2a1062f7cedfaf73cc6d">00065</a> <span class="preprocessor"></span><span class="preprocessor">        #define SYSFS_EHRPWM_PERIOD_NS &quot;period_ns&quot;</span>
-<a name="l00066"></a><a class="code" href="c_p_w_m_8h.html#ad5ab3e891281e210991cb39cdcc24cc9">00066</a> <span class="preprocessor"></span><span class="preprocessor">        #define SYSFS_EHRPWM_PERIOD_FREQ &quot;period_freq&quot;</span>
-<a name="l00067"></a><a class="code" href="c_p_w_m_8h.html#aab1aacedee5d8dce03422d0f09639f88">00067</a> <span class="preprocessor"></span><span class="preprocessor">                #define SYSFS_EHRPWM_POLARITY &quot;polarity&quot;</span>
-<a name="l00068"></a><a class="code" href="c_p_w_m_8h.html#a06034030a73c0ad8350269c15651b0fa">00068</a> <span class="preprocessor"></span><span class="preprocessor">                #define SYSFS_EHRPWM_RUN &quot;run&quot;</span>
-<a name="l00069"></a><a class="code" href="c_p_w_m_8h.html#a1aaf5e488c97bc29107020383b0a0cac">00069</a> <span class="preprocessor"></span><span class="preprocessor">                #define SYSFS_EHRPWM_REQUEST &quot;request&quot;</span>
-<a name="l00070"></a>00070 <span class="preprocessor"></span>
-<a name="l00071"></a>00071         std::ofstream sysfsfid_dutyA_ns;
-<a name="l00072"></a>00072         std::ofstream sysfsfid_dutyA_percent;
-<a name="l00073"></a>00073         std::ofstream sysfsfid_dutyB_ns;
-<a name="l00074"></a>00074         std::ofstream sysfsfid_dutyB_percent;
-<a name="l00075"></a>00075         std::ofstream sysfsfid_period_ns;
-<a name="l00076"></a>00076         std::ofstream sysfsfid_period_freq;
-<a name="l00077"></a>00077                 std::ofstream sysfsfid_polarityA;
-<a name="l00078"></a>00078                 std::ofstream sysfsfid_runA;
-<a name="l00079"></a>00079                 std::ofstream sysfsfid_requestA;
-<a name="l00080"></a>00080                 std::ofstream sysfsfid_polarityB;
-<a name="l00081"></a>00081                 std::ofstream sysfsfid_runB;
-<a name="l00082"></a>00082                 std::ofstream sysfsfid_requestB;
+<a name="l00041"></a>00041 <span class="comment">ehrpwm.0:0</span>
+<a name="l00042"></a>00042 <span class="comment">│   ├── duty_ns</span>
+<a name="l00043"></a>00043 <span class="comment">│   ├── period_ns</span>
+<a name="l00044"></a>00044 <span class="comment">│   ├── polarity</span>
+<a name="l00045"></a>00045 <span class="comment">│   ├── request</span>
+<a name="l00046"></a>00046 <span class="comment">│   ├── run</span>
+<a name="l00047"></a>00047 <span class="comment">├── ehrpwm.0:1 -&gt; ../../devices/platform/omap/ehrpwm.0/pwm/ehrpwm.0:1</span>
+<a name="l00048"></a>00048 <span class="comment">│   ├── duty_ns</span>
+<a name="l00049"></a>00049 <span class="comment">│   ├── period_ns</span>
+<a name="l00050"></a>00050 <span class="comment">│   ├── polarity</span>
+<a name="l00051"></a>00051 <span class="comment">│   ├── request</span>
+<a name="l00052"></a>00052 <span class="comment">│   ├── run</span>
+<a name="l00053"></a>00053 <span class="comment">         *</span>
+<a name="l00054"></a>00054 <span class="comment">std::stringstream sysfs_file;</span>
+<a name="l00055"></a>00055 <span class="comment"></span>
+<a name="l00056"></a>00056 <span class="comment">Define files to match sysfs tree:</span>
+<a name="l00057"></a>00057 <span class="comment">         */</span>
+<a name="l00058"></a><a class="code" href="c_p_w_m_8h.html#a1ba5819c7195dec86e01a33333f73727">00058</a> <span class="preprocessor">                #define SYSFS_EHRPWM_PREFIX &quot;/sys/class/pwm/ehrpwm.&quot;</span>
+<a name="l00059"></a><a class="code" href="c_p_w_m_8h.html#a77695d0078bb8734c092fea1153789b8">00059</a> <span class="preprocessor"></span><span class="preprocessor">                #define SYSFS_EHRPWM_SUFFIX_A &quot;:0&quot;</span>
+<a name="l00060"></a><a class="code" href="c_p_w_m_8h.html#a7c349d0a2ba14e6a0c0d78f354939bb2">00060</a> <span class="preprocessor"></span><span class="preprocessor">                #define SYSFS_EHRPWM_SUFFIX_B &quot;:1&quot;</span>
+<a name="l00061"></a><a class="code" href="c_p_w_m_8h.html#a3ae008f737a3f27bd780490363c2267a">00061</a> <span class="preprocessor"></span><span class="preprocessor">        #define SYSFS_EHRPWM_DUTY_NS &quot;duty_ns&quot;</span>
+<a name="l00062"></a><a class="code" href="c_p_w_m_8h.html#afd2b94988d056d78a4e2c75acc7e454e">00062</a> <span class="preprocessor"></span><span class="preprocessor">        #define SYSFS_EHRPWM_DUTY_PERCENT &quot;duty_percent&quot;</span>
+<a name="l00063"></a><a class="code" href="c_p_w_m_8h.html#add4a08ceb1db2a1062f7cedfaf73cc6d">00063</a> <span class="preprocessor"></span><span class="preprocessor">        #define SYSFS_EHRPWM_PERIOD_NS &quot;period_ns&quot;</span>
+<a name="l00064"></a><a class="code" href="c_p_w_m_8h.html#ad5ab3e891281e210991cb39cdcc24cc9">00064</a> <span class="preprocessor"></span><span class="preprocessor">        #define SYSFS_EHRPWM_PERIOD_FREQ &quot;period_freq&quot;</span>
+<a name="l00065"></a><a class="code" href="c_p_w_m_8h.html#aab1aacedee5d8dce03422d0f09639f88">00065</a> <span class="preprocessor"></span><span class="preprocessor">                #define SYSFS_EHRPWM_POLARITY &quot;polarity&quot;</span>
+<a name="l00066"></a><a class="code" href="c_p_w_m_8h.html#a06034030a73c0ad8350269c15651b0fa">00066</a> <span class="preprocessor"></span><span class="preprocessor">                #define SYSFS_EHRPWM_RUN &quot;run&quot;</span>
+<a name="l00067"></a><a class="code" href="c_p_w_m_8h.html#a1aaf5e488c97bc29107020383b0a0cac">00067</a> <span class="preprocessor"></span><span class="preprocessor">                #define SYSFS_EHRPWM_REQUEST &quot;request&quot;</span>
+<a name="l00068"></a>00068 <span class="preprocessor"></span>
+<a name="l00069"></a>00069         std::ofstream sysfsfid_dutyA_ns;
+<a name="l00070"></a>00070         std::ofstream sysfsfid_dutyA_percent;
+<a name="l00071"></a>00071         std::ofstream sysfsfid_dutyB_ns;
+<a name="l00072"></a>00072         std::ofstream sysfsfid_dutyB_percent;
+<a name="l00073"></a>00073         std::ofstream sysfsfid_period_ns;
+<a name="l00074"></a>00074         std::ofstream sysfsfid_period_freq;
+<a name="l00075"></a>00075                 std::ofstream sysfsfid_polarityA;
+<a name="l00076"></a>00076                 std::ofstream sysfsfid_runA;
+<a name="l00077"></a>00077                 std::ofstream sysfsfid_requestA;
+<a name="l00078"></a>00078                 std::ofstream sysfsfid_polarityB;
+<a name="l00079"></a>00079                 std::ofstream sysfsfid_runB;
+<a name="l00080"></a>00080                 std::ofstream sysfsfid_requestB;
+<a name="l00081"></a>00081 
+<a name="l00082"></a>00082 <span class="keyword">public</span>:
 <a name="l00083"></a>00083 
-<a name="l00084"></a>00084 <span class="keyword">public</span>:
-<a name="l00085"></a>00085 
-<a name="l00086"></a>00086         <a class="code" href="classc_p_w_m_1_1c_p_w_m.html#a87ddc70eca104f023cf4e1fab0b790ed">cPWM</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>);
-<a name="l00087"></a>00087     <span class="keyword">virtual</span> <a class="code" href="classc_p_w_m_1_1c_p_w_m.html#a97435529da4f7c42d75165d12836ba33">~cPWM</a>();
-<a name="l00088"></a>00088 
-<a name="l00089"></a>00089     <span class="keywordtype">void</span> <a class="code" href="classc_p_w_m_1_1c_p_w_m.html#aec5fb0cd9369c28dc24522b588c81a12">DutyA_ns</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nanoseconds);
-<a name="l00090"></a>00090     <span class="keywordtype">void</span> <a class="code" href="classc_p_w_m_1_1c_p_w_m.html#afefcfe004ca8879482391586cdec259f">DutyA_percent</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> percent);  <span class="comment">//TODO: check if floats are possible</span>
-<a name="l00091"></a>00091 
-<a name="l00092"></a>00092     <span class="keywordtype">void</span> <a class="code" href="classc_p_w_m_1_1c_p_w_m.html#a8129f4ef44dbeaae6505c2f66a82f0f0">DutyB_ns</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nanoseconds);
-<a name="l00093"></a>00093     <span class="keywordtype">void</span> <a class="code" href="classc_p_w_m_1_1c_p_w_m.html#a072d3743030283a61f4b383a556eafac">DutyB_percent</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> percent); <span class="comment">//TODO: check if floats are possible</span>
-<a name="l00094"></a>00094 
-<a name="l00095"></a>00095     <span class="keywordtype">void</span> <a class="code" href="classc_p_w_m_1_1c_p_w_m.html#a65985891447da0e318fc95a3bea887bf">Period_ns</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nanoseconds);
-<a name="l00096"></a>00096     <span class="keywordtype">void</span> <a class="code" href="classc_p_w_m_1_1c_p_w_m.html#a294d333e40010689874fd3d54938a034">Period_freq</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> freq_Hz);
-<a name="l00097"></a>00097 
-<a name="l00098"></a>00098     <span class="keywordtype">void</span> <a class="code" href="classc_p_w_m_1_1c_p_w_m.html#a1ea0d09a5a5614c6ce06ca496f24f8b7">PolarityA</a>(cPWM::Polarity polarity);
-<a name="l00099"></a>00099     <span class="keywordtype">void</span> <a class="code" href="classc_p_w_m_1_1c_p_w_m.html#ab97deebd2a12697c033d2f0cfad01ffe">RunA</a>();
-<a name="l00100"></a>00100     <span class="keywordtype">void</span> <a class="code" href="classc_p_w_m_1_1c_p_w_m.html#a4c25685907cdfb7901f735962abce75e">StopA</a>();
-<a name="l00101"></a>00101     <span class="keywordtype">void</span> <a class="code" href="classc_p_w_m_1_1c_p_w_m.html#a20aa0037edcae7f2fffecca3ab9eccfd">PolarityB</a>(cPWM::Polarity polarity);
-<a name="l00102"></a>00102     <span class="keywordtype">void</span> <a class="code" href="classc_p_w_m_1_1c_p_w_m.html#aa6dc5671e0c6cf8048c1bccf859b5b66">RunB</a>();
-<a name="l00103"></a>00103     <span class="keywordtype">void</span> <a class="code" href="classc_p_w_m_1_1c_p_w_m.html#af266ed026306c6a3138d47fce8dec541">StopB</a>();
-<a name="l00104"></a>00104 };
-<a name="l00105"></a>00105 
-<a name="l00106"></a>00106 } <span class="comment">/* namespace cPWM */</span>
-<a name="l00107"></a>00107 <span class="preprocessor">#endif </span><span class="comment">/* CPWM_H_ */</span>
+<a name="l00084"></a>00084         <a class="code" href="classc_p_w_m.html#a03c79bd28b7eef4ee13b5130079cf8a4" title="Simple C++ class wrapper for beaglebone PWM eHRPWM interface.">cPWM</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>);
+<a name="l00085"></a>00085     <span class="keyword">virtual</span> <a class="code" href="classc_p_w_m.html#a90137dc6aed95732b11e98bb4fb2615d">~cPWM</a>();
+<a name="l00086"></a>00086 
+<a name="l00087"></a>00087     <span class="keywordtype">void</span> <a class="code" href="classc_p_w_m.html#a6992b609c8ff5918bb0be124a587f242">DutyA_ns</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nanoseconds);
+<a name="l00088"></a>00088     <span class="keywordtype">void</span> <a class="code" href="classc_p_w_m.html#a01ee225187750aca970472bfcbc0c78d">DutyA_percent</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> percent);  <span class="comment">//TODO: check if floats are possible</span>
+<a name="l00089"></a>00089 
+<a name="l00090"></a>00090     <span class="keywordtype">void</span> <a class="code" href="classc_p_w_m.html#a3301314659e0d9b1378dd0108c5d606d">DutyB_ns</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nanoseconds);
+<a name="l00091"></a>00091     <span class="keywordtype">void</span> <a class="code" href="classc_p_w_m.html#a411d83d46e5658239575cc3fd9b4bc8f">DutyB_percent</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> percent); <span class="comment">//TODO: check if floats are possible</span>
+<a name="l00092"></a>00092 
+<a name="l00093"></a>00093     <span class="keywordtype">void</span> <a class="code" href="classc_p_w_m.html#a5260adb0d5302e4f35a29d0f20e41e03">Period_ns</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nanoseconds);
+<a name="l00094"></a>00094     <span class="keywordtype">void</span> <a class="code" href="classc_p_w_m.html#a1b2b93cf10a31cd169bbfd0ddbe5e743">Period_freq</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> freq_Hz);
+<a name="l00095"></a>00095 
+<a name="l00096"></a>00096     <span class="keywordtype">void</span> <a class="code" href="classc_p_w_m.html#a045adb25bf713abc186e2b2cce6effed">PolarityA</a>(<a class="code" href="classc_p_w_m.html#a4e92531076ad9cf56c1df16b1028ce64">cPWM::Polarity</a> polarity);
+<a name="l00097"></a>00097     <span class="keywordtype">void</span> <a class="code" href="classc_p_w_m.html#a9a0ca9c423dcf337c37cd0a41ef48f70">RunA</a>();
+<a name="l00098"></a>00098     <span class="keywordtype">void</span> <a class="code" href="classc_p_w_m.html#a2fffee066d83200b808edff0a08987fd">StopA</a>();
+<a name="l00099"></a>00099     <span class="keywordtype">void</span> <a class="code" href="classc_p_w_m.html#adf98ffdf180320ab9c81b675b03adc79">PolarityB</a>(<a class="code" href="classc_p_w_m.html#a4e92531076ad9cf56c1df16b1028ce64">cPWM::Polarity</a> polarity);
+<a name="l00100"></a>00100     <span class="keywordtype">void</span> <a class="code" href="classc_p_w_m.html#a4f9a302cfd62c5ab845093c62667f91f">RunB</a>();
+<a name="l00101"></a>00101     <span class="keywordtype">void</span> <a class="code" href="classc_p_w_m.html#a69227099073031294d20d8d4d3eae116">StopB</a>();
+<a name="l00102"></a>00102 };
+<a name="l00103"></a>00103 
+<a name="l00104"></a>00104 <span class="preprocessor">#endif </span><span class="comment">/* CPWM_H_ */</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -216,7 +213,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="c_p_w_m_8h.html">cPWM.h</a>      </li>
 
-    <li class="footer">Generated on Sat Apr 27 2013 15:33:49 for U-BET by
+    <li class="footer">Generated on Fri May 17 2013 16:30:34 for U-BET by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

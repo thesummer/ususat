@@ -102,36 +102,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">USU::MotorControl Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<!-- doxytag: class="USU::MotorControl" --><!-- doxytag: inherits="USU::PeriodicRtThread" -->
+<!-- doxytag: class="USU::MotorControl" -->
 <p>Represents the Periodic task for motor control.  
  <a href="class_u_s_u_1_1_motor_control.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="motorcontrol_8h_source.html">motorcontrol.h</a>&gt;</code></p>
-<div class="dynheader">
-Inheritance diagram for USU::MotorControl:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_u_s_u_1_1_motor_control__inherit__graph.png" border="0" usemap="#_u_s_u_1_1_motor_control_inherit__map" alt="Inheritance graph"/></div>
-<map name="_u_s_u_1_1_motor_control_inherit__map" id="_u_s_u_1_1_motor_control_inherit__map">
-<area shape="rect" id="node2" href="class_u_s_u_1_1_periodic_rt_thread.html" title="TODO: Make some proper exceptions." alt="" coords="5,83,165,112"/><area shape="rect" id="node4" href="class_u_s_u_1_1_rt_thread.html" title="Abstract wrapper class for the pthread library with RT&#45;priority." alt="" coords="29,5,141,35"/></map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
-<div class="dynheader">
-Collaboration diagram for USU::MotorControl:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_u_s_u_1_1_motor_control__coll__graph.png" border="0" usemap="#_u_s_u_1_1_motor_control_coll__map" alt="Collaboration graph"/></div>
-<map name="_u_s_u_1_1_motor_control_coll__map" id="_u_s_u_1_1_motor_control_coll__map">
-<area shape="rect" id="node2" href="class_u_s_u_1_1_periodic_rt_thread.html" title="TODO: Make some proper exceptions." alt="" coords="5,83,165,112"/><area shape="rect" id="node4" href="class_u_s_u_1_1_rt_thread.html" title="Abstract wrapper class for the pthread library with RT&#45;priority." alt="" coords="29,5,141,35"/></map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="class_u_s_u_1_1_motor_control-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_s_u_1_1_motor_control.html#a62a00e1dc61fec92cef7879c2d90cc9a">MotorControl</a> (int priority=0, unsigned int period_us=1000000, <a class="el" href="class_u_s_u_1_1_kalman_filter.html">KalmanFilter</a> &amp;kalmanfilter)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of the class.  <a href="#a62a00e1dc61fec92cef7879c2d90cc9a"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_s_u_1_1_motor_control.html#aa317c39d73f244913c54c80284130eab">stop</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Signals the thread to stop.  <a href="#aa317c39d73f244913c54c80284130eab"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_s_u_1_1_motor_control.html#a1c7a621170352b9bdd4e5a60feee24c8">run</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Thread routine.  <a href="#a1c7a621170352b9bdd4e5a60feee24c8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_s_u_1_1_motor_control.html#a56ef29cfa725b1ceebd63722f67cc94f">MotorControl</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of the class.  <a href="#a56ef29cfa725b1ceebd63722f67cc94f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_s_u_1_1_motor_control.html#ac37d32e9cc1bd392873f155758267564">calculateControlResponse</a> (bool state)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the control responste from the current state estimate.  <a href="#ac37d32e9cc1bd392873f155758267564"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Represents the Periodic task for motor control. </p>
@@ -139,32 +123,15 @@ Public Member Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="motorcontrol_8h_source.html#l00034">34</a> of file <a class="el" href="motorcontrol_8h_source.html">motorcontrol.h</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a62a00e1dc61fec92cef7879c2d90cc9a"></a><!-- doxytag: member="USU::MotorControl::MotorControl" ref="a62a00e1dc61fec92cef7879c2d90cc9a" args="(int priority=0, unsigned int period_us=1000000, KalmanFilter &amp;kalmanfilter)" -->
+<a class="anchor" id="a56ef29cfa725b1ceebd63722f67cc94f"></a><!-- doxytag: member="USU::MotorControl::MotorControl" ref="a56ef29cfa725b1ceebd63722f67cc94f" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_u_s_u_1_1_motor_control.html#a62a00e1dc61fec92cef7879c2d90cc9a">MotorControl::MotorControl</a> </td>
+          <td class="memname"><a class="el" href="class_u_s_u_1_1_motor_control.html#a56ef29cfa725b1ceebd63722f67cc94f">MotorControl::MotorControl</a> </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>priority</em> = <code>0</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>period_us</em> = <code>1000000</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="class_u_s_u_1_1_kalman_filter.html">KalmanFilter</a> &amp;&#160;</td>
-          <td class="paramname"><em>kalmanfilter</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div>
@@ -180,60 +147,39 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<p>TODO: use meaningful Pin numbers (declare consts) </p>
 
 <p>Definition at line <a class="el" href="motorcontrol_8cpp_source.html#l00016">16</a> of file <a class="el" href="motorcontrol_8cpp_source.html">motorcontrol.cpp</a>.</p>
 
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a1c7a621170352b9bdd4e5a60feee24c8"></a><!-- doxytag: member="USU::MotorControl::run" ref="a1c7a621170352b9bdd4e5a60feee24c8" args="()" -->
+<a class="anchor" id="ac37d32e9cc1bd392873f155758267564"></a><!-- doxytag: member="USU::MotorControl::calculateControlResponse" ref="ac37d32e9cc1bd392873f155758267564" args="(bool state)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_u_s_u_1_1_motor_control.html#a1c7a621170352b9bdd4e5a60feee24c8">MotorControl::run</a> </td>
+          <td class="memname">void <a class="el" href="class_u_s_u_1_1_motor_control.html#ac37d32e9cc1bd392873f155758267564">MotorControl::calculateControlResponse</a> </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [virtual]</code></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>state</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Thread routine. </p>
-<ul>
-<li>Gets the newest estimate from <a class="el" href="class_u_s_u_1_1_kalman_filter.html" title="Represents the Periodic Thread class for state estimation.">KalmanFilter</a></li>
-<li>Calculate the control response</li>
-<li>Set the motor speed of the 4 Motors</li>
-<li>wait for the next timer event TODO: Its only an idea, no actual implementation yet. </li>
-</ul>
+<p>Calculate the control responste from the current state estimate. </p>
+<p>TODO: use a proper variable for the state estimate</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td>the current state estimate from the Kalman filter </td></tr>
+  </table>
+  </dd>
+</dl>
 <p>TODO: Make some control magic</p>
 <p>[...] </p>
 
-<p>Implements <a class="el" href="class_u_s_u_1_1_periodic_rt_thread.html#ac9146b3088a9b268594ce41d002d020a">USU::PeriodicRtThread</a>.</p>
-
-<p>Definition at line <a class="el" href="motorcontrol_8cpp_source.html#l00027">27</a> of file <a class="el" href="motorcontrol_8cpp_source.html">motorcontrol.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="aa317c39d73f244913c54c80284130eab"></a><!-- doxytag: member="USU::MotorControl::stop" ref="aa317c39d73f244913c54c80284130eab" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="class_u_s_u_1_1_motor_control.html#aa317c39d73f244913c54c80284130eab">USU::MotorControl::stop</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Signals the thread to stop. </p>
-
-<p>Definition at line <a class="el" href="motorcontrol_8h_source.html#l00055">55</a> of file <a class="el" href="motorcontrol_8h_source.html">motorcontrol.h</a>.</p>
+<p>Definition at line <a class="el" href="motorcontrol_8cpp_source.html#l00026">26</a> of file <a class="el" href="motorcontrol_8cpp_source.html">motorcontrol.cpp</a>.</p>
 
 </div>
 </div>
@@ -262,7 +208,7 @@ Public Member Functions</h2></td></tr>
       <li class="navelem"><a class="el" href="namespace_u_s_u.html">USU</a>      </li>
       <li class="navelem"><a class="el" href="class_u_s_u_1_1_motor_control.html">MotorControl</a>      </li>
 
-    <li class="footer">Generated on Sat Apr 27 2013 15:33:50 for U-BET by
+    <li class="footer">Generated on Fri May 17 2013 16:30:36 for U-BET by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

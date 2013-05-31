@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['activehigh',['ActiveHigh',['../classc_p_w_m_1_1c_p_w_m.html#af190eac685b62a4a27e3b9b6fc3aba09a7e9862f0d7812ec1c9c89797aa8abf25',1,'cPWM::cPWM']]],
-  ['activelow',['ActiveLow',['../classc_p_w_m_1_1c_p_w_m.html#af190eac685b62a4a27e3b9b6fc3aba09a94c88fb15c7102bd8e872e84170f69d6',1,'cPWM::cPWM']]]
+  ['activehigh',['ActiveHigh',['../classc_p_w_m.html#a4e92531076ad9cf56c1df16b1028ce64ae92ac1e728039ef28b065c617d793058',1,'cPWM']]],
+  ['activelow',['ActiveLow',['../classc_p_w_m.html#a4e92531076ad9cf56c1df16b1028ce64ad35a0e12428b4c290597f1621a061718',1,'cPWM']]]
 ];

@@ -1,12 +1,15 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$periodicrtthread_8h.html" title="threading/periodicrtthread.h" alt="" coords="553,83,732,112"/>
-<area shape="rect" id="node9" href="$minimu_8h.html" title="minimu/minimu.h" alt="" coords="244,83,364,112"/>
-<area shape="rect" id="node36" href="$_lock_8h.html" title="threading/Lock.h" alt="" coords="412,83,529,112"/>
-<area shape="rect" id="node5" href="$_rt_thread_8h.html" title="RtThread.h" alt="" coords="599,160,684,189"/>
-<area shape="rect" id="node11" href="$_i_m_u_8h.html" title="IMU.h" alt="" coords="143,160,201,189"/>
-<area shape="rect" id="node13" href="$vector_8h.html" title="vector.h" alt="" coords="137,237,207,267"/>
-<area shape="rect" id="node19" href="$_l_s_m303_8h.html" title="LSM303.h" alt="" coords="356,160,436,189"/>
-<area shape="rect" id="node32" href="$_l3_g_8h.html" title="L3G.h" alt="" coords="276,160,332,189"/>
-<area shape="rect" id="node23" href="$_i2_c_bus_8h.html" title="I2CBus.h" alt="" coords="275,237,352,267"/>
-<area shape="rect" id="node26" href="$exceptions_8h.html" title="exceptions.h" alt="" coords="253,315,349,344"/>
+<area shape="rect" id="node3" href="$periodicrtthread_8h.html" title="threading/periodicrtthread.h" alt="" coords="5,83,184,112"/>
+<area shape="rect" id="node9" href="$minimu_8h.html" title="minimu/minimu.h" alt="" coords="875,83,995,112"/>
+<area shape="rect" id="node36" href="$_lock_8h.html" title="threading/Lock.h" alt="" coords="163,237,280,267"/>
+<area shape="rect" id="node41" href="$gx3communicator_8h.html" title="3dm/gx3communicator.h" alt="" coords="304,83,469,112"/>
+<area shape="rect" id="node51" href="$messages_8h.html" title="messages.h" alt="" coords="561,160,655,189"/>
+<area shape="rect" id="node5" href="$_rt_thread_8h.html" title="RtThread.h" alt="" coords="83,160,168,189"/>
+<area shape="rect" id="node11" href="$_i_m_u_8h.html" title="IMU.h" alt="" coords="1037,160,1096,189"/>
+<area shape="rect" id="node13" href="$vector_8h.html" title="vector.h" alt="" coords="1021,237,1091,267"/>
+<area shape="rect" id="node19" href="$_l_s_m303_8h.html" title="LSM303.h" alt="" coords="803,160,883,189"/>
+<area shape="rect" id="node32" href="$_l3_g_8h.html" title="L3G.h" alt="" coords="907,160,963,189"/>
+<area shape="rect" id="node23" href="$_i2_c_bus_8h.html" title="I2CBus.h" alt="" coords="888,237,965,267"/>
+<area shape="rect" id="node26" href="$exceptions_8h.html" title="exceptions.h" alt="" coords="879,315,975,344"/>
+<area shape="rect" id="node46" href="$sharedqueue_8h.html" title="../threading/sharedqueue.h" alt="" coords="259,160,435,189"/>
 </map>

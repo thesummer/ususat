@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['polarity',['Polarity',['../classc_p_w_m_1_1c_p_w_m.html#af190eac685b62a4a27e3b9b6fc3aba09',1,'cPWM::cPWM']]]
+  ['pins',['Pins',['../class_beagle___g_p_i_o.html#a9b1fd560ea5d2d65898ac15c23055e58',1,'Beagle_GPIO']]],
+  ['polarity',['Polarity',['../classc_p_w_m.html#a4e92531076ad9cf56c1df16b1028ce64',1,'cPWM']]]
 ];

@@ -1,14 +1,19 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$_i2_c_bus_8h.html" title="minimu/I2CBus.h" alt="" coords="237,83,360,112"/>
-<area shape="rect" id="node5" href="$_l_s_m303_8h.html" title="minimu/LSM303.h" alt="" coords="99,160,224,189"/>
-<area shape="rect" id="node21" href="$_l3_g_8h.html" title="minimu/L3G.h" alt="" coords="248,160,349,189"/>
-<area shape="rect" id="node26" href="$_i2_c_bus_8cpp.html" title="minimu/I2CBus.cpp" alt="" coords="373,160,509,189"/>
-<area shape="rect" id="node7" href="$minimu_8h.html" title="minimu/minimu.h" alt="" coords="171,237,291,267"/>
-<area shape="rect" id="node19" href="$_l_s_m303_8cpp.html" title="minimu/LSM303.cpp" alt="" coords="5,237,147,267"/>
-<area shape="rect" id="node9" href="$kalmanfilter_8h.html" title="kalmanfilter.h" alt="" coords="111,315,209,344"/>
-<area shape="rect" id="node17" href="$minimu_8cpp.html" title="minimu/minimu.cpp" alt="" coords="233,315,367,344"/>
-<area shape="rect" id="node11" href="$kalmanfilter_8cpp.html" title="kalmanfilter.cpp" alt="" coords="36,392,151,421"/>
-<area shape="rect" id="node13" href="$motorcontrol_8h.html" title="motorcontrol.h" alt="" coords="175,392,279,421"/>
-<area shape="rect" id="node15" href="$motorcontrol_8cpp.html" title="motorcontrol.cpp" alt="" coords="168,469,285,499"/>
-<area shape="rect" id="node24" href="$_l3_g_8cpp.html" title="minimu/L3G.cpp" alt="" coords="315,237,432,267"/>
+<area shape="rect" id="node3" href="$_i2_c_bus_8h.html" title="minimu/I2CBus.h" alt="" coords="392,83,515,112"/>
+<area shape="rect" id="node5" href="$_l_s_m303_8h.html" title="minimu/LSM303.h" alt="" coords="183,160,308,189"/>
+<area shape="rect" id="node25" href="$_l3_g_8h.html" title="minimu/L3G.h" alt="" coords="332,160,433,189"/>
+<area shape="rect" id="node30" href="$_i2_c_bus_8cpp.html" title="minimu/I2CBus.cpp" alt="" coords="457,160,593,189"/>
+<area shape="rect" id="node32" href="$max127_8h.html" title="pwm/max127.h" alt="" coords="617,160,727,189"/>
+<area shape="rect" id="node7" href="$minimu_8h.html" title="minimu/minimu.h" alt="" coords="255,237,375,267"/>
+<area shape="rect" id="node23" href="$_l_s_m303_8cpp.html" title="minimu/LSM303.cpp" alt="" coords="89,237,231,267"/>
+<area shape="rect" id="node9" href="$kalmanfilter_8h.html" title="kalmanfilter.h" alt="" coords="132,315,231,344"/>
+<area shape="rect" id="node19" href="$minimu_2main_8cpp.html" title="minimu/main.cpp" alt="" coords="255,315,375,344"/>
+<area shape="rect" id="node21" href="$minimu_8cpp.html" title="minimu/minimu.cpp" alt="" coords="399,315,532,344"/>
+<area shape="rect" id="node11" href="$kalmanfilter_8cpp.html" title="kalmanfilter.cpp" alt="" coords="5,392,120,421"/>
+<area shape="rect" id="node13" href="$main_8cpp.html" title="main.cpp" alt="" coords="144,392,219,421"/>
+<area shape="rect" id="node15" href="$motorcontrol_8h.html" title="motorcontrol.h" alt="" coords="243,392,347,421"/>
+<area shape="rect" id="node17" href="$motorcontrol_8cpp.html" title="motorcontrol.cpp" alt="" coords="236,469,353,499"/>
+<area shape="rect" id="node28" href="$_l3_g_8cpp.html" title="minimu/L3G.cpp" alt="" coords="399,237,516,267"/>
+<area shape="rect" id="node34" href="$dac_8cpp.html" title="pwm/dac.cpp" alt="" coords="581,237,680,267"/>
+<area shape="rect" id="node36" href="$max127_8cpp.html" title="pwm/max127.cpp" alt="" coords="704,237,829,267"/>
 </map>

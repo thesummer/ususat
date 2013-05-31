@@ -1,14 +1,13 @@
 var files =
 [
-    [ "kalmanfilter.cpp", "kalmanfilter_8cpp.html", null ],
+    [ "kalmanfilter.cpp", "kalmanfilter_8cpp.html", "kalmanfilter_8cpp" ],
     [ "kalmanfilter.h", "kalmanfilter_8h.html", null ],
     [ "main.cpp", "main_8cpp.html", "main_8cpp" ],
     [ "motorcontrol.cpp", "motorcontrol_8cpp.html", null ],
     [ "motorcontrol.h", "motorcontrol_8h.html", null ],
-    [ "3dm/gx3communicator.cpp", "gx3communicator_8cpp.html", "gx3communicator_8cpp" ],
+    [ "3dm/gx3communicator.cpp", "gx3communicator_8cpp.html", null ],
     [ "3dm/gx3communicator.h", "gx3communicator_8h.html", null ],
     [ "3dm/messages.h", "messages_8h.html", "messages_8h" ],
-    [ "3dm/test.cpp", "test_8cpp.html", "test_8cpp" ],
     [ "minimu/exceptions.h", "exceptions_8h.html", "exceptions_8h" ],
     [ "minimu/I2CBus.cpp", "_i2_c_bus_8cpp.html", null ],
     [ "minimu/I2CBus.h", "_i2_c_bus_8h.html", null ],
@@ -17,6 +16,7 @@ var files =
     [ "minimu/L3G.h", "_l3_g_8h.html", "_l3_g_8h" ],
     [ "minimu/LSM303.cpp", "_l_s_m303_8cpp.html", "_l_s_m303_8cpp" ],
     [ "minimu/LSM303.h", "_l_s_m303_8h.html", "_l_s_m303_8h" ],
+    [ "minimu/main.cpp", "minimu_2main_8cpp.html", "minimu_2main_8cpp" ],
     [ "minimu/minimu.cpp", "minimu_8cpp.html", null ],
     [ "minimu/minimu.h", "minimu_8h.html", null ],
     [ "minimu/vector.h", "vector_8h.html", "vector_8h" ],
@@ -24,6 +24,9 @@ var files =
     [ "pwm/Beagle_GPIO.h", "_beagle___g_p_i_o_8h.html", "_beagle___g_p_i_o_8h" ],
     [ "pwm/cPWM.cpp", "c_p_w_m_8cpp.html", null ],
     [ "pwm/cPWM.h", "c_p_w_m_8h.html", "c_p_w_m_8h" ],
+    [ "pwm/dac.cpp", "dac_8cpp.html", "dac_8cpp" ],
+    [ "pwm/max127.cpp", "max127_8cpp.html", null ],
+    [ "pwm/max127.h", "max127_8h.html", "max127_8h" ],
     [ "pwm/motor.cpp", "motor_8cpp.html", null ],
     [ "pwm/motor.h", "motor_8h.html", "motor_8h" ],
     [ "pwm/setPWM.c", "set_p_w_m_8c.html", "set_p_w_m_8c" ],
@@ -32,5 +35,7 @@ var files =
     [ "threading/periodicrtthread.cpp", "periodicrtthread_8cpp.html", null ],
     [ "threading/periodicrtthread.h", "periodicrtthread_8h.html", null ],
     [ "threading/RtThread.cpp", "_rt_thread_8cpp.html", null ],
-    [ "threading/RtThread.h", "_rt_thread_8h.html", null ]
+    [ "threading/RtThread.h", "_rt_thread_8h.html", null ],
+    [ "threading/semaphore.h", "semaphore_8h.html", null ],
+    [ "threading/sharedqueue.h", "sharedqueue_8h.html", null ]
 ];

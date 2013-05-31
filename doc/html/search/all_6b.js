@@ -1,7 +1,7 @@
 var searchData=
 [
   ['kalmanfilter',['KalmanFilter',['../class_u_s_u_1_1_kalman_filter.html',1,'USU']]],
-  ['kalmanfilter',['KalmanFilter',['../class_u_s_u_1_1_kalman_filter.html#acbde9bd0fafa0e6c1aa078d392b28a6d',1,'USU::KalmanFilter']]],
+  ['kalmanfilter',['KalmanFilter',['../class_u_s_u_1_1_kalman_filter.html#acbde9bd0fafa0e6c1aa078d392b28a6d',1,'USU::KalmanFilter::KalmanFilter()'],['../main_8cpp.html#a0a9b6f4deb0318813fac0927f268ade3',1,'kalmanFilter():&#160;main.cpp']]],
   ['kalmanfilter_2ecpp',['kalmanfilter.cpp',['../kalmanfilter_8cpp.html',1,'']]],
   ['kalmanfilter_2eh',['kalmanfilter.h',['../kalmanfilter_8h.html',1,'']]],
   ['kcleardataout',['kCLEARDATAOUT',['../class_beagle___g_p_i_o.html#abf819302a5fe343fcc95c1357d96528da90393fcfe5b4a4ca4ad891e20b23a74e',1,'Beagle_GPIO']]],

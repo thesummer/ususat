@@ -106,7 +106,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00015"></a>00015 
 <a name="l00016"></a>00016 
 <a name="l00017"></a><a class="code" href="class_u_s_u_1_1_rt_thread.html#a9b72ca126bc7f53871ec78635540e037">00017</a> RtThread::RtThread(<span class="keywordtype">int</span> priority):
-<a name="l00018"></a>00018     mPriority(priority), mStarted(false), mId(-1)
+<a name="l00018"></a>00018     mPriority(priority), mId(-1), mStarted(false)
 <a name="l00019"></a>00019 {
 <a name="l00020"></a>00020     <span class="keywordtype">int</span> ret;
 <a name="l00021"></a>00021     <span class="keywordflow">if</span> ( (ret = pthread_attr_init(&amp;mAttr)) != 0)
@@ -233,7 +233,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="_rt_thread_8cpp.html">RtThread.cpp</a>      </li>
 
-    <li class="footer">Generated on Sat Apr 27 2013 15:33:49 for U-BET by
+    <li class="footer">Generated on Fri May 17 2013 16:30:34 for U-BET by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

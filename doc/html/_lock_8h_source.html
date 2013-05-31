@@ -106,85 +106,85 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00015"></a>00015 
 <a name="l00016"></a>00016 <span class="preprocessor">#include &lt;pthread.h&gt;</span>
 <a name="l00017"></a>00017 
-<a name="l00022"></a><a class="code" href="class_u_s_u_1_1_lock.html">00022</a> <span class="keyword">class </span><a class="code" href="class_u_s_u_1_1_lock.html" title="Wrapper class for pthread mutexes.">Lock</a>
-<a name="l00023"></a>00023 {
-<a name="l00024"></a>00024 <span class="keyword">private</span>:
-<a name="l00025"></a>00025     pthread_mutex_t mMutex; 
-<a name="l00027"></a>00027     <a class="code" href="class_u_s_u_1_1_lock.html#a4eb7425055400e6edf40c09b89a3b4c8">Lock</a>(<span class="keyword">const</span> <a class="code" href="class_u_s_u_1_1_lock.html" title="Wrapper class for pthread mutexes.">Lock</a>&amp; arg);
-<a name="l00028"></a>00028     <a class="code" href="class_u_s_u_1_1_lock.html" title="Wrapper class for pthread mutexes.">Lock</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="class_u_s_u_1_1_lock.html" title="Wrapper class for pthread mutexes.">Lock</a>&amp; rhs);
-<a name="l00030"></a>00030 <span class="keyword">public</span>:
-<a name="l00031"></a>00031 
-<a name="l00032"></a>00032     <a class="code" href="class_u_s_u_1_1_lock.html#a4eb7425055400e6edf40c09b89a3b4c8">Lock</a>(); 
-<a name="l00034"></a>00034     <span class="keyword">virtual</span> <a class="code" href="class_u_s_u_1_1_lock.html#a81280a2e319eab2bf18d9eebb591d871">~Lock</a>(); 
-<a name="l00036"></a>00036     <span class="keywordtype">void</span> <a class="code" href="class_u_s_u_1_1_lock.html#a68790e92c297da5b067f0b9797a1a9f0">lock</a>(); 
-<a name="l00038"></a>00038     <span class="keywordtype">void</span> <a class="code" href="class_u_s_u_1_1_lock.html#a77d54adab825e5532c8bd38f642fdd89">unlock</a>(); 
-<a name="l00039"></a>00039 };
-<a name="l00040"></a>00040 
-<a name="l00041"></a>00041 
-<a name="l00042"></a>00042 <span class="preprocessor">#include &lt;stdio.h&gt;</span>
+<a name="l00024"></a><a class="code" href="class_u_s_u_1_1_lock.html">00024</a> <span class="keyword">class </span><a class="code" href="class_u_s_u_1_1_lock.html" title="Wrapper class for pthread mutexes.">Lock</a>
+<a name="l00025"></a>00025 {
+<a name="l00026"></a>00026 <span class="keyword">private</span>:
+<a name="l00027"></a>00027     pthread_mutex_t mMutex; 
+<a name="l00029"></a>00029     <a class="code" href="class_u_s_u_1_1_lock.html#a4eb7425055400e6edf40c09b89a3b4c8">Lock</a>(<span class="keyword">const</span> <a class="code" href="class_u_s_u_1_1_lock.html" title="Wrapper class for pthread mutexes.">Lock</a>&amp; arg);
+<a name="l00030"></a>00030     <a class="code" href="class_u_s_u_1_1_lock.html" title="Wrapper class for pthread mutexes.">Lock</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="class_u_s_u_1_1_lock.html" title="Wrapper class for pthread mutexes.">Lock</a>&amp; rhs);
+<a name="l00032"></a>00032 <span class="keyword">public</span>:
+<a name="l00033"></a>00033 
+<a name="l00034"></a>00034     <a class="code" href="class_u_s_u_1_1_lock.html#a4eb7425055400e6edf40c09b89a3b4c8">Lock</a>(); 
+<a name="l00036"></a>00036     <span class="keyword">virtual</span> <a class="code" href="class_u_s_u_1_1_lock.html#a81280a2e319eab2bf18d9eebb591d871">~Lock</a>(); 
+<a name="l00038"></a>00038     <span class="keywordtype">void</span> <a class="code" href="class_u_s_u_1_1_lock.html#a68790e92c297da5b067f0b9797a1a9f0">lock</a>(); 
+<a name="l00040"></a>00040     <span class="keywordtype">void</span> <a class="code" href="class_u_s_u_1_1_lock.html#a77d54adab825e5532c8bd38f642fdd89">unlock</a>(); 
+<a name="l00041"></a>00041 };
+<a name="l00042"></a>00042 
 <a name="l00043"></a>00043 
-<a name="l00044"></a>00044 <span class="keyword">inline</span>
-<a name="l00045"></a><a class="code" href="class_u_s_u_1_1_lock.html#a4eb7425055400e6edf40c09b89a3b4c8">00045</a> <a class="code" href="class_u_s_u_1_1_lock.html#a4eb7425055400e6edf40c09b89a3b4c8">Lock::Lock</a>()
-<a name="l00046"></a>00046 {
-<a name="l00047"></a>00047     <span class="keywordtype">int</span> ret;
-<a name="l00048"></a>00048     <span class="keywordflow">if</span> ( (ret = pthread_mutex_init(&amp;mMutex, NULL)) != 0)
-<a name="l00049"></a>00049     {
-<a name="l00050"></a>00050         perror(<span class="stringliteral">&quot;pthread_mutex_init &quot;</span>);
-<a name="l00051"></a>00051     }
-<a name="l00052"></a>00052 }
-<a name="l00053"></a>00053 
-<a name="l00054"></a>00054 <span class="keyword">inline</span>
-<a name="l00055"></a><a class="code" href="class_u_s_u_1_1_lock.html#a81280a2e319eab2bf18d9eebb591d871">00055</a> <a class="code" href="class_u_s_u_1_1_lock.html#a81280a2e319eab2bf18d9eebb591d871">Lock::~Lock</a>()
-<a name="l00056"></a>00056 {
-<a name="l00057"></a>00057     <span class="keywordtype">int</span> ret;
-<a name="l00058"></a>00058     <span class="keywordflow">if</span> ( (ret = pthread_mutex_destroy(&amp;mMutex) ) != 0)
-<a name="l00059"></a>00059     {
-<a name="l00060"></a>00060         perror(<span class="stringliteral">&quot;pthread_mutex_destroy &quot;</span>);
-<a name="l00061"></a>00061     }
-<a name="l00062"></a>00062 }
-<a name="l00063"></a>00063 
-<a name="l00064"></a>00064 
-<a name="l00065"></a>00065 <span class="keyword">inline</span>
-<a name="l00066"></a><a class="code" href="class_u_s_u_1_1_lock.html#a68790e92c297da5b067f0b9797a1a9f0">00066</a> <span class="keywordtype">void</span> <a class="code" href="class_u_s_u_1_1_lock.html#a68790e92c297da5b067f0b9797a1a9f0">Lock::lock</a>()
-<a name="l00067"></a>00067 {
-<a name="l00068"></a>00068     pthread_mutex_lock(&amp;mMutex);
-<a name="l00069"></a>00069 }
-<a name="l00070"></a>00070 
-<a name="l00071"></a>00071 <span class="keyword">inline</span>
-<a name="l00072"></a><a class="code" href="class_u_s_u_1_1_lock.html#a77d54adab825e5532c8bd38f642fdd89">00072</a> <span class="keywordtype">void</span> <a class="code" href="class_u_s_u_1_1_lock.html#a77d54adab825e5532c8bd38f642fdd89">Lock::unlock</a>()
-<a name="l00073"></a>00073 {
-<a name="l00074"></a>00074     pthread_mutex_unlock(&amp;mMutex);
-<a name="l00075"></a>00075 }
-<a name="l00076"></a>00076 
+<a name="l00044"></a>00044 <span class="preprocessor">#include &lt;stdio.h&gt;</span>
+<a name="l00045"></a>00045 
+<a name="l00046"></a>00046 <span class="keyword">inline</span>
+<a name="l00047"></a><a class="code" href="class_u_s_u_1_1_lock.html#a4eb7425055400e6edf40c09b89a3b4c8">00047</a> <a class="code" href="class_u_s_u_1_1_lock.html#a4eb7425055400e6edf40c09b89a3b4c8">Lock::Lock</a>()
+<a name="l00048"></a>00048 {
+<a name="l00049"></a>00049     <span class="keywordtype">int</span> ret;
+<a name="l00050"></a>00050     <span class="keywordflow">if</span> ( (ret = pthread_mutex_init(&amp;mMutex, NULL)) != 0)
+<a name="l00051"></a>00051     {
+<a name="l00052"></a>00052         perror(<span class="stringliteral">&quot;pthread_mutex_init &quot;</span>);
+<a name="l00053"></a>00053     }
+<a name="l00054"></a>00054 }
+<a name="l00055"></a>00055 
+<a name="l00056"></a>00056 <span class="keyword">inline</span>
+<a name="l00057"></a><a class="code" href="class_u_s_u_1_1_lock.html#a81280a2e319eab2bf18d9eebb591d871">00057</a> <a class="code" href="class_u_s_u_1_1_lock.html#a81280a2e319eab2bf18d9eebb591d871">Lock::~Lock</a>()
+<a name="l00058"></a>00058 {
+<a name="l00059"></a>00059     <span class="keywordtype">int</span> ret;
+<a name="l00060"></a>00060     <span class="keywordflow">if</span> ( (ret = pthread_mutex_destroy(&amp;mMutex) ) != 0)
+<a name="l00061"></a>00061     {
+<a name="l00062"></a>00062         perror(<span class="stringliteral">&quot;pthread_mutex_destroy &quot;</span>);
+<a name="l00063"></a>00063     }
+<a name="l00064"></a>00064 }
+<a name="l00065"></a>00065 
+<a name="l00066"></a>00066 
+<a name="l00067"></a>00067 <span class="keyword">inline</span>
+<a name="l00068"></a><a class="code" href="class_u_s_u_1_1_lock.html#a68790e92c297da5b067f0b9797a1a9f0">00068</a> <span class="keywordtype">void</span> <a class="code" href="class_u_s_u_1_1_lock.html#a68790e92c297da5b067f0b9797a1a9f0">Lock::lock</a>()
+<a name="l00069"></a>00069 {
+<a name="l00070"></a>00070     pthread_mutex_lock(&amp;mMutex);
+<a name="l00071"></a>00071 }
+<a name="l00072"></a>00072 
+<a name="l00073"></a>00073 <span class="keyword">inline</span>
+<a name="l00074"></a><a class="code" href="class_u_s_u_1_1_lock.html#a77d54adab825e5532c8bd38f642fdd89">00074</a> <span class="keywordtype">void</span> <a class="code" href="class_u_s_u_1_1_lock.html#a77d54adab825e5532c8bd38f642fdd89">Lock::unlock</a>()
+<a name="l00075"></a>00075 {
+<a name="l00076"></a>00076     pthread_mutex_unlock(&amp;mMutex);
+<a name="l00077"></a>00077 }
 <a name="l00078"></a>00078 
-<a name="l00089"></a><a class="code" href="class_u_s_u_1_1_scoped_lock.html">00089</a> <span class="keyword">class </span><a class="code" href="class_u_s_u_1_1_scoped_lock.html" title="Provides a helper class for Scoped Mutexes.">ScopedLock</a>
-<a name="l00090"></a>00090 {
-<a name="l00091"></a>00091 <span class="keyword">private</span>:
-<a name="l00092"></a>00092     <a class="code" href="class_u_s_u_1_1_lock.html" title="Wrapper class for pthread mutexes.">Lock</a> &amp;mLock; 
-<a name="l00094"></a>00094     <a class="code" href="class_u_s_u_1_1_scoped_lock.html" title="Provides a helper class for Scoped Mutexes.">ScopedLock</a>(<span class="keyword">const</span> <a class="code" href="class_u_s_u_1_1_scoped_lock.html" title="Provides a helper class for Scoped Mutexes.">ScopedLock</a>&amp; thread); 
-<a name="l00095"></a>00095     <a class="code" href="class_u_s_u_1_1_scoped_lock.html" title="Provides a helper class for Scoped Mutexes.">ScopedLock</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="class_u_s_u_1_1_scoped_lock.html" title="Provides a helper class for Scoped Mutexes.">ScopedLock</a>&amp; rhs); 
-<a name="l00097"></a>00097 <span class="keyword">public</span>:
-<a name="l00103"></a>00103     <a class="code" href="class_u_s_u_1_1_scoped_lock.html" title="Provides a helper class for Scoped Mutexes.">ScopedLock</a>(<a class="code" href="class_u_s_u_1_1_lock.html" title="Wrapper class for pthread mutexes.">Lock</a> &amp;lock);
-<a name="l00104"></a>00104 
-<a name="l00108"></a>00108     <span class="keyword">virtual</span> <a class="code" href="class_u_s_u_1_1_scoped_lock.html#a5cf581cbe18004e6fec30724c5f94071" title="Destructor: will unlock the mutex.">~ScopedLock</a>();
-<a name="l00109"></a>00109 };
-<a name="l00110"></a>00110 
-<a name="l00111"></a>00111 <span class="keyword">inline</span>
-<a name="l00112"></a><a class="code" href="class_u_s_u_1_1_scoped_lock.html#aa92db605fefa48f75be29b86ad0d6186">00112</a> ScopedLock::ScopedLock(<a class="code" href="class_u_s_u_1_1_lock.html" title="Wrapper class for pthread mutexes.">Lock</a> &amp;lock)
-<a name="l00113"></a>00113     :mLock(lock)
-<a name="l00114"></a>00114 {
-<a name="l00115"></a>00115     mLock.<a class="code" href="class_u_s_u_1_1_lock.html#a68790e92c297da5b067f0b9797a1a9f0">lock</a>();
-<a name="l00116"></a>00116 }
-<a name="l00117"></a>00117 
-<a name="l00118"></a>00118 <span class="keyword">inline</span>
-<a name="l00119"></a><a class="code" href="class_u_s_u_1_1_scoped_lock.html#a5cf581cbe18004e6fec30724c5f94071">00119</a> <a class="code" href="class_u_s_u_1_1_scoped_lock.html#a5cf581cbe18004e6fec30724c5f94071" title="Destructor: will unlock the mutex.">ScopedLock::~ScopedLock</a>()
-<a name="l00120"></a>00120 {
-<a name="l00121"></a>00121     mLock.<a class="code" href="class_u_s_u_1_1_lock.html#a77d54adab825e5532c8bd38f642fdd89">unlock</a>();
-<a name="l00122"></a>00122 }
-<a name="l00123"></a>00123 
+<a name="l00080"></a>00080 
+<a name="l00091"></a><a class="code" href="class_u_s_u_1_1_scoped_lock.html">00091</a> <span class="keyword">class </span><a class="code" href="class_u_s_u_1_1_scoped_lock.html" title="Provides a helper class for Scoped Mutexes.">ScopedLock</a>
+<a name="l00092"></a>00092 {
+<a name="l00093"></a>00093 <span class="keyword">private</span>:
+<a name="l00094"></a>00094     <a class="code" href="class_u_s_u_1_1_lock.html" title="Wrapper class for pthread mutexes.">Lock</a> &amp;mLock; 
+<a name="l00096"></a>00096     <a class="code" href="class_u_s_u_1_1_scoped_lock.html" title="Provides a helper class for Scoped Mutexes.">ScopedLock</a>(<span class="keyword">const</span> <a class="code" href="class_u_s_u_1_1_scoped_lock.html" title="Provides a helper class for Scoped Mutexes.">ScopedLock</a>&amp; thread); 
+<a name="l00097"></a>00097     <a class="code" href="class_u_s_u_1_1_scoped_lock.html" title="Provides a helper class for Scoped Mutexes.">ScopedLock</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="class_u_s_u_1_1_scoped_lock.html" title="Provides a helper class for Scoped Mutexes.">ScopedLock</a>&amp; rhs); 
+<a name="l00099"></a>00099 <span class="keyword">public</span>:
+<a name="l00105"></a>00105     <a class="code" href="class_u_s_u_1_1_scoped_lock.html" title="Provides a helper class for Scoped Mutexes.">ScopedLock</a>(<a class="code" href="class_u_s_u_1_1_lock.html" title="Wrapper class for pthread mutexes.">Lock</a> &amp;lock);
+<a name="l00106"></a>00106 
+<a name="l00110"></a>00110     <span class="keyword">virtual</span> <a class="code" href="class_u_s_u_1_1_scoped_lock.html#a5cf581cbe18004e6fec30724c5f94071" title="Destructor: will unlock the mutex.">~ScopedLock</a>();
+<a name="l00111"></a>00111 };
+<a name="l00112"></a>00112 
+<a name="l00113"></a>00113 <span class="keyword">inline</span>
+<a name="l00114"></a><a class="code" href="class_u_s_u_1_1_scoped_lock.html#aa92db605fefa48f75be29b86ad0d6186">00114</a> ScopedLock::ScopedLock(<a class="code" href="class_u_s_u_1_1_lock.html" title="Wrapper class for pthread mutexes.">Lock</a> &amp;lock)
+<a name="l00115"></a>00115     :mLock(lock)
+<a name="l00116"></a>00116 {
+<a name="l00117"></a>00117     mLock.<a class="code" href="class_u_s_u_1_1_lock.html#a68790e92c297da5b067f0b9797a1a9f0">lock</a>();
+<a name="l00118"></a>00118 }
+<a name="l00119"></a>00119 
+<a name="l00120"></a>00120 <span class="keyword">inline</span>
+<a name="l00121"></a><a class="code" href="class_u_s_u_1_1_scoped_lock.html#a5cf581cbe18004e6fec30724c5f94071">00121</a> <a class="code" href="class_u_s_u_1_1_scoped_lock.html#a5cf581cbe18004e6fec30724c5f94071" title="Destructor: will unlock the mutex.">ScopedLock::~ScopedLock</a>()
+<a name="l00122"></a>00122 {
+<a name="l00123"></a>00123     mLock.<a class="code" href="class_u_s_u_1_1_lock.html#a77d54adab825e5532c8bd38f642fdd89">unlock</a>();
 <a name="l00124"></a>00124 }
 <a name="l00125"></a>00125 
-<a name="l00126"></a>00126 <span class="preprocessor">#endif // LOCK_H</span>
+<a name="l00126"></a>00126 }
+<a name="l00127"></a>00127 
+<a name="l00128"></a>00128 <span class="preprocessor">#endif // LOCK_H</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -205,7 +205,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="_lock_8h.html">Lock.h</a>      </li>
 
-    <li class="footer">Generated on Sat Apr 27 2013 15:33:49 for U-BET by
+    <li class="footer">Generated on Fri May 17 2013 16:30:34 for U-BET by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

@@ -2,6 +2,7 @@ var class_beagle___g_p_i_o =
 [
     [ "Beagle_GPIO_Direction", "class_beagle___g_p_i_o.html#abf8efba9f6a4f6b552d1c15c99100765", null ],
     [ "Beagle_GPIO_Status", "class_beagle___g_p_i_o.html#a40ebd672d74de41bbf5944109e1302ee", null ],
+    [ "Pins", "class_beagle___g_p_i_o.html#a9b1fd560ea5d2d65898ac15c23055e58", null ],
     [ "Beagle_GPIO", "class_beagle___g_p_i_o.html#a9d59bb015cf2fd0643905cdf3f265efe", null ],
     [ "~Beagle_GPIO", "class_beagle___g_p_i_o.html#a602473a6b993564cd7adbb9c9d09695c", null ],
     [ "closeSPI", "class_beagle___g_p_i_o.html#a747aaea28330bc339002e43f0e04bb0c", null ],
@@ -18,5 +19,5 @@ var class_beagle___g_p_i_o =
     [ "GPIO_Pad_Control", "class_beagle___g_p_i_o.html#ae4a0a2a56a0ba31145a5f41eb3439886", null ],
     [ "GPIO_Pin_Bank", "class_beagle___g_p_i_o.html#ae7919c981429a17c48c601664a61d64a", null ],
     [ "GPIO_Pin_Id", "class_beagle___g_p_i_o.html#a9a48339b54de8e6c884ddad8629a3647", null ],
-    [ "GPIO_Pins", "class_beagle___g_p_i_o.html#aa33c6977896ab86e6b493646fcf6c3eb", null ]
+    [ "GPIO_Pins", "class_beagle___g_p_i_o.html#ae173a49845ccc4d980cc0eb83a990418", null ]
 ];

@@ -109,20 +109,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_s_u_1_1_motor.html#aefca8e50b8a3a246908a07d8b129a03b">Motor</a> (<a class="el" href="class_beagle___g_p_i_o.html">Beagle_GPIO</a> &amp;beagleGpio, <a class="el" href="class_beagle___g_p_i_o.html#aa33c6977896ab86e6b493646fcf6c3eb">Beagle_GPIO::GPIO_Pins</a> clockwise, <a class="el" href="class_beagle___g_p_i_o.html#aa33c6977896ab86e6b493646fcf6c3eb">Beagle_GPIO::GPIO_Pins</a> counterClockwise, <a class="el" href="motor_8h.html#aa4a2cd53d0866ae4c273573db3c4870d">SetDutyCyle</a> dutyCycle)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_s_u_1_1_motor.html#a2200a3939cd62d2e22e9b134b54bc402">Motor</a> (<a class="el" href="class_beagle___g_p_i_o.html">Beagle_GPIO</a> &amp;beagleGpio, <a class="el" href="class_beagle___g_p_i_o.html#a9b1fd560ea5d2d65898ac15c23055e58">Beagle_GPIO::Pins</a> clockwise, <a class="el" href="class_beagle___g_p_i_o.html#a9b1fd560ea5d2d65898ac15c23055e58">Beagle_GPIO::Pins</a> counterClockwise, <a class="el" href="classc_p_w_m.html">cPWM</a> &amp;pwm, <a class="el" href="motor_8h.html#aa4a2cd53d0866ae4c273573db3c4870d">SetDutyCyle</a> dutyCycle)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_s_u_1_1_motor.html#aa58cbc26a0da87389dd208367d0fa407">setSpeed</a> (int speed)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_s_u_1_1_motor.html#a98d4c98ddc30e00485712f55b4a91211">getSpeed</a> () const </td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="motor_8h_source.html#l00023">23</a> of file <a class="el" href="motor_8h_source.html">motor.h</a>.</p>
+<p>Definition at line <a class="el" href="motor_8h_source.html#l00022">22</a> of file <a class="el" href="motor_8h_source.html">motor.h</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="aefca8e50b8a3a246908a07d8b129a03b"></a><!-- doxytag: member="USU::Motor::Motor" ref="aefca8e50b8a3a246908a07d8b129a03b" args="(Beagle_GPIO &amp;beagleGpio, Beagle_GPIO::GPIO_Pins clockwise, Beagle_GPIO::GPIO_Pins counterClockwise, SetDutyCyle dutyCycle)" -->
+<a class="anchor" id="a2200a3939cd62d2e22e9b134b54bc402"></a><!-- doxytag: member="USU::Motor::Motor" ref="a2200a3939cd62d2e22e9b134b54bc402" args="(Beagle_GPIO &amp;beagleGpio, Beagle_GPIO::Pins clockwise, Beagle_GPIO::Pins counterClockwise, cPWM &amp;pwm, SetDutyCyle dutyCycle)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_u_s_u_1_1_motor.html#aefca8e50b8a3a246908a07d8b129a03b">Motor::Motor</a> </td>
+          <td class="memname"><a class="el" href="class_u_s_u_1_1_motor.html#a2200a3939cd62d2e22e9b134b54bc402">Motor::Motor</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_beagle___g_p_i_o.html">Beagle_GPIO</a> &amp;&#160;</td>
           <td class="paramname"><em>beagleGpio</em>, </td>
@@ -130,14 +130,20 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_beagle___g_p_i_o.html#aa33c6977896ab86e6b493646fcf6c3eb">Beagle_GPIO::GPIO_Pins</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="class_beagle___g_p_i_o.html#a9b1fd560ea5d2d65898ac15c23055e58">Beagle_GPIO::Pins</a>&#160;</td>
           <td class="paramname"><em>clockwise</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_beagle___g_p_i_o.html#aa33c6977896ab86e6b493646fcf6c3eb">Beagle_GPIO::GPIO_Pins</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="class_beagle___g_p_i_o.html#a9b1fd560ea5d2d65898ac15c23055e58">Beagle_GPIO::Pins</a>&#160;</td>
           <td class="paramname"><em>counterClockwise</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classc_p_w_m.html">cPWM</a> &amp;&#160;</td>
+          <td class="paramname"><em>pwm</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -173,7 +179,7 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="motor_8h_source.html#l00029">29</a> of file <a class="el" href="motor_8h_source.html">motor.h</a>.</p>
+<p>Definition at line <a class="el" href="motor_8h_source.html#l00028">28</a> of file <a class="el" href="motor_8h_source.html">motor.h</a>.</p>
 
 </div>
 </div>
@@ -221,7 +227,7 @@ Public Member Functions</h2></td></tr>
       <li class="navelem"><a class="el" href="namespace_u_s_u.html">USU</a>      </li>
       <li class="navelem"><a class="el" href="class_u_s_u_1_1_motor.html">Motor</a>      </li>
 
-    <li class="footer">Generated on Sat Apr 27 2013 15:33:50 for U-BET by
+    <li class="footer">Generated on Fri May 17 2013 16:30:36 for U-BET by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>
