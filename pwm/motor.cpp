@@ -28,14 +28,14 @@ Motor::Motor(Beagle_GPIO &beagleGpio, Beagle_GPIO::Pins clockwise, Beagle_GPIO::
 
 void Motor::setSpeed(int speed)
 {
-    if (mSpeed > 0)
+    if (speed > 0)
     {
         mBeagleGpio.writePin(mClockwise, 1);
         mBeagleGpio.writePin(mCounterClockwise, 0);
         (mPwm.*mSetDutyCycle)(speed);
         mSpeed = speed;
     }
-    else if (mSpeed < 0)
+    else if (speed < 0)
     {
         mBeagleGpio.writePin(mClockwise, 0);
         mBeagleGpio.writePin(mCounterClockwise, 1);
@@ -46,7 +46,7 @@ void Motor::setSpeed(int speed)
     {
         mBeagleGpio.writePin(mClockwise, 0);
         mBeagleGpio.writePin(mCounterClockwise, 0);
-        (mPwm.*mSetDutyCycle)(speed);
-        mSpeed = 9;
+        (mPwm.*mSetDutyCycle)(9);
+        mSpeed = 0;
     }
 }
