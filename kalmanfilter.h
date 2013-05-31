@@ -19,6 +19,7 @@
 #include "threading/Lock.h"
 #include "3dm/gx3communicator.h"
 #include "3dm/messages.h"
+#include "motorcontrol.h"
 
 namespace USU
 {
@@ -40,28 +41,32 @@ public:
     /*!
      \brief Constructor of the class
 
-     Initializes the interface to the MinIMU9 sensors
+     Initializes the interface to the MinIMU9 sensors and
+     to the 3DM-GX3.
+     Sets up the motor controller.
 
      \param priority    priority of the underlying periodic thread
      \param period_us   period (in us) of the underlying periodic thread
-     \param i2cBus  name of the I2C-device (e.g. /dev/i2c-1)
+     \param i2cImu      name of the I2C-device for the IMU (e.g. /dev/i2c-1)
+     \param i2cMotor    name of the I2C-device for the Motors (e.g. /dev/i2c-2)
     */
-    KalmanFilter(int priority, unsigned int period_us, char* i2cBus);
+    KalmanFilter(int priority, unsigned int period_us, char* i2cImu, char *i2cMotor);
 
     /*!
      \brief Thread routine
 
-     - Gets sensor data from MinIMU9
-     - Calculate state estimate
-     - wait for next timer event
+     Current scenario is:
+        - Get quaternion data from MicroStrain at constant rate
+        - Hand this state estimate to the motor controller.
 
-    TODO: Its only an idea no actual implementation yet.
-
+        TODO: Develop scenario using Kalman-Filter
     */
     virtual void run();
 
     /*!
      \brief Signals the thread to stop
+
+     TODO: Doesn't really work.
     */
     void stop() { mKeepRunning = false; }
 
@@ -74,6 +79,7 @@ public:
 
      \return bool Current system state
      TODO: Currently only dummy variable. Replace with actual state representation (quaternion?)
+           Probably not necessary anymore
     */
     bool getState();
 
@@ -84,6 +90,7 @@ private:
 
     MinImu mImu; /*!< Class for accessing the MinIMU9v2*/
     GX3Communicator mGX3;
+    MotorControl mMotors;
 
     ///TODO: queue to ethernet
     bool mState; ///TODO: Actual representation of the state estimate /*!< TODO */
