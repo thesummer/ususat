@@ -26,10 +26,10 @@ public:
 
 private:
     int id;
-    int dutyA;
-    int dutyB;
-    int period;
-    int freq_Hz;
+    unsigned int dutyA;
+    unsigned int dutyB;
+    unsigned int period;
+    unsigned int freq_Hz;
     enum cPWM::Polarity polarityA;
     enum cPWM::Polarity polarityB;
     int runA;
