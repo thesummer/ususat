@@ -1,3 +1,13 @@
+/**
+ * @file max127.h
+ *
+ * C++ class for the ADC Max127.
+ *
+ * @author Jan Sommer
+ *  Created on: May 20, 2013
+ *
+ */
+
 #ifndef MAX127_H
 #define MAX127_H
 
@@ -5,6 +15,8 @@
 
 #include "I2CBus.h"
 
+namespace USU
+{
 
 /*!
  \brief I2C-address of the ADC
@@ -72,5 +84,7 @@ private:
 
 
 };
+
+}
 
 #endif // MAX127_H

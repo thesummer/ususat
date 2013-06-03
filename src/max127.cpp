@@ -1,3 +1,13 @@
+/**
+ * @file max127.cpp
+ *
+ * C++ class for the ADC Max127.
+ *
+ * @author Jan Sommer
+ *  Created on: May 20, 2013
+ *
+ */
+
 #include "max127.h"
 
 Max127::Max127(const char *i2cdevice)
