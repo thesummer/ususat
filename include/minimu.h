@@ -1,3 +1,13 @@
+/**
+ * @file minimu.h
+ *
+ * C++ MinIMU9v2.
+ *
+ * @author Jan Sommer
+ *  Created on: Apr 20, 2013
+ *
+ */
+
 #ifndef MINIMU_H
 #define MINIMU_H
 
@@ -5,6 +15,9 @@
 #include "LSM303.h"
 #include "L3G.h"
 #include "vector.h"
+
+namespace USU
+{
 
 class MinImu : public IMU
 {
@@ -19,5 +32,7 @@ public:
 
     virtual void enable();
 };
+
+}
 
 #endif // MINIMU_H
