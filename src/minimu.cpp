@@ -1,4 +1,5 @@
 #include "minimu.h"
+using namespace USU;
 #include "IMU.h"
 
 MinImu::MinImu(const char *i2cDeviceName)

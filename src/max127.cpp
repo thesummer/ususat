@@ -9,6 +9,7 @@
  */
 
 #include "max127.h"
+using namespace USU;
 
 Max127::Max127(const char *i2cdevice)
     :mI2c(i2cdevice)
