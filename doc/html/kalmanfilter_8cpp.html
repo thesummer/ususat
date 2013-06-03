@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>U-BET: kalmanfilter.cpp File Reference</title>
+<title>U-BET: src/kalmanfilter.cpp File Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -97,22 +97,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">kalmanfilter.cpp File Reference</div>  </div>
+<div class="title">src/kalmanfilter.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;iostream&gt;</code><br/>
 <code>#include &lt;sys/time.h&gt;</code><br/>
 <code>#include &lt;unistd.h&gt;</code><br/>
 <code>#include &quot;<a class="el" href="kalmanfilter_8h_source.html">kalmanfilter.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="vector_8h_source.html">minimu/vector.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="gx3communicator_8h_source.html">3dm/gx3communicator.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="messages_8h_source.html">3dm/messages.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="vector_8h_source.html">vector.h</a>&quot;</code><br/>
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for kalmanfilter.cpp:</div>
 <div class="dyncontent">
-<div class="center"><img src="kalmanfilter_8cpp__incl.png" border="0" usemap="#kalmanfilter_8cpp" alt=""/></div>
-<map name="kalmanfilter_8cpp" id="kalmanfilter_8cpp">
-<area shape="rect" id="node9" href="kalmanfilter_8h.html" title="kalmanfilter.h" alt="" coords="607,83,705,112"/><area shape="rect" id="node21" href="vector_8h.html" title="vector.h" alt="" coords="312,315,381,344"/><area shape="rect" id="node49" href="gx3communicator_8h.html" title="3dm/gx3communicator.h" alt="" coords="708,160,873,189"/><area shape="rect" id="node59" href="messages_8h.html" title="messages.h" alt="" coords="512,237,605,267"/><area shape="rect" id="node11" href="periodicrtthread_8h.html" title="threading/periodicrtthread.h" alt="" coords="897,160,1076,189"/><area shape="rect" id="node17" href="minimu_8h.html" title="minimu/minimu.h" alt="" coords="379,160,499,189"/><area shape="rect" id="node44" href="_lock_8h.html" title="threading/Lock.h" alt="" coords="763,315,880,344"/><area shape="rect" id="node13" href="_rt_thread_8h.html" title="RtThread.h" alt="" coords="944,237,1029,267"/><area shape="rect" id="node19" href="_i_m_u_8h.html" title="IMU.h" alt="" coords="429,237,488,267"/><area shape="rect" id="node27" href="_l_s_m303_8h.html" title="LSM303.h" alt="" coords="139,237,219,267"/><area shape="rect" id="node40" href="_l3_g_8h.html" title="L3G.h" alt="" coords="59,237,115,267"/><area shape="rect" id="node31" href="_i2_c_bus_8h.html" title="I2CBus.h" alt="" coords="56,315,133,344"/><area shape="rect" id="node34" href="exceptions_8h.html" title="exceptions.h" alt="" coords="37,392,133,421"/><area shape="rect" id="node54" href="sharedqueue_8h.html" title="../threading/sharedqueue.h" alt="" coords="733,237,909,267"/></map>
+<div class="center"><img src="kalmanfilter_8cpp__incl.png" border="0" usemap="#src_2kalmanfilter_8cpp" alt=""/></div>
+<map name="src_2kalmanfilter_8cpp" id="src_2kalmanfilter_8cpp">
+<area shape="rect" id="node9" href="kalmanfilter_8h.html" title="kalmanfilter.h" alt="" coords="7063,83,7161,112"/><area shape="rect" id="node21" href="vector_8h.html" title="vector.h" alt="" coords="75,315,144,344"/><area shape="rect" id="node11" href="periodicrtthread_8h.html" title="periodicrtthread.h" alt="" coords="9187,160,9309,189"/><area shape="rect" id="node17" href="minimu_8h.html" title="minimu.h" alt="" coords="183,160,257,189"/><area shape="rect" id="node32" href="_lock_8h.html" title="Lock.h" alt="" coords="9063,315,9124,344"/><area shape="rect" id="node37" href="gx3communicator_8h.html" title="gx3communicator.h" alt="" coords="7044,160,7180,189"/><area shape="rect" id="node45" href="messages_8h.html" title="messages.h" alt="" coords="364,237,457,267"/><area shape="rect" id="node107" href="motorcontrol_8h.html" title="motorcontrol.h" alt="" coords="3683,160,3787,189"/><area shape="rect" id="node13" href="_rt_thread_8h.html" title="RtThread.h" alt="" coords="9215,237,9300,267"/><area shape="rect" id="node19" href="_i_m_u_8h.html" title="IMU.h" alt="" coords="47,237,105,267"/><area shape="rect" id="node27" href="_l_s_m303_8h.html" title="LSM303.h" alt="" coords="180,237,260,267"/><area shape="rect" id="node29" href="_l3_g_8h.html" title="L3G.h" alt="" coords="284,237,340,267"/><area shape="rect" id="node42" href="sharedqueue_8h.html" title="sharedqueue.h" alt="" coords="9033,237,9140,267"/></map>
 </div>
 </div>
 <p><a href="kalmanfilter_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -158,7 +156,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="kalmanfilter_8cpp_source.html#l00024">24</a> of file <a class="el" href="kalmanfilter_8cpp_source.html">kalmanfilter.cpp</a>.</p>
+<p>Definition at line <a class="el" href="kalmanfilter_8cpp_source.html#l00022">22</a> of file <a class="el" href="kalmanfilter_8cpp_source.html">kalmanfilter.cpp</a>.</p>
 
 </div>
 </div>
@@ -182,7 +180,7 @@ Functions</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="kalmanfilter_8cpp.html">kalmanfilter.cpp</a>      </li>
 
-    <li class="footer">Generated on Fri May 17 2013 16:30:35 for U-BET by
+    <li class="footer">Generated on Mon Jun 3 2013 15:14:35 for U-BET by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

@@ -22,16 +22,16 @@ void endProgram(int s)
 
 int main()
 {
-       struct sigaction sigIntHandler;
-       sigIntHandler.sa_handler = endProgram;
-       sigemptyset(&sigIntHandler.sa_mask);
-       sigIntHandler.sa_flags = 0;
+    struct sigaction sigIntHandler;
+    sigIntHandler.sa_handler = endProgram;
+    sigemptyset(&sigIntHandler.sa_mask);
+    sigIntHandler.sa_flags = 0;
 
-       sigaction(SIGINT, &sigIntHandler, NULL);
+    sigaction(SIGINT, &sigIntHandler, NULL);
 
-       kalmanFilter.start();
+    kalmanFilter.start();
 
-       kalmanFilter.join();
+    kalmanFilter.join();
 
 
     return 0;

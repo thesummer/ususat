@@ -94,8 +94,8 @@ var searchData=
   ['p9_5f9',['P9_9',['../class_beagle___g_p_i_o.html#a9b1fd560ea5d2d65898ac15c23055e58a813ba5c5aa73d57b8371df9f1e017b66',1,'Beagle_GPIO']]],
   ['period_5ffreq',['Period_freq',['../classc_p_w_m.html#a1b2b93cf10a31cd169bbfd0ddbe5e743',1,'cPWM']]],
   ['period_5fns',['Period_ns',['../classc_p_w_m.html#a5260adb0d5302e4f35a29d0f20e41e03',1,'cPWM']]],
-  ['periodicrtthread',['PeriodicRtThread',['../class_u_s_u_1_1_periodic_rt_thread.html#a1106f9ea06df9739369c5994be340624',1,'USU::PeriodicRtThread']]],
   ['periodicrtthread',['PeriodicRtThread',['../class_u_s_u_1_1_periodic_rt_thread.html',1,'USU']]],
+  ['periodicrtthread',['PeriodicRtThread',['../class_u_s_u_1_1_periodic_rt_thread.html#a1106f9ea06df9739369c5994be340624',1,'USU::PeriodicRtThread']]],
   ['periodicrtthread_2ecpp',['periodicrtthread.cpp',['../periodicrtthread_8cpp.html',1,'']]],
   ['periodicrtthread_2eh',['periodicrtthread.h',['../periodicrtthread_8h.html',1,'']]],
   ['pins',['Pins',['../class_beagle___g_p_i_o.html#a9b1fd560ea5d2d65898ac15c23055e58',1,'Beagle_GPIO']]],
@@ -104,10 +104,6 @@ var searchData=
   ['polarityb',['PolarityB',['../classc_p_w_m.html#adf98ffdf180320ab9c81b675b03adc79',1,'cPWM']]],
   ['pop',['pop',['../class_u_s_u_1_1_g_x3_communicator.html#a0e0e9432c1bf8daf9d63f3c1cbe9feb4',1,'USU::GX3Communicator::pop()'],['../class_u_s_u_1_1_shared_queue.html#a93afe08ba3846e7b939a5f4b3c9d52e0',1,'USU::SharedQueue::pop()']]],
   ['post',['post',['../class_u_s_u_1_1_semaphore.html#a30db893557f60ec42b569b8768df10df',1,'USU::Semaphore']]],
-  ['print_5fusage',['print_usage',['../set_p_w_m_8c.html#ad64a1abe6d3f1789825c8ddada15f260',1,'setPWM.c']]],
-  ['push',['push',['../class_u_s_u_1_1_shared_queue.html#aa022284c06365797ef191b92a273f2e8',1,'USU::SharedQueue']]],
-  ['pwm_5fclock_5fdisable',['PWM_CLOCK_DISABLE',['../set_p_w_m_8c.html#a1ad5533b9833271a0afe1665b2091de6',1,'setPWM.c']]],
-  ['pwm_5fclock_5fenable',['PWM_CLOCK_ENABLE',['../set_p_w_m_8c.html#a1a7412a14f779cf6e360c37dd138b544',1,'setPWM.c']]],
-  ['pwm_5flist_5fmax',['PWM_LIST_MAX',['../set_p_w_m_8c.html#a11821146334673886675fbb9ff645579',1,'setPWM.c']]],
-  ['pwm_5foffsets',['PWM_OFFSETS',['../set_p_w_m_8c.html#a5dbabbd7e1d5ecc67eb4680bf18e6b72',1,'setPWM.c']]]
+  ['printscreen',['printScreen',['../motor-example_8cpp.html#aa4ea73cecae9fefbdec0ef033bf12792',1,'motor-example.cpp']]],
+  ['push',['push',['../class_u_s_u_1_1_shared_queue.html#aa022284c06365797ef191b92a273f2e8',1,'USU::SharedQueue']]]
 ];

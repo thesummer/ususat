@@ -1,6 +1,8 @@
 var searchData=
 [
   ['a',['a',['../class_l_s_m303.html#ad71c39fa2c1dfd978c9e93b48a6a9310',1,'LSM303']]],
+  ['a1',['a1',['../motor-example_8cpp.html#ad36c8f7a507294aa8f53bb0baf28fb24',1,'motor-example.cpp']]],
+  ['a2',['a2',['../motor-example_8cpp.html#a0a9ef35b787a9d8a73482c238d0177c4',1,'motor-example.cpp']]],
   ['acc',['acc',['../class_u_s_u_1_1_raw_acc_ang.html#a6a3d4a7bb82ccd946a5643eb160832f3',1,'USU::RawAccAng::acc()'],['../class_u_s_u_1_1_acc_ang_mag.html#a9c42a8a7e04633030c5b1c6b2b3397cd',1,'USU::AccAngMag::acc()'],['../class_u_s_u_1_1_acc_ang_mag_orientation_mat.html#a0e696809c760074e5a261b1480d34bf2',1,'USU::AccAngMagOrientationMat::acc()']]],
   ['acc_5fang',['ACC_ANG',['../namespace_u_s_u.html#a0517f100ec98a93fb28d4ae52a943b19',1,'USU']]],
   ['acc_5fang_5fmag_5fvec',['ACC_ANG_MAG_VEC',['../namespace_u_s_u.html#ad03e7c0f41fd47a68a9f33abde73932a',1,'USU']]],

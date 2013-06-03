@@ -11,12 +11,22 @@
 \item 
 class \hyperlink{class_u_s_u_1_1_g_x3_communicator}{\-G\-X3\-Communicator}
 \begin{DoxyCompactList}\small\item\em \-Represents the \-Thread class for communication with the 3\-D\-M-\/\-G\-X3-\/25. \end{DoxyCompactList}\item 
+class \hyperlink{class_u_s_u_1_1_kalman_filter}{\-Kalman\-Filter}
+\begin{DoxyCompactList}\small\item\em \-Represents the \-Periodic \-Thread class for state estimation. \end{DoxyCompactList}\item 
+class \hyperlink{class_u_s_u_1_1_lock}{\-Lock}
+\begin{DoxyCompactList}\small\item\em \-Wrapper class for pthread mutexes. \end{DoxyCompactList}\item 
+class \hyperlink{class_u_s_u_1_1_scoped_lock}{\-Scoped\-Lock}
+\begin{DoxyCompactList}\small\item\em \-Provides a helper class for \-Scoped \-Mutexes. \end{DoxyCompactList}\item 
+class \hyperlink{class_u_s_u_1_1_max127}{\-Max127}
+\begin{DoxyCompactList}\small\item\em \-Class representing the \-M\-A\-X127 \-A\-D\-C. \end{DoxyCompactList}\item 
 class \hyperlink{class_u_s_u_1_1_g_x3_packet}{\-G\-X3\-Packet}
 \begin{DoxyCompactList}\small\item\em \-Abstract base class for received packets. \end{DoxyCompactList}\item 
 class \hyperlink{class_u_s_u_1_1_raw_acc_ang}{\-Raw\-Acc\-Ang}
 \begin{DoxyCompactList}\small\item\em \-Representation for receiving (raw) acceleration \& angular rate packets. \end{DoxyCompactList}\item 
 class \hyperlink{class_u_s_u_1_1_acc_ang_mag}{\-Acc\-Ang\-Mag}
 \begin{DoxyCompactList}\small\item\em \-Representation for receiving acceleration, angular rate and magnetometer packets. \end{DoxyCompactList}\item 
+class \hyperlink{class_u_s_u_1_1_quaternion}{\-Quaternion}
+\begin{DoxyCompactList}\small\item\em \-Representation for receiving the \hyperlink{class_u_s_u_1_1_quaternion}{\-Quaternion} representation from the \hyperlink{class_i_m_u}{\-I\-M\-U}. \end{DoxyCompactList}\item 
 class \hyperlink{class_u_s_u_1_1_acc_ang_mag_orientation_mat}{\-Acc\-Ang\-Mag\-Orientation\-Mat}
 \begin{DoxyCompactList}\small\item\em \-Representation for packets containing the 3 sensor vectors and orientation matrix \-This class can be used with the commands which return 3 \-Vectors and a 3x3 \-Matrix. \-The units are\-: \end{DoxyCompactList}\item 
 class \hyperlink{class_u_s_u_1_1_g_x3_command}{\-G\-X3\-Command}
@@ -25,16 +35,12 @@ class \hyperlink{class_u_s_u_1_1_set_countinuous_mode}{\-Set\-Countinuous\-Mode}
 \begin{DoxyCompactList}\small\item\em \-Represents the \char`\"{}\-Set continuous mode\char`\"{} command. \end{DoxyCompactList}\item 
 class \hyperlink{class_u_s_u_1_1_sampling_settings}{\-Sampling\-Settings}
 \begin{DoxyCompactList}\small\item\em \-Represents the \char`\"{}\-Sampling Settings\char`\"{} command. \end{DoxyCompactList}\item 
-class \hyperlink{class_u_s_u_1_1_kalman_filter}{\-Kalman\-Filter}
-\begin{DoxyCompactList}\small\item\em \-Represents the \-Periodic \-Thread class for state estimation. \end{DoxyCompactList}\item 
-class \hyperlink{class_u_s_u_1_1_motor_control}{\-Motor\-Control}
-\begin{DoxyCompactList}\small\item\em \-Represents the \-Periodic task for motor control. \end{DoxyCompactList}\item 
+class \hyperlink{class_u_s_u_1_1_min_imu}{\-Min\-Imu}
+\item 
 class \hyperlink{class_u_s_u_1_1_motor}{\-Motor}
 \item 
-class \hyperlink{class_u_s_u_1_1_lock}{\-Lock}
-\begin{DoxyCompactList}\small\item\em \-Wrapper class for pthread mutexes. \end{DoxyCompactList}\item 
-class \hyperlink{class_u_s_u_1_1_scoped_lock}{\-Scoped\-Lock}
-\begin{DoxyCompactList}\small\item\em \-Provides a helper class for \-Scoped \-Mutexes. \end{DoxyCompactList}\item 
+class \hyperlink{class_u_s_u_1_1_motor_control}{\-Motor\-Control}
+\begin{DoxyCompactList}\small\item\em \-Represents the class for motor control. \end{DoxyCompactList}\item 
 class \hyperlink{class_u_s_u_1_1_periodic_rt_thread}{\-Periodic\-Rt\-Thread}
 \begin{DoxyCompactList}\small\item\em \-T\-O\-D\-O\-: \-Make some proper exceptions. \end{DoxyCompactList}\item 
 class \hyperlink{class_u_s_u_1_1_rt_thread}{\-Rt\-Thread}
@@ -45,6 +51,12 @@ class \hyperlink{class_u_s_u_1_1_shared_queue}{\-Shared\-Queue}
 \begin{DoxyCompactList}\small\item\em \-Wrapper class to make std\-::queue thread safe. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{\-Variables}
 \begin{DoxyCompactItemize}
+\item 
+const uint8\-\_\-t \hyperlink{namespace_u_s_u_a2db9a5d5bfe7ac01ad7614d2113cdbee}{\-I2\-C\-\_\-\-A\-D\-D\-R\-E\-S\-S} = 0b00101000
+\begin{DoxyCompactList}\small\item\em \-I2\-C-\/address of the \-A\-D\-C. \end{DoxyCompactList}\item 
+const uint8\-\_\-t \hyperlink{namespace_u_s_u_a2a7d5ce7e6cfea72beb680d46437f83a}{\-C\-O\-N\-T\-R\-O\-L\-\_\-\-B\-Y\-T\-E} = 0b10000110
+\begin{DoxyCompactList}\small\item\em \-Template of the control byte. \end{DoxyCompactList}\item 
+const uint8\-\_\-t \hyperlink{namespace_u_s_u_af74f2b5c887719077addc33c5986024b}{\-S\-E\-L0} = 4
 \item 
 const uint8\-\_\-t \hyperlink{namespace_u_s_u_a6bbb473161195a7e10d9f821cece1b04}{\-R\-A\-W\-\_\-\-A\-C\-C\-\_\-\-A\-N\-G} = 0x\-C1
 \item 
@@ -171,6 +183,23 @@ const uint8\-\_\-t \hyperlink{namespace_u_s_u_a7c9f78c9bb18ba92a529bf5819f6a5d2}
 
 \-Definition at line 50 of file messages.\-h.
 
+\hypertarget{namespace_u_s_u_a2a7d5ce7e6cfea72beb680d46437f83a}{\index{\-U\-S\-U@{\-U\-S\-U}!\-C\-O\-N\-T\-R\-O\-L\-\_\-\-B\-Y\-T\-E@{\-C\-O\-N\-T\-R\-O\-L\-\_\-\-B\-Y\-T\-E}}
+\index{\-C\-O\-N\-T\-R\-O\-L\-\_\-\-B\-Y\-T\-E@{\-C\-O\-N\-T\-R\-O\-L\-\_\-\-B\-Y\-T\-E}!USU@{\-U\-S\-U}}
+\subsubsection[{\-C\-O\-N\-T\-R\-O\-L\-\_\-\-B\-Y\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}const uint8\-\_\-t {\bf \-U\-S\-U\-::\-C\-O\-N\-T\-R\-O\-L\-\_\-\-B\-Y\-T\-E} = 0b10000110}}\label{namespace_u_s_u_a2a7d5ce7e6cfea72beb680d46437f83a}
+
+
+\-Template of the control byte. 
+
+\-The used settings are\-\_\-
+\begin{DoxyItemize}
+\item fullscale range +-\/5\-V
+\item \-Standby \-Power-\/\-Down mode
+\end{DoxyItemize}
+
+\-The bits for channel selection are set to 0. \-Send \-C\-O\-N\-T\-R\-O\-L\-\_\-\-B\-Y\-T\-E $|$ (\-C\-H$<$$<$\-S\-E\-L0) with \-C\-H being the desired channel via the \hyperlink{class_i2_c_bus}{\-I2\-C\-Bus}. 
+
+\-Definition at line 40 of file max127.\-h.
+
 \hypertarget{namespace_u_s_u_acaafc8eff5346d9c529238dd0ceb61a6}{\index{\-U\-S\-U@{\-U\-S\-U}!\-D\-E\-L\-T\-A\-\_\-\-A\-N\-G\-L\-E\-\_\-\-V\-E\-L@{\-D\-E\-L\-T\-A\-\_\-\-A\-N\-G\-L\-E\-\_\-\-V\-E\-L}}
 \index{\-D\-E\-L\-T\-A\-\_\-\-A\-N\-G\-L\-E\-\_\-\-V\-E\-L@{\-D\-E\-L\-T\-A\-\_\-\-A\-N\-G\-L\-E\-\_\-\-V\-E\-L}!USU@{\-U\-S\-U}}
 \subsubsection[{\-D\-E\-L\-T\-A\-\_\-\-A\-N\-G\-L\-E\-\_\-\-V\-E\-L}]{\setlength{\rightskip}{0pt plus 5cm}const uint8\-\_\-t {\bf \-U\-S\-U\-::\-D\-E\-L\-T\-A\-\_\-\-A\-N\-G\-L\-E\-\_\-\-V\-E\-L} = 0x\-C3}}\label{namespace_u_s_u_acaafc8eff5346d9c529238dd0ceb61a6}
@@ -220,6 +249,17 @@ const uint8\-\_\-t \hyperlink{namespace_u_s_u_a7c9f78c9bb18ba92a529bf5819f6a5d2}
 
 \-Definition at line 46 of file messages.\-h.
 
+\hypertarget{namespace_u_s_u_a2db9a5d5bfe7ac01ad7614d2113cdbee}{\index{\-U\-S\-U@{\-U\-S\-U}!\-I2\-C\-\_\-\-A\-D\-D\-R\-E\-S\-S@{\-I2\-C\-\_\-\-A\-D\-D\-R\-E\-S\-S}}
+\index{\-I2\-C\-\_\-\-A\-D\-D\-R\-E\-S\-S@{\-I2\-C\-\_\-\-A\-D\-D\-R\-E\-S\-S}!USU@{\-U\-S\-U}}
+\subsubsection[{\-I2\-C\-\_\-\-A\-D\-D\-R\-E\-S\-S}]{\setlength{\rightskip}{0pt plus 5cm}const uint8\-\_\-t {\bf \-U\-S\-U\-::\-I2\-C\-\_\-\-A\-D\-D\-R\-E\-S\-S} = 0b00101000}}\label{namespace_u_s_u_a2db9a5d5bfe7ac01ad7614d2113cdbee}
+
+
+\-I2\-C-\/address of the \-A\-D\-C. 
+
+\-It is assumed that the \-P\-I\-Ns \-A0-\/\-A2 are connected to \-G\-N\-D. \-If the \-P\-I\-Ns are connected by \-V\-C\-C change accordingly. 
+
+\-Definition at line 27 of file max127.\-h.
+
 \hypertarget{namespace_u_s_u_a85ca84f12076e3251addb0c96317c83a}{\index{\-U\-S\-U@{\-U\-S\-U}!\-M\-A\-G\-\_\-\-V\-E\-C@{\-M\-A\-G\-\_\-\-V\-E\-C}}
 \index{\-M\-A\-G\-\_\-\-V\-E\-C@{\-M\-A\-G\-\_\-\-V\-E\-C}!USU@{\-U\-S\-U}}
 \subsubsection[{\-M\-A\-G\-\_\-\-V\-E\-C}]{\setlength{\rightskip}{0pt plus 5cm}const uint8\-\_\-t {\bf \-U\-S\-U\-::\-M\-A\-G\-\_\-\-V\-E\-C} = 0x\-C7}}\label{namespace_u_s_u_a85ca84f12076e3251addb0c96317c83a}
@@ -258,7 +298,7 @@ const uint8\-\_\-t \hyperlink{namespace_u_s_u_a7c9f78c9bb18ba92a529bf5819f6a5d2}
 \hypertarget{namespace_u_s_u_ad476e2e7f70dbe869e508f676bea92a9}{\index{\-U\-S\-U@{\-U\-S\-U}!\-Q\-U\-A\-T\-E\-R\-N\-I\-O\-N@{\-Q\-U\-A\-T\-E\-R\-N\-I\-O\-N}}
 \index{\-Q\-U\-A\-T\-E\-R\-N\-I\-O\-N@{\-Q\-U\-A\-T\-E\-R\-N\-I\-O\-N}!USU@{\-U\-S\-U}}
 \subsubsection[{\-Q\-U\-A\-T\-E\-R\-N\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}const uint8\-\_\-t {\bf \-U\-S\-U\-::\-Q\-U\-A\-T\-E\-R\-N\-I\-O\-N} = 0x\-D\-F}}\label{namespace_u_s_u_ad476e2e7f70dbe869e508f676bea92a9}
-\-Quaternion 
+\hyperlink{class_u_s_u_1_1_quaternion}{\-Quaternion} 
 
 \-Definition at line 56 of file messages.\-h.
 
@@ -303,6 +343,13 @@ const uint8\-\_\-t \hyperlink{namespace_u_s_u_a7c9f78c9bb18ba92a529bf5819f6a5d2}
 \-Sampling \-Settings 
 
 \-Definition at line 54 of file messages.\-h.
+
+\hypertarget{namespace_u_s_u_af74f2b5c887719077addc33c5986024b}{\index{\-U\-S\-U@{\-U\-S\-U}!\-S\-E\-L0@{\-S\-E\-L0}}
+\index{\-S\-E\-L0@{\-S\-E\-L0}!USU@{\-U\-S\-U}}
+\subsubsection[{\-S\-E\-L0}]{\setlength{\rightskip}{0pt plus 5cm}const uint8\-\_\-t {\bf \-U\-S\-U\-::\-S\-E\-L0} = 4}}\label{namespace_u_s_u_af74f2b5c887719077addc33c5986024b}
+\-Bit offset for channel selection 
+
+\-Definition at line 41 of file max127.\-h.
 
 \hypertarget{namespace_u_s_u_a1f3d4b142078bc61d7dea5676b399d29}{\index{\-U\-S\-U@{\-U\-S\-U}!\-S\-E\-T\-\_\-\-C\-O\-N\-T\-I\-N\-U\-O\-U\-S\-\_\-\-M\-O\-D\-E@{\-S\-E\-T\-\_\-\-C\-O\-N\-T\-I\-N\-U\-O\-U\-S\-\_\-\-M\-O\-D\-E}}
 \index{\-S\-E\-T\-\_\-\-C\-O\-N\-T\-I\-N\-U\-O\-U\-S\-\_\-\-M\-O\-D\-E@{\-S\-E\-T\-\_\-\-C\-O\-N\-T\-I\-N\-U\-O\-U\-S\-\_\-\-M\-O\-D\-E}!USU@{\-U\-S\-U}}

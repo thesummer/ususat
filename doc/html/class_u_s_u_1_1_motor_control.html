@@ -103,7 +103,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="USU::MotorControl" -->
-<p>Represents the Periodic task for motor control.  
+<p>Represents the class for motor control.  
  <a href="class_u_s_u_1_1_motor_control.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="motorcontrol_8h_source.html">motorcontrol.h</a>&gt;</code></p>
@@ -112,25 +112,32 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_s_u_1_1_motor_control.html#a56ef29cfa725b1ceebd63722f67cc94f">MotorControl</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of the class.  <a href="#a56ef29cfa725b1ceebd63722f67cc94f"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_s_u_1_1_motor_control.html#ac37d32e9cc1bd392873f155758267564">calculateControlResponse</a> (bool state)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the control responste from the current state estimate.  <a href="#ac37d32e9cc1bd392873f155758267564"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_s_u_1_1_motor_control.html#aeb90cba1220e8558b170ed1637f8fc90">MotorControl</a> (const char *i2cdevice=&quot;/dev/i2c-3&quot;)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of the class.  <a href="#aeb90cba1220e8558b170ed1637f8fc90"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_s_u_1_1_motor_control.html#a5bc78d24ed52a012a3f81cd3b62216f3">~MotorControl</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_s_u_1_1_motor_control.html#a40b7e40ce5bfb7fb0dea6c0a75d1eb5e">calculateControlResponse</a> (<a class="el" href="class_u_s_u_1_1_quaternion.html">Quaternion</a> state)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the control responste from the current state estimate.  <a href="#a40b7e40ce5bfb7fb0dea6c0a75d1eb5e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_s_u_1_1_motor_control.html#ad08369ed288a7816de1b3c423684f0da">setMotor</a> (int motor, int <a class="el" href="motor-example_8cpp.html#a839337b9ba74aba4916f05f8676a90c0">dutyCycle</a>)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">For testing: sets the speed of a motor.  <a href="#ad08369ed288a7816de1b3c423684f0da"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_s_u_1_1_motor_control.html#a3304fd7022bf2468859a0d2edae0e2f0">getAnalog</a> (int motor, float &amp;aOut1, float &amp;aOut2)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">For testing: returns the Analog measurements of a motor.  <a href="#a3304fd7022bf2468859a0d2edae0e2f0"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Represents the Periodic task for motor control. </p>
-<p>This class is derived from <a class="el" href="class_u_s_u_1_1_periodic_rt_thread.html" title="TODO: Make some proper exceptions.">PeriodicRtThread</a>. It initializes the interface to the 4 motors. In a periodic loop it takes the last system state estimate from the Kalman filter, calculates the appropiate control response and sets the speed (duty cycle) of the motors. </p>
+<div class="textblock"><p>Represents the class for motor control. </p>
+<p>It initializes the interface to the 4 motors. It receives the last system state estimate from the Kalman filter, calculates the appropiate control response and sets the speed (duty cycle) of the motors.</p>
+<p>TODO: Get the desired state from ground station to calculate the control response. </p>
 
 <p>Definition at line <a class="el" href="motorcontrol_8h_source.html#l00034">34</a> of file <a class="el" href="motorcontrol_8h_source.html">motorcontrol.h</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a56ef29cfa725b1ceebd63722f67cc94f"></a><!-- doxytag: member="USU::MotorControl::MotorControl" ref="a56ef29cfa725b1ceebd63722f67cc94f" args="()" -->
+<a class="anchor" id="aeb90cba1220e8558b170ed1637f8fc90"></a><!-- doxytag: member="USU::MotorControl::MotorControl" ref="aeb90cba1220e8558b170ed1637f8fc90" args="(const char *i2cdevice=&quot;/dev/i2c&#45;3&quot;)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_u_s_u_1_1_motor_control.html#a56ef29cfa725b1ceebd63722f67cc94f">MotorControl::MotorControl</a> </td>
+          <td class="memname"><a class="el" href="class_u_s_u_1_1_motor_control.html#aeb90cba1220e8558b170ed1637f8fc90">MotorControl::MotorControl</a> </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>i2cdevice</em> = <code>&quot;/dev/i2c-3&quot;</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -138,29 +145,45 @@ Public Member Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Constructor of the class. </p>
-<p>Initializes the underlying <a class="el" href="class_u_s_u_1_1_periodic_rt_thread.html" title="TODO: Make some proper exceptions.">PeriodicRtThread</a>, the GPIO-class, the PWMs and the 4 Motors.</p>
+<p>Initializes the underlying the GPIO-class, the PWMs the 4 Motors and the ADC.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">priority</td><td>priority of the periodic pthread </td></tr>
-    <tr><td class="paramname">period_us</td><td>period (in us) of the periodic pthread </td></tr>
-    <tr><td class="paramname">kalmanfilter</td><td>reference to the <a class="el" href="class_u_s_u_1_1_kalman_filter.html" title="Represents the Periodic Thread class for state estimation.">KalmanFilter</a> to get state estimates </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="motorcontrol_8cpp_source.html#l00016">16</a> of file <a class="el" href="motorcontrol_8cpp_source.html">motorcontrol.cpp</a>.</p>
+<p>Definition at line <a class="el" href="motorcontrol_8cpp_source.html#l00015">15</a> of file <a class="el" href="motorcontrol_8cpp_source.html">motorcontrol.cpp</a>.</p>
 
 </div>
 </div>
-<hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="ac37d32e9cc1bd392873f155758267564"></a><!-- doxytag: member="USU::MotorControl::calculateControlResponse" ref="ac37d32e9cc1bd392873f155758267564" args="(bool state)" -->
+<a class="anchor" id="a5bc78d24ed52a012a3f81cd3b62216f3"></a><!-- doxytag: member="USU::MotorControl::~MotorControl" ref="a5bc78d24ed52a012a3f81cd3b62216f3" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_u_s_u_1_1_motor_control.html#ac37d32e9cc1bd392873f155758267564">MotorControl::calculateControlResponse</a> </td>
+          <td class="memname"><a class="el" href="class_u_s_u_1_1_motor_control.html#a5bc78d24ed52a012a3f81cd3b62216f3">MotorControl::~MotorControl</a> </td>
           <td>(</td>
-          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="motorcontrol_8cpp_source.html#l00031">31</a> of file <a class="el" href="motorcontrol_8cpp_source.html">motorcontrol.cpp</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a40b7e40ce5bfb7fb0dea6c0a75d1eb5e"></a><!-- doxytag: member="USU::MotorControl::calculateControlResponse" ref="a40b7e40ce5bfb7fb0dea6c0a75d1eb5e" args="(Quaternion state)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_u_s_u_1_1_motor_control.html#a40b7e40ce5bfb7fb0dea6c0a75d1eb5e">MotorControl::calculateControlResponse</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_u_s_u_1_1_quaternion.html">Quaternion</a>&#160;</td>
           <td class="paramname"><em>state</em></td><td>)</td>
           <td></td>
         </tr>
@@ -169,7 +192,6 @@ Public Member Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Calculate the control responste from the current state estimate. </p>
-<p>TODO: use a proper variable for the state estimate</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">state</td><td>the current state estimate from the Kalman filter </td></tr>
@@ -179,13 +201,96 @@ Public Member Functions</h2></td></tr>
 <p>TODO: Make some control magic</p>
 <p>[...] </p>
 
-<p>Definition at line <a class="el" href="motorcontrol_8cpp_source.html#l00026">26</a> of file <a class="el" href="motorcontrol_8cpp_source.html">motorcontrol.cpp</a>.</p>
+<p>Definition at line <a class="el" href="motorcontrol_8cpp_source.html#l00039">39</a> of file <a class="el" href="motorcontrol_8cpp_source.html">motorcontrol.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3304fd7022bf2468859a0d2edae0e2f0"></a><!-- doxytag: member="USU::MotorControl::getAnalog" ref="a3304fd7022bf2468859a0d2edae0e2f0" args="(int motor, float &amp;aOut1, float &amp;aOut2)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_u_s_u_1_1_motor_control.html#a3304fd7022bf2468859a0d2edae0e2f0">MotorControl::getAnalog</a> </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>motor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float &amp;&#160;</td>
+          <td class="paramname"><em>aOut1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float &amp;&#160;</td>
+          <td class="paramname"><em>aOut2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>For testing: returns the Analog measurements of a motor. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">motor</td><td>which motor [0..3] </td></tr>
+    <tr><td class="paramname">aOut1</td><td>reference to a variable to store the first analog measurement </td></tr>
+    <tr><td class="paramname">aOut2</td><td>reference to a variable to store the second analog measurement </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="motorcontrol_8cpp_source.html#l00052">52</a> of file <a class="el" href="motorcontrol_8cpp_source.html">motorcontrol.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad08369ed288a7816de1b3c423684f0da"></a><!-- doxytag: member="USU::MotorControl::setMotor" ref="ad08369ed288a7816de1b3c423684f0da" args="(int motor, int dutyCycle)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_u_s_u_1_1_motor_control.html#ad08369ed288a7816de1b3c423684f0da">MotorControl::setMotor</a> </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>motor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>dutyCycle</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>For testing: sets the speed of a motor. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">motor</td><td>which motor [0..3] </td></tr>
+    <tr><td class="paramname">dutyCycle</td><td>which speed [-100..100] </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="motorcontrol_8cpp_source.html#l00047">47</a> of file <a class="el" href="motorcontrol_8cpp_source.html">motorcontrol.cpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="motorcontrol_8h_source.html">motorcontrol.h</a></li>
-<li><a class="el" href="motorcontrol_8cpp_source.html">motorcontrol.cpp</a></li>
+<li>include/<a class="el" href="motorcontrol_8h_source.html">motorcontrol.h</a></li>
+<li>src/<a class="el" href="motorcontrol_8cpp_source.html">motorcontrol.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -208,7 +313,7 @@ Public Member Functions</h2></td></tr>
       <li class="navelem"><a class="el" href="namespace_u_s_u.html">USU</a>      </li>
       <li class="navelem"><a class="el" href="class_u_s_u_1_1_motor_control.html">MotorControl</a>      </li>
 
-    <li class="footer">Generated on Fri May 17 2013 16:30:36 for U-BET by
+    <li class="footer">Generated on Mon Jun 3 2013 15:14:36 for U-BET by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

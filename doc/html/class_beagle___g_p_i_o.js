@@ -13,7 +13,7 @@ var class_beagle___g_p_i_o =
     [ "readPin", "class_beagle___g_p_i_o.html#a698b1f9ef0e609f1b28d823a7d01a8d6", null ],
     [ "sendSPIBuffer", "class_beagle___g_p_i_o.html#a74e936b8da8c28a39a44707317059a01", null ],
     [ "writePin", "class_beagle___g_p_i_o.html#a33d763b486233269f5e8045b69d9ec49", null ],
-    [ "Beagle_GPIO_Registers", "class_beagle___g_p_i_o.html#a9f75d6e93d767194192f573ded387976", null ],
+    [ "Beagle_GPIO_Registers", "class_beagle___g_p_i_o.html#a0164dbfd9376ef3a1e0a404d5cf2f431", null ],
     [ "GPIO_Base", "class_beagle___g_p_i_o.html#ab259232b938bf1892836737c07610384", null ],
     [ "GPIO_Control_Module_Registers", "class_beagle___g_p_i_o.html#a45dea13988842b47f592806fd15f1262", null ],
     [ "GPIO_Pad_Control", "class_beagle___g_p_i_o.html#ae4a0a2a56a0ba31145a5f41eb3439886", null ],

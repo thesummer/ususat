@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>U-BET: minimu/minimu.cpp Source File</title>
+<title>U-BET: src/minimu.cpp Source File</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -95,52 +95,52 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="doc-content">
 <div class="header">
   <div class="headertitle">
-<div class="title">minimu/minimu.cpp</div>  </div>
+<div class="title">src/minimu.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="minimu_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#include &quot;<a class="code" href="minimu_8h.html">minimu.h</a>&quot;</span>
 <a name="l00002"></a>00002 <span class="preprocessor">#include &quot;<a class="code" href="_i_m_u_8h.html">IMU.h</a>&quot;</span>
 <a name="l00003"></a>00003 
-<a name="l00004"></a><a class="code" href="class_min_imu.html#a2584a081b9ed215df6823133f7f010d2">00004</a> <a class="code" href="class_min_imu.html#a2584a081b9ed215df6823133f7f010d2">MinImu::MinImu</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *i2cDeviceName)
+<a name="l00004"></a><a class="code" href="class_u_s_u_1_1_min_imu.html#a2584a081b9ed215df6823133f7f010d2">00004</a> MinImu::MinImu(<span class="keyword">const</span> <span class="keywordtype">char</span> *i2cDeviceName)
 <a name="l00005"></a>00005     :compass(i2cDeviceName), gyro(i2cDeviceName)
 <a name="l00006"></a>00006 {
 <a name="l00007"></a>00007 
 <a name="l00008"></a>00008 }
 <a name="l00009"></a>00009 
-<a name="l00010"></a><a class="code" href="class_min_imu.html#a8f6842375bddcd750203e860b1475a32">00010</a> <span class="keywordtype">void</span> <a class="code" href="class_min_imu.html#a8f6842375bddcd750203e860b1475a32">MinImu::enable</a>()
+<a name="l00010"></a><a class="code" href="class_u_s_u_1_1_min_imu.html#a8f6842375bddcd750203e860b1475a32">00010</a> <span class="keywordtype">void</span> <a class="code" href="class_u_s_u_1_1_min_imu.html#a8f6842375bddcd750203e860b1475a32">MinImu::enable</a>()
 <a name="l00011"></a>00011 {
-<a name="l00012"></a>00012     <a class="code" href="class_min_imu.html#a35f286e23317c02649ce133d60b063e2">compass</a>.<a class="code" href="class_l_s_m303.html#af2c1baa290df19e7cd4667a13a68a19a">enable</a>();
-<a name="l00013"></a>00013     <a class="code" href="class_min_imu.html#a4d70040f3bc073706b65dbafcf97f7e2">gyro</a>.<a class="code" href="class_l3_g.html#a48decd4910020dc16c219e0081239c45">enable</a>();
+<a name="l00012"></a>00012     <a class="code" href="class_u_s_u_1_1_min_imu.html#a25e0998632bb7e123d23a1c3221d925b">compass</a>.<a class="code" href="class_l_s_m303.html#af2c1baa290df19e7cd4667a13a68a19a">enable</a>();
+<a name="l00013"></a>00013     <a class="code" href="class_u_s_u_1_1_min_imu.html#a5fb25cb88a138d7af87d1c69c6100d6b">gyro</a>.<a class="code" href="class_l3_g.html#a48decd4910020dc16c219e0081239c45">enable</a>();
 <a name="l00014"></a>00014 }
 <a name="l00015"></a>00015 
-<a name="l00016"></a><a class="code" href="class_min_imu.html#a08d89ce9548722810df43bd8439372ff">00016</a> <a class="code" href="vector_8h.html#a148efcf3c5319dd8961dbf9f4b846a98">vector</a> <a class="code" href="class_min_imu.html#a08d89ce9548722810df43bd8439372ff">MinImu::readGyro</a>()
+<a name="l00016"></a><a class="code" href="class_u_s_u_1_1_min_imu.html#a08d89ce9548722810df43bd8439372ff">00016</a> <a class="code" href="vector_8h.html#a148efcf3c5319dd8961dbf9f4b846a98">vector</a> <a class="code" href="class_u_s_u_1_1_min_imu.html#a08d89ce9548722810df43bd8439372ff">MinImu::readGyro</a>()
 <a name="l00017"></a>00017 {
 <a name="l00018"></a>00018     <span class="comment">// At the full-scale=250 dps setting, the gyro datasheet says</span>
 <a name="l00019"></a>00019     <span class="comment">// we get 8.75 mdps/digit.</span>
 <a name="l00020"></a>00020     <span class="keyword">const</span> <span class="keywordtype">float</span> gyro_scale = 0.00875; <span class="comment">// in °/s</span>
 <a name="l00021"></a>00021 
-<a name="l00022"></a>00022     <a class="code" href="class_min_imu.html#a4d70040f3bc073706b65dbafcf97f7e2">gyro</a>.<a class="code" href="class_l3_g.html#a4b1913429824dc07bd2017c3755e7985">read</a>();
-<a name="l00023"></a>00023     <a class="code" href="class_i_m_u.html#aa63b8395ba841c899a926fc47d4a2435">IMU::raw_g</a> = int_vector_from_ints(&amp;<a class="code" href="class_min_imu.html#a4d70040f3bc073706b65dbafcf97f7e2">gyro</a>.<a class="code" href="class_l3_g.html#a0cb874e50a2ea4753d81e9a46c7e45ce">g</a>);
-<a name="l00024"></a>00024     <span class="keywordflow">return</span> ( vector_from_ints(&amp;<a class="code" href="class_min_imu.html#a4d70040f3bc073706b65dbafcf97f7e2">gyro</a>.<a class="code" href="class_l3_g.html#a0cb874e50a2ea4753d81e9a46c7e45ce">g</a>)  * gyro_scale);
+<a name="l00022"></a>00022     <a class="code" href="class_u_s_u_1_1_min_imu.html#a5fb25cb88a138d7af87d1c69c6100d6b">gyro</a>.<a class="code" href="class_l3_g.html#a4b1913429824dc07bd2017c3755e7985">read</a>();
+<a name="l00023"></a>00023     <a class="code" href="class_i_m_u.html#aa63b8395ba841c899a926fc47d4a2435">IMU::raw_g</a> = int_vector_from_ints(&amp;<a class="code" href="class_u_s_u_1_1_min_imu.html#a5fb25cb88a138d7af87d1c69c6100d6b">gyro</a>.<a class="code" href="class_l3_g.html#a0cb874e50a2ea4753d81e9a46c7e45ce">g</a>);
+<a name="l00024"></a>00024     <span class="keywordflow">return</span> ( vector_from_ints(&amp;<a class="code" href="class_u_s_u_1_1_min_imu.html#a5fb25cb88a138d7af87d1c69c6100d6b">gyro</a>.<a class="code" href="class_l3_g.html#a0cb874e50a2ea4753d81e9a46c7e45ce">g</a>)  * gyro_scale);
 <a name="l00025"></a>00025 }
 <a name="l00026"></a>00026 
-<a name="l00027"></a><a class="code" href="class_min_imu.html#ac31e697b05053c7535140eabf4f6f06f">00027</a> <a class="code" href="vector_8h.html#a148efcf3c5319dd8961dbf9f4b846a98">vector</a> <a class="code" href="class_min_imu.html#ac31e697b05053c7535140eabf4f6f06f">MinImu::readAcc</a>()
+<a name="l00027"></a><a class="code" href="class_u_s_u_1_1_min_imu.html#ac31e697b05053c7535140eabf4f6f06f">00027</a> <a class="code" href="vector_8h.html#a148efcf3c5319dd8961dbf9f4b846a98">vector</a> <a class="code" href="class_u_s_u_1_1_min_imu.html#ac31e697b05053c7535140eabf4f6f06f">MinImu::readAcc</a>()
 <a name="l00028"></a>00028 {
 <a name="l00029"></a>00029     <span class="comment">// LSM303 accelerometer: At 2 g sensitivity, the datasheet says</span>
 <a name="l00030"></a>00030     <span class="comment">// we get 1 mg/digit.</span>
 <a name="l00031"></a>00031     <span class="keyword">const</span> <span class="keywordtype">float</span> accel_scale = 0.0010;
 <a name="l00032"></a>00032 
-<a name="l00033"></a>00033     <a class="code" href="class_min_imu.html#a35f286e23317c02649ce133d60b063e2">compass</a>.<a class="code" href="class_l_s_m303.html#ac1396a51b288eadc41fd19fbd79ef68e">readAcc</a>();
-<a name="l00034"></a>00034     <a class="code" href="class_i_m_u.html#acd6307b0f4f44bd6f057cd8f85080668">IMU::raw_a</a> = int_vector_from_ints(&amp;<a class="code" href="class_min_imu.html#a35f286e23317c02649ce133d60b063e2">compass</a>.<a class="code" href="class_l_s_m303.html#ad71c39fa2c1dfd978c9e93b48a6a9310">a</a>);
-<a name="l00035"></a>00035     <span class="keywordflow">return</span> vector_from_ints(&amp;<a class="code" href="class_min_imu.html#a35f286e23317c02649ce133d60b063e2">compass</a>.<a class="code" href="class_l_s_m303.html#ad71c39fa2c1dfd978c9e93b48a6a9310">a</a>) * accel_scale;
+<a name="l00033"></a>00033     <a class="code" href="class_u_s_u_1_1_min_imu.html#a25e0998632bb7e123d23a1c3221d925b">compass</a>.<a class="code" href="class_l_s_m303.html#ac1396a51b288eadc41fd19fbd79ef68e">readAcc</a>();
+<a name="l00034"></a>00034     <a class="code" href="class_i_m_u.html#acd6307b0f4f44bd6f057cd8f85080668">IMU::raw_a</a> = int_vector_from_ints(&amp;<a class="code" href="class_u_s_u_1_1_min_imu.html#a25e0998632bb7e123d23a1c3221d925b">compass</a>.<a class="code" href="class_l_s_m303.html#ad71c39fa2c1dfd978c9e93b48a6a9310">a</a>);
+<a name="l00035"></a>00035     <span class="keywordflow">return</span> vector_from_ints(&amp;<a class="code" href="class_u_s_u_1_1_min_imu.html#a25e0998632bb7e123d23a1c3221d925b">compass</a>.<a class="code" href="class_l_s_m303.html#ad71c39fa2c1dfd978c9e93b48a6a9310">a</a>) * accel_scale;
 <a name="l00036"></a>00036 }
 <a name="l00037"></a>00037 
-<a name="l00038"></a><a class="code" href="class_min_imu.html#add98c9a8e002a56ccb4978079ac2dbfe">00038</a> <a class="code" href="vector_8h.html#a148efcf3c5319dd8961dbf9f4b846a98">vector</a> <a class="code" href="class_min_imu.html#add98c9a8e002a56ccb4978079ac2dbfe">MinImu::readMag</a>()
+<a name="l00038"></a><a class="code" href="class_u_s_u_1_1_min_imu.html#add98c9a8e002a56ccb4978079ac2dbfe">00038</a> <a class="code" href="vector_8h.html#a148efcf3c5319dd8961dbf9f4b846a98">vector</a> <a class="code" href="class_u_s_u_1_1_min_imu.html#add98c9a8e002a56ccb4978079ac2dbfe">MinImu::readMag</a>()
 <a name="l00039"></a>00039 {
-<a name="l00040"></a>00040     <a class="code" href="class_min_imu.html#a35f286e23317c02649ce133d60b063e2">compass</a>.<a class="code" href="class_l_s_m303.html#abc93e8d8101c6b00df2ae85c5f8ded9e">readMag</a>();
-<a name="l00041"></a>00041     <a class="code" href="class_i_m_u.html#ad822d0a58bd3050a42cd377453521b5f">IMU::raw_m</a> = int_vector_from_ints(&amp;<a class="code" href="class_min_imu.html#a35f286e23317c02649ce133d60b063e2">compass</a>.<a class="code" href="class_l_s_m303.html#a606cb6a86d385c4c4a9767f6b1bf2ea5">m</a>);
+<a name="l00040"></a>00040     <a class="code" href="class_u_s_u_1_1_min_imu.html#a25e0998632bb7e123d23a1c3221d925b">compass</a>.<a class="code" href="class_l_s_m303.html#abc93e8d8101c6b00df2ae85c5f8ded9e">readMag</a>();
+<a name="l00041"></a>00041     <a class="code" href="class_i_m_u.html#ad822d0a58bd3050a42cd377453521b5f">IMU::raw_m</a> = int_vector_from_ints(&amp;<a class="code" href="class_u_s_u_1_1_min_imu.html#a25e0998632bb7e123d23a1c3221d925b">compass</a>.<a class="code" href="class_l_s_m303.html#a606cb6a86d385c4c4a9767f6b1bf2ea5">m</a>);
 <a name="l00042"></a>00042 
-<a name="l00043"></a>00043     <span class="keywordflow">return</span> vector_from_ints(&amp;<a class="code" href="class_min_imu.html#a35f286e23317c02649ce133d60b063e2">compass</a>.<a class="code" href="class_l_s_m303.html#a606cb6a86d385c4c4a9767f6b1bf2ea5">m</a>);
+<a name="l00043"></a>00043     <span class="keywordflow">return</span> vector_from_ints(&amp;<a class="code" href="class_u_s_u_1_1_min_imu.html#a25e0998632bb7e123d23a1c3221d925b">compass</a>.<a class="code" href="class_l_s_m303.html#a606cb6a86d385c4c4a9767f6b1bf2ea5">m</a>);
 <a name="l00044"></a>00044 }
 </pre></div></div><!-- contents -->
 </div>
@@ -162,7 +162,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="minimu_8cpp.html">minimu.cpp</a>      </li>
 
-    <li class="footer">Generated on Fri May 17 2013 16:30:34 for U-BET by
+    <li class="footer">Generated on Mon Jun 3 2013 15:14:35 for U-BET by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

@@ -33,6 +33,7 @@ var searchData=
   ['l3g_5fwho_5fam_5fi',['L3G_WHO_AM_I',['../_l3_g_8h.html#a170cb2b6f48b713af1c7bddf603ed09c',1,'L3G.h']]],
   ['l3gd20_5faddress_5fsa0_5fhigh',['L3GD20_ADDRESS_SA0_HIGH',['../_l3_g_8cpp.html#a30dbad8f4ae0051bcbc17587c6ee7703',1,'L3G.cpp']]],
   ['l3gd20_5faddress_5fsa0_5flow',['L3GD20_ADDRESS_SA0_LOW',['../_l3_g_8cpp.html#a49fc2c0e239dc82b4c3ce88d489004a3',1,'L3G.cpp']]],
+  ['length',['LENGTH',['../motor-example_8cpp.html#a30362161c93e3f1a4ee4c673f535b5a8',1,'motor-example.cpp']]],
   ['lock',['Lock',['../class_u_s_u_1_1_lock.html',1,'USU']]],
   ['lock',['Lock',['../class_u_s_u_1_1_lock.html#a4eb7425055400e6edf40c09b89a3b4c8',1,'USU::Lock::Lock()'],['../class_u_s_u_1_1_lock.html#a68790e92c297da5b067f0b9797a1a9f0',1,'USU::Lock::lock()']]],
   ['lock_2eh',['Lock.h',['../_lock_8h.html',1,'']]],

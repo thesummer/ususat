@@ -7,5 +7,6 @@ var searchData=
   ['read_5fdevice_5fid',['READ_DEVICE_ID',['../namespace_u_s_u.html#ad810b0281ab629302e9fd716374b90ed',1,'USU']]],
   ['read_5ffirmware_5fver',['READ_FIRMWARE_VER',['../namespace_u_s_u.html#a7d0e77d37d6107d2869c30f57412e8b0',1,'USU']]],
   ['read_5fword_5feeprom',['READ_WORD_EEPROM',['../namespace_u_s_u.html#ac9d01a02c622d06449580697749db1f5',1,'USU']]],
-  ['realign_5fup_5fnorth',['REALIGN_UP_NORTH',['../namespace_u_s_u.html#a9c5f8777b9c35aaaa0b64490d1f9a20d',1,'USU']]]
+  ['realign_5fup_5fnorth',['REALIGN_UP_NORTH',['../namespace_u_s_u.html#a9c5f8777b9c35aaaa0b64490d1f9a20d',1,'USU']]],
+  ['row',['row',['../motor-example_8cpp.html#a1d1d05d566b8050d6f5e92f1e5f32898',1,'motor-example.cpp']]]
 ];

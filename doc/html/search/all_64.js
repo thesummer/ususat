@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['dac_2ecpp',['dac.cpp',['../dac_8cpp.html',1,'']]],
+  ['dac_2dexample_2ecpp',['dac-example.cpp',['../dac-example_8cpp.html',1,'']]],
   ['datacollector',['DataCollector',['../class_data_collector.html',1,'DataCollector'],['../class_data_collector.html#a0f71c5485807140c74871ef5a9467334',1,'DataCollector::DataCollector()']]],
   ['dataconditioning',['DataConditioning',['../class_u_s_u_1_1_sampling_settings.html#ae0ea2cbf894229093108a0c03c140289',1,'USU::SamplingSettings']]],
   ['delta_5fangle_5fvel',['DELTA_ANGLE_VEL',['../namespace_u_s_u.html#acaafc8eff5346d9c529238dd0ceb61a6',1,'USU']]],
@@ -9,5 +9,6 @@ var searchData=
   ['dutya_5fns',['DutyA_ns',['../classc_p_w_m.html#a6992b609c8ff5918bb0be124a587f242',1,'cPWM']]],
   ['dutya_5fpercent',['DutyA_percent',['../classc_p_w_m.html#a01ee225187750aca970472bfcbc0c78d',1,'cPWM']]],
   ['dutyb_5fns',['DutyB_ns',['../classc_p_w_m.html#a3301314659e0d9b1378dd0108c5d606d',1,'cPWM']]],
-  ['dutyb_5fpercent',['DutyB_percent',['../classc_p_w_m.html#a411d83d46e5658239575cc3fd9b4bc8f',1,'cPWM']]]
+  ['dutyb_5fpercent',['DutyB_percent',['../classc_p_w_m.html#a411d83d46e5658239575cc3fd9b4bc8f',1,'cPWM']]],
+  ['dutycycle',['dutyCycle',['../motor-example_8cpp.html#a839337b9ba74aba4916f05f8676a90c0',1,'motor-example.cpp']]]
 ];

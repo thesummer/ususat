@@ -5,6 +5,6 @@ var searchData=
   ['beagle_5fgpio_2eh',['Beagle_GPIO.h',['../_beagle___g_p_i_o_8h.html',1,'']]],
   ['beagle_5fgpio_5fdebug',['BEAGLE_GPIO_DEBUG',['../_beagle___g_p_i_o_8h.html#a4539ad479eb3f5b550fe158afba3c743',1,'Beagle_GPIO.h']]],
   ['beagle_5fgpio_5fdirection',['Beagle_GPIO_Direction',['../class_beagle___g_p_i_o.html#abf8efba9f6a4f6b552d1c15c99100765',1,'Beagle_GPIO']]],
-  ['beagle_5fgpio_5fregisters',['Beagle_GPIO_Registers',['../class_beagle___g_p_i_o.html#a9f75d6e93d767194192f573ded387976',1,'Beagle_GPIO']]],
+  ['beagle_5fgpio_5fregisters',['Beagle_GPIO_Registers',['../class_beagle___g_p_i_o.html#a0164dbfd9376ef3a1e0a404d5cf2f431',1,'Beagle_GPIO']]],
   ['beagle_5fgpio_5fstatus',['Beagle_GPIO_Status',['../class_beagle___g_p_i_o.html#a40ebd672d74de41bbf5944109e1302ee',1,'Beagle_GPIO']]]
 ];
