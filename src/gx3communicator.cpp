@@ -14,12 +14,35 @@
 #include <iomanip>
 #include <stdexcept>
 
-
+#include <sys/time.h>
 
 #include "gx3communicator.h"
 using namespace USU;
 
 #include "messages.h"
+
+//int timeval_subtract (struct timeval * result, struct timeval * x, struct timeval * y)
+//{
+//    /* Perform the carry for the later subtraction by updating y. */
+//    if (x->tv_usec < y->tv_usec) {
+//        int nsec = (y->tv_usec - x->tv_usec) / 1000000 + 1;
+//        y->tv_usec -= 1000000 * nsec;
+//        y->tv_sec += nsec;
+//    }
+//    if (x->tv_usec - y->tv_usec > 1000000) {
+//        int nsec = (x->tv_usec - y->tv_usec) / 1000000;
+//        y->tv_usec += 1000000 * nsec;
+//        y->tv_sec -= nsec;
+//    }
+
+//    /* Compute the time remaining to wait.
+//          tv_usec is certainly positive. */
+//    result->tv_sec = x->tv_sec - y->tv_sec;
+//    result->tv_usec = x->tv_usec - y->tv_usec;
+
+//    /* Return 1 if result is negative. */
+//    return x->tv_sec < y->tv_sec;
+//}
 
 GX3Communicator::GX3Communicator(int priority, const char *serialDevice, SerialPort::BaudRate baudRate)
     :RtThread(priority), mSerialPort(serialDevice), mKeepRunning(false)
@@ -50,13 +73,26 @@ void GX3Communicator::run()
     if(setCont.sendCommand(mSerialPort) == false)
         ;/// TODO: Error
 
+//    struct timeval start, now, elapsed;
+
+//    gettimeofday(&start, NULL);
     while(mKeepRunning)
     {
         AccAngMag data;
-        if(data.readFromSerial(mSerialPort) == false)
-            ; /// TODO: Error?
+        if(data.readFromSerial(mSerialPort))
+        {
+            mQueue.push(data);
+            //        gettimeofday(&now, NULL);
+            //        timeval_subtract(&elapsed, &now, &start);
+            //        unsigned long long timestamp = elapsed.tv_sec * 1000 + elapsed.tv_usec / 1000; // in ms since start
+            //        std::cout << timestamp << "\t" << data.timer/62 << std::endl;
+        }
+        else
+        {
+//            std::cout << "readFromSerial failed" << std::endl;
+            //            throw std::runtime_error("Getting PackageData failed"); /// TODO: Error?
 
-        mQueue.push(data);
+        }
     }
 
     // Stop continuous mode

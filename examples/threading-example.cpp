@@ -1,10 +1,12 @@
 
+#include <iostream>
+using namespace std;
+
+
 #include "periodicrtthread.h"
 #include "Lock.h"
 using namespace USU;
 
-#include <iostream>
-using namespace std;
 
 class SharedObject
 {

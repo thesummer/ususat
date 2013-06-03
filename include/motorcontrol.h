@@ -12,10 +12,10 @@
 #ifndef MOTORCONTROL_H
 #define MOTORCONTROL_H
 
-#include "pwm/cPWM.h"
-#include "pwm/Beagle_GPIO.h"
-#include "pwm/motor.h"
-#include "pwm/max127.h"
+#include "cPWM.h"
+#include "Beagle_GPIO.h"
+#include "motor.h"
+#include "max127.h"
 
 namespace USU
 {

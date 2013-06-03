@@ -14,11 +14,11 @@
 #ifndef KALMANFILTER_H
 #define KALMANFILTER_H
 
-#include "threading/periodicrtthread.h"
-#include "minimu/minimu.h"
-#include "threading/Lock.h"
-#include "3dm/gx3communicator.h"
-#include "3dm/messages.h"
+#include "periodicrtthread.h"
+#include "minimu.h"
+#include "Lock.h"
+#include "gx3communicator.h"
+#include "messages.h"
 #include "motorcontrol.h"
 
 namespace USU
@@ -32,7 +32,6 @@ namespace USU
  estimate can be accessed from other threads (protected by mutex).
 
  TODO:
-    - Add interface to 3DM-GX3-25
     - Add interface to star camera
 */
 class KalmanFilter : public PeriodicRtThread
@@ -50,7 +49,7 @@ public:
      \param i2cImu      name of the I2C-device for the IMU (e.g. /dev/i2c-1)
      \param i2cMotor    name of the I2C-device for the Motors (e.g. /dev/i2c-2)
     */
-    KalmanFilter(int priority, unsigned int period_us, char* i2cImu, char *i2cMotor);
+    KalmanFilter(int priority, unsigned int period_us, const char* i2cImu, const char *i2cMotor);
 
     /*!
      \brief Thread routine

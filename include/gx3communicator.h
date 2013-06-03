@@ -13,8 +13,8 @@
 #define GX3COMMUNICATOR_H
 
 #include<SerialPort.h>
-#include "../threading/RtThread.h"
-#include "../threading/sharedqueue.h"
+#include "RtThread.h"
+#include "sharedqueue.h"
 #include "messages.h"
 
 
@@ -64,6 +64,8 @@ public:
     void pop() { mQueue.pop();}
 
     bool isEmpty() {return mQueue.isEmpty(); }
+
+    int size() {return mQueue.size(); }
 
     AccAngMag& front() { return mQueue.front(); }
 

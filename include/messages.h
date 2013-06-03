@@ -19,7 +19,7 @@
 #include<iostream>
 #include<iomanip>
 
-#include "../minimu/vector.h"
+#include "vector.h"
 
 namespace USU
 {
@@ -72,6 +72,12 @@ const uint8_t DEVICE_RESET                    = 0xFE; /*!< Device Reset (no repl
 class GX3Packet
 {
 public:
+     /*!
+      \brief Read the information for the structure from the SerialPort
+
+      \param serialPort serialPort object from libserial
+      \return bool true if reading (and checksum) was successful, fals otherwise
+     */
      virtual bool readFromSerial(SerialPort &serialPort) = 0;
 
     /*!
@@ -164,7 +170,7 @@ public:
         if(GX3Packet::calculateChecksum(buffer, size) == false)
         {
             using namespace std;
-            cout << "Checksum failed" << endl;
+//            cout << "Checksum failed" << endl;
             for (int i = 0; i<size; ++i)
             {
                 cout << hex <<  setw(2) << setfill('0') << "0x" << (int) buffer[i] << dec << "+ ";
@@ -222,7 +228,7 @@ public:
         if(GX3Packet::calculateChecksum(buffer, size) == false)
         {
             using namespace std;
-            cout << "Checksum failed" << endl;
+//            cout << "Checksum failed" << endl;
             for (int i = 0; i<size; ++i)
             {
                 cout << hex <<  setw(2) << setfill('0') << "0x" << (int) buffer[i] << dec << "+ ";
@@ -248,6 +254,50 @@ public:
     unsigned int timer; /*!< The value of the timestamp for the package */
 
     enum{size = 43}; /*!< Size of the package (enum to avoid complications with static consts) */
+};
+
+/*!
+ \brief Representation for receiving the Quaternion representation from the IMU
+
+ The class will return a Quaternion from the Eigen library
+
+*/
+class Quaternion : public GX3Packet
+{
+public:
+    /*!
+     \brief Creates an empty packet object
+     */
+    Quaternion() {}
+
+    bool readFromSerial(SerialPort &serialPort)
+    {
+        uint8_t buffer[size];
+        buffer[0] = serialPort.ReadByte();
+        if(buffer[0] != QUATERNION)
+        {
+            std::cout << (char) buffer[0] << std::endl;
+            return false; //throw std::runtime_error("Wrong package identifier");
+        }
+
+        serialPort.ReadRaw(&buffer[1], size-1);
+        if(GX3Packet::calculateChecksum(buffer, size) == false)
+        {
+            return false;
+        }
+
+        quat = quaternion((float*) &buffer[1]);
+        timer = createUInt(&buffer[17]);
+
+        return true;
+    }
+
+
+    quaternion quat; /*!< Eigen::Quaternionf representing the Orientation of the IMU*/
+
+    unsigned int timer; /*!< The value of the timestamp for the package */
+
+    enum{size = 23}; /*!< Size of the package (enum to avoid complications with static consts) */
 };
 
 

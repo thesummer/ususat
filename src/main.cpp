@@ -1,15 +1,19 @@
 #include<csignal>
 #include<cstdlib>
+#include<unistd.h>
+
 
 #include "kalmanfilter.h"
 using namespace USU;
 
-KalmanFilter kalmanFilter(5, 20000, "/dev/i2c-3");
+KalmanFilter kalmanFilter(5, 20000, "/dev/i2c-2", "/dev/i2c-3");
 
 
 void endProgram(int s)
 {
  kalmanFilter.stop();
+
+ usleep(1000000);
 
  exit(1);
 
@@ -26,6 +30,8 @@ int main()
        sigaction(SIGINT, &sigIntHandler, NULL);
 
        kalmanFilter.start();
+
+       kalmanFilter.join();
 
 
     return 0;

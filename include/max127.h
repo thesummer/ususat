@@ -3,7 +3,7 @@
 
 #include <stdint.h>
 
-#include "../minimu/I2CBus.h"
+#include "I2CBus.h"
 
 
 /*!
