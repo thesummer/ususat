@@ -45,7 +45,7 @@ set(threading-example_SRC
 # Use all .cpp-files for ususat
 FILE(GLOB ususat_SRC *.cpp)
 # Build ususat
-add_executable(ususat ${ususat_SRC})
+add_executable(ususat ${ususat_SRC} ${ususat_HEADER})
 target_link_libraries(ususat pthread serial)
 set_target_properties(ususat PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
 
