@@ -36,7 +36,7 @@ MotorControl::~MotorControl()
     mPwm2.StopB();
 }
 
-void MotorControl::calculateControlResponse(bool state)
+void MotorControl::calculateControlResponse(Quaternion state)
 {
     /// TODO: Make some control magic
     mMotor[0]->setSpeed(20);
@@ -49,7 +49,7 @@ void MotorControl::setMotor(int motor, int dutyCycle)
     mMotor[motor]->setSpeed(dutyCycle);
 }
 
-void MotorControl::printAnalog(int motor, float& aOut1, float& aOut2)
+void MotorControl::getAnalog(int motor, float& aOut1, float& aOut2)
 {
     aOut1 =  mAnalog.readVoltage(motor*2);
     aOut2 =  mAnalog.readVoltage(motor*2 + 1);
