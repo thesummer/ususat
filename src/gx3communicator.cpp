@@ -69,7 +69,7 @@ void GX3Communicator::run()
     mKeepRunning = true;
 
     // Activate Continuous mode
-    SetCountinuousMode setCont(ACC_ANG_MAG_VEC);
+    SetCountinuousMode setCont(QUATERNION);
     if(setCont.sendCommand(mSerialPort) == false)
         ;/// TODO: Error
 
@@ -78,7 +78,7 @@ void GX3Communicator::run()
 //    gettimeofday(&start, NULL);
     while(mKeepRunning)
     {
-        AccAngMag data;
+        Quaternion data;
         if(data.readFromSerial(mSerialPort))
         {
             mQueue.push(data);

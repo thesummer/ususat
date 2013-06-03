@@ -78,13 +78,13 @@ void KalmanFilter::run()
         gettimeofday(&now, NULL);
         timeval_subtract(&elapsed, &now, &start);
         unsigned long long timestamp = elapsed.tv_sec * 1000 + elapsed.tv_usec / 1000; // in ms since start
-        AccAngMag last;
+        Quaternion lastState;
 
         ///TODO: Do some Kalman-Filtering magic here
 
         if(mGX3.isEmpty() == false)
         {
-            last = mGX3.front();
+            lastState = mGX3.front();
             mGX3.pop();
 
             /// TODO: some more magic
@@ -93,19 +93,19 @@ void KalmanFilter::run()
         {
 //            std::cout << "Missed measurement" << std::endl;
         }
-        std::cout << last.timer << "," << last.acc[0]  << "," << last.acc[1]  << "," << last.acc[2] << ","
-                                       << last.mag[0]  << "," << last.mag[1]  << "," << last.mag[2] << ","
-                                       << last.gyro[0] << "," << last.gyro[1] << "," << last.gyro[2] << ",";
-        std::cout << timestamp
-                  << "," << acc[0]  << "," << acc[1]  << "," << acc[2]
-                  << "," << mag[0]  << "," << mag[1]  << "," << mag[2]
-                  << "," << gyro[0] << "," << gyro[1] << "," << gyro[2] << std::endl;
+//        std::cout << last.timer << "," << last.acc[0]  << "," << last.acc[1]  << "," << last.acc[2] << ","
+//                                       << last.mag[0]  << "," << last.mag[1]  << "," << last.mag[2] << ","
+//                                       << last.gyro[0] << "," << last.gyro[1] << "," << last.gyro[2] << ",";
+
+//        std::cout << timestamp
+//                  << "," << acc[0]  << "," << acc[1]  << "," << acc[2]
+//                  << "," << mag[0]  << "," << mag[1]  << "," << mag[2]
+//                  << "," << gyro[0] << "," << gyro[1] << "," << gyro[2] << std::endl;
+
 
 
         // Alwasy use mutex, when changing state
-//        mStateLock.lock();
-//            mState = !mState;
-//        mStateLock.unlock();
+        mMotors.calculateControlResponse(lastState);
 
         waitPeriod();
     }
