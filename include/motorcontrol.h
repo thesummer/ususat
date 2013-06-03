@@ -16,17 +16,20 @@
 #include "Beagle_GPIO.h"
 #include "motor.h"
 #include "max127.h"
+#include "messages.h"
 
 namespace USU
 {
 
 /*!
- \brief Represents the Periodic task for motor control
+ \brief Represents the class for motor control
 
- This class is derived from PeriodicRtThread. It initializes the interface to the
- 4 motors. In a periodic loop it takes the last system state estimate from the Kalman
+ It initializes the interface to the 4 motors. It receives the last system state estimate from the Kalman
  filter, calculates the appropiate control response and sets the speed (duty cycle)
  of the motors.
+
+ TODO: Get the desired state from ground station to calculate the control response.
+
 */
 class MotorControl
 {
@@ -36,12 +39,10 @@ public:
     /*!
      \brief Constructor of the class
 
-     Initializes the underlying PeriodicRtThread, the GPIO-class,
-     the PWMs and the 4 Motors.
+     Initializes the underlying the GPIO-class,
+     the PWMs the 4 Motors and the ADC.
 
      \param priority  priority of the periodic pthread
-     \param period_us   period (in us) of the periodic pthread
-     \param kalmanfilter reference to the KalmanFilter to get state estimates
     */
     MotorControl(const char* i2cdevice="/dev/i2c-3");
 
@@ -50,15 +51,27 @@ public:
     /*!
      \brief Calculate the control responste from the current state estimate
 
-     TODO: use a proper variable for the state estimate
-
      \param state the current state estimate from the Kalman filter
    */
-    void calculateControlResponse(bool state);
+    void calculateControlResponse(Quaternion state);
 
+    /*!
+     \brief For testing: sets the speed of a motor
+
+     \param motor which motor [0..3]
+     \param dutyCycle  which speed [-100..100]
+    */
     void setMotor(int motor, int dutyCycle);
 
-    void printAnalog(int motor, float &aOut1, float &aOut2);
+
+    /*!
+     \brief For testing: returns the Analog measurements of a motor
+
+     \param motor which motor [0..3]
+     \param aOut1   reference to a variable to store the first analog measurement
+     \param aOut2   reference to a variable to store the second analog measurement
+    */
+    void getAnalog(int motor, float &aOut1, float &aOut2);
 
 private:
     cPWM mPwm1; /*!< First PWM module (has 2 channels) */
@@ -67,7 +80,7 @@ private:
     Beagle_GPIO mBeagleGpio; /*!< Representation of the BeagleBoard Gpios (access via mmap) */
     Motor *mMotor[4]; /*!< Array of the 4 motors */
 
-    Max127 mAnalog;
+    Max127 mAnalog; /*!< Representation of the ADC for the motor feedback */
 
     MotorControl(const MotorControl& thread); /*!< Copy constructor made inaccessible by declaring it private */
 
