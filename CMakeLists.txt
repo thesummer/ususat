@@ -14,6 +14,10 @@ else (CMAKE_BUILD_TYPE STREQUAL Debug)
 endif (CMAKE_BUILD_TYPE STREQUAL Debug)
 
 include_directories(include)
+
+# collect header files
+FILE(GLOB ususat_HEADER include/*.h)
+
 add_subdirectory(src)
 
 # Build the examples only in Debug-builds
