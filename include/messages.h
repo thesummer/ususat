@@ -98,6 +98,7 @@ public:
         return (sum == temp );
     }
 
+protected:
     /*!
      \brief Creates a Eigen::Vector3f consisting of 3 floats from 12 sucessive bytes
 
@@ -227,8 +228,8 @@ public:
         serialPort.ReadRaw(&buffer[1], size-1);
         if(GX3Packet::calculateChecksum(buffer, size) == false)
         {
-            using namespace std;
 //            cout << "Checksum failed" << endl;
+            using namespace std;
             for (int i = 0; i<size; ++i)
             {
                 cout << hex <<  setw(2) << setfill('0') << "0x" << (int) buffer[i] << dec << "+ ";
@@ -276,17 +277,15 @@ public:
         buffer[0] = serialPort.ReadByte();
         if(buffer[0] != QUATERNION)
         {
-            std::cout << (char) buffer[0] << std::endl;
             return false; //throw std::runtime_error("Wrong package identifier");
         }
-
         serialPort.ReadRaw(&buffer[1], size-1);
         if(GX3Packet::calculateChecksum(buffer, size) == false)
         {
             return false;
         }
 
-        quat = quaternion((float*) &buffer[1]);
+        quat = quaternion( (float*) &buffer[1]);
         timer = createUInt(&buffer[17]);
 
         return true;
@@ -485,16 +484,16 @@ public:
         mCommand[1] = 0xA8;
         mCommand[2] = 0xB9;
         mCommand[3] = (uint8_t) funSel;
-        mCommand[4] = (samplingPeriod_ms & 0xFF00);
+        mCommand[4] = (samplingPeriod_ms >> 8);
         mCommand[5] = (samplingPeriod_ms & 0x00FF);
-        mCommand[6] = (dataCondFlags & 0xFF00);
+        mCommand[6] = (dataCondFlags >> 8);
         mCommand[7] = (dataCondFlags& 0x00FF);
         mCommand[8] = gyroAccFilter;
         mCommand[9] = magFilter;
-        mCommand[10]= (upCompensation& 0xFF00);
-        mCommand[11]= (upCompensation& 0x00FF);
-        mCommand[12]= (northCompensation& 0xFF00);
-        mCommand[13]= (northCompensation& 0x00FF);
+        mCommand[10]= (upCompensation >> 8);
+        mCommand[11]= (upCompensation & 0x00FF);
+        mCommand[12]= (northCompensation >> 8);
+        mCommand[13]= (northCompensation & 0x00FF);
         mCommand[14]= magPower;
         mCommand[15]= 0;
         mCommand[16]= 0;
