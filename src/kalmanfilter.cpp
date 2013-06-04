@@ -112,7 +112,12 @@ void KalmanFilter::run()
         waitPeriod();
     }
 
+    std::cout << "KALMANFILTER: Got signal to terminate" << std::endl;
+    std::cout << "KALMANFILTER: Stopping Gx3-communicator..." << std::endl;
     mGX3.stop();
+    mGX3.join();
+    std::cout << "KALMANFILTER: Gx3-communicator joined" << std::endl;
+    std::cout << "KALMANFILTER: Terminating now..." << std::endl;
 
 }
 

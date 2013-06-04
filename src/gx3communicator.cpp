@@ -97,10 +97,15 @@ void GX3Communicator::run()
         }
     }
 
+    std::cout << "GX3COMMUNICATOR: Got signal to terminate" << std::endl;
+    std::cout << "GX3COMMUNICATOR: Stopping IMU continuous mode..." << std::endl;
     // Stop continuous mode
     setCont.mCommand[3] = 0;
     if(setCont.sendCommand(mSerialPort) == false)
         ; /// TODO: Error?
+
+    std::cout << "GX3COMMUNICATOR: IMU continuous mode stopped" << std::endl;
+    std::cout << "GX3COMMUNICATOR: Terminating now..." << std::endl;
 }
 
 
