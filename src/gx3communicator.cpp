@@ -57,10 +57,12 @@ GX3Communicator::GX3Communicator(int priority, const char *serialDevice, SerialP
         - Enable little endian for floating points
      */
     SamplingSettings initSettings(SamplingSettings::Change, 20,
-                                  SamplingSettings::FlagDefault | SamplingSettings::FlagFloatLittleEndian);
+                                  SamplingSettings::FlagDefault | SamplingSettings::FlagFloatLittleEndian
+                                                                | SamplingSettings::FlagEnableQuaternion);
 
     if(initSettings.sendCommand(mSerialPort) == false)
         throw std::runtime_error("Setting SamplingSettings failed");
+
 }
 
 void GX3Communicator::run()
@@ -71,7 +73,7 @@ void GX3Communicator::run()
     // Activate Continuous mode
     SetCountinuousMode setCont(QUATERNION);
     if(setCont.sendCommand(mSerialPort) == false)
-        ;/// TODO: Error
+        std::cout << "something wrong\n";/// TODO: Error
 
 //    struct timeval start, now, elapsed;
 
@@ -89,7 +91,7 @@ void GX3Communicator::run()
         }
         else
         {
-//            std::cout << "readFromSerial failed" << std::endl;
+            std::cout << "readFromSerial failed" << std::endl;
             //            throw std::runtime_error("Getting PackageData failed"); /// TODO: Error?
 
         }
