@@ -10,6 +10,9 @@
  */
 
 #include<iostream>
+using std::cout;
+using std::endl;
+
 #include <sys/time.h>
 #include <unistd.h>
 
@@ -55,7 +58,7 @@ void KalmanFilter::run()
     mKeepRunning = true;
     struct timeval start, now, elapsed;
 
-    mImu.enable();
+//    mImu.enable();
 
     // Start the mGX3, put into continuous mode
     // then wait some time for the transmission to start
@@ -71,9 +74,9 @@ void KalmanFilter::run()
     while(mKeepRunning)
     {
 
-        acc  = mImu.readAcc();
-        mag  = mImu.readMag();
-        gyro = mImu.readGyro();
+//        acc  = mImu.readAcc();
+//        mag  = mImu.readMag();
+//        gyro = mImu.readGyro();
 
         gettimeofday(&now, NULL);
         timeval_subtract(&elapsed, &now, &start);
@@ -91,11 +94,10 @@ void KalmanFilter::run()
         }
         else
         {
-//            std::cout << "Missed measurement" << std::endl;
-        }
-//        std::cout << last.timer << "," << last.acc[0]  << "," << last.acc[1]  << "," << last.acc[2] << ","
-//                                       << last.mag[0]  << "," << last.mag[1]  << "," << last.mag[2] << ","
-//                                       << last.gyro[0] << "," << last.gyro[1] << "," << last.gyro[2] << ",";
+            std::cout << "Missed measurement" << std::endl;
+        }     
+        std::cout << timestamp << "\t" << lastState.quat.w() << "\t" << lastState.quat.x() << "\t"
+                                       << lastState.quat.y() << "\t" << lastState.quat.z() << endl;
 
 //        std::cout << timestamp
 //                  << "," << acc[0]  << "," << acc[1]  << "," << acc[2]
