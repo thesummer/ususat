@@ -39,9 +39,8 @@ MotorControl::~MotorControl()
 void MotorControl::calculateControlResponse(Quaternion state)
 {
     /// TODO: Make some control magic
-    mMotor[0]->setSpeed(20);
+//    mMotor[0]->setSpeed(20);
     /// [...]
-
 }
 
 void MotorControl::setMotor(int motor, int dutyCycle)
