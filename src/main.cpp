@@ -12,8 +12,8 @@ KalmanFilter kalmanFilter(5, 20000, "/dev/i2c-2", "/dev/i2c-3");
 
 void endProgram(int s)
 {
-    std::cout << "MAIN: Got signal for termination" << std::endl;
-    std::cout << "MAIN: Stopping kalman filter thread..." << std::endl;
+    std::cerr << "MAIN: Got signal for termination" << std::endl;
+    std::cerr << "MAIN: Stopping kalman filter thread..." << std::endl;
     kalmanFilter.stop();
 }
 
@@ -31,8 +31,8 @@ int main()
 
     kalmanFilter.join();
 
-    std::cout << "MAIN: Kalman filter thread joined" << std::endl;
-    std::cout << "MAIN: Terminating now..." << std::endl;
+    std::cerr << "MAIN: Kalman filter thread joined" << std::endl;
+    std::cerr << "MAIN: Terminating now..." << std::endl;
 
     return 0;
 }
