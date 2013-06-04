@@ -2,6 +2,9 @@
 #include <iostream>
 using namespace std;
 
+#include<csignal>
+#include<cstdlib>
+#include<unistd.h>
 
 #include "periodicrtthread.h"
 #include "Lock.h"
@@ -60,14 +63,15 @@ class MyThread: public PeriodicRtThread
 {
 public:
     MyThread(int prio)
-        : PeriodicRtThread(prio, 1000000)
+        : PeriodicRtThread(prio, 1000000), keepRunning(true)
     {}
 
     void run()
     {
         SharedObject* counter = reinterpret_cast<SharedObject*> (mArgs);
         cout << "Hello from Thread: " << mId << endl;
-        for(int i = 0; i<10; i++)
+//        for(int i = 0; i<10; i++)
+        while(keepRunning)
         {
             counter->increaseData1();
             counter->increaseData2();
@@ -76,13 +80,39 @@ public:
             cout << "Thread " << mId << ": Data2 " << counter->getData2() << endl;
             waitPeriod();
         }
+
+        cout << "Thread " << mId << ": terminating..." << endl;
     }
+
+    volatile bool keepRunning;
 };
+
+
+MyThread thr1(5), thr2(4);
+
+void endProgram(int s)
+{
+    cout << "got signal" << endl;
+
+    thr1.keepRunning = false;
+    thr2.keepRunning = false;
+
+
+    usleep(2000000);
+
+    exit(1);
+
+}
 
 int main()
 {
-    cout << "Creating threads" << endl;
-    MyThread thr1(5), thr2(4);
+    struct sigaction sigIntHandler;
+    sigIntHandler.sa_handler = endProgram;
+    sigemptyset(&sigIntHandler.sa_mask);
+    sigIntHandler.sa_flags = 0;
+
+    sigaction(SIGINT, &sigIntHandler, NULL);
+
     SharedObject sO;
     cout << "Starting threads" << endl;
     thr1.start((void*) &sO);
