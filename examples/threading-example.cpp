@@ -70,7 +70,7 @@ public:
     {
         SharedObject* counter = reinterpret_cast<SharedObject*> (mArgs);
         cout << "Hello from Thread: " << mId << endl;
-//        for(int i = 0; i<10; i++)
+
         while(keepRunning)
         {
             counter->increaseData1();
