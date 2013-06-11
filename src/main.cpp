@@ -20,6 +20,8 @@ void endProgram(int s)
 
 int main()
 {
+    // Register endProgram function as
+    // signal handler for the kill signal (ctrl+c)
     struct sigaction sigIntHandler;
     sigIntHandler.sa_handler = endProgram;
     sigemptyset(&sigIntHandler.sa_mask);
