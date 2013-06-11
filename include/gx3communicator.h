@@ -29,6 +29,8 @@ namespace USU
  Finally it starts the continuous mode and polls the serial port for new arrived data.
  If new data arrived it is presented for the KalmanFilter to take and consider.
 
+ TODO: Make class template for the package command
+
 */
 class GX3Communicator : public RtThread
 {
@@ -67,7 +69,7 @@ public:
 
     int size() {return mQueue.size(); }
 
-    Quaternion &front() { return mQueue.front(); }
+    AccAngMag &front() { return mQueue.front(); }
 
 private:
     GX3Communicator(const GX3Communicator& thread); /*!< Copy constructor made inaccessible by declaring it private */
@@ -75,7 +77,7 @@ private:
     GX3Communicator& operator=(const GX3Communicator& rhs); /*!< Assignment constructor made inaccessible by declaring it private */
 
     SerialPort mSerialPort; /*!< Handles the serial port communication */
-    SharedQueue<Quaternion> mQueue;
+    SharedQueue<AccAngMag> mQueue;
 
     volatile bool mKeepRunning;  /*!< Indicates if the Thread should keep running. volatile to prevent optimizing */
 };

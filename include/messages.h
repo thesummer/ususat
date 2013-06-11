@@ -68,6 +68,8 @@ const uint8_t DEVICE_RESET                    = 0xFE; /*!< Device Reset (no repl
  The class provides some useful function available to all derived classes
  such as checksum calculation and creation of vectors and matrizes from
  the received binary data.
+
+ TODO:  add print function
 */
 class GX3Packet
 {

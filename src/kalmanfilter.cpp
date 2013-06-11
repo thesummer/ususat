@@ -58,7 +58,7 @@ void KalmanFilter::run()
     mKeepRunning = true;
     struct timeval start, now, elapsed;
 
-//    mImu.enable();
+    mImu.enable();
 
     // Start the mGX3, put into continuous mode
     // then wait some time for the transmission to start
@@ -74,14 +74,14 @@ void KalmanFilter::run()
     while(mKeepRunning)
     {
 
-//        acc  = mImu.readAcc();
-//        mag  = mImu.readMag();
-//        gyro = mImu.readGyro();
+        acc  = mImu.readAcc();
+        mag  = mImu.readMag();
+        gyro = mImu.readGyro();
 
         gettimeofday(&now, NULL);
         timeval_subtract(&elapsed, &now, &start);
         unsigned long long timestamp = elapsed.tv_sec * 1000 + elapsed.tv_usec / 1000; // in ms since start
-        Quaternion lastState;
+        AccAngMag lastState;
 
         ///TODO: Do some Kalman-Filtering magic here
 
@@ -94,20 +94,27 @@ void KalmanFilter::run()
         }
         else
         {
-            std::cout << "Missed measurement" << std::endl;
+//            std::cout << "Missed measurement" << std::endl;
         }     
-        std::cout << timestamp << "\t" << lastState.quat.w() << "\t" << lastState.quat.x() << "\t"
-                                       << lastState.quat.y() << "\t" << lastState.quat.z() << endl;
+//        std::cout << timestamp << "\t" << lastState.quat.w() << "\t" << lastState.quat.x() << "\t"
+//                                       << lastState.quat.y() << "\t" << lastState.quat.z() << endl;
 
-//        std::cout << timestamp
-//                  << "," << acc[0]  << "," << acc[1]  << "," << acc[2]
-//                  << "," << mag[0]  << "," << mag[1]  << "," << mag[2]
-//                  << "," << gyro[0] << "," << gyro[1] << "," << gyro[2] << std::endl;
+        std::cout << lastState.timer/62.5f
+                  << "," << lastState.acc[0]  << "," << lastState.acc[1]  << "," << lastState.acc[2]
+                  << "," << lastState.mag[0]  << "," << lastState.mag[1]  << "," << lastState.mag[2]
+                  << "," << lastState.gyro[0] << "," << lastState.gyro[1] << "," << lastState.gyro[2];
+
+        std::cout << ",";
+
+        std::cout << timestamp
+                  << "," << acc[0]  << "," << acc[1]  << "," << acc[2]
+                  << "," << mag[0]  << "," << mag[1]  << "," << mag[2]
+                  << "," << gyro[0] << "," << gyro[1] << "," << gyro[2] << std::endl;
 
 
 
         // Alwasy use mutex, when changing state
-        mMotors.calculateControlResponse(lastState);
+//        mMotors.calculateControlResponse(lastState);
 
         waitPeriod();
     }

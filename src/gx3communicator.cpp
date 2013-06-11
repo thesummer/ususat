@@ -71,7 +71,7 @@ void GX3Communicator::run()
     mKeepRunning = true;
 
     // Activate Continuous mode
-    SetCountinuousMode setCont(QUATERNION);
+    SetCountinuousMode setCont(ACC_ANG_MAG_VEC);
     if(setCont.sendCommand(mSerialPort) == false)
         std::cout << "something wrong\n";/// TODO: Error
 
@@ -80,7 +80,7 @@ void GX3Communicator::run()
 //    gettimeofday(&start, NULL);
     while(mKeepRunning)
     {
-        Quaternion data;
+        AccAngMag data;
         if(data.readFromSerial(mSerialPort))
         {
             mQueue.push(data);
@@ -91,7 +91,7 @@ void GX3Communicator::run()
         }
         else
         {
-            std::cout << "readFromSerial failed" << std::endl;
+//            std::cout << "readFromSerial failed" << std::endl;
             //            throw std::runtime_error("Getting PackageData failed"); /// TODO: Error?
 
         }
