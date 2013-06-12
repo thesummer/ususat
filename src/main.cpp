@@ -31,10 +31,16 @@ int main()
 
     kalmanFilter.start();
 
-    kalmanFilter.join();
-
-    std::cerr << "MAIN: Kalman filter thread joined" << std::endl;
-    std::cerr << "MAIN: Terminating now..." << std::endl;
-
-    return 0;
+    if(kalmanFilter.join(2000) )
+    {
+        std::cerr << "MAIN: Kalman filter thread joined" << std::endl;
+        std::cerr << "MAIN: Terminating now..." << std::endl;
+        return 0;
+    }
+    else
+    {
+        std::cerr << "MAIN: Joining Kalman filter thread failed" << std::endl;
+        std::cerr << "MAIN: Terminating now..." << std::endl;
+        return 1;
+    }
 }
