@@ -95,8 +95,11 @@ public:
 
     /*!
      \brief Waits for the thread to join
+
+     \param timeout_ms timeout in ms (optional). 0 means no timeout
+     \return bool returns true if thread joined successfully and false if error occured
     */
-    void join();
+    bool join(int timeout_ms = 0);
 
     /*!
      \brief Actual method of the thread is running

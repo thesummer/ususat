@@ -7,11 +7,13 @@
  *  Created on: Apr 10, 2013
  *
  */
+#include <stdio.h>
+#include <time.h>
+#include <errno.h>
 
 #include "RtThread.h"
 using namespace USU;
 
-#include <stdio.h>
 
 
 RtThread::RtThread(int priority):
@@ -105,12 +107,31 @@ void RtThread::start(void *arg)
     mStarted = true;
 }
 
-void RtThread::join()
+bool RtThread::join(int timeout_ms)
 {
     //Allow the thread to wait for the termination status
     if (mStarted)
     {
-        pthread_join(mId, NULL);
+        if(timeout_ms == 0)
+        {
+            if (pthread_join(mId, NULL) != 0) return false;
+        }
+        else
+        {
+            struct timespec ts;
+            if (clock_gettime(CLOCK_REALTIME, &ts) == -1)
+            {
+                perror("clock_gettime ");
+                throw "Error";
+            }
+            ts.tv_sec  += timeout_ms / 1000;
+            ts.tv_nsec += timeout_ms * 1000000;
+
+            int result =  pthread_timedjoin_np(mId, NULL, &ts);
+            if (result == ETIMEDOUT)
+                return false;
+        }
+        return true;
     }
 }
 
