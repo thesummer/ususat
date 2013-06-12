@@ -89,7 +89,7 @@ private:
 
     MinImu mImu; /*!< Class for accessing the MinIMU9v2*/
     GX3Communicator mGX3;
-    MotorControl mMotors;
+//    MotorControl mMotors;
 
     ///TODO: queue to ethernet
     bool mState; ///TODO: Actual representation of the state estimate /*!< TODO */

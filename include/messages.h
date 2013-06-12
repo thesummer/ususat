@@ -176,9 +176,9 @@ public:
 //            cout << "Checksum failed" << endl;
             for (int i = 0; i<size; ++i)
             {
-                cout << hex <<  setw(2) << setfill('0') << "0x" << (int) buffer[i] << dec << "+ ";
+//                cout << hex <<  setw(2) << setfill('0') << "0x" << (int) buffer[i] << dec << "+ ";
             }
-            cout << endl;
+//            cout << endl;
             return false;
         }
 
@@ -223,7 +223,7 @@ public:
         buffer[0] = serialPort.ReadByte();
         if(buffer[0] != ACC_ANG_MAG_VEC)
         {
-            std::cout << (char) buffer[0] << std::endl;
+//            std::cout << (char) buffer[0] << std::endl;
             return false; //throw std::runtime_error("Wrong package identifier");
         }
 
@@ -234,9 +234,9 @@ public:
             using namespace std;
             for (int i = 0; i<size; ++i)
             {
-                cout << hex <<  setw(2) << setfill('0') << "0x" << (int) buffer[i] << dec << "+ ";
+//                cout << hex <<  setw(2) << setfill('0') << "0x" << (int) buffer[i] << dec << "+ ";
             }
-            cout << endl;
+//            cout << endl;
             return false;
         }
 

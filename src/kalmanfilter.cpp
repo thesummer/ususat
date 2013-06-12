@@ -47,7 +47,7 @@ int timeval_subtract (struct timeval * result, struct timeval * x, struct timeva
 
 KalmanFilter::KalmanFilter(int priority, unsigned int period_us, const char *i2cImu, const char *i2cMotor)
     :PeriodicRtThread(priority, period_us), mImu(i2cImu),
-      mGX3(priority, "/dev/ttyO4"), mMotors(i2cMotor), mKeepRunning(false)
+      mGX3(priority, "/dev/ttyO4"), mKeepRunning(false)
 {
 }
 
@@ -104,9 +104,8 @@ void KalmanFilter::run()
                   << "," << lastState.mag[0]  << "," << lastState.mag[1]  << "," << lastState.mag[2]
                   << "," << lastState.gyro[0] << "," << lastState.gyro[1] << "," << lastState.gyro[2];
 
-        std::cout << ",";
 
-        std::cout << timestamp
+        std::cout << "," << timestamp
                   << "," << acc[0]  << "," << acc[1]  << "," << acc[2]
                   << "," << mag[0]  << "," << mag[1]  << "," << mag[2]
                   << "," << gyro[0] << "," << gyro[1] << "," << gyro[2] << std::endl;
