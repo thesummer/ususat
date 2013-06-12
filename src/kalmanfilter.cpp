@@ -115,8 +115,14 @@ void KalmanFilter::run()
     std::cerr << "KALMANFILTER: Got signal to terminate" << std::endl;
     std::cerr << "KALMANFILTER: Stopping Gx3-communicator..." << std::endl;
     mGX3.stop();
-    mGX3.join();
-    std::cerr << "KALMANFILTER: Gx3-communicator joined" << std::endl;
+    if(mGX3.join() )
+    {
+        std::cerr << "KALMANFILTER: Gx3-communicator joined" << std::endl;
+    }
+    else
+    {
+        std::cerr << "KALMANFILTER: Joining Gx3-communicator failed" << std::endl;
+    }
     std::cerr << "KALMANFILTER: Terminating now..." << std::endl;
 
 }
