@@ -10,6 +10,7 @@ Go to project's root folder (on BeagleBone):
 Create new build directory:
 
 rm -rf build
+
 mkdir build
 
 Step into the directory:
