@@ -4,6 +4,7 @@ using namespace std;
 #include <unistd.h>
 
 #include "max127.h"
+using namespace USU;
 
 
 int main()
