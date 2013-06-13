@@ -133,6 +133,8 @@ bool RtThread::join(int timeout_ms)
         }
         return true;
     }
+
+    return false;
 }
 
 // Function which is actually executed by the thread
