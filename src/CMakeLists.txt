@@ -25,6 +25,8 @@ set(motor-example_SRC
         ${CMAKE_CURRENT_SOURCE_DIR}/Beagle_GPIO.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/motor.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/I2CBus.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/periodicrtthread.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/RtThread.cpp
         PARENT_SCOPE
     )
 
@@ -46,6 +48,6 @@ set(threading-example_SRC
 FILE(GLOB ususat_SRC *.cpp)
 # Build ususat
 add_executable(ususat ${ususat_SRC} ${ususat_HEADER})
-target_link_libraries(ususat pthread serial)
+target_link_libraries(ususat pthread serial rt)
 set_target_properties(ususat PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
 
