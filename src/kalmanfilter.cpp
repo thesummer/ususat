@@ -87,19 +87,24 @@ void KalmanFilter::run()
 
         if(mGX3.isEmpty() == false)
         {
+            int length = mGX3.size()-1;
+            while(length>1)
+                mGX3.pop();
+
             lastState = mGX3.front();
             mGX3.pop();
 
             /// TODO: some more magic
+//            cout << mGX3.size() << ",";
         }
         else
         {
-//            std::cout << "Missed measurement" << std::endl;
+            std::cout << "Missed measurement" << std::endl;
         }     
 //        std::cout << timestamp << "\t" << lastState.quat.w() << "\t" << lastState.quat.x() << "\t"
 //                                       << lastState.quat.y() << "\t" << lastState.quat.z() << endl;
 
-        std::cout << lastState.timer/62.5f
+        std::cout << lastState.timer/62
                   << "," << lastState.acc[0]  << "," << lastState.acc[1]  << "," << lastState.acc[2]
                   << "," << lastState.mag[0]  << "," << lastState.mag[1]  << "," << lastState.mag[2]
                   << "," << lastState.gyro[0] << "," << lastState.gyro[1] << "," << lastState.gyro[2];

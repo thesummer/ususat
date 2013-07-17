@@ -48,12 +48,14 @@ void I2CBus::writeByte(uint8_t data)
 
 uint8_t I2CBus::readByte(uint8_t command)
 {
-    int result = i2c_smbus_read_byte_data(fd, command);
+    int result = 0;
+    result = i2c_smbus_read_byte_data(fd, command);
     if (result == -1)
     {
-        throw posix_error("Failed to read byte from I2C.");
+//        throw posix_error("Failed to read byte from I2C.");
+        return 0;
     }
-    return result;
+    return (uint8_t) result;
 }
 
 uint8_t I2CBus::readByte()

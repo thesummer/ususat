@@ -56,7 +56,7 @@ GX3Communicator::GX3Communicator(int priority, const char *serialDevice, SerialP
         - Data rate 50 Hz
         - Enable little endian for floating points
      */
-    SamplingSettings initSettings(SamplingSettings::Change, 20,
+    SamplingSettings initSettings(SamplingSettings::Change,  20,
                                   SamplingSettings::FlagDefault | SamplingSettings::FlagFloatLittleEndian
                                                                 | SamplingSettings::FlagEnableQuaternion);
 
@@ -73,7 +73,7 @@ void GX3Communicator::run()
     // Activate Continuous mode
     SetCountinuousMode setCont(ACC_ANG_MAG_VEC);
     if(setCont.sendCommand(mSerialPort) == false)
-        std::cout << "something wrong\n";/// TODO: Error
+        ;/// TODO: Error
 
 //    struct timeval start, now, elapsed;
 

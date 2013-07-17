@@ -25,7 +25,7 @@ public:
     Motor(Beagle_GPIO& beagleGpio, Beagle_GPIO::Pins clockwise,  Beagle_GPIO::Pins counterClockwise,
           cPWM& pwm, SetDutyCyle dutyCycle);
     void setSpeed(int speed);
-    int getSpeed() const { return mSpeed; }
+    int getSpeed() const { return mSpeed; } /// TODO: protect with mutex?
 
 private:
     Beagle_GPIO& mBeagleGpio;

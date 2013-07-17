@@ -7,7 +7,7 @@
 #include "kalmanfilter.h"
 using namespace USU;
 
-KalmanFilter kalmanFilter(5, 20000, "/dev/i2c-2", "/dev/i2c-3");
+KalmanFilter kalmanFilter(5, 20000 , "/dev/i2c-2", "/dev/i2c-3");
 //bool run = true;
 
 void endProgram(int s)
@@ -31,7 +31,7 @@ int main()
 
     kalmanFilter.start();
 
-    if(kalmanFilter.join(2000) )
+    if(kalmanFilter.join() )
     {
         std::cerr << "MAIN: Kalman filter thread joined" << std::endl;
         std::cerr << "MAIN: Terminating now..." << std::endl;

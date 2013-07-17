@@ -53,3 +53,23 @@ void MotorControl::getAnalog(int motor, float& aOut1, float& aOut2)
     aOut1 =  mAnalog.readVoltage(motor*2);
     aOut2 =  mAnalog.readVoltage(motor*2 + 1);
 }
+
+void MotorControl::getAnalogs(float *aOut1, float *aOut2)
+{
+    aOut1[0] =  mAnalog.readVoltage(0);
+    aOut2[0] =  mAnalog.readVoltage(1);
+    aOut1[1] =  mAnalog.readVoltage(2);
+    aOut2[1] =  mAnalog.readVoltage(3);
+    aOut1[2] =  mAnalog.readVoltage(4);
+    aOut2[2] =  mAnalog.readVoltage(5);
+    aOut1[3] =  mAnalog.readVoltage(6);
+    aOut2[3] =  mAnalog.readVoltage(7);
+}
+
+void MotorControl::getDutyCycles(int *dc)
+{
+    dc[0] = mMotor[0]->getSpeed();
+    dc[1] = mMotor[1]->getSpeed();
+    dc[2] = mMotor[2]->getSpeed();
+    dc[3] = mMotor[3]->getSpeed();
+}

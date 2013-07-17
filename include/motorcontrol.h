@@ -73,6 +73,10 @@ public:
     */
     void getAnalog(int motor, float &aOut1, float &aOut2);
 
+    void getAnalogs(float * aOut1, float* aOut2);
+
+    void getDutyCycles(int* dc);
+
 private:
     cPWM mPwm1; /*!< First PWM module (has 2 channels) */
     cPWM mPwm2; /*!< Second PwM module (has 2 channels) */

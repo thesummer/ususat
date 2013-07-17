@@ -11,9 +11,9 @@ target_link_libraries(minimu-example pthread rt)
 set_target_properties(minimu-example PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
 
 # Build the motor-example program
-set(motor-example_SRC ${motor-example_SRC} motor-example.cpp)
+set(motor-example_SRC ${motor-example_SRC} motor-example.cpp motorprogrammer.hpp datacollector.hpp)
 add_executable(motor-example ${motor-example_SRC})
-target_link_libraries(motor-example ncurses rt)
+target_link_libraries(motor-example rt pthread)
 set_target_properties(motor-example PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
 
 # Build the gx3-example program
