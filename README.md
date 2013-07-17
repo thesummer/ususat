@@ -9,12 +9,13 @@ Go to project's root folder (on BeagleBone):
 
 Create new build directory:
 
-rm -rf build
-mkdir build
+rm -rf build-test
+
+mkdir build-test
 
 Step into the directory:
 
-cd build
+cd build-test
 
 Create makefiles using cmake:
 
