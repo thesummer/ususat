@@ -22,7 +22,7 @@ namespace USU
  \brief I2C-address of the ADC
 
  It is assumed that the PINs A0-A2 are connected to GND.
- If the PINs are connected by VCC change accordingly.
+ If the PINs are connected to VCC change accordingly.
 */
 const uint8_t I2C_ADDRESS  = 0b00101000;
 
@@ -80,7 +80,7 @@ public:
     float readVoltage(unsigned int channel);
 
 private:
-    I2CBus mI2c; /*!< TODO */
+    I2CBus mI2c; /*!< Object for the used I2C-bus */
 
 
 };

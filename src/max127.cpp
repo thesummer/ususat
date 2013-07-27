@@ -27,7 +27,6 @@ int16_t Max127::readRaw(uint8_t channel)
 
     // From the read word use use the high byte as low byte and vice versa
     // Then move all bits 4 to the left because it is only a 12 bit number.
-    // Could different endianess be a problem here?
     return ( (int16_t) ( ( (rawValue & 0xFF00)>>8) | ( (rawValue & 0x00FF )<<8) ) >> 4 );
 
 

@@ -78,7 +78,7 @@ public:
       \brief Read the information for the structure from the SerialPort
 
       \param serialPort serialPort object from libserial
-      \return bool true if reading (and checksum) was successful, fals otherwise
+      \return bool true if reading (and checksum) was successful, false otherwise
      */
      virtual bool readFromSerial(SerialPort &serialPort) = 0;
 
@@ -174,10 +174,10 @@ public:
         {
             using namespace std;
 //            cout << "Checksum failed" << endl;
-            for (int i = 0; i<size; ++i)
-            {
+//            for (int i = 0; i<size; ++i)
+//            {
 //                cout << hex <<  setw(2) << setfill('0') << "0x" << (int) buffer[i] << dec << "+ ";
-            }
+//            }
 //            cout << endl;
             return false;
         }
@@ -232,10 +232,10 @@ public:
         {
 //            cout << "Checksum failed" << endl;
             using namespace std;
-            for (int i = 0; i<size; ++i)
-            {
+//            for (int i = 0; i<size; ++i)
+//            {
 //                cout << hex <<  setw(2) << setfill('0') << "0x" << (int) buffer[i] << dec << "+ ";
-            }
+//            }
 //            cout << endl;
             return false;
         }

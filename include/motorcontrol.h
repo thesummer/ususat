@@ -39,17 +39,19 @@ public:
     /*!
      \brief Constructor of the class
 
-     Initializes the underlying the GPIO-class,
-     the PWMs the 4 Motors and the ADC.
+     Initializes the underlying GPIO-class,
+     the PWMs, the 4 Motors and the ADC.
 
-     \param priority  priority of the periodic pthread
+     \param i2cDevice  name of the i2cDevice of the ADC
     */
     MotorControl(const char* i2cdevice="/dev/i2c-3");
 
     virtual ~MotorControl();
 
     /*!
-     \brief Calculate the control responste from the current state estimate
+     \brief Calculate the control response from the current state estimate
+
+     TODO: Doesn't do anything at the moment
 
      \param state the current state estimate from the Kalman filter
    */
@@ -73,8 +75,19 @@ public:
     */
     void getAnalog(int motor, float &aOut1, float &aOut2);
 
+    /*!
+     \brief For testing: returns the Analog measurements of all motors
+
+     \param aOut1 Float array to store the first analog measurement of each motor
+     \param aOut2 Float array to store the second analog measurement of each motor
+    */
     void getAnalogs(float * aOut1, float* aOut2);
 
+    /*!
+     \brief For testing: returns the dutycycles of all motors
+
+     \param dc Int array to store the duty cycle of each motor
+    */
     void getDutyCycles(int* dc);
 
 private:
