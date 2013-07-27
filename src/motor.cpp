@@ -30,6 +30,8 @@ void Motor::setSpeed(int speed)
 {
     if (speed > 0)
     {
+        // Make sure speed <100
+        speed = speed<100 ? speed : 99;
         mBeagleGpio.writePin(mClockwise, 1);
         mBeagleGpio.writePin(mCounterClockwise, 0);
         (mPwm.*mSetDutyCycle)(speed);
@@ -37,6 +39,8 @@ void Motor::setSpeed(int speed)
     }
     else if (speed < 0)
     {
+        // Make sure speed >-100
+        speed = speed>-100 ? speed : -99;
         mBeagleGpio.writePin(mClockwise, 0);
         mBeagleGpio.writePin(mCounterClockwise, 1);
         (mPwm.*mSetDutyCycle)(-speed);
