@@ -1,7 +1,7 @@
 /**
  * @file kalmanfilter.h
  *
- * C++ class for the sensor fusion and stated estimated.
+ * C++ class for the sensor fusion and state estimated.
  * Based on the PeriodicRtThread class.
  *
  * @author Jan Sommer
@@ -32,7 +32,8 @@ namespace USU
  estimate can be accessed from other threads (protected by mutex).
 
  TODO:
-    - Add interface to star camera
+    - Implement kalman filter for state estimate
+    - change name to something more meaningful?
 */
 class KalmanFilter : public PeriodicRtThread
 {
@@ -65,7 +66,6 @@ public:
     /*!
      \brief Signals the thread to stop
 
-     TODO: Doesn't really work.
     */
     void stop() { mKeepRunning = false; }
 
@@ -88,7 +88,7 @@ private:
     KalmanFilter& operator=(const KalmanFilter& rhs); /*!< Assignment constructor made inaccessible by declaring it private */
 
     MinImu mImu; /*!< Class for accessing the MinIMU9v2*/
-    GX3Communicator mGX3;
+    GX3Communicator mGX3;  /*!< Class for accessing the 3DM-GX3*/
 //    MotorControl mMotors;
 
     ///TODO: queue to ethernet
