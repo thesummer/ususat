@@ -19,8 +19,6 @@ namespace USU {
 /*!
  \brief Wrapper class for pthread mutexes
 
-  TODO: use exceptions
-
 */
 class Lock
 {
