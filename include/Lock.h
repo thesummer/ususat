@@ -12,6 +12,7 @@
 #define LOCK_H
 
 namespace USU {
+#include <stdexcept>
 
 #include <pthread.h>
 
@@ -49,7 +50,7 @@ Lock::Lock()
     int ret;
     if ( (ret = pthread_mutex_init(&mMutex, NULL)) != 0)
     {
-        perror("pthread_mutex_init ");
+        throw std::runtime_error(strerror(errno));
     }
 }
 
@@ -59,7 +60,7 @@ Lock::~Lock()
     int ret;
     if ( (ret = pthread_mutex_destroy(&mMutex) ) != 0)
     {
-        perror("pthread_mutex_destroy ");
+        throw std::runtime_error(strerror(errno));
     }
 }
 
