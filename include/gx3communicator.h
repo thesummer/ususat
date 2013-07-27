@@ -27,9 +27,9 @@ namespace USU
  The class is derived from RtThread.
  It initializes the serial interface to the 3DM and sets the sampling settings.
  Finally it starts the continuous mode and polls the serial port for new arrived data.
- If new data arrived it is presented for the KalmanFilter to take and consider.
+ New data is stored in a FIFO queue.
 
- TODO: Make class template for the package command
+ TODO: Use the parent class for the package instead to make it more generic.
 
 */
 class GX3Communicator : public RtThread
@@ -63,12 +63,31 @@ public:
     */
     void stop() {mKeepRunning = false;}
 
+    /*!
+     \brief Delete the first element of the FIFO.
+    */
     void pop() { mQueue.pop();}
 
+
+    /*!
+     \brief Check if the FIFO is empty
+
+     \return bool true, if empty
+    */
     bool isEmpty() {return mQueue.isEmpty(); }
 
-    int size() {return mQueue.size(); }
+    /*!
+     \brief Return the number of elements in the FIFO
 
+     \return unsigned number of elements
+    */
+    unsigned size() {return mQueue.size(); }
+
+    /*!
+     \brief Return the first element from the FIFO
+
+     \return AccAngMag the first element
+    */
     AccAngMag &front() { return mQueue.front(); }
 
 private:
