@@ -8,30 +8,69 @@
 #include "motorcontrol.h"
 using namespace USU;
 
-// Simple class which manages the motors and collects data at an periodic intervall
-// Inherited from PeriodicRtThread
+/*!
+ \brief Simple class which manages the motors and collects data at an periodic intervall
+
+    Inherited from PeriodicRtThread
+*/
 class DataCollector: public PeriodicRtThread
 {
 public:
 
+    /*!
+     \brief Constructor
+
+     Sets up the underlying PeriodicRtThread.
+
+    \param priority Priority of the PeriodicRtThread
+    \param period_us sampling period (in us) of the PeriodicRtThread
+     \param filename  Filename of the output file
+    \param motors     Reference to the MotorControl object for accessing the ADC
+    */
     DataCollector(int priority, unsigned int period_us, const char *filename, MotorControl& motors);
 
+    /*!
+     \brief Runs the sampling loop
+
+     Reads the channels and set speeds of all 4 motors and
+     prints the results to the output file.
+
+    */
     virtual void run();
 
-    volatile bool mKeepRunning;
+    volatile bool mKeepRunning; /*!<  Possibility to interrupt thread */
 
 private:
 
+    /*!
+     \brief Substract 2 timeval structures
+
+     result = x - y;
+
+     \param result
+     \param x
+     \param y
+     \return int 1 if result is negative
+    */
     int timeval_subtract (struct timeval * result, struct timeval * x, struct timeval * y);
 
-    MotorControl& mMotors;
-    const char * mFilename;
+    MotorControl& mMotors; /*!< Object to access the motors for ADC measurements */
+    const char * mFilename; /*!< Filename of the output file */
 
 };
 
+/*!
+ \brief
+
+ \param priority
+ \param period_us
+ \param filename
+ \param motors
+*/
 DataCollector::DataCollector::DataCollector(int priority, unsigned int period_us, const char* filename, MotorControl &motors)
     :PeriodicRtThread(priority, period_us), mMotors(motors), mFilename(filename)
 {}
+
 
 void DataCollector::run()
 {
@@ -57,7 +96,7 @@ void DataCollector::run()
         int dutyCycles[4];
         mMotors.getDutyCycles(dutyCycles);
 
-        // take time stamp
+        // Compute time stamp
         timeval_subtract(&elapsed, &now, &start);
         unsigned long long timestamp = elapsed.tv_sec * 1000 + elapsed.tv_usec / 1000; // in ms since start
 

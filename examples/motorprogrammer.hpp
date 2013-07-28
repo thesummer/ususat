@@ -1,3 +1,16 @@
+/**
+ * @file MotorProgrammer.hpp
+ *
+ * Runs the given trajectory for the 4 motors.
+ *
+ * Based on RtThread
+ *
+ * @author Jan Sommer
+ *  Created on: Apr 26, 2013
+ *
+ */
+
+
 #ifndef MOTOR_PROGRAMMER_H
 #define MOTOR_PROGRAMMER_H
 
@@ -5,6 +18,7 @@
 #include <sys/timerfd.h>
 #include <unistd.h>
 #include <cerrno>
+#include <stdexcept>
 
 #include <queue>
 #include <fstream>
@@ -17,28 +31,56 @@ using std::endl;
 #include "datacollector.hpp"
 using namespace USU;
 
+/*!
+ \brief Class which reads the input file and runs the trajectory for each motor
+*/
 class MotorProgrammer: public RtThread
 {
 public:
+    /*!
+     \brief Struct representing a single command point
+
+     At the point time the corresponding motor will be
+     set to the desired speed
+
+    */
     struct Command
     {
-        unsigned int time;
-        unsigned int motor;
-        int dutyCycle;
+        unsigned int time; /*!< Time (in ms) from start*/
+        unsigned int motor; /*!< The motor ought to be set [0,3] */
+        int speed; /*!< The speed the motor will be set to at time*/
     };
 
+    /*!
+    \brief Constructor
+
+    Prepares the underlying thread.
+    Parses the input file.
+
+
+    \param priority Priority for the underlying RtThread
+    \param inputFile    filename of the input file
+    \param outputFile   filename of the output file
+    \param period_us    sampling time (in us) for the data collector thread
+    */
     MotorProgrammer(int priority, const char* inputFile, const char *outputFile, unsigned int period_us);
 
+    /*!
+     \brief Starts the thread
+
+     Sets the motors speeds according go the input file
+
+    */
     virtual void run();
 
-    volatile bool mKeepRunning;
+    volatile bool mKeepRunning; /*!< Possibility to interrupt thread */
 
 private:
-    int mTimerFd;
-    struct timespec mStartTime;
-    std::queue<Command> mCommandQueue;
-    MotorControl mMotors;
-    DataCollector mDataCollector;
+    int mTimerFd; /*!< Handle to the timer */
+    struct timespec mStartTime; /*!< Start time all other times are relative to*/
+    std::queue<Command> mCommandQueue; /*!< The list with the commands*/
+    MotorControl mMotors; /*!< Object which controls the motors*/
+    DataCollector mDataCollector; /*!< Thread which collects the data periodically*/
 
 };
 
@@ -61,11 +103,20 @@ MotorProgrammer::MotorProgrammer(int priority, const char *inputFile,
     file.open(inputFile, std::ios_base::in);
 
     Command temp;
+    unsigned lastTime = 0;
     while(true)
     {
         file >> temp.time;
+        if (temp.time < lastTime)
+            throw std::runtime_error("Error while parsing input file: Commands have to be sorted chronologically");
+        lastTime = temp.time;
+
         file >> temp.motor;
-        file >> temp.dutyCycle;
+        if(temp.motor >3)
+            throw std::runtime_error("Error while parsing input file: Motor has to be between 0 and 3");
+
+        file >> temp.speed;
+
         if(file.eof())
             break;
         mCommandQueue.push(temp);
@@ -78,6 +129,7 @@ MotorProgrammer::MotorProgrammer(int priority, const char *inputFile,
 
 void MotorProgrammer::run()
 {
+    // Get the start time
     if (clock_gettime(CLOCK_MONOTONIC, &mStartTime) == -1)
     {
         perror("clock_gettime ");
@@ -88,13 +140,18 @@ void MotorProgrammer::run()
     cout << "Starting data collector " << endl;
     mDataCollector.start();
 
-
+    //    1. Read the next event from the list.
+    //    2. Create a timer signal for the time.
+    //    3. Wait for the timer.
+    //    4. Set the motor(s) to the desired duty cycle
+    //    5. Go back to 1
     mKeepRunning = true;
     while(mKeepRunning && !mCommandQueue.empty())
     {
 
         Command nextEvent = mCommandQueue.front();
 
+        // Set the timer event:
         struct itimerspec nextTimer;
         // single event (no period)
         nextTimer.it_interval.tv_sec  = 0;
@@ -131,20 +188,22 @@ void MotorProgrammer::run()
         }
 
         // Do command
-        mMotors.setMotor(nextEvent.motor, nextEvent.dutyCycle);
+
+        // do{} while -loop would make more sense?
+        mMotors.setMotor(nextEvent.motor, nextEvent.speed);
         mCommandQueue.pop();
 
         cout << "Motor: " << nextEvent.motor
-             << "\tDutyCycle: " << nextEvent.dutyCycle << endl;
+             << "\tDutyCycle: " << nextEvent.speed << endl;
 
         // Do subsequent commands (if any)
         while(nextEvent.time == mCommandQueue.front().time)
         {
             nextEvent = mCommandQueue.front();
-            mMotors.setMotor(nextEvent.motor, nextEvent.dutyCycle);
+            mMotors.setMotor(nextEvent.motor, nextEvent.speed);
             mCommandQueue.pop();
             cout << "Motor: " << nextEvent.motor
-                 << "\tDutyCycle: " << nextEvent.dutyCycle << endl;
+                 << "\tDutyCycle: " << nextEvent.speed << endl;
         }
     }
 

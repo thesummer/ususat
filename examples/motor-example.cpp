@@ -1,3 +1,15 @@
+/**
+ * @file motor-example.cpp
+ *
+ * Example program to run a trajectory of the motors
+ * defined in an input file and collect the analog measurements for each motor.
+ *
+ * @author Jan Sommer
+ *  Created on: July, 13 2013
+ *
+ */
+
+
 #include <iostream>
 using std::cout;
 using std::endl;
@@ -5,6 +17,17 @@ using std::endl;
 #include "motorprogrammer.hpp"
 
 
+/*!
+ \brief The main program.
+
+ Parses the arguments and creates a MotorProgrammer object
+ and starts the test routine.
+
+
+ \param argc
+ \param argv[]
+ \return int
+*/
 int main(int argc, char *argv[])
 {
 
@@ -29,7 +52,7 @@ int main(int argc, char *argv[])
     }
 
 
-    MotorProgrammer mp(6, inputFile, outputFile, 20000);
+    MotorProgrammer mp(6, inputFile, outputFile, 10000);
 
     mp.start();
 
