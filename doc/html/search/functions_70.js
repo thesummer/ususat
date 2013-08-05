@@ -7,6 +7,5 @@ var searchData=
   ['polarityb',['PolarityB',['../classc_p_w_m.html#adf98ffdf180320ab9c81b675b03adc79',1,'cPWM']]],
   ['pop',['pop',['../class_u_s_u_1_1_g_x3_communicator.html#a0e0e9432c1bf8daf9d63f3c1cbe9feb4',1,'USU::GX3Communicator::pop()'],['../class_u_s_u_1_1_shared_queue.html#a93afe08ba3846e7b939a5f4b3c9d52e0',1,'USU::SharedQueue::pop()']]],
   ['post',['post',['../class_u_s_u_1_1_semaphore.html#a30db893557f60ec42b569b8768df10df',1,'USU::Semaphore']]],
-  ['printscreen',['printScreen',['../motor-example_8cpp.html#aa4ea73cecae9fefbdec0ef033bf12792',1,'motor-example.cpp']]],
   ['push',['push',['../class_u_s_u_1_1_shared_queue.html#aa022284c06365797ef191b92a273f2e8',1,'USU::SharedQueue']]]
 ];

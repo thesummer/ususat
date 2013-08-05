@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -101,7 +102,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#pro-static-methods">Static Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a>  </div>
   <div class="headertitle">
-<div class="title">USU::RtThread Class Reference</div>  </div>
+<div class="title">USU::RtThread Class Reference<div class="ingroups"><a class="el" href="group__threading.html">Utitlity classes for threading with pthread</a> &#124; <a class="el" href="group__dm.html">Classes related to communication with MicroStrain 3DM-GX3</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="USU::RtThread" -->
@@ -114,7 +115,7 @@ Inheritance diagram for USU::RtThread:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_u_s_u_1_1_rt_thread__inherit__graph.png" border="0" usemap="#_u_s_u_1_1_rt_thread_inherit__map" alt="Inheritance graph"/></div>
 <map name="_u_s_u_1_1_rt_thread_inherit__map" id="_u_s_u_1_1_rt_thread_inherit__map">
-<area shape="rect" id="node3" href="class_u_s_u_1_1_g_x3_communicator.html" title="Represents the Thread class for communication with the 3DM&#45;GX3&#45;25." alt="" coords="5,83,176,112"/><area shape="rect" id="node5" href="class_u_s_u_1_1_periodic_rt_thread.html" title="TODO: Make some proper exceptions." alt="" coords="200,83,360,112"/><area shape="rect" id="node7" href="class_data_collector.html" title="DataCollector" alt="" coords="115,160,216,189"/><area shape="rect" id="node9" href="class_my_thread.html" title="MyThread" alt="" coords="240,160,320,189"/><area shape="rect" id="node11" href="class_u_s_u_1_1_kalman_filter.html" title="Represents the Periodic Thread class for state estimation." alt="" coords="344,160,475,189"/></map>
+<area shape="rect" id="node3" href="class_motor_programmer.html" title="Class which reads the input file and runs the trajectory for each motor." alt="" coords="5,83,131,112"/><area shape="rect" id="node5" href="class_u_s_u_1_1_g_x3_communicator.html" title="Represents the Thread class for communication with the 3DM&#45;GX3&#45;25." alt="" coords="155,83,325,112"/><area shape="rect" id="node7" href="class_u_s_u_1_1_periodic_rt_thread.html" title="TODO: Make some proper exceptions." alt="" coords="349,83,509,112"/><area shape="rect" id="node9" href="class_data_collector.html" title="Simple class which manages the motors and collects data at an periodic intervall." alt="" coords="321,160,423,189"/><area shape="rect" id="node12" href="class_my_thread.html" title="MyThread" alt="" coords="447,160,527,189"/><area shape="rect" id="node14" href="class_u_s_u_1_1_kalman_filter.html" title="Represents the Periodic Thread class for state estimation." alt="" coords="551,160,681,189"/></map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="class_u_s_u_1_1_rt_thread-members.html">List of all members.</a></p>
@@ -131,8 +132,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the priority of the thread.  <a href="#ac26891d04e6b5fc487d5325ca0c90ead"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_s_u_1_1_rt_thread.html#aadd18e02db9c71911671936247d0ac70">start</a> (void *args=NULL)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates and starts the pthread.  <a href="#aadd18e02db9c71911671936247d0ac70"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_s_u_1_1_rt_thread.html#ae9ee3caaab9d46341c779ff67b27926d">join</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for the thread to join.  <a href="#ae9ee3caaab9d46341c779ff67b27926d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_s_u_1_1_rt_thread.html#a3e86cb1e51e7966a6aa9ce06b154b73e">join</a> (int timeout_ms=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for the thread to join.  <a href="#a3e86cb1e51e7966a6aa9ce06b154b73e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_s_u_1_1_rt_thread.html#a858a5d475ed5b61759889b6608ff4372">run</a> ()=0</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Actual method of the thread is running.  <a href="#a858a5d475ed5b61759889b6608ff4372"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-static-methods"></a>
@@ -147,9 +148,10 @@ Protected Attributes</h2></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Abstract wrapper class for the pthread library with RT-priority. </p>
-<p>This class is a thin wrapper for the pthread library. Inherited classes need to implement the run function with the tasks for the thread. The thread will run with the SCHED_FIFO-scheduler at the set priority. Therefore root rights are necessary for changing the scheduling policy. </p>
+<p>This class is a thin wrapper for the pthread library. Inherited classes need to implement the run function with the tasks for the thread. The thread will run with the SCHED_FIFO-scheduler at the set priority. Therefore root rights are necessary for changing the scheduling policy.</p>
+<p>3 </p>
 
-<p>Definition at line <a class="el" href="_rt_thread_8h_source.html#l00029">29</a> of file <a class="el" href="_rt_thread_8h_source.html">RtThread.h</a>.</p>
+<p>Definition at line <a class="el" href="_rt_thread_8h_source.html#l00032">32</a> of file <a class="el" href="_rt_thread_8h_source.html">RtThread.h</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a9b72ca126bc7f53871ec78635540e037"></a><!-- doxytag: member="USU::RtThread::RtThread" ref="a9b72ca126bc7f53871ec78635540e037" args="(int priority=0)" -->
 <div class="memitem">
@@ -175,7 +177,7 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_rt_thread_8cpp_source.html#l00017">17</a> of file <a class="el" href="_rt_thread_8cpp_source.html">RtThread.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_rt_thread_8cpp_source.html#l00019">19</a> of file <a class="el" href="_rt_thread_8cpp_source.html">RtThread.cpp</a>.</p>
 
 </div>
 </div>
@@ -196,7 +198,7 @@ Protected Attributes</h2></td></tr>
 <p>Destructor of the <a class="el" href="class_u_s_u_1_1_rt_thread.html" title="Abstract wrapper class for the pthread library with RT-priority.">RtThread</a> object. </p>
 <p>Waits for the thread to join (if not already) and releases the Attributes object. </p>
 
-<p>Definition at line <a class="el" href="_rt_thread_8cpp_source.html#l00060">60</a> of file <a class="el" href="_rt_thread_8cpp_source.html">RtThread.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_rt_thread_8cpp_source.html#l00062">62</a> of file <a class="el" href="_rt_thread_8cpp_source.html">RtThread.cpp</a>.</p>
 
 </div>
 </div>
@@ -225,7 +227,7 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_rt_thread_8cpp_source.html#l00118">118</a> of file <a class="el" href="_rt_thread_8cpp_source.html">RtThread.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_rt_thread_8cpp_source.html#l00141">141</a> of file <a class="el" href="_rt_thread_8cpp_source.html">RtThread.cpp</a>.</p>
 
 </div>
 </div>
@@ -246,7 +248,7 @@ Protected Attributes</h2></td></tr>
 <p>Returns the priority of the thread. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>int priority </dd></dl>
 
-<p>Definition at line <a class="el" href="_rt_thread_8cpp_source.html#l00082">82</a> of file <a class="el" href="_rt_thread_8cpp_source.html">RtThread.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_rt_thread_8cpp_source.html#l00084">84</a> of file <a class="el" href="_rt_thread_8cpp_source.html">RtThread.cpp</a>.</p>
 
 </div>
 </div>
@@ -267,18 +269,19 @@ Protected Attributes</h2></td></tr>
 <p>Return the pthread handle. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>pthread_t the thread handle of the last started pthread or -1 (if no pthread was started) </dd></dl>
 
-<p>Definition at line <a class="el" href="_rt_thread_8cpp_source.html#l00076">76</a> of file <a class="el" href="_rt_thread_8cpp_source.html">RtThread.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_rt_thread_8cpp_source.html#l00078">78</a> of file <a class="el" href="_rt_thread_8cpp_source.html">RtThread.cpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ae9ee3caaab9d46341c779ff67b27926d"></a><!-- doxytag: member="USU::RtThread::join" ref="ae9ee3caaab9d46341c779ff67b27926d" args="()" -->
+<a class="anchor" id="a3e86cb1e51e7966a6aa9ce06b154b73e"></a><!-- doxytag: member="USU::RtThread::join" ref="a3e86cb1e51e7966a6aa9ce06b154b73e" args="(int timeout_ms=0)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_u_s_u_1_1_rt_thread.html#ae9ee3caaab9d46341c779ff67b27926d">RtThread::join</a> </td>
+          <td class="memname">bool <a class="el" href="class_u_s_u_1_1_rt_thread.html#a3e86cb1e51e7966a6aa9ce06b154b73e">RtThread::join</a> </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>timeout_ms</em> = <code>0</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -286,8 +289,15 @@ Protected Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Waits for the thread to join. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">timeout_ms</td><td>timeout in ms (optional). 0 means no timeout </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>bool returns true if thread joined successfully and false if error occured </dd></dl>
 
-<p>Definition at line <a class="el" href="_rt_thread_8cpp_source.html#l00108">108</a> of file <a class="el" href="_rt_thread_8cpp_source.html">RtThread.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_rt_thread_8cpp_source.html#l00110">110</a> of file <a class="el" href="_rt_thread_8cpp_source.html">RtThread.cpp</a>.</p>
 
 </div>
 </div>
@@ -308,7 +318,7 @@ Protected Attributes</h2></td></tr>
 <p>Actual method of the thread is running. </p>
 <p>Every child class has to implement this function in order to do some threaded work. </p>
 
-<p>Implemented in <a class="el" href="class_u_s_u_1_1_periodic_rt_thread.html#ac9146b3088a9b268594ce41d002d020a">USU::PeriodicRtThread</a>, <a class="el" href="class_my_thread.html#a48f2e366e852087c53705f64e1ee65c2">MyThread</a>, <a class="el" href="class_u_s_u_1_1_kalman_filter.html#a47cc7f620b57b25133289e61dbf2a7be">USU::KalmanFilter</a>, <a class="el" href="class_u_s_u_1_1_g_x3_communicator.html#ae7e5cf4c792ca270826dea243abbc5aa">USU::GX3Communicator</a>, and <a class="el" href="class_data_collector.html#acb6910eac48d5992e2bd9c43cfcd8ca5">DataCollector</a>.</p>
+<p>Implemented in <a class="el" href="class_u_s_u_1_1_periodic_rt_thread.html#ac9146b3088a9b268594ce41d002d020a">USU::PeriodicRtThread</a>, <a class="el" href="class_motor_programmer.html#add5000a22f85e3ce067f06c0ce4279e2">MotorProgrammer</a>, <a class="el" href="class_my_thread.html#a48f2e366e852087c53705f64e1ee65c2">MyThread</a>, <a class="el" href="class_u_s_u_1_1_kalman_filter.html#a47cc7f620b57b25133289e61dbf2a7be">USU::KalmanFilter</a>, <a class="el" href="class_u_s_u_1_1_g_x3_communicator.html#ae7e5cf4c792ca270826dea243abbc5aa">USU::GX3Communicator</a>, <a class="el" href="class_data_collector.html#acb6910eac48d5992e2bd9c43cfcd8ca5">DataCollector</a>, and <a class="el" href="class_data_collector.html#aa6735ae7b21378ec0f2e2aa28c295c87">DataCollector</a>.</p>
 
 </div>
 </div>
@@ -336,7 +346,7 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_rt_thread_8cpp_source.html#l00087">87</a> of file <a class="el" href="_rt_thread_8cpp_source.html">RtThread.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_rt_thread_8cpp_source.html#l00089">89</a> of file <a class="el" href="_rt_thread_8cpp_source.html">RtThread.cpp</a>.</p>
 
 </div>
 </div>
@@ -353,7 +363,7 @@ Protected Attributes</h2></td></tr>
 <div class="memdoc">
 <p>Arguments which can be passed to a certain thread thread </p>
 
-<p>Definition at line <a class="el" href="_rt_thread_8h_source.html#l00042">42</a> of file <a class="el" href="_rt_thread_8h_source.html">RtThread.h</a>.</p>
+<p>Definition at line <a class="el" href="_rt_thread_8h_source.html#l00045">45</a> of file <a class="el" href="_rt_thread_8h_source.html">RtThread.h</a>.</p>
 
 </div>
 </div>
@@ -369,7 +379,7 @@ Protected Attributes</h2></td></tr>
 <div class="memdoc">
 <p>The thread handle </p>
 
-<p>Definition at line <a class="el" href="_rt_thread_8h_source.html#l00040">40</a> of file <a class="el" href="_rt_thread_8h_source.html">RtThread.h</a>.</p>
+<p>Definition at line <a class="el" href="_rt_thread_8h_source.html#l00043">43</a> of file <a class="el" href="_rt_thread_8h_source.html">RtThread.h</a>.</p>
 
 </div>
 </div>
@@ -385,7 +395,7 @@ Protected Attributes</h2></td></tr>
 <div class="memdoc">
 <p>Keeps the status of the thread TODO: Useful?? </p>
 
-<p>Definition at line <a class="el" href="_rt_thread_8h_source.html#l00041">41</a> of file <a class="el" href="_rt_thread_8h_source.html">RtThread.h</a>.</p>
+<p>Definition at line <a class="el" href="_rt_thread_8h_source.html#l00044">44</a> of file <a class="el" href="_rt_thread_8h_source.html">RtThread.h</a>.</p>
 
 </div>
 </div>
@@ -414,7 +424,7 @@ Protected Attributes</h2></td></tr>
       <li class="navelem"><a class="el" href="namespace_u_s_u.html">USU</a>      </li>
       <li class="navelem"><a class="el" href="class_u_s_u_1_1_rt_thread.html">RtThread</a>      </li>
 
-    <li class="footer">Generated on Mon Jun 3 2013 15:14:36 for U-BET by
+    <li class="footer">Generated on Fri Aug 2 2013 12:16:42 for U-BET by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

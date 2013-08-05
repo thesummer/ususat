@@ -99,11 +99,11 @@ var searchData=
   ['periodicrtthread_2ecpp',['periodicrtthread.cpp',['../periodicrtthread_8cpp.html',1,'']]],
   ['periodicrtthread_2eh',['periodicrtthread.h',['../periodicrtthread_8h.html',1,'']]],
   ['pins',['Pins',['../class_beagle___g_p_i_o.html#a9b1fd560ea5d2d65898ac15c23055e58',1,'Beagle_GPIO']]],
+  ['platform_5fid',['PLATFORM_ID',['../_c_make_c_compiler_id_8c.html#adbc5372f40838899018fadbc89bd588b',1,'PLATFORM_ID():&#160;CMakeCCompilerId.c'],['../_c_make_c_x_x_compiler_id_8cpp.html#adbc5372f40838899018fadbc89bd588b',1,'PLATFORM_ID():&#160;CMakeCXXCompilerId.cpp']]],
   ['polarity',['Polarity',['../classc_p_w_m.html#a4e92531076ad9cf56c1df16b1028ce64',1,'cPWM']]],
   ['polaritya',['PolarityA',['../classc_p_w_m.html#a045adb25bf713abc186e2b2cce6effed',1,'cPWM']]],
   ['polarityb',['PolarityB',['../classc_p_w_m.html#adf98ffdf180320ab9c81b675b03adc79',1,'cPWM']]],
   ['pop',['pop',['../class_u_s_u_1_1_g_x3_communicator.html#a0e0e9432c1bf8daf9d63f3c1cbe9feb4',1,'USU::GX3Communicator::pop()'],['../class_u_s_u_1_1_shared_queue.html#a93afe08ba3846e7b939a5f4b3c9d52e0',1,'USU::SharedQueue::pop()']]],
   ['post',['post',['../class_u_s_u_1_1_semaphore.html#a30db893557f60ec42b569b8768df10df',1,'USU::Semaphore']]],
-  ['printscreen',['printScreen',['../motor-example_8cpp.html#aa4ea73cecae9fefbdec0ef033bf12792',1,'motor-example.cpp']]],
   ['push',['push',['../class_u_s_u_1_1_shared_queue.html#aa022284c06365797ef191b92a273f2e8',1,'USU::SharedQueue']]]
 ];

@@ -11,5 +11,6 @@ var searchData=
   ['motor_2ecpp',['motor.cpp',['../motor_8cpp.html',1,'']]],
   ['motor_2eh',['motor.h',['../motor_8h.html',1,'']]],
   ['motorcontrol_2ecpp',['motorcontrol.cpp',['../motorcontrol_8cpp.html',1,'']]],
-  ['motorcontrol_2eh',['motorcontrol.h',['../motorcontrol_8h.html',1,'']]]
+  ['motorcontrol_2eh',['motorcontrol.h',['../motorcontrol_8h.html',1,'']]],
+  ['motorprogrammer_2ehpp',['motorprogrammer.hpp',['../motorprogrammer_8hpp.html',1,'']]]
 ];

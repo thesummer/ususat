@@ -9,7 +9,7 @@ var searchData=
   ['setmotor',['setMotor',['../class_u_s_u_1_1_motor_control.html#ad08369ed288a7816de1b3c423684f0da',1,'USU::MotorControl']]],
   ['setspeed',['setSpeed',['../class_u_s_u_1_1_motor.html#aa58cbc26a0da87389dd208367d0fa407',1,'USU::Motor']]],
   ['sharedobject',['SharedObject',['../class_shared_object.html#a852b716237753c48654dce4491a41b59',1,'SharedObject']]],
-  ['size',['size',['../class_u_s_u_1_1_g_x3_communicator.html#aac82e15389a41ff99c2a4f6c0bbecf95',1,'USU::GX3Communicator::size()'],['../class_u_s_u_1_1_shared_queue.html#a78e772083f27b8822b98886ba932ac27',1,'USU::SharedQueue::size()']]],
+  ['size',['size',['../class_u_s_u_1_1_g_x3_communicator.html#ab456da2f8c27e84180e5e6453774b545',1,'USU::GX3Communicator::size()'],['../class_u_s_u_1_1_shared_queue.html#a78e772083f27b8822b98886ba932ac27',1,'USU::SharedQueue::size()']]],
   ['start',['start',['../class_u_s_u_1_1_rt_thread.html#aadd18e02db9c71911671936247d0ac70',1,'USU::RtThread']]],
   ['stop',['stop',['../class_data_collector.html#a87652f10e500818393e314d374398d89',1,'DataCollector::stop()'],['../class_u_s_u_1_1_g_x3_communicator.html#a0d7a0359b7fed872ea1737dffacdd156',1,'USU::GX3Communicator::stop()'],['../class_u_s_u_1_1_kalman_filter.html#a3f8b3ce719dcb24745150f8c4ef361b8',1,'USU::KalmanFilter::stop()']]],
   ['stopa',['StopA',['../classc_p_w_m.html#a2fffee066d83200b808edff0a08987fd',1,'cPWM']]],

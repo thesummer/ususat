@@ -1,8 +1,6 @@
 var searchData=
 [
   ['a',['a',['../class_l_s_m303.html#ad71c39fa2c1dfd978c9e93b48a6a9310',1,'LSM303']]],
-  ['a1',['a1',['../motor-example_8cpp.html#ad36c8f7a507294aa8f53bb0baf28fb24',1,'motor-example.cpp']]],
-  ['a2',['a2',['../motor-example_8cpp.html#a0a9ef35b787a9d8a73482c238d0177c4',1,'motor-example.cpp']]],
   ['acc',['acc',['../class_u_s_u_1_1_raw_acc_ang.html#a6a3d4a7bb82ccd946a5643eb160832f3',1,'USU::RawAccAng::acc()'],['../class_u_s_u_1_1_acc_ang_mag.html#a9c42a8a7e04633030c5b1c6b2b3397cd',1,'USU::AccAngMag::acc()'],['../class_u_s_u_1_1_acc_ang_mag_orientation_mat.html#a0e696809c760074e5a261b1480d34bf2',1,'USU::AccAngMagOrientationMat::acc()']]],
   ['acc_5faddress_5fsa0_5fa_5fhigh',['ACC_ADDRESS_SA0_A_HIGH',['../_l_s_m303_8cpp.html#aa938ef5c958ad633f62e45ce3eda5054',1,'LSM303.cpp']]],
   ['acc_5faddress_5fsa0_5fa_5flow',['ACC_ADDRESS_SA0_A_LOW',['../_l_s_m303_8cpp.html#a44d83da6f81354e553d574e99ee0691e',1,'LSM303.cpp']]],
@@ -17,5 +15,6 @@ var searchData=
   ['activehigh',['ActiveHigh',['../classc_p_w_m.html#a4e92531076ad9cf56c1df16b1028ce64ae92ac1e728039ef28b065c617d793058',1,'cPWM']]],
   ['activelow',['ActiveLow',['../classc_p_w_m.html#a4e92531076ad9cf56c1df16b1028ce64ad35a0e12428b4c290597f1621a061718',1,'cPWM']]],
   ['addressset',['addressSet',['../class_i2_c_bus.html#a3df26769808e1e948dda57cd02680c3d',1,'I2CBus']]],
+  ['architecture_5fid',['ARCHITECTURE_ID',['../_c_make_c_compiler_id_8c.html#aba35d0d200deaeb06aee95ca297acb28',1,'ARCHITECTURE_ID():&#160;CMakeCCompilerId.c'],['../_c_make_c_x_x_compiler_id_8cpp.html#aba35d0d200deaeb06aee95ca297acb28',1,'ARCHITECTURE_ID():&#160;CMakeCXXCompilerId.cpp']]],
   ['assert',['assert',['../_beagle___g_p_i_o_8h.html#acdcc5aaebf3f273c1762f24a6ece2e5e',1,'Beagle_GPIO.h']]]
 ];

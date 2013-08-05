@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -105,7 +106,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00005"></a>00005 
 <a name="l00006"></a>00006 <span class="preprocessor">#include &quot;<a class="code" href="_i2_c_bus_8h.html">I2CBus.h</a>&quot;</span>
 <a name="l00007"></a>00007 
-<a name="l00008"></a><a class="code" href="class_i2_c_bus.html#afc250c51eed417b2726c53353cae4083">00008</a> <a class="code" href="class_i2_c_bus.html#afc250c51eed417b2726c53353cae4083">I2CBus::I2CBus</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> * deviceName)
+<a name="l00008"></a><a class="code" href="class_i2_c_bus.html#afc250c51eed417b2726c53353cae4083">00008</a> <a class="code" href="class_i2_c_bus.html#afc250c51eed417b2726c53353cae4083" title="Constructor.">I2CBus::I2CBus</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> * deviceName)
 <a name="l00009"></a>00009 {
 <a name="l00010"></a>00010     fd = open(deviceName, O_RDWR);
 <a name="l00011"></a>00011     <span class="keywordflow">if</span> (fd == -1)
@@ -114,12 +115,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00014"></a>00014     }
 <a name="l00015"></a>00015 }
 <a name="l00016"></a>00016 
-<a name="l00017"></a><a class="code" href="class_i2_c_bus.html#a70dac2923cd16ce06f0e73f7fc5bca89">00017</a> <a class="code" href="class_i2_c_bus.html#a70dac2923cd16ce06f0e73f7fc5bca89">I2CBus::~I2CBus</a>()
+<a name="l00017"></a><a class="code" href="class_i2_c_bus.html#a70dac2923cd16ce06f0e73f7fc5bca89">00017</a> <a class="code" href="class_i2_c_bus.html#a70dac2923cd16ce06f0e73f7fc5bca89" title="Destructor.">I2CBus::~I2CBus</a>()
 <a name="l00018"></a>00018 {
 <a name="l00019"></a>00019     close(fd);
 <a name="l00020"></a>00020 }
 <a name="l00021"></a>00021 
-<a name="l00022"></a><a class="code" href="class_i2_c_bus.html#a3df26769808e1e948dda57cd02680c3d">00022</a> <span class="keywordtype">void</span> <a class="code" href="class_i2_c_bus.html#a3df26769808e1e948dda57cd02680c3d">I2CBus::addressSet</a>(uint8_t address)
+<a name="l00022"></a><a class="code" href="class_i2_c_bus.html#a3df26769808e1e948dda57cd02680c3d">00022</a> <span class="keywordtype">void</span> <a class="code" href="class_i2_c_bus.html#a3df26769808e1e948dda57cd02680c3d" title="Set the address of the I2C device the bus will read and write data to.">I2CBus::addressSet</a>(uint8_t address)
 <a name="l00023"></a>00023 {
 <a name="l00024"></a>00024     <span class="keywordtype">int</span> result = ioctl(fd, I2C_SLAVE, address);
 <a name="l00025"></a>00025     <span class="keywordflow">if</span> (result == -1)
@@ -128,7 +129,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00028"></a>00028     }
 <a name="l00029"></a>00029 }
 <a name="l00030"></a>00030 
-<a name="l00031"></a><a class="code" href="class_i2_c_bus.html#a0f9c9c32bff6152119b4ee79f003a1bd">00031</a> <span class="keywordtype">void</span> <a class="code" href="class_i2_c_bus.html#a0f9c9c32bff6152119b4ee79f003a1bd">I2CBus::writeByte</a>(uint8_t command, uint8_t data)
+<a name="l00031"></a><a class="code" href="class_i2_c_bus.html#a0f9c9c32bff6152119b4ee79f003a1bd">00031</a> <span class="keywordtype">void</span> <a class="code" href="class_i2_c_bus.html#a0f9c9c32bff6152119b4ee79f003a1bd" title="Write a byte to the register command.">I2CBus::writeByte</a>(uint8_t command, uint8_t data)
 <a name="l00032"></a>00032 {
 <a name="l00033"></a>00033     <span class="keywordtype">int</span> result = i2c_smbus_write_byte_data(fd, command, data);
 <a name="l00034"></a>00034     <span class="keywordflow">if</span> (result == -1)
@@ -137,7 +138,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00037"></a>00037     }
 <a name="l00038"></a>00038 }
 <a name="l00039"></a>00039 
-<a name="l00040"></a><a class="code" href="class_i2_c_bus.html#a1e64669ddb6db1efda2525d51e6a99e8">00040</a> <span class="keywordtype">void</span> <a class="code" href="class_i2_c_bus.html#a0f9c9c32bff6152119b4ee79f003a1bd">I2CBus::writeByte</a>(uint8_t data)
+<a name="l00040"></a><a class="code" href="class_i2_c_bus.html#a1e64669ddb6db1efda2525d51e6a99e8">00040</a> <span class="keywordtype">void</span> <a class="code" href="class_i2_c_bus.html#a0f9c9c32bff6152119b4ee79f003a1bd" title="Write a byte to the register command.">I2CBus::writeByte</a>(uint8_t data)
 <a name="l00041"></a>00041 {
 <a name="l00042"></a>00042     <span class="keywordtype">int</span> result = i2c_smbus_write_byte(fd, data);
 <a name="l00043"></a>00043     <span class="keywordflow">if</span> (result == -1)
@@ -146,61 +147,63 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00046"></a>00046     }
 <a name="l00047"></a>00047 }
 <a name="l00048"></a>00048 
-<a name="l00049"></a><a class="code" href="class_i2_c_bus.html#a3b7cd32f752e2a5eeb6a5bdaf9267282">00049</a> uint8_t <a class="code" href="class_i2_c_bus.html#a1f9b4e6e0771e3de031aab0f8c5bc691">I2CBus::readByte</a>(uint8_t command)
+<a name="l00049"></a><a class="code" href="class_i2_c_bus.html#a3b7cd32f752e2a5eeb6a5bdaf9267282">00049</a> uint8_t <a class="code" href="class_i2_c_bus.html#a1f9b4e6e0771e3de031aab0f8c5bc691" title="Read a byte directly without specifying a register.">I2CBus::readByte</a>(uint8_t command)
 <a name="l00050"></a>00050 {
-<a name="l00051"></a>00051     <span class="keywordtype">int</span> result = i2c_smbus_read_byte_data(fd, command);
-<a name="l00052"></a>00052     <span class="keywordflow">if</span> (result == -1)
-<a name="l00053"></a>00053     {
-<a name="l00054"></a>00054         <span class="keywordflow">throw</span> posix_error(<span class="stringliteral">&quot;Failed to read byte from I2C.&quot;</span>);
-<a name="l00055"></a>00055     }
-<a name="l00056"></a>00056     <span class="keywordflow">return</span> result;
-<a name="l00057"></a>00057 }
-<a name="l00058"></a>00058 
-<a name="l00059"></a><a class="code" href="class_i2_c_bus.html#a1f9b4e6e0771e3de031aab0f8c5bc691">00059</a> uint8_t <a class="code" href="class_i2_c_bus.html#a1f9b4e6e0771e3de031aab0f8c5bc691">I2CBus::readByte</a>()
-<a name="l00060"></a>00060 {
-<a name="l00061"></a>00061     <span class="keywordtype">int</span> result = i2c_smbus_read_byte(fd);
-<a name="l00062"></a>00062     <span class="keywordflow">if</span> (result == -1)
-<a name="l00063"></a>00063     {
-<a name="l00064"></a>00064         <span class="keywordflow">throw</span> posix_error(<span class="stringliteral">&quot;Failed to read raw byte from I2C.&quot;</span>);
-<a name="l00065"></a>00065     }
-<a name="l00066"></a>00066     <span class="keywordflow">return</span> result;
-<a name="l00067"></a>00067 }
-<a name="l00068"></a>00068 
-<a name="l00069"></a><a class="code" href="class_i2_c_bus.html#a4db730c58bf5bab95bae47c976ccd825">00069</a> uint16_t <a class="code" href="class_i2_c_bus.html#a09abdc7887db46a7f9a26f37754ad6d1">I2CBus::readWord</a>(uint8_t command)
-<a name="l00070"></a>00070 {
-<a name="l00071"></a>00071     <span class="keywordtype">int</span> result = i2c_smbus_read_word_data(fd, command);
-<a name="l00072"></a>00072     <span class="keywordflow">if</span> (result == -1)
-<a name="l00073"></a>00073     {
-<a name="l00074"></a>00074         <span class="keywordflow">throw</span> posix_error(<span class="stringliteral">&quot;Failed to read word from I2C.&quot;</span>);
-<a name="l00075"></a>00075     }
-<a name="l00076"></a>00076     <span class="keywordflow">return</span> result;
-<a name="l00077"></a>00077 }
-<a name="l00078"></a>00078 
-<a name="l00079"></a><a class="code" href="class_i2_c_bus.html#a09abdc7887db46a7f9a26f37754ad6d1">00079</a> uint16_t <a class="code" href="class_i2_c_bus.html#a09abdc7887db46a7f9a26f37754ad6d1">I2CBus::readWord</a>()
-<a name="l00080"></a>00080 {
-<a name="l00081"></a>00081     uint16_t temp;
-<a name="l00082"></a>00082     <span class="keywordtype">int</span> result = read(fd, &amp;temp, <span class="keyword">sizeof</span>(uint16_t) );
-<a name="l00083"></a>00083     <span class="keywordflow">if</span>(result == -1)
-<a name="l00084"></a>00084     {
-<a name="l00085"></a>00085         <span class="keywordflow">throw</span> posix_error(<span class="stringliteral">&quot;Failed to read raw word from I2C&quot;</span>);
-<a name="l00086"></a>00086     }
-<a name="l00087"></a>00087     <span class="keywordflow">return</span> temp;
-<a name="l00088"></a>00088 }
-<a name="l00089"></a>00089 
-<a name="l00090"></a><a class="code" href="class_i2_c_bus.html#a9aefab7f4230de3dc45385d1c79d4fe5">00090</a> <span class="keywordtype">int</span> <a class="code" href="class_i2_c_bus.html#a9aefab7f4230de3dc45385d1c79d4fe5">I2CBus::tryReadByte</a>(uint8_t command)
-<a name="l00091"></a>00091 {
-<a name="l00092"></a>00092     <span class="keywordflow">return</span> i2c_smbus_read_byte_data(fd, command);
-<a name="l00093"></a>00093 }
-<a name="l00094"></a>00094 
-<a name="l00095"></a>00095 
-<a name="l00096"></a><a class="code" href="class_i2_c_bus.html#a3f0bed946e8431cacbac1f214ba03232">00096</a> <span class="keywordtype">void</span> <a class="code" href="class_i2_c_bus.html#a3f0bed946e8431cacbac1f214ba03232">I2CBus::readBlock</a>(uint8_t command, uint8_t size, uint8_t * data)
-<a name="l00097"></a>00097 {
-<a name="l00098"></a>00098     <span class="keywordtype">int</span> result = i2c_smbus_read_i2c_block_data(fd, command, size, data);
-<a name="l00099"></a>00099     <span class="keywordflow">if</span> (result != size)
-<a name="l00100"></a>00100     {
-<a name="l00101"></a>00101         <span class="keywordflow">throw</span> posix_error(<span class="stringliteral">&quot;Failed to read block from I2C.&quot;</span>);
-<a name="l00102"></a>00102     }
-<a name="l00103"></a>00103 }
+<a name="l00051"></a>00051     <span class="keywordtype">int</span> result = 0;
+<a name="l00052"></a>00052     result = i2c_smbus_read_byte_data(fd, command);
+<a name="l00053"></a>00053     <span class="keywordflow">if</span> (result == -1)
+<a name="l00054"></a>00054     {
+<a name="l00055"></a>00055 <span class="comment">//        throw posix_error(&quot;Failed to read byte from I2C.&quot;);</span>
+<a name="l00056"></a>00056         <span class="keywordflow">return</span> 0;
+<a name="l00057"></a>00057     }
+<a name="l00058"></a>00058     <span class="keywordflow">return</span> (uint8_t) result;
+<a name="l00059"></a>00059 }
+<a name="l00060"></a>00060 
+<a name="l00061"></a><a class="code" href="class_i2_c_bus.html#a1f9b4e6e0771e3de031aab0f8c5bc691">00061</a> uint8_t <a class="code" href="class_i2_c_bus.html#a1f9b4e6e0771e3de031aab0f8c5bc691" title="Read a byte directly without specifying a register.">I2CBus::readByte</a>()
+<a name="l00062"></a>00062 {
+<a name="l00063"></a>00063     <span class="keywordtype">int</span> result = i2c_smbus_read_byte(fd);
+<a name="l00064"></a>00064     <span class="keywordflow">if</span> (result == -1)
+<a name="l00065"></a>00065     {
+<a name="l00066"></a>00066         <span class="keywordflow">throw</span> posix_error(<span class="stringliteral">&quot;Failed to read raw byte from I2C.&quot;</span>);
+<a name="l00067"></a>00067     }
+<a name="l00068"></a>00068     <span class="keywordflow">return</span> result;
+<a name="l00069"></a>00069 }
+<a name="l00070"></a>00070 
+<a name="l00071"></a><a class="code" href="class_i2_c_bus.html#a4db730c58bf5bab95bae47c976ccd825">00071</a> uint16_t <a class="code" href="class_i2_c_bus.html#a09abdc7887db46a7f9a26f37754ad6d1" title="Read a word (2 bytes) directly without specifying a register.">I2CBus::readWord</a>(uint8_t command)
+<a name="l00072"></a>00072 {
+<a name="l00073"></a>00073     <span class="keywordtype">int</span> result = i2c_smbus_read_word_data(fd, command);
+<a name="l00074"></a>00074     <span class="keywordflow">if</span> (result == -1)
+<a name="l00075"></a>00075     {
+<a name="l00076"></a>00076         <span class="keywordflow">throw</span> posix_error(<span class="stringliteral">&quot;Failed to read word from I2C.&quot;</span>);
+<a name="l00077"></a>00077     }
+<a name="l00078"></a>00078     <span class="keywordflow">return</span> result;
+<a name="l00079"></a>00079 }
+<a name="l00080"></a>00080 
+<a name="l00081"></a><a class="code" href="class_i2_c_bus.html#a09abdc7887db46a7f9a26f37754ad6d1">00081</a> uint16_t <a class="code" href="class_i2_c_bus.html#a09abdc7887db46a7f9a26f37754ad6d1" title="Read a word (2 bytes) directly without specifying a register.">I2CBus::readWord</a>()
+<a name="l00082"></a>00082 {
+<a name="l00083"></a>00083     uint16_t temp;
+<a name="l00084"></a>00084     <span class="keywordtype">int</span> result = read(fd, &amp;temp, <span class="keyword">sizeof</span>(uint16_t) );
+<a name="l00085"></a>00085     <span class="keywordflow">if</span>(result == -1)
+<a name="l00086"></a>00086     {
+<a name="l00087"></a>00087         <span class="keywordflow">throw</span> posix_error(<span class="stringliteral">&quot;Failed to read raw word from I2C&quot;</span>);
+<a name="l00088"></a>00088     }
+<a name="l00089"></a>00089     <span class="keywordflow">return</span> temp;
+<a name="l00090"></a>00090 }
+<a name="l00091"></a>00091 
+<a name="l00092"></a><a class="code" href="class_i2_c_bus.html#a9aefab7f4230de3dc45385d1c79d4fe5">00092</a> <span class="keywordtype">int</span> <a class="code" href="class_i2_c_bus.html#a9aefab7f4230de3dc45385d1c79d4fe5" title="Tries to read a byte from register command.">I2CBus::tryReadByte</a>(uint8_t command)
+<a name="l00093"></a>00093 {
+<a name="l00094"></a>00094     <span class="keywordflow">return</span> i2c_smbus_read_byte_data(fd, command);
+<a name="l00095"></a>00095 }
+<a name="l00096"></a>00096 
+<a name="l00097"></a>00097 
+<a name="l00098"></a><a class="code" href="class_i2_c_bus.html#a3f0bed946e8431cacbac1f214ba03232">00098</a> <span class="keywordtype">void</span> <a class="code" href="class_i2_c_bus.html#a3f0bed946e8431cacbac1f214ba03232" title="Read a block of data from the device starting at register command.">I2CBus::readBlock</a>(uint8_t command, uint8_t size, uint8_t * data)
+<a name="l00099"></a>00099 {
+<a name="l00100"></a>00100     <span class="keywordtype">int</span> result = i2c_smbus_read_i2c_block_data(fd, command, size, data);
+<a name="l00101"></a>00101     <span class="keywordflow">if</span> (result != size)
+<a name="l00102"></a>00102     {
+<a name="l00103"></a>00103         <span class="keywordflow">throw</span> posix_error(<span class="stringliteral">&quot;Failed to read block from I2C.&quot;</span>);
+<a name="l00104"></a>00104     }
+<a name="l00105"></a>00105 }
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -221,7 +224,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="_i2_c_bus_8cpp.html">I2CBus.cpp</a>      </li>
 
-    <li class="footer">Generated on Mon Jun 3 2013 15:14:35 for U-BET by
+    <li class="footer">Generated on Fri Aug 2 2013 12:16:41 for U-BET by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -102,7 +103,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00011"></a>00011 <span class="preprocessor">#include &quot;<a class="code" href="motor_8h.html">motor.h</a>&quot;</span>
 <a name="l00012"></a>00012 <span class="keyword">using namespace </span>USU;
 <a name="l00013"></a>00013 
-<a name="l00014"></a><a class="code" href="class_u_s_u_1_1_motor.html#a2200a3939cd62d2e22e9b134b54bc402">00014</a> <a class="code" href="class_u_s_u_1_1_motor.html#a2200a3939cd62d2e22e9b134b54bc402">Motor::Motor</a>(<a class="code" href="class_beagle___g_p_i_o.html">Beagle_GPIO</a> &amp;beagleGpio, <a class="code" href="class_beagle___g_p_i_o.html#a9b1fd560ea5d2d65898ac15c23055e58">Beagle_GPIO::Pins</a> clockwise, <a class="code" href="class_beagle___g_p_i_o.html#a9b1fd560ea5d2d65898ac15c23055e58">Beagle_GPIO::Pins</a> counterClockwise, <a class="code" href="classc_p_w_m.html">cPWM</a> &amp;pwm, <a class="code" href="motor_8h.html#aa4a2cd53d0866ae4c273573db3c4870d">SetDutyCyle</a> <a class="code" href="motor-example_8cpp.html#a839337b9ba74aba4916f05f8676a90c0">dutyCycle</a>)
+<a name="l00014"></a><a class="code" href="class_u_s_u_1_1_motor.html#a2200a3939cd62d2e22e9b134b54bc402">00014</a> <a class="code" href="class_u_s_u_1_1_motor.html#a2200a3939cd62d2e22e9b134b54bc402" title="Constructor.">Motor::Motor</a>(<a class="code" href="class_beagle___g_p_i_o.html" title="Wrapper class to access the GPIOs of the BeagleBone.">Beagle_GPIO</a> &amp;beagleGpio, <a class="code" href="class_beagle___g_p_i_o.html#a9b1fd560ea5d2d65898ac15c23055e58">Beagle_GPIO::Pins</a> clockwise, <a class="code" href="class_beagle___g_p_i_o.html#a9b1fd560ea5d2d65898ac15c23055e58">Beagle_GPIO::Pins</a> counterClockwise, <a class="code" href="classc_p_w_m.html" title="Wrapper class to access the PWM-devices of the BeagleBone.">cPWM</a> &amp;pwm, <a class="code" href="motor_8h.html#aa4a2cd53d0866ae4c273573db3c4870d" title="Function-pointer to the SetDutyCyle-method of cPWM class.">SetDutyCyle</a> dutyCycle)
 <a name="l00015"></a>00015     :mBeagleGpio(beagleGpio), mClockwise(clockwise), mCounterClockwise(counterClockwise),
 <a name="l00016"></a>00016       mPwm(pwm), mSetDutyCycle(dutyCycle), mSpeed(0)
 <a name="l00017"></a>00017 {
@@ -114,33 +115,37 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00023"></a>00023     mBeagleGpio.<a class="code" href="class_beagle___g_p_i_o.html#a7b67e50e7cc1dfa3a5be88d6c4ed8229">enablePinInterrupts</a>( mCounterClockwise, <span class="keyword">false</span> );
 <a name="l00024"></a>00024     mBeagleGpio.<a class="code" href="class_beagle___g_p_i_o.html#a33d763b486233269f5e8045b69d9ec49">writePin</a>(mCounterClockwise, 0);
 <a name="l00025"></a>00025 
-<a name="l00026"></a>00026     <a class="code" href="class_u_s_u_1_1_motor.html#aa58cbc26a0da87389dd208367d0fa407">setSpeed</a>(mSpeed);
+<a name="l00026"></a>00026     <a class="code" href="class_u_s_u_1_1_motor.html#aa58cbc26a0da87389dd208367d0fa407" title="Set the speed of the motor in percent.">setSpeed</a>(mSpeed);
 <a name="l00027"></a>00027 }
 <a name="l00028"></a>00028 
-<a name="l00029"></a><a class="code" href="class_u_s_u_1_1_motor.html#aa58cbc26a0da87389dd208367d0fa407">00029</a> <span class="keywordtype">void</span> <a class="code" href="class_u_s_u_1_1_motor.html#aa58cbc26a0da87389dd208367d0fa407">Motor::setSpeed</a>(<span class="keywordtype">int</span> speed)
+<a name="l00029"></a><a class="code" href="class_u_s_u_1_1_motor.html#aa58cbc26a0da87389dd208367d0fa407">00029</a> <span class="keywordtype">void</span> <a class="code" href="class_u_s_u_1_1_motor.html#aa58cbc26a0da87389dd208367d0fa407" title="Set the speed of the motor in percent.">Motor::setSpeed</a>(<span class="keywordtype">int</span> speed)
 <a name="l00030"></a>00030 {
 <a name="l00031"></a>00031     <span class="keywordflow">if</span> (speed &gt; 0)
 <a name="l00032"></a>00032     {
-<a name="l00033"></a>00033         mBeagleGpio.<a class="code" href="class_beagle___g_p_i_o.html#a33d763b486233269f5e8045b69d9ec49">writePin</a>(mClockwise, 1);
-<a name="l00034"></a>00034         mBeagleGpio.<a class="code" href="class_beagle___g_p_i_o.html#a33d763b486233269f5e8045b69d9ec49">writePin</a>(mCounterClockwise, 0);
-<a name="l00035"></a>00035         (mPwm.*mSetDutyCycle)(speed);
-<a name="l00036"></a>00036         mSpeed = speed;
-<a name="l00037"></a>00037     }
-<a name="l00038"></a>00038     <span class="keywordflow">else</span> <span class="keywordflow">if</span> (speed &lt; 0)
-<a name="l00039"></a>00039     {
-<a name="l00040"></a>00040         mBeagleGpio.<a class="code" href="class_beagle___g_p_i_o.html#a33d763b486233269f5e8045b69d9ec49">writePin</a>(mClockwise, 0);
-<a name="l00041"></a>00041         mBeagleGpio.<a class="code" href="class_beagle___g_p_i_o.html#a33d763b486233269f5e8045b69d9ec49">writePin</a>(mCounterClockwise, 1);
-<a name="l00042"></a>00042         (mPwm.*mSetDutyCycle)(-speed);
-<a name="l00043"></a>00043         mSpeed = speed;
-<a name="l00044"></a>00044     }
-<a name="l00045"></a>00045     <span class="keywordflow">else</span>
-<a name="l00046"></a>00046     {
-<a name="l00047"></a>00047         mBeagleGpio.<a class="code" href="class_beagle___g_p_i_o.html#a33d763b486233269f5e8045b69d9ec49">writePin</a>(mClockwise, 0);
-<a name="l00048"></a>00048         mBeagleGpio.<a class="code" href="class_beagle___g_p_i_o.html#a33d763b486233269f5e8045b69d9ec49">writePin</a>(mCounterClockwise, 0);
-<a name="l00049"></a>00049         (mPwm.*mSetDutyCycle)(9);
-<a name="l00050"></a>00050         mSpeed = 0;
-<a name="l00051"></a>00051     }
-<a name="l00052"></a>00052 }
+<a name="l00033"></a>00033         <span class="comment">// Make sure speed &lt;100</span>
+<a name="l00034"></a>00034         speed = speed&lt;100 ? speed : 99;
+<a name="l00035"></a>00035         mBeagleGpio.<a class="code" href="class_beagle___g_p_i_o.html#a33d763b486233269f5e8045b69d9ec49">writePin</a>(mClockwise, 1);
+<a name="l00036"></a>00036         mBeagleGpio.<a class="code" href="class_beagle___g_p_i_o.html#a33d763b486233269f5e8045b69d9ec49">writePin</a>(mCounterClockwise, 0);
+<a name="l00037"></a>00037         (mPwm.*mSetDutyCycle)(speed);
+<a name="l00038"></a>00038         mSpeed = speed;
+<a name="l00039"></a>00039     }
+<a name="l00040"></a>00040     <span class="keywordflow">else</span> <span class="keywordflow">if</span> (speed &lt; 0)
+<a name="l00041"></a>00041     {
+<a name="l00042"></a>00042         <span class="comment">// Make sure speed &gt;-100</span>
+<a name="l00043"></a>00043         speed = speed&gt;-100 ? speed : -99;
+<a name="l00044"></a>00044         mBeagleGpio.<a class="code" href="class_beagle___g_p_i_o.html#a33d763b486233269f5e8045b69d9ec49">writePin</a>(mClockwise, 0);
+<a name="l00045"></a>00045         mBeagleGpio.<a class="code" href="class_beagle___g_p_i_o.html#a33d763b486233269f5e8045b69d9ec49">writePin</a>(mCounterClockwise, 1);
+<a name="l00046"></a>00046         (mPwm.*mSetDutyCycle)(-speed);
+<a name="l00047"></a>00047         mSpeed = speed;
+<a name="l00048"></a>00048     }
+<a name="l00049"></a>00049     <span class="keywordflow">else</span>
+<a name="l00050"></a>00050     {
+<a name="l00051"></a>00051         mBeagleGpio.<a class="code" href="class_beagle___g_p_i_o.html#a33d763b486233269f5e8045b69d9ec49">writePin</a>(mClockwise, 0);
+<a name="l00052"></a>00052         mBeagleGpio.<a class="code" href="class_beagle___g_p_i_o.html#a33d763b486233269f5e8045b69d9ec49">writePin</a>(mCounterClockwise, 0);
+<a name="l00053"></a>00053         (mPwm.*mSetDutyCycle)(9);
+<a name="l00054"></a>00054         mSpeed = 0;
+<a name="l00055"></a>00055     }
+<a name="l00056"></a>00056 }
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -161,7 +166,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="motor_8cpp.html">motor.cpp</a>      </li>
 
-    <li class="footer">Generated on Mon Jun 3 2013 15:14:35 for U-BET by
+    <li class="footer">Generated on Fri Aug 2 2013 12:16:41 for U-BET by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

@@ -12,8 +12,7 @@
 
 
 
-\-Inheritance diagram for \-U\-S\-U\-:\-:\-Rt\-Thread\-:
-\nopagebreak
+\-Inheritance diagram for \-U\-S\-U\-:\-:\-Rt\-Thread\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -33,7 +32,7 @@ int \hyperlink{class_u_s_u_1_1_rt_thread_ac26891d04e6b5fc487d5325ca0c90ead}{get\
 \begin{DoxyCompactList}\small\item\em \-Returns the priority of the thread. \end{DoxyCompactList}\item 
 void \hyperlink{class_u_s_u_1_1_rt_thread_aadd18e02db9c71911671936247d0ac70}{start} (void $\ast$args=\-N\-U\-L\-L)
 \begin{DoxyCompactList}\small\item\em \-Creates and starts the pthread. \end{DoxyCompactList}\item 
-void \hyperlink{class_u_s_u_1_1_rt_thread_ae9ee3caaab9d46341c779ff67b27926d}{join} ()
+bool \hyperlink{class_u_s_u_1_1_rt_thread_a3e86cb1e51e7966a6aa9ce06b154b73e}{join} (int timeout\-\_\-ms=0)
 \begin{DoxyCompactList}\small\item\em \-Waits for the thread to join. \end{DoxyCompactList}\item 
 virtual void \hyperlink{class_u_s_u_1_1_rt_thread_a858a5d475ed5b61759889b6608ff4372}{run} ()=0
 \begin{DoxyCompactList}\small\item\em \-Actual method of the thread is running. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -56,9 +55,11 @@ void $\ast$ \hyperlink{class_u_s_u_1_1_rt_thread_a5213699b8def7e9e2af0add4648b8b
 \subsection{\-Detailed \-Description}
 \-Abstract wrapper class for the pthread library with \-R\-T-\/priority. 
 
-\-This class is a thin wrapper for the pthread library. \-Inherited classes need to implement the run function with the tasks for the thread. \-The thread will run with the \-S\-C\-H\-E\-D\-\_\-\-F\-I\-F\-O-\/scheduler at the set priority. \-Therefore root rights are necessary for changing the scheduling policy. 
+\-This class is a thin wrapper for the pthread library. \-Inherited classes need to implement the run function with the tasks for the thread. \-The thread will run with the \-S\-C\-H\-E\-D\-\_\-\-F\-I\-F\-O-\/scheduler at the set priority. \-Therefore root rights are necessary for changing the scheduling policy.
 
-\-Definition at line 29 of file \-Rt\-Thread.\-h.
+3 
+
+\-Definition at line 32 of file \-Rt\-Thread.\-h.
 
 
 
@@ -83,7 +84,7 @@ void $\ast$ \hyperlink{class_u_s_u_1_1_rt_thread_a5213699b8def7e9e2af0add4648b8b
 \end{DoxyParams}
 
 
-\-Definition at line 17 of file \-Rt\-Thread.\-cpp.
+\-Definition at line 19 of file \-Rt\-Thread.\-cpp.
 
 \hypertarget{class_u_s_u_1_1_rt_thread_ab1ec23dd67ba0d1ad0193416a1ed8243}{\index{\-U\-S\-U\-::\-Rt\-Thread@{\-U\-S\-U\-::\-Rt\-Thread}!$\sim$\-Rt\-Thread@{$\sim$\-Rt\-Thread}}
 \index{$\sim$\-Rt\-Thread@{$\sim$\-Rt\-Thread}!USU::RtThread@{\-U\-S\-U\-::\-Rt\-Thread}}
@@ -98,7 +99,7 @@ void $\ast$ \hyperlink{class_u_s_u_1_1_rt_thread_a5213699b8def7e9e2af0add4648b8b
 
 \-Waits for the thread to join (if not already) and releases the \-Attributes object. 
 
-\-Definition at line 60 of file \-Rt\-Thread.\-cpp.
+\-Definition at line 62 of file \-Rt\-Thread.\-cpp.
 
 
 
@@ -123,7 +124,7 @@ void $\ast$ \hyperlink{class_u_s_u_1_1_rt_thread_a5213699b8def7e9e2af0add4648b8b
 \end{DoxyParams}
 
 
-\-Definition at line 118 of file \-Rt\-Thread.\-cpp.
+\-Definition at line 141 of file \-Rt\-Thread.\-cpp.
 
 \hypertarget{class_u_s_u_1_1_rt_thread_ac26891d04e6b5fc487d5325ca0c90ead}{\index{\-U\-S\-U\-::\-Rt\-Thread@{\-U\-S\-U\-::\-Rt\-Thread}!get\-Priority@{get\-Priority}}
 \index{get\-Priority@{get\-Priority}!USU::RtThread@{\-U\-S\-U\-::\-Rt\-Thread}}
@@ -141,7 +142,7 @@ int priority
 \end{DoxyReturn}
 
 
-\-Definition at line 82 of file \-Rt\-Thread.\-cpp.
+\-Definition at line 84 of file \-Rt\-Thread.\-cpp.
 
 \hypertarget{class_u_s_u_1_1_rt_thread_a8432c713bb9f0fca217d822970b3ec54}{\index{\-U\-S\-U\-::\-Rt\-Thread@{\-U\-S\-U\-::\-Rt\-Thread}!get\-Thread\-Id@{get\-Thread\-Id}}
 \index{get\-Thread\-Id@{get\-Thread\-Id}!USU::RtThread@{\-U\-S\-U\-::\-Rt\-Thread}}
@@ -159,22 +160,30 @@ pthread\-\_\-t the thread handle of the last started pthread or -\/1 (if no pthr
 \end{DoxyReturn}
 
 
-\-Definition at line 76 of file \-Rt\-Thread.\-cpp.
+\-Definition at line 78 of file \-Rt\-Thread.\-cpp.
 
-\hypertarget{class_u_s_u_1_1_rt_thread_ae9ee3caaab9d46341c779ff67b27926d}{\index{\-U\-S\-U\-::\-Rt\-Thread@{\-U\-S\-U\-::\-Rt\-Thread}!join@{join}}
+\hypertarget{class_u_s_u_1_1_rt_thread_a3e86cb1e51e7966a6aa9ce06b154b73e}{\index{\-U\-S\-U\-::\-Rt\-Thread@{\-U\-S\-U\-::\-Rt\-Thread}!join@{join}}
 \index{join@{join}!USU::RtThread@{\-U\-S\-U\-::\-Rt\-Thread}}
-\subsubsection[{join}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Rt\-Thread\-::join} (
+\subsubsection[{join}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Rt\-Thread\-::join} (
 \begin{DoxyParamCaption}
-{}
+\item[{int}]{timeout\-\_\-ms = {\ttfamily 0}}
 \end{DoxyParamCaption}
-)}}\label{class_u_s_u_1_1_rt_thread_ae9ee3caaab9d46341c779ff67b27926d}
+)}}\label{class_u_s_u_1_1_rt_thread_a3e86cb1e51e7966a6aa9ce06b154b73e}
 
 
 \-Waits for the thread to join. 
 
 
+\begin{DoxyParams}{\-Parameters}
+{\em timeout\-\_\-ms} & timeout in ms (optional). 0 means no timeout \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+bool returns true if thread joined successfully and false if error occured 
+\end{DoxyReturn}
 
-\-Definition at line 108 of file \-Rt\-Thread.\-cpp.
+
+\-Definition at line 110 of file \-Rt\-Thread.\-cpp.
 
 \hypertarget{class_u_s_u_1_1_rt_thread_a858a5d475ed5b61759889b6608ff4372}{\index{\-U\-S\-U\-::\-Rt\-Thread@{\-U\-S\-U\-::\-Rt\-Thread}!run@{run}}
 \index{run@{run}!USU::RtThread@{\-U\-S\-U\-::\-Rt\-Thread}}
@@ -189,7 +198,7 @@ pthread\-\_\-t the thread handle of the last started pthread or -\/1 (if no pthr
 
 \-Every child class has to implement this function in order to do some threaded work. 
 
-\-Implemented in \hyperlink{class_u_s_u_1_1_periodic_rt_thread_ac9146b3088a9b268594ce41d002d020a}{\-U\-S\-U\-::\-Periodic\-Rt\-Thread}, \hyperlink{class_my_thread_a48f2e366e852087c53705f64e1ee65c2}{\-My\-Thread}, \hyperlink{class_u_s_u_1_1_kalman_filter_a47cc7f620b57b25133289e61dbf2a7be}{\-U\-S\-U\-::\-Kalman\-Filter}, \hyperlink{class_u_s_u_1_1_g_x3_communicator_ae7e5cf4c792ca270826dea243abbc5aa}{\-U\-S\-U\-::\-G\-X3\-Communicator}, and \hyperlink{class_data_collector_acb6910eac48d5992e2bd9c43cfcd8ca5}{\-Data\-Collector}.
+\-Implemented in \hyperlink{class_u_s_u_1_1_periodic_rt_thread_ac9146b3088a9b268594ce41d002d020a}{\-U\-S\-U\-::\-Periodic\-Rt\-Thread}, \hyperlink{class_motor_programmer_add5000a22f85e3ce067f06c0ce4279e2}{\-Motor\-Programmer}, \hyperlink{class_my_thread_a48f2e366e852087c53705f64e1ee65c2}{\-My\-Thread}, \hyperlink{class_u_s_u_1_1_kalman_filter_a47cc7f620b57b25133289e61dbf2a7be}{\-U\-S\-U\-::\-Kalman\-Filter}, \hyperlink{class_u_s_u_1_1_g_x3_communicator_ae7e5cf4c792ca270826dea243abbc5aa}{\-U\-S\-U\-::\-G\-X3\-Communicator}, \hyperlink{class_data_collector_acb6910eac48d5992e2bd9c43cfcd8ca5}{\-Data\-Collector}, and \hyperlink{class_data_collector_aa6735ae7b21378ec0f2e2aa28c295c87}{\-Data\-Collector}.
 
 \hypertarget{class_u_s_u_1_1_rt_thread_aadd18e02db9c71911671936247d0ac70}{\index{\-U\-S\-U\-::\-Rt\-Thread@{\-U\-S\-U\-::\-Rt\-Thread}!start@{start}}
 \index{start@{start}!USU::RtThread@{\-U\-S\-U\-::\-Rt\-Thread}}
@@ -211,7 +220,7 @@ pthread\-\_\-t the thread handle of the last started pthread or -\/1 (if no pthr
 \end{DoxyParams}
 
 
-\-Definition at line 87 of file \-Rt\-Thread.\-cpp.
+\-Definition at line 89 of file \-Rt\-Thread.\-cpp.
 
 
 
@@ -221,21 +230,21 @@ pthread\-\_\-t the thread handle of the last started pthread or -\/1 (if no pthr
 \subsubsection[{m\-Args}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ {\bf \-U\-S\-U\-::\-Rt\-Thread\-::m\-Args}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{class_u_s_u_1_1_rt_thread_a5213699b8def7e9e2af0add4648b8b40}
 \-Arguments which can be passed to a certain thread thread 
 
-\-Definition at line 42 of file \-Rt\-Thread.\-h.
+\-Definition at line 45 of file \-Rt\-Thread.\-h.
 
 \hypertarget{class_u_s_u_1_1_rt_thread_afe45711f791a727426c6b0e23add03a8}{\index{\-U\-S\-U\-::\-Rt\-Thread@{\-U\-S\-U\-::\-Rt\-Thread}!m\-Id@{m\-Id}}
 \index{m\-Id@{m\-Id}!USU::RtThread@{\-U\-S\-U\-::\-Rt\-Thread}}
 \subsubsection[{m\-Id}]{\setlength{\rightskip}{0pt plus 5cm}pthread\-\_\-t {\bf \-U\-S\-U\-::\-Rt\-Thread\-::m\-Id}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{class_u_s_u_1_1_rt_thread_afe45711f791a727426c6b0e23add03a8}
 \-The thread handle 
 
-\-Definition at line 40 of file \-Rt\-Thread.\-h.
+\-Definition at line 43 of file \-Rt\-Thread.\-h.
 
 \hypertarget{class_u_s_u_1_1_rt_thread_a990cc76b2f9541a6dbafdfa6be5fd367}{\index{\-U\-S\-U\-::\-Rt\-Thread@{\-U\-S\-U\-::\-Rt\-Thread}!m\-Started@{m\-Started}}
 \index{m\-Started@{m\-Started}!USU::RtThread@{\-U\-S\-U\-::\-Rt\-Thread}}
 \subsubsection[{m\-Started}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-U\-S\-U\-::\-Rt\-Thread\-::m\-Started}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{class_u_s_u_1_1_rt_thread_a990cc76b2f9541a6dbafdfa6be5fd367}
 \-Keeps the status of the thread \-T\-O\-D\-O\-: \-Useful?? 
 
-\-Definition at line 41 of file \-Rt\-Thread.\-h.
+\-Definition at line 44 of file \-Rt\-Thread.\-h.
 
 
 

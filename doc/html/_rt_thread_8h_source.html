@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -107,39 +108,39 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00018"></a>00018 
 <a name="l00019"></a>00019 <span class="keyword">namespace </span>USU {
 <a name="l00020"></a>00020 
-<a name="l00029"></a><a class="code" href="class_u_s_u_1_1_rt_thread.html">00029</a> <span class="keyword">class </span><a class="code" href="class_u_s_u_1_1_rt_thread.html" title="Abstract wrapper class for the pthread library with RT-priority.">RtThread</a>
-<a name="l00030"></a>00030 {
-<a name="l00031"></a>00031 
-<a name="l00032"></a>00032 <span class="keyword">private</span>:
-<a name="l00033"></a>00033     pthread_attr_t mAttr; 
-<a name="l00034"></a>00034     <span class="keywordtype">int</span> mPriority; 
-<a name="l00036"></a>00036     <a class="code" href="class_u_s_u_1_1_rt_thread.html" title="Abstract wrapper class for the pthread library with RT-priority.">RtThread</a>(<span class="keyword">const</span> <a class="code" href="class_u_s_u_1_1_rt_thread.html" title="Abstract wrapper class for the pthread library with RT-priority.">RtThread</a>&amp; thread); 
-<a name="l00037"></a>00037     <a class="code" href="class_u_s_u_1_1_rt_thread.html" title="Abstract wrapper class for the pthread library with RT-priority.">RtThread</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="class_u_s_u_1_1_rt_thread.html" title="Abstract wrapper class for the pthread library with RT-priority.">RtThread</a>&amp; rhs); 
-<a name="l00039"></a>00039 <span class="keyword">protected</span>:
-<a name="l00040"></a><a class="code" href="class_u_s_u_1_1_rt_thread.html#afe45711f791a727426c6b0e23add03a8">00040</a>     pthread_t <a class="code" href="class_u_s_u_1_1_rt_thread.html#afe45711f791a727426c6b0e23add03a8">mId</a>; 
-<a name="l00041"></a><a class="code" href="class_u_s_u_1_1_rt_thread.html#a990cc76b2f9541a6dbafdfa6be5fd367">00041</a>     <span class="keywordtype">bool</span> <a class="code" href="class_u_s_u_1_1_rt_thread.html#a990cc76b2f9541a6dbafdfa6be5fd367">mStarted</a>; 
-<a name="l00042"></a><a class="code" href="class_u_s_u_1_1_rt_thread.html#a5213699b8def7e9e2af0add4648b8b40">00042</a>     <span class="keywordtype">void</span> *<a class="code" href="class_u_s_u_1_1_rt_thread.html#a5213699b8def7e9e2af0add4648b8b40">mArgs</a>; 
-<a name="l00051"></a>00051     <span class="keyword">static</span> <span class="keywordtype">void</span> *<a class="code" href="class_u_s_u_1_1_rt_thread.html#ab971fca9b0e83f4101ca9c1723af4bdc" title="Function passed to pthread_create, do not call manually!">exec</a>(<span class="keywordtype">void</span> * thr);
-<a name="l00052"></a>00052 
-<a name="l00053"></a>00053 <span class="keyword">public</span>:
-<a name="l00062"></a>00062     <a class="code" href="class_u_s_u_1_1_rt_thread.html" title="Abstract wrapper class for the pthread library with RT-priority.">RtThread</a>(<span class="keywordtype">int</span> priority = 0);
-<a name="l00063"></a>00063 
-<a name="l00071"></a>00071     <span class="keyword">virtual</span> <a class="code" href="class_u_s_u_1_1_rt_thread.html#ab1ec23dd67ba0d1ad0193416a1ed8243" title="Destructor of the RtThread object.">~RtThread</a>();
-<a name="l00072"></a>00072 
-<a name="l00078"></a>00078     pthread_t <a class="code" href="class_u_s_u_1_1_rt_thread.html#a8432c713bb9f0fca217d822970b3ec54" title="Return the pthread handle.">getThreadId</a>() <span class="keyword">const</span>;
-<a name="l00079"></a>00079 
-<a name="l00085"></a>00085     <span class="keywordtype">int</span> <a class="code" href="class_u_s_u_1_1_rt_thread.html#ac26891d04e6b5fc487d5325ca0c90ead" title="Returns the priority of the thread.">getPriority</a>() <span class="keyword">const</span>;
-<a name="l00086"></a>00086 
-<a name="l00094"></a>00094     <span class="keywordtype">void</span> <a class="code" href="class_u_s_u_1_1_rt_thread.html#aadd18e02db9c71911671936247d0ac70" title="Creates and starts the pthread.">start</a>(<span class="keywordtype">void</span> * args = NULL);
-<a name="l00095"></a>00095 
-<a name="l00099"></a>00099     <span class="keywordtype">void</span> <a class="code" href="class_u_s_u_1_1_rt_thread.html#ae9ee3caaab9d46341c779ff67b27926d" title="Waits for the thread to join.">join</a>();
-<a name="l00100"></a>00100 
-<a name="l00107"></a>00107     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_u_s_u_1_1_rt_thread.html#a858a5d475ed5b61759889b6608ff4372" title="Actual method of the thread is running.">run</a>() = 0;
-<a name="l00108"></a>00108 };
-<a name="l00109"></a>00109 
-<a name="l00110"></a>00110 }
-<a name="l00111"></a>00111 
-<a name="l00112"></a>00112 <span class="preprocessor">#endif // RTTHREAD_H</span>
+<a name="l00032"></a><a class="code" href="class_u_s_u_1_1_rt_thread.html">00032</a> <span class="keyword">class </span><a class="code" href="class_u_s_u_1_1_rt_thread.html" title="Abstract wrapper class for the pthread library with RT-priority.">RtThread</a>
+<a name="l00033"></a>00033 {
+<a name="l00034"></a>00034 
+<a name="l00035"></a>00035 <span class="keyword">private</span>:
+<a name="l00036"></a>00036     pthread_attr_t mAttr; 
+<a name="l00037"></a>00037     <span class="keywordtype">int</span> mPriority; 
+<a name="l00039"></a>00039     <a class="code" href="class_u_s_u_1_1_rt_thread.html" title="Abstract wrapper class for the pthread library with RT-priority.">RtThread</a>(<span class="keyword">const</span> <a class="code" href="class_u_s_u_1_1_rt_thread.html" title="Abstract wrapper class for the pthread library with RT-priority.">RtThread</a>&amp; thread); 
+<a name="l00040"></a>00040     <a class="code" href="class_u_s_u_1_1_rt_thread.html" title="Abstract wrapper class for the pthread library with RT-priority.">RtThread</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="class_u_s_u_1_1_rt_thread.html" title="Abstract wrapper class for the pthread library with RT-priority.">RtThread</a>&amp; rhs); 
+<a name="l00042"></a>00042 <span class="keyword">protected</span>:
+<a name="l00043"></a><a class="code" href="class_u_s_u_1_1_rt_thread.html#afe45711f791a727426c6b0e23add03a8">00043</a>     pthread_t <a class="code" href="class_u_s_u_1_1_rt_thread.html#afe45711f791a727426c6b0e23add03a8">mId</a>; 
+<a name="l00044"></a><a class="code" href="class_u_s_u_1_1_rt_thread.html#a990cc76b2f9541a6dbafdfa6be5fd367">00044</a>     <span class="keywordtype">bool</span> <a class="code" href="class_u_s_u_1_1_rt_thread.html#a990cc76b2f9541a6dbafdfa6be5fd367">mStarted</a>; 
+<a name="l00045"></a><a class="code" href="class_u_s_u_1_1_rt_thread.html#a5213699b8def7e9e2af0add4648b8b40">00045</a>     <span class="keywordtype">void</span> *<a class="code" href="class_u_s_u_1_1_rt_thread.html#a5213699b8def7e9e2af0add4648b8b40">mArgs</a>; 
+<a name="l00054"></a>00054     <span class="keyword">static</span> <span class="keywordtype">void</span> *<a class="code" href="class_u_s_u_1_1_rt_thread.html#ab971fca9b0e83f4101ca9c1723af4bdc" title="Function passed to pthread_create, do not call manually!">exec</a>(<span class="keywordtype">void</span> * thr);
+<a name="l00055"></a>00055 
+<a name="l00056"></a>00056 <span class="keyword">public</span>:
+<a name="l00065"></a>00065     <a class="code" href="class_u_s_u_1_1_rt_thread.html" title="Abstract wrapper class for the pthread library with RT-priority.">RtThread</a>(<span class="keywordtype">int</span> priority = 0);
+<a name="l00066"></a>00066 
+<a name="l00074"></a>00074     <span class="keyword">virtual</span> <a class="code" href="class_u_s_u_1_1_rt_thread.html#ab1ec23dd67ba0d1ad0193416a1ed8243" title="Destructor of the RtThread object.">~RtThread</a>();
+<a name="l00075"></a>00075 
+<a name="l00081"></a>00081     pthread_t <a class="code" href="class_u_s_u_1_1_rt_thread.html#a8432c713bb9f0fca217d822970b3ec54" title="Return the pthread handle.">getThreadId</a>() <span class="keyword">const</span>;
+<a name="l00082"></a>00082 
+<a name="l00088"></a>00088     <span class="keywordtype">int</span> <a class="code" href="class_u_s_u_1_1_rt_thread.html#ac26891d04e6b5fc487d5325ca0c90ead" title="Returns the priority of the thread.">getPriority</a>() <span class="keyword">const</span>;
+<a name="l00089"></a>00089 
+<a name="l00097"></a>00097     <span class="keywordtype">void</span> <a class="code" href="class_u_s_u_1_1_rt_thread.html#aadd18e02db9c71911671936247d0ac70" title="Creates and starts the pthread.">start</a>(<span class="keywordtype">void</span> * args = NULL);
+<a name="l00098"></a>00098 
+<a name="l00105"></a>00105     <span class="keywordtype">bool</span> <a class="code" href="class_u_s_u_1_1_rt_thread.html#a3e86cb1e51e7966a6aa9ce06b154b73e" title="Waits for the thread to join.">join</a>(<span class="keywordtype">int</span> timeout_ms = 0);
+<a name="l00106"></a>00106 
+<a name="l00113"></a>00113     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_u_s_u_1_1_rt_thread.html#a858a5d475ed5b61759889b6608ff4372" title="Actual method of the thread is running.">run</a>() = 0;
+<a name="l00114"></a>00114 };
+<a name="l00115"></a>00115 
+<a name="l00116"></a>00116 }
+<a name="l00117"></a>00117 
+<a name="l00118"></a>00118 <span class="preprocessor">#endif // RTTHREAD_H</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -160,7 +161,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="_rt_thread_8h.html">RtThread.h</a>      </li>
 
-    <li class="footer">Generated on Mon Jun 3 2013 15:14:35 for U-BET by
+    <li class="footer">Generated on Fri Aug 2 2013 12:16:41 for U-BET by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

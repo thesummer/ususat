@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -105,32 +106,32 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00014"></a>00014 <span class="preprocessor">#include &quot;<a class="code" href="c_p_w_m_8h.html">cPWM.h</a>&quot;</span>
 <a name="l00015"></a>00015 <span class="preprocessor">#include &quot;<a class="code" href="_beagle___g_p_i_o_8h.html">Beagle_GPIO.h</a>&quot;</span>
 <a name="l00016"></a>00016 
-<a name="l00017"></a><a class="code" href="motor_8h.html#aa4a2cd53d0866ae4c273573db3c4870d">00017</a> <span class="keyword">typedef</span> void (<a class="code" href="classc_p_w_m.html">cPWM</a>::*<a class="code" href="motor_8h.html#aa4a2cd53d0866ae4c273573db3c4870d">SetDutyCyle</a>)(<span class="keywordtype">unsigned</span> int);
-<a name="l00018"></a>00018 
-<a name="l00019"></a>00019 <span class="keyword">namespace </span>USU
-<a name="l00020"></a>00020 {
-<a name="l00021"></a>00021 
-<a name="l00022"></a><a class="code" href="class_u_s_u_1_1_motor.html">00022</a> <span class="keyword">class </span><a class="code" href="class_u_s_u_1_1_motor.html">Motor</a>
-<a name="l00023"></a>00023 {
-<a name="l00024"></a>00024 <span class="keyword">public</span>:
-<a name="l00025"></a>00025     <a class="code" href="class_u_s_u_1_1_motor.html#a2200a3939cd62d2e22e9b134b54bc402">Motor</a>(<a class="code" href="class_beagle___g_p_i_o.html">Beagle_GPIO</a>&amp; beagleGpio, <a class="code" href="class_beagle___g_p_i_o.html#a9b1fd560ea5d2d65898ac15c23055e58">Beagle_GPIO::Pins</a> clockwise,  <a class="code" href="class_beagle___g_p_i_o.html#a9b1fd560ea5d2d65898ac15c23055e58">Beagle_GPIO::Pins</a> counterClockwise,
-<a name="l00026"></a>00026           <a class="code" href="classc_p_w_m.html">cPWM</a>&amp; pwm, <a class="code" href="motor_8h.html#aa4a2cd53d0866ae4c273573db3c4870d">SetDutyCyle</a> <a class="code" href="motor-example_8cpp.html#a839337b9ba74aba4916f05f8676a90c0">dutyCycle</a>);
-<a name="l00027"></a>00027     <span class="keywordtype">void</span> <a class="code" href="class_u_s_u_1_1_motor.html#aa58cbc26a0da87389dd208367d0fa407">setSpeed</a>(<span class="keywordtype">int</span> speed);
-<a name="l00028"></a><a class="code" href="class_u_s_u_1_1_motor.html#a98d4c98ddc30e00485712f55b4a91211">00028</a>     <span class="keywordtype">int</span> <a class="code" href="class_u_s_u_1_1_motor.html#a98d4c98ddc30e00485712f55b4a91211">getSpeed</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> mSpeed; }
-<a name="l00029"></a>00029 
-<a name="l00030"></a>00030 <span class="keyword">private</span>:
-<a name="l00031"></a>00031     <a class="code" href="class_beagle___g_p_i_o.html">Beagle_GPIO</a>&amp; mBeagleGpio;
-<a name="l00032"></a>00032     <a class="code" href="class_beagle___g_p_i_o.html#a9b1fd560ea5d2d65898ac15c23055e58">Beagle_GPIO::Pins</a> mClockwise;
-<a name="l00033"></a>00033     <a class="code" href="class_beagle___g_p_i_o.html#a9b1fd560ea5d2d65898ac15c23055e58">Beagle_GPIO::Pins</a> mCounterClockwise;
-<a name="l00034"></a>00034 
-<a name="l00035"></a>00035     <a class="code" href="classc_p_w_m.html">cPWM</a> &amp;mPwm;
-<a name="l00036"></a>00036     <a class="code" href="motor_8h.html#aa4a2cd53d0866ae4c273573db3c4870d">SetDutyCyle</a> mSetDutyCycle;
-<a name="l00037"></a>00037     <span class="keywordtype">int</span> mSpeed;
-<a name="l00038"></a>00038 };
-<a name="l00039"></a>00039 
-<a name="l00040"></a>00040 }
-<a name="l00041"></a>00041 
-<a name="l00042"></a>00042 <span class="preprocessor">#endif // MOTOR_H</span>
+<a name="l00023"></a><a class="code" href="motor_8h.html#aa4a2cd53d0866ae4c273573db3c4870d">00023</a> <span class="keyword">typedef</span> void (<a class="code" href="classc_p_w_m.html" title="Wrapper class to access the PWM-devices of the BeagleBone.">cPWM</a>::*<a class="code" href="motor_8h.html#aa4a2cd53d0866ae4c273573db3c4870d" title="Function-pointer to the SetDutyCyle-method of cPWM class.">SetDutyCyle</a>)(<span class="keywordtype">unsigned</span> int);
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="keyword">namespace </span>USU
+<a name="l00026"></a>00026 {
+<a name="l00027"></a>00027 
+<a name="l00037"></a><a class="code" href="class_u_s_u_1_1_motor.html">00037</a> <span class="keyword">class </span><a class="code" href="class_u_s_u_1_1_motor.html" title="Class which represents a motor.">Motor</a>
+<a name="l00038"></a>00038 {
+<a name="l00039"></a>00039 <span class="keyword">public</span>:
+<a name="l00049"></a>00049     <a class="code" href="class_u_s_u_1_1_motor.html#a2200a3939cd62d2e22e9b134b54bc402" title="Constructor.">Motor</a>(<a class="code" href="class_beagle___g_p_i_o.html" title="Wrapper class to access the GPIOs of the BeagleBone.">Beagle_GPIO</a>&amp; beagleGpio, <a class="code" href="class_beagle___g_p_i_o.html#a9b1fd560ea5d2d65898ac15c23055e58">Beagle_GPIO::Pins</a> clockwise,  <a class="code" href="class_beagle___g_p_i_o.html#a9b1fd560ea5d2d65898ac15c23055e58">Beagle_GPIO::Pins</a> counterClockwise,
+<a name="l00050"></a>00050           <a class="code" href="classc_p_w_m.html" title="Wrapper class to access the PWM-devices of the BeagleBone.">cPWM</a>&amp; pwm, <a class="code" href="motor_8h.html#aa4a2cd53d0866ae4c273573db3c4870d" title="Function-pointer to the SetDutyCyle-method of cPWM class.">SetDutyCyle</a> dutyCycle);
+<a name="l00056"></a>00056     <span class="keywordtype">void</span> <a class="code" href="class_u_s_u_1_1_motor.html#aa58cbc26a0da87389dd208367d0fa407" title="Set the speed of the motor in percent.">setSpeed</a>(<span class="keywordtype">int</span> speed);
+<a name="l00057"></a>00057 
+<a name="l00063"></a><a class="code" href="class_u_s_u_1_1_motor.html#a98d4c98ddc30e00485712f55b4a91211">00063</a>     <span class="keywordtype">int</span> <a class="code" href="class_u_s_u_1_1_motor.html#a98d4c98ddc30e00485712f55b4a91211" title="Return the current speed of the motor.">getSpeed</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> mSpeed; } 
+<a name="l00064"></a>00064 
+<a name="l00065"></a>00065 <span class="keyword">private</span>:
+<a name="l00066"></a>00066     <a class="code" href="class_beagle___g_p_i_o.html" title="Wrapper class to access the GPIOs of the BeagleBone.">Beagle_GPIO</a>&amp; mBeagleGpio; 
+<a name="l00067"></a>00067     <a class="code" href="class_beagle___g_p_i_o.html#a9b1fd560ea5d2d65898ac15c23055e58">Beagle_GPIO::Pins</a> mClockwise; 
+<a name="l00068"></a>00068     <a class="code" href="class_beagle___g_p_i_o.html#a9b1fd560ea5d2d65898ac15c23055e58">Beagle_GPIO::Pins</a> mCounterClockwise; 
+<a name="l00070"></a>00070     <a class="code" href="classc_p_w_m.html" title="Wrapper class to access the PWM-devices of the BeagleBone.">cPWM</a> &amp;mPwm; 
+<a name="l00071"></a>00071     <a class="code" href="motor_8h.html#aa4a2cd53d0866ae4c273573db3c4870d" title="Function-pointer to the SetDutyCyle-method of cPWM class.">SetDutyCyle</a> mSetDutyCycle; 
+<a name="l00072"></a>00072     <span class="keywordtype">int</span> mSpeed; 
+<a name="l00073"></a>00073 };
+<a name="l00074"></a>00074 
+<a name="l00075"></a>00075 }
+<a name="l00076"></a>00076 
+<a name="l00077"></a>00077 <span class="preprocessor">#endif // MOTOR_H</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -151,7 +152,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="motor_8h.html">motor.h</a>      </li>
 
-    <li class="footer">Generated on Mon Jun 3 2013 15:14:35 for U-BET by
+    <li class="footer">Generated on Fri Aug 2 2013 12:16:41 for U-BET by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

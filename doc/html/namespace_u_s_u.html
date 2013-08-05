@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li class="current"><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -124,7 +125,7 @@ Classes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_s_u_1_1_acc_ang_mag.html">AccAngMag</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Representation for receiving acceleration, angular rate and magnetometer packets.  <a href="class_u_s_u_1_1_acc_ang_mag.html#details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_s_u_1_1_quaternion.html">Quaternion</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Representation for receiving the <a class="el" href="class_u_s_u_1_1_quaternion.html" title="Representation for receiving the Quaternion representation from the IMU.">Quaternion</a> representation from the <a class="el" href="class_i_m_u.html">IMU</a>.  <a href="class_u_s_u_1_1_quaternion.html#details">More...</a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Representation for receiving the <a class="el" href="class_u_s_u_1_1_quaternion.html" title="Representation for receiving the Quaternion representation from the IMU.">Quaternion</a> representation from the <a class="el" href="class_i_m_u.html" title="Virtual base class for IMU.">IMU</a>.  <a href="class_u_s_u_1_1_quaternion.html#details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_s_u_1_1_acc_ang_mag_orientation_mat.html">AccAngMagOrientationMat</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Representation for packets containing the 3 sensor vectors and orientation matrix This class can be used with the commands which return 3 Vectors and a 3x3 Matrix. The units are:  <a href="class_u_s_u_1_1_acc_ang_mag_orientation_mat.html#details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_s_u_1_1_g_x3_command.html">GX3Command</a></td></tr>
@@ -134,7 +135,9 @@ Classes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_s_u_1_1_sampling_settings.html">SamplingSettings</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the "Sampling Settings" command.  <a href="class_u_s_u_1_1_sampling_settings.html#details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_s_u_1_1_min_imu.html">MinImu</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Class to manage the communication to the Pololu MinIMU9.  <a href="class_u_s_u_1_1_min_imu.html#details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_s_u_1_1_motor.html">Motor</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Class which represents a motor.  <a href="class_u_s_u_1_1_motor.html#details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_s_u_1_1_motor_control.html">MotorControl</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the class for motor control.  <a href="class_u_s_u_1_1_motor_control.html#details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_s_u_1_1_periodic_rt_thread.html">PeriodicRtThread</a></td></tr>
@@ -320,7 +323,7 @@ Variables</h2></td></tr>
 <li>fullscale range +-5V</li>
 <li>Standby Power-Down mode</li>
 </ul>
-<p>The bits for channel selection are set to 0. Send CONTROL_BYTE | (CH&lt;&lt;SEL0) with CH being the desired channel via the <a class="el" href="class_i2_c_bus.html">I2CBus</a>. </p>
+<p>The bits for channel selection are set to 0. Send CONTROL_BYTE | (CH&lt;&lt;SEL0) with CH being the desired channel via the <a class="el" href="class_i2_c_bus.html" title="Wrapper class for I2C-bus communication.">I2CBus</a>. </p>
 
 <p>Definition at line <a class="el" href="max127_8h_source.html#l00040">40</a> of file <a class="el" href="max127_8h_source.html">max127.h</a>.</p>
 
@@ -450,7 +453,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 
 <p>I2C-address of the ADC. </p>
-<p>It is assumed that the PINs A0-A2 are connected to GND. If the PINs are connected by VCC change accordingly. </p>
+<p>It is assumed that the PINs A0-A2 are connected to GND. If the PINs are connected to VCC change accordingly. </p>
 
 <p>Definition at line <a class="el" href="max127_8h_source.html#l00027">27</a> of file <a class="el" href="max127_8h_source.html">max127.h</a>.</p>
 
@@ -828,7 +831,7 @@ Variables</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="namespace_u_s_u.html">USU</a>      </li>
 
-    <li class="footer">Generated on Mon Jun 3 2013 15:14:35 for U-BET by
+    <li class="footer">Generated on Fri Aug 2 2013 12:16:41 for U-BET by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

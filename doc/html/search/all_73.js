@@ -1,8 +1,8 @@
 var searchData=
 [
   ['sampling_5fsettings',['SAMPLING_SETTINGS',['../namespace_u_s_u.html#aeb8ec20b4bb74ff2895ab487c29810e0',1,'USU']]],
-  ['samplingsettings',['SamplingSettings',['../class_u_s_u_1_1_sampling_settings.html',1,'USU']]],
   ['samplingsettings',['SamplingSettings',['../class_u_s_u_1_1_sampling_settings.html#a14fc764b72761cf27d205f0003d00bd2',1,'USU::SamplingSettings']]],
+  ['samplingsettings',['SamplingSettings',['../class_u_s_u_1_1_sampling_settings.html',1,'USU']]],
   ['scopedlock',['ScopedLock',['../class_u_s_u_1_1_scoped_lock.html',1,'USU']]],
   ['scopedlock',['ScopedLock',['../class_u_s_u_1_1_scoped_lock.html#aa92db605fefa48f75be29b86ad0d6186',1,'USU::ScopedLock']]],
   ['sel0',['SEL0',['../namespace_u_s_u.html#af74f2b5c887719077addc33c5986024b',1,'USU']]],
@@ -20,8 +20,9 @@ var searchData=
   ['sharedobject',['SharedObject',['../class_shared_object.html',1,'SharedObject'],['../class_shared_object.html#a852b716237753c48654dce4491a41b59',1,'SharedObject::SharedObject()']]],
   ['sharedqueue',['SharedQueue',['../class_u_s_u_1_1_shared_queue.html',1,'USU']]],
   ['sharedqueue_2eh',['sharedqueue.h',['../sharedqueue_8h.html',1,'']]],
-  ['sharedqueue_3c_20quaternion_20_3e',['SharedQueue< Quaternion >',['../class_u_s_u_1_1_shared_queue.html',1,'USU']]],
-  ['size',['size',['../class_u_s_u_1_1_raw_acc_ang.html#a6ecf916fd306c5c5e201122b57c3e84dace714ebb974699a0489dcaa79c218e1f',1,'USU::RawAccAng::size()'],['../class_u_s_u_1_1_acc_ang_mag.html#ac99d81795fce25e4e2c08119a0893b98a19d2ef813bdd361848bd8b32f4d6143c',1,'USU::AccAngMag::size()'],['../class_u_s_u_1_1_quaternion.html#a99d27850cbec6d279f06c70c506a14e8a6f3fbd3862b9a69e1507a0f506b99074',1,'USU::Quaternion::size()'],['../class_u_s_u_1_1_acc_ang_mag_orientation_mat.html#a813ba4eaab8dd3dd44e15aea2b715ebdabc44065ed87a4e0b515c5c417d35eb50',1,'USU::AccAngMagOrientationMat::size()'],['../class_u_s_u_1_1_set_countinuous_mode.html#a2a5ff53068c8f7ae48a7553e1daf58fda641bcb857fe8b541879106cc4096c843',1,'USU::SetCountinuousMode::size()'],['../class_u_s_u_1_1_sampling_settings.html#ac3c5ab9495434c6996e87fd8b5276105a18547b8eac7a7d56ec506d8de13087cb',1,'USU::SamplingSettings::size()'],['../class_u_s_u_1_1_g_x3_communicator.html#aac82e15389a41ff99c2a4f6c0bbecf95',1,'USU::GX3Communicator::size()'],['../class_u_s_u_1_1_shared_queue.html#a78e772083f27b8822b98886ba932ac27',1,'USU::SharedQueue::size()']]],
+  ['sharedqueue_3c_20accangmag_20_3e',['SharedQueue< AccAngMag >',['../class_u_s_u_1_1_shared_queue.html',1,'USU']]],
+  ['size',['size',['../class_u_s_u_1_1_raw_acc_ang.html#a6ecf916fd306c5c5e201122b57c3e84dace714ebb974699a0489dcaa79c218e1f',1,'USU::RawAccAng::size()'],['../class_u_s_u_1_1_acc_ang_mag.html#ac99d81795fce25e4e2c08119a0893b98a19d2ef813bdd361848bd8b32f4d6143c',1,'USU::AccAngMag::size()'],['../class_u_s_u_1_1_quaternion.html#a99d27850cbec6d279f06c70c506a14e8a6f3fbd3862b9a69e1507a0f506b99074',1,'USU::Quaternion::size()'],['../class_u_s_u_1_1_acc_ang_mag_orientation_mat.html#a813ba4eaab8dd3dd44e15aea2b715ebdabc44065ed87a4e0b515c5c417d35eb50',1,'USU::AccAngMagOrientationMat::size()'],['../class_u_s_u_1_1_set_countinuous_mode.html#a2a5ff53068c8f7ae48a7553e1daf58fda641bcb857fe8b541879106cc4096c843',1,'USU::SetCountinuousMode::size()'],['../class_u_s_u_1_1_sampling_settings.html#ac3c5ab9495434c6996e87fd8b5276105a18547b8eac7a7d56ec506d8de13087cb',1,'USU::SamplingSettings::size()'],['../class_u_s_u_1_1_g_x3_communicator.html#ab456da2f8c27e84180e5e6453774b545',1,'USU::GX3Communicator::size()'],['../class_u_s_u_1_1_shared_queue.html#a78e772083f27b8822b98886ba932ac27',1,'USU::SharedQueue::size()']]],
+  ['speed',['speed',['../struct_motor_programmer_1_1_command.html#aa393100e92455376a25eb927d1e9ef3f',1,'MotorProgrammer::Command']]],
   ['start',['start',['../class_u_s_u_1_1_rt_thread.html#aadd18e02db9c71911671936247d0ac70',1,'USU::RtThread']]],
   ['stationary_5ftest',['STATIONARY_TEST',['../namespace_u_s_u.html#aa13337d52a46707f63911e7c2972971b',1,'USU']]],
   ['stop',['stop',['../class_data_collector.html#a87652f10e500818393e314d374398d89',1,'DataCollector::stop()'],['../class_u_s_u_1_1_g_x3_communicator.html#a0d7a0359b7fed872ea1737dffacdd156',1,'USU::GX3Communicator::stop()'],['../class_u_s_u_1_1_kalman_filter.html#a3f8b3ce719dcb24745150f8c4ef361b8',1,'USU::KalmanFilter::stop()']]],

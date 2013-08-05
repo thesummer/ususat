@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -110,23 +111,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00019"></a>00019 <span class="keyword">namespace </span>USU
 <a name="l00020"></a>00020 {
 <a name="l00021"></a>00021 
-<a name="l00022"></a><a class="code" href="class_u_s_u_1_1_min_imu.html">00022</a> <span class="keyword">class </span><a class="code" href="class_u_s_u_1_1_min_imu.html">MinImu</a> : <span class="keyword">public</span> <a class="code" href="class_i_m_u.html">IMU</a>
-<a name="l00023"></a>00023 {
-<a name="l00024"></a>00024 <span class="keyword">public</span>:
-<a name="l00025"></a><a class="code" href="class_u_s_u_1_1_min_imu.html#a25e0998632bb7e123d23a1c3221d925b">00025</a>     <a class="code" href="class_l_s_m303.html">LSM303</a> <a class="code" href="class_u_s_u_1_1_min_imu.html#a25e0998632bb7e123d23a1c3221d925b">compass</a>;
-<a name="l00026"></a><a class="code" href="class_u_s_u_1_1_min_imu.html#a5fb25cb88a138d7af87d1c69c6100d6b">00026</a>     <a class="code" href="class_l3_g.html">L3G</a> <a class="code" href="class_u_s_u_1_1_min_imu.html#a5fb25cb88a138d7af87d1c69c6100d6b">gyro</a>;
-<a name="l00027"></a>00027 
-<a name="l00028"></a>00028     <a class="code" href="class_u_s_u_1_1_min_imu.html#a2584a081b9ed215df6823133f7f010d2">MinImu</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> * i2cDeviceName);
-<a name="l00029"></a>00029     <span class="keyword">virtual</span> <a class="code" href="vector_8h.html#a148efcf3c5319dd8961dbf9f4b846a98">vector</a> <a class="code" href="class_u_s_u_1_1_min_imu.html#add98c9a8e002a56ccb4978079ac2dbfe">readMag</a>();  <span class="comment">// In body coords, currently without scaling</span>
-<a name="l00030"></a>00030     <span class="keyword">virtual</span> <a class="code" href="vector_8h.html#a148efcf3c5319dd8961dbf9f4b846a98">vector</a> <a class="code" href="class_u_s_u_1_1_min_imu.html#ac31e697b05053c7535140eabf4f6f06f">readAcc</a>();  <span class="comment">// In body coords, with units = g</span>
-<a name="l00031"></a>00031     <span class="keyword">virtual</span> <a class="code" href="vector_8h.html#a148efcf3c5319dd8961dbf9f4b846a98">vector</a> <a class="code" href="class_u_s_u_1_1_min_imu.html#a08d89ce9548722810df43bd8439372ff">readGyro</a>(); <span class="comment">// In body coords, with units = rad/sec</span>
-<a name="l00032"></a>00032 
-<a name="l00033"></a>00033     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_u_s_u_1_1_min_imu.html#a8f6842375bddcd750203e860b1475a32">enable</a>();
-<a name="l00034"></a>00034 };
-<a name="l00035"></a>00035 
-<a name="l00036"></a>00036 }
-<a name="l00037"></a>00037 
-<a name="l00038"></a>00038 <span class="preprocessor">#endif // MINIMU_H</span>
+<a name="l00028"></a><a class="code" href="class_u_s_u_1_1_min_imu.html">00028</a> <span class="keyword">class </span><a class="code" href="class_u_s_u_1_1_min_imu.html" title="Class to manage the communication to the Pololu MinIMU9.">MinImu</a> : <span class="keyword">public</span> <a class="code" href="class_i_m_u.html" title="Virtual base class for IMU.">IMU</a>
+<a name="l00029"></a>00029 {
+<a name="l00030"></a>00030 <span class="keyword">public</span>:
+<a name="l00031"></a><a class="code" href="class_u_s_u_1_1_min_imu.html#a25e0998632bb7e123d23a1c3221d925b">00031</a>     <a class="code" href="class_l_s_m303.html" title="Class to manage communication to the LSM303 compass via the I2C-bus.">LSM303</a> <a class="code" href="class_u_s_u_1_1_min_imu.html#a25e0998632bb7e123d23a1c3221d925b">compass</a>; 
+<a name="l00032"></a><a class="code" href="class_u_s_u_1_1_min_imu.html#a5fb25cb88a138d7af87d1c69c6100d6b">00032</a>     <a class="code" href="class_l3_g.html" title="Class to manage the communication to the L3G gyroscope via the I2C-bus.">L3G</a> <a class="code" href="class_u_s_u_1_1_min_imu.html#a5fb25cb88a138d7af87d1c69c6100d6b">gyro</a>; 
+<a name="l00041"></a>00041     <a class="code" href="class_u_s_u_1_1_min_imu.html#a2584a081b9ed215df6823133f7f010d2" title="Constructor.">MinImu</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> * i2cDeviceName);
+<a name="l00042"></a>00042 
+<a name="l00050"></a>00050     <span class="keyword">virtual</span> <a class="code" href="vector_8h.html#a148efcf3c5319dd8961dbf9f4b846a98">vector</a> <a class="code" href="class_u_s_u_1_1_min_imu.html#add98c9a8e002a56ccb4978079ac2dbfe" title="Reads the magnetometer and return a vector of raw values.">readMag</a>();  <span class="comment">// In body coords, currently without scaling</span>
+<a name="l00051"></a>00051 
+<a name="l00057"></a>00057     <span class="keyword">virtual</span> <a class="code" href="vector_8h.html#a148efcf3c5319dd8961dbf9f4b846a98">vector</a> <a class="code" href="class_u_s_u_1_1_min_imu.html#ac31e697b05053c7535140eabf4f6f06f" title="Reads the accelerometer and return a vector with units in g.">readAcc</a>();  <span class="comment">// In body coords, with units = g</span>
+<a name="l00058"></a>00058 
+<a name="l00064"></a>00064     <span class="keyword">virtual</span> <a class="code" href="vector_8h.html#a148efcf3c5319dd8961dbf9f4b846a98">vector</a> <a class="code" href="class_u_s_u_1_1_min_imu.html#a08d89ce9548722810df43bd8439372ff" title="Reads the gyroscope and returns a vector with units in degrees/s.">readGyro</a>(); <span class="comment">// In body coords, with units = degrees/sec</span>
+<a name="l00065"></a>00065 
+<a name="l00069"></a>00069     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_u_s_u_1_1_min_imu.html#a8f6842375bddcd750203e860b1475a32" title="Enables compass and gyroscope, i.e. starts the sampling on these devices.">enable</a>();
+<a name="l00070"></a>00070 };
+<a name="l00071"></a>00071 
+<a name="l00072"></a>00072 }
+<a name="l00073"></a>00073 
+<a name="l00074"></a>00074 <span class="preprocessor">#endif // MINIMU_H</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -147,7 +150,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="minimu_8h.html">minimu.h</a>      </li>
 
-    <li class="footer">Generated on Mon Jun 3 2013 15:14:34 for U-BET by
+    <li class="footer">Generated on Fri Aug 2 2013 12:16:41 for U-BET by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -140,10 +141,11 @@ Public Member Functions</h2></td></tr>
 <p>This class is derived from <a class="el" href="class_u_s_u_1_1_periodic_rt_thread.html" title="TODO: Make some proper exceptions.">PeriodicRtThread</a>. It initializes the interface to the MinIMU9v2 and estimates the system state using Kalman filtering techniques. The state estimate can be accessed from other threads (protected by mutex).</p>
 <p>TODO:</p>
 <ul>
-<li>Add interface to star camera </li>
+<li>Implement kalman filter for state estimate</li>
+<li>change name to something more meaningful? </li>
 </ul>
 
-<p>Definition at line <a class="el" href="kalmanfilter_8h_source.html#l00037">37</a> of file <a class="el" href="kalmanfilter_8h_source.html">kalmanfilter.h</a>.</p>
+<p>Definition at line <a class="el" href="kalmanfilter_8h_source.html#l00038">38</a> of file <a class="el" href="kalmanfilter_8h_source.html">kalmanfilter.h</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a65e87c695dac9877015a2ace1471fdc2"></a><!-- doxytag: member="USU::KalmanFilter::KalmanFilter" ref="a65e87c695dac9877015a2ace1471fdc2" args="(int priority, unsigned int period_us, const char *i2cImu, const char *i2cMotor)" -->
 <div class="memitem">
@@ -188,13 +190,13 @@ Public Member Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">priority</td><td>priority of the underlying periodic thread </td></tr>
     <tr><td class="paramname">period_us</td><td>period (in us) of the underlying periodic thread </td></tr>
-    <tr><td class="paramname">i2cImu</td><td>name of the I2C-device for the <a class="el" href="class_i_m_u.html">IMU</a> (e.g. /dev/i2c-1) </td></tr>
+    <tr><td class="paramname">i2cImu</td><td>name of the I2C-device for the <a class="el" href="class_i_m_u.html" title="Virtual base class for IMU.">IMU</a> (e.g. /dev/i2c-1) </td></tr>
     <tr><td class="paramname">i2cMotor</td><td>name of the I2C-device for the Motors (e.g. /dev/i2c-2) </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="kalmanfilter_8cpp_source.html#l00045">45</a> of file <a class="el" href="kalmanfilter_8cpp_source.html">kalmanfilter.cpp</a>.</p>
+<p>Definition at line <a class="el" href="kalmanfilter_8cpp_source.html#l00048">48</a> of file <a class="el" href="kalmanfilter_8cpp_source.html">kalmanfilter.cpp</a>.</p>
 
 </div>
 </div>
@@ -217,7 +219,7 @@ Public Member Functions</h2></td></tr>
 <p>Copies the current system state estimate. Acquires mutex before acessing the internal variable to avoid read/write-conflicts.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>bool Current system state TODO: Currently only dummy variable. Replace with actual state representation (quaternion?) Probably not necessary anymore </dd></dl>
 
-<p>Definition at line <a class="el" href="kalmanfilter_8cpp_source.html#l00117">117</a> of file <a class="el" href="kalmanfilter_8cpp_source.html">kalmanfilter.cpp</a>.</p>
+<p>Definition at line <a class="el" href="kalmanfilter_8cpp_source.html#l00141">141</a> of file <a class="el" href="kalmanfilter_8cpp_source.html">kalmanfilter.cpp</a>.</p>
 
 </div>
 </div>
@@ -247,7 +249,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="class_u_s_u_1_1_periodic_rt_thread.html#ac9146b3088a9b268594ce41d002d020a">USU::PeriodicRtThread</a>.</p>
 
-<p>Definition at line <a class="el" href="kalmanfilter_8cpp_source.html#l00051">51</a> of file <a class="el" href="kalmanfilter_8cpp_source.html">kalmanfilter.cpp</a>.</p>
+<p>Definition at line <a class="el" href="kalmanfilter_8cpp_source.html#l00054">54</a> of file <a class="el" href="kalmanfilter_8cpp_source.html">kalmanfilter.cpp</a>.</p>
 
 </div>
 </div>
@@ -266,7 +268,6 @@ Public Member Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Signals the thread to stop. </p>
-<p>TODO: Doesn't really work. </p>
 
 <p>Definition at line <a class="el" href="kalmanfilter_8h_source.html#l00070">70</a> of file <a class="el" href="kalmanfilter_8h_source.html">kalmanfilter.h</a>.</p>
 
@@ -297,7 +298,7 @@ Public Member Functions</h2></td></tr>
       <li class="navelem"><a class="el" href="namespace_u_s_u.html">USU</a>      </li>
       <li class="navelem"><a class="el" href="class_u_s_u_1_1_kalman_filter.html">KalmanFilter</a>      </li>
 
-    <li class="footer">Generated on Mon Jun 3 2013 15:14:35 for U-BET by
+    <li class="footer">Generated on Fri Aug 2 2013 12:16:41 for U-BET by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

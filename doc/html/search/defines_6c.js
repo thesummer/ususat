@@ -30,7 +30,6 @@ var searchData=
   ['l3g_5fwho_5fam_5fi',['L3G_WHO_AM_I',['../_l3_g_8h.html#a170cb2b6f48b713af1c7bddf603ed09c',1,'L3G.h']]],
   ['l3gd20_5faddress_5fsa0_5fhigh',['L3GD20_ADDRESS_SA0_HIGH',['../_l3_g_8cpp.html#a30dbad8f4ae0051bcbc17587c6ee7703',1,'L3G.cpp']]],
   ['l3gd20_5faddress_5fsa0_5flow',['L3GD20_ADDRESS_SA0_LOW',['../_l3_g_8cpp.html#a49fc2c0e239dc82b4c3ce88d489004a3',1,'L3G.cpp']]],
-  ['length',['LENGTH',['../motor-example_8cpp.html#a30362161c93e3f1a4ee4c673f535b5a8',1,'motor-example.cpp']]],
   ['lsm303_5fclick_5fcfg_5fa',['LSM303_CLICK_CFG_A',['../_l_s_m303_8h.html#a311a43c319aae2133921b6fc398ace40',1,'LSM303.h']]],
   ['lsm303_5fclick_5fsrc_5fa',['LSM303_CLICK_SRC_A',['../_l_s_m303_8h.html#ad074818af7eae0dba4355d030ac7b9e3',1,'LSM303.h']]],
   ['lsm303_5fclick_5fths_5fa',['LSM303_CLICK_THS_A',['../_l_s_m303_8h.html#a9b2e349bea548a36559763d0dbf79a13',1,'LSM303.h']]],

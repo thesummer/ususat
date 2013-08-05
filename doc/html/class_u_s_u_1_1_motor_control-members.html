@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -103,7 +104,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 This is the complete list of members for <a class="el" href="class_u_s_u_1_1_motor_control.html">USU::MotorControl</a>, including all inherited members.<table>
   <tr class="memlist"><td><a class="el" href="class_u_s_u_1_1_motor_control.html#a40b7e40ce5bfb7fb0dea6c0a75d1eb5e">calculateControlResponse</a>(Quaternion state)</td><td><a class="el" href="class_u_s_u_1_1_motor_control.html">USU::MotorControl</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_u_s_u_1_1_motor_control.html#a3304fd7022bf2468859a0d2edae0e2f0">getAnalog</a>(int motor, float &amp;aOut1, float &amp;aOut2)</td><td><a class="el" href="class_u_s_u_1_1_motor_control.html">USU::MotorControl</a></td><td></td></tr>
-  <tr class="memlist"><td><a class="el" href="class_u_s_u_1_1_motor_control.html#aeb90cba1220e8558b170ed1637f8fc90">MotorControl</a>(const char *i2cdevice=&quot;/dev/i2c-3&quot;)</td><td><a class="el" href="class_u_s_u_1_1_motor_control.html">USU::MotorControl</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_u_s_u_1_1_motor_control.html#a195cfcad9f3e9ca8cbde54340aad620c">getAnalogs</a>(float *aOut1, float *aOut2)</td><td><a class="el" href="class_u_s_u_1_1_motor_control.html">USU::MotorControl</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_u_s_u_1_1_motor_control.html#a16a8f713f050fffc56321f82267bc7cc">getDutyCycles</a>(int *dc)</td><td><a class="el" href="class_u_s_u_1_1_motor_control.html">USU::MotorControl</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_u_s_u_1_1_motor_control.html#a85b6eed3bdd71d61a690395156999888">MotorControl</a>(const char *i2cDevice=&quot;/dev/i2c-3&quot;)</td><td><a class="el" href="class_u_s_u_1_1_motor_control.html">USU::MotorControl</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_u_s_u_1_1_motor_control.html#ad08369ed288a7816de1b3c423684f0da">setMotor</a>(int motor, int dutyCycle)</td><td><a class="el" href="class_u_s_u_1_1_motor_control.html">USU::MotorControl</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_u_s_u_1_1_motor_control.html#a5bc78d24ed52a012a3f81cd3b62216f3">~MotorControl</a>()</td><td><a class="el" href="class_u_s_u_1_1_motor_control.html">USU::MotorControl</a></td><td><code> [virtual]</code></td></tr>
 </table></div><!-- contents -->
@@ -125,7 +128,7 @@ This is the complete list of members for <a class="el" href="class_u_s_u_1_1_mot
   <div id="nav-path" class="navpath">
     <ul>
 
-    <li class="footer">Generated on Mon Jun 3 2013 15:14:36 for U-BET by
+    <li class="footer">Generated on Fri Aug 2 2013 12:16:42 for U-BET by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>
