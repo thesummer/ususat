@@ -12,8 +12,8 @@
 #include "motorcontrol.h"
 using namespace USU;
 
-MotorControl::MotorControl(const char *i2cdevice)
-    :mPwm1(1), mPwm2(2), mAnalog(i2cdevice)
+MotorControl::MotorControl(const char *i2cDevice)
+    :mPwm1(1), mPwm2(2), mAnalog(i2cDevice)
 {
     // Initizalize the four motors
     mMotor[0] = new Motor(mBeagleGpio, Beagle_GPIO::P8_31,Beagle_GPIO::P8_29, mPwm1, &cPWM::DutyA_percent);
