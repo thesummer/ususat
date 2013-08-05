@@ -88,6 +88,31 @@ public:
      */
      virtual bool readFromSerial(SerialPort &serialPort) = 0;
 
+     /*!
+      \brief Print the information of the GX3Packet to an ostream object
+
+      Enables convenient data recording of all different GX3Packet classes.
+      Uses csv format; every packet is a single line (without std::endl).
+
+      \param os
+     */
+     virtual void print(std::ostream &os) = 0;
+
+     /*!
+      \brief Implementation of the <<-operator for printinf for all GX3Packets
+
+      Calls the print function of the derived class.
+
+      \param os
+      \param packet
+      \return std::ostream &operator
+     */
+     std::ostream & operator << (std::ostream & os, const GX3Packet packet)
+     {
+        packet.print(os);
+        return os;
+     }
+
     /*!
      \brief Calculates the checksum of a received byte array
 
@@ -196,6 +221,19 @@ public:
         return true;
     }
 
+    /*!
+     \brief Print the stored information to ostream object
+
+     Format:
+        timestamp,accX,accY,accZ,gyroX,gyroY,gyroZ
+
+     \param os
+    */
+    virtual void print(std::ostream &os)
+    {
+        os << timer << "," << acc[0]  << "," << acc[1] << ","  << acc[2]
+                    << "," << gyro[0] << "," << gyro[1] << "," << gyro[2];
+    }
 
     vector acc; /*!< Vector containing the accelerometer data */
     vector gyro; /*!< Vector containing the gyroscope (angular rate) data */
@@ -255,6 +293,20 @@ public:
         return true;
     }
 
+    /*!
+     \brief Print the stored information to ostream object
+
+     Format:
+        timestamp,accX,accY,accZ,magX,magY,magZ,gyroX,gyroY,gyroZ
+
+     \param os
+    */
+    virtual void print(std::ostream &os)
+    {
+        os << timer << "," << acc[0]  << "," << acc[1]  << "," << acc[2]
+                    << "," << mag[0]  << "," << mag[1]  << "," << mag[2]
+                    << "," << gyro[0] << "," << gyro[1] << "," << gyro[2];
+    }
 
     vector acc; /*!< Vector containing the accelerometer data */
     vector gyro; /*!< Vector containing the gyroscope (angular rate) data */
@@ -299,6 +351,20 @@ public:
         return true;
     }
 
+    /*!
+     \brief Print the stored information to ostream object
+
+        quaternion = w + i*x + j*y + k*z
+
+        Format:
+            timestamp,w,x,y,z
+
+     \param os
+    */
+    virtual void print(std::ostream &os)
+    {
+        os << timer << "," << quat[0]  << "," << quat[1] << "," << quat[2] << "," << quat[3];
+    }
 
     quaternion quat; /*!< Eigen::Quaternionf representing the Orientation of the IMU*/
 
@@ -343,6 +409,25 @@ public:
         return true;
     }
 
+
+    /*!
+     \brief Print the stored information to ostream object
+
+     Format:
+        timestamp,accX,accY,accZ,magX,magY,magZ,gyroX,gyroY,gyroZ,mat(0,[0..2]),mat(1,[0..2]),mat(2,[0..2])
+
+     \param os
+    */
+    virtual void print(std::ostream &os)
+    {
+        os << timer << "," << acc[0]  << "," << acc[1]  << "," << acc[2]
+                    << "," << mag[0]  << "," << mag[1]  << "," << mag[2]
+                    << "," << gyro[0] << "," << gyro[1] << "," << gyro[2]
+                    << "," << orientation(0,0) << "," << orientation(0,1) << "," << orientation(0,1)
+                    << "," << orientation(1,0) << "," << orientation(1,1) << "," << orientation(1,2)
+                    << "," << orientation(2,0) << "," << orientation(2,1) << "," << orientation(2,2);
+
+    }
 
     vector acc; /*!< Vector containing the accelerometer data */
     vector gyro; /*!< Vector containing the gyroscope (angular rate) data */
