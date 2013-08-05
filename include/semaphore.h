@@ -21,6 +21,8 @@ namespace USU
 /*!
  \brief Wrapper class for semaphores
 
+ \ingroup threading
+
 */
 class Semaphore
 {

@@ -34,23 +34,61 @@
 #define L3G_INT1_THS_ZL   0x37
 #define L3G_INT1_DURATION 0x38
 
+
+/*!
+ \brief Class to manage the communication to the L3G gyroscope via the I2C-bus
+
+ \ingroup minimu
+
+*/
 class L3G
 {
 public:
+    /*!
+    \brief
+
+    \param i2cDeviceName
+    */
     L3G(const char * i2cDeviceName);
 
-    // gyro angular velocity readings
-    int g[3];
+    int g[3]; /*!< Gyro raw angular velocity readings */
 
+    /*!
+     \brief Puts the chip into active sampling mode
+
+    */
     void enable(void);
 
+    /*!
+     \brief Write value to register reg
+
+     TODO: Make registers enum, so that writing to wrong register impossible?
+
+     \param reg Register address to write to
+     \param value Value to write to the register reg
+    */
     void writeReg(uint8_t reg, uint8_t value);
+
+    /*!
+     \brief Read the value from register reg
+
+     \param reg Register address to read from
+     \return uint8_t Value read from the register reg
+    */
     uint8_t readReg(uint8_t reg);
+
+    /*!
+     \brief Reads the current raw angular rates into \ref g
+    */
     void read();
 
 private:
+    /*!
+     \brief Tries to determine the correct I2C address of the gyroscope.
+
+    */
     void detectAddress();
-    I2CBus i2c;
+    I2CBus i2c; /*!< Handle to the I2C-bus */
 };
 
 #endif

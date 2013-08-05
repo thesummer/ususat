@@ -30,6 +30,8 @@ namespace USU
 
  TODO: Get the desired state from ground station to calculate the control response.
 
+ \ingroup motor
+
 */
 class MotorControl
 {
@@ -44,7 +46,7 @@ public:
 
      \param i2cDevice  name of the i2cDevice of the ADC
     */
-    MotorControl(const char* i2cdevice="/dev/i2c-3");
+    MotorControl(const char* i2cDevice="/dev/i2c-3");
 
     virtual ~MotorControl();
 

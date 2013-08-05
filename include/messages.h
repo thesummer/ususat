@@ -63,6 +63,11 @@ const uint8_t FIRMWARE_UPDATE                 = 0xFD; /*!< Firmware Update (no r
 const uint8_t DEVICE_RESET                    = 0xFE; /*!< Device Reset (no reply) */
 
 /*!
+\addtogroup 3dm
+@{
+*/
+
+/*!
  \brief Abstract base class for received packets
 
  The class provides some useful function available to all derived classes
@@ -70,6 +75,7 @@ const uint8_t DEVICE_RESET                    = 0xFE; /*!< Device Reset (no repl
  the received binary data.
 
  TODO:  add print function
+
 */
 class GX3Packet
 {
@@ -398,7 +404,6 @@ public:
      \brief Checks if the response to this command has the correct setup
 
      \param buffer pointer to the byte array containing the response from the 3DM
-     \param length length of the pointer
      \return bool  true if the response is correct, false if it suggests an error
     */
     bool checkResponse(uint8_t *buffer)
@@ -520,7 +525,6 @@ public:
      \brief Checks if the response to this command has the correct setup
 
      \param buffer pointer to the byte array containing the response from the 3DM
-     \param length length of the pointer
      \return bool  true if the response is correct, false if it suggests an error
     */
     bool checkResponse(uint8_t *buffer)
@@ -542,6 +546,8 @@ public:
     uint8_t mCommand[size]; /*!< Buffer which contains the byte array for the command */
 
 };
+
+/*! @}*/
 
 }
 #endif // MESSAGES_H

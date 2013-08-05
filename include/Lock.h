@@ -19,6 +19,7 @@ namespace USU {
 /*!
  \brief Wrapper class for pthread mutexes
 
+ \ingroup threading
 */
 class Lock
 {
@@ -86,6 +87,9 @@ void Lock::unlock()
  Can make it more convenient than manual (un)locking.
 
  TODO: Test if it works correctly with a getter-method
+
+  \ingroup threading
+
 */
 class ScopedLock
 {

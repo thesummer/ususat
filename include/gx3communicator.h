@@ -31,6 +31,8 @@ namespace USU
 
  TODO: Use the parent class for the package instead to make it more generic.
 
+ \ingroup 3dm
+
 */
 class GX3Communicator : public RtThread
 {

@@ -25,6 +25,9 @@ namespace USU {
  to implement the run function with the tasks for the thread. The thread will
  run with the SCHED_FIFO-scheduler at the set priority. Therefore root rights
  are necessary for changing the scheduling policy.
+
+ \ingroup threading
+ \ingroup 3dm
 */
 class RtThread
 {

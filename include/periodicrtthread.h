@@ -26,6 +26,8 @@ namespace USU {
  nanosleep as the execution time of the loop will not be taken into account. It is
  therefore designed for periodic work where high accuracy is desired.
 
+ \ingroup threading
+
 */
 class PeriodicRtThread : public RtThread
 {

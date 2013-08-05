@@ -30,6 +30,9 @@ namespace USU
 
  It controls 2 digital pins to set motor spin direction
  and one PWM channel to set motor speed.
+
+ \ingroup motor
+
 */
 class Motor
 {

@@ -15,6 +15,12 @@
 
 #include <fstream>
 
+/*!
+ \brief Wrapper class to access the PWM-devices of the BeagleBone
+
+ \ingroup motor
+
+*/
 class cPWM {
 
 public:

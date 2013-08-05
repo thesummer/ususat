@@ -27,6 +27,9 @@ namespace USU
  It can only handle one reader and one writer thread at a time.
  Multiple reader threads could produce race conditions!!!
 
+ \ingroup threading
+ \ingroup 3dm
+
 */
 template <class T>
 class SharedQueue

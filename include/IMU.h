@@ -3,6 +3,13 @@
 
 #include "vector.h"
 
+/*!
+ \brief Virtual base class for IMU
+
+ Derive this class to make your own IMU-class.
+
+ \ingroup minimu
+*/
 class IMU {
 public:
     // Scaled readings

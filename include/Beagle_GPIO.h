@@ -45,6 +45,12 @@
 //=======================================================
 //=======================================================
  
+/*!
+ \brief Wrapper class to access the GPIOs of the BeagleBone
+
+ \ingroup motor
+
+*/
 class Beagle_GPIO
 {
 public:

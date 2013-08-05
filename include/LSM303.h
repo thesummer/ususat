@@ -75,32 +75,101 @@
 #define LSM303DLHC_OUT_Z_H_M     0x05
 #define LSM303DLHC_OUT_Z_L_M     0x06
 
+/*!
+ \brief Class to manage communication to the LSM303 compass via the I2C-bus
+
+ LSM303 has a 3-axis accelerometer and a 3-axis magnetometer on a single chip and
+ the same I2C-bus. This class manages the interface to both of them and handles the
+ read out procedure for the analog values.
+ Check the data sheet for more details of the settings.
+
+ \ingroup minimu
+*/
 class LSM303
 {
  public:
-    int a[3];  // accelerometer readings
-    int m[3];  // magnetometer readings
+    int a[3];  /*!< Raw accelerometer readings */
+    int m[3];  /*!< Magnetometer readings */
 
+    /*!
+    \brief Constructor
+
+    Sets up the accelerometer and magnetometer on the given I2C-bus.
+
+    \param i2cDeviceName Device name of the I2C-bus
+    */
     LSM303(const char * i2cDeviceName);
 
+    /*!
+     \brief Puts both (accelerometer and magnetometer) into active sampling mode
+
+    */
     void enable(void);
 
+    /*!
+     \brief Write value to the accelerometer register reg
+
+     \param reg Register address to write to
+     \param value Value to write to the register reg
+    */
     void writeAccReg(uint8_t reg, uint8_t value);
+
+    /*!
+     \brief Read the value from accelerometer register reg
+
+     \param reg Register address to read from
+     \return uint8_t Value read from the register reg
+    */
     uint8_t readAccReg(uint8_t reg);
+
+    /*!
+     \brief Write value to the magnetometer register reg
+
+     \param reg Register address to write to
+     \param value Value to write to the register reg
+    */
     void writeMagReg(uint8_t reg, uint8_t value);
+
+    /*!
+     \brief Read the value from magnetometer register reg
+
+     \param reg Register address to read from
+     \return uint8_t Value read from the register reg
+    */
     uint8_t readMagReg(uint8_t reg);
 
+    /*!
+     \brief Reads the current raw acceleration vector into \ref a
+
+    */
     void readAcc(void);
+
+    /*!
+     \brief Reads the current raw magnetic field vector into \ref m
+
+    */
     void readMag(void);
+
+    /*!
+     \brief Read both (accelerometer and magnetometer) into \ref a and \ref m respectively
+    */
     void read(void);
 
 private:
-    I2CBus i2c_mag, i2c_acc;
+    I2CBus i2c_mag, i2c_acc; /*!< I2C-bus handle for magnetometer and accelerometer respectively*/
+
+    /*!
+     \brief Model of the LSM303
+
+     The LSM303 has several different models which differ slighly in
+     the register settings.
+
+    */
     enum class Device {
         LSM303DLH,
         LSM303DLM,
         LSM303DLHC,
-    } device;
+    } device; /*!< Save which model is used*/
 };
 
 #endif

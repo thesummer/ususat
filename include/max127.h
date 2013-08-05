@@ -46,6 +46,8 @@ const uint8_t SEL0         = 4; /*!< Bit offset for channel selection */
  Provides simple functionality to read the channels.
  Uses the I2CBus class for communication.
 
+ \ingroup motor
+
 */
 class Max127
 {
