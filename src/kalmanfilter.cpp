@@ -60,46 +60,18 @@ void KalmanFilter::run()
 
     mImu.enable();
 
-    // Start the mGX3, put into continuous mode
-    // then wait some time for the transmission to start
-    mGX3.start();
-
-    while(mGX3.isEmpty())
-        usleep(1000);
-
-    usleep(8000);
-
-
     gettimeofday(&start, NULL);
     while(mKeepRunning)
     {
 
-        acc  = mImu.readAcc();
-        mag  = mImu.readMag();
+        //Only use gyro at first
+//        acc  = mImu.readAcc();
+//        mag  = mImu.readMag();
         gyro = mImu.readGyro();
 
         gettimeofday(&now, NULL);
         timeval_subtract(&elapsed, &now, &start);
         unsigned long long timestamp = elapsed.tv_sec * 1000 + elapsed.tv_usec / 1000; // in ms since start
-        AccAngMag lastState;
-
-        ///TODO: Do some Kalman-Filtering magic here
-
-        if(mGX3.isEmpty() == false)
-        {
-            int length = mGX3.size()-1;
-            while(length>1)
-                mGX3.pop();
-
-            lastState = mGX3.front();
-            mGX3.pop();
-
-            /// TODO: some more magic
-        }
-        else
-        {
-            std::cout << "Missed measurement" << std::endl;
-        }     
 
         // Alwasy use mutex, when changing state
          mMotors.calculateControlResponse(lastState);
