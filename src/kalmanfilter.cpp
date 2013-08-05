@@ -95,30 +95,14 @@ void KalmanFilter::run()
             mGX3.pop();
 
             /// TODO: some more magic
-//            cout << mGX3.size() << ",";
         }
         else
         {
             std::cout << "Missed measurement" << std::endl;
         }     
-//        std::cout << timestamp << "\t" << lastState.quat.w() << "\t" << lastState.quat.x() << "\t"
-//                                       << lastState.quat.y() << "\t" << lastState.quat.z() << endl;
-
-        std::cout << lastState.timer/62
-                  << "," << lastState.acc[0]  << "," << lastState.acc[1]  << "," << lastState.acc[2]
-                  << "," << lastState.mag[0]  << "," << lastState.mag[1]  << "," << lastState.mag[2]
-                  << "," << lastState.gyro[0] << "," << lastState.gyro[1] << "," << lastState.gyro[2];
-
-
-        std::cout << "," << timestamp
-                  << "," << acc[0]  << "," << acc[1]  << "," << acc[2]
-                  << "," << mag[0]  << "," << mag[1]  << "," << mag[2]
-                  << "," << gyro[0] << "," << gyro[1] << "," << gyro[2] << std::endl;
-
-
 
         // Alwasy use mutex, when changing state
-//        mMotors.calculateControlResponse(lastState);
+         mMotors.calculateControlResponse(lastState);
 
         waitPeriod();
     }
