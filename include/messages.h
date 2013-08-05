@@ -74,8 +74,6 @@ const uint8_t DEVICE_RESET                    = 0xFE; /*!< Device Reset (no repl
  such as checksum calculation and creation of vectors and matrizes from
  the received binary data.
 
- TODO:  add print function
-
 */
 class GX3Packet
 {
@@ -426,10 +424,14 @@ public:
     enum {size = 79}; /*!< Size of the package (enum to avoid complications with static consts) */
 };
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 /*!
  \brief Base class for commands send to the 3DM-GX3-25
 
  Just an empty base class, so that all commands share the same base class.
+
+ TODO: Implement sendCommand in base class instead of in each class separately?
 */
 class GX3Command
 {
