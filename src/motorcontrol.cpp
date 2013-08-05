@@ -43,6 +43,11 @@ void MotorControl::calculateControlResponse(Quaternion state)
     /// [...]
 }
 
+void MotorControl::controlFromGyro(Eigen::Vector3f gyro)
+{
+
+}
+
 void MotorControl::setMotor(int motor, int dutyCycle)
 {
     mMotor[motor]->setSpeed(dutyCycle);

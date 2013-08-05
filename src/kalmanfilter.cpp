@@ -74,7 +74,7 @@ void KalmanFilter::run()
         unsigned long long timestamp = elapsed.tv_sec * 1000 + elapsed.tv_usec / 1000; // in ms since start
 
         // Alwasy use mutex, when changing state
-         mMotors.calculateControlResponse(lastState);
+         mMotors.controlFromGyro(gyro);
 
         waitPeriod();
     }

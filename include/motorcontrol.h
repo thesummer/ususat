@@ -55,9 +55,16 @@ public:
 
      TODO: Doesn't do anything at the moment
 
-     \param state the current state estimate from the Kalman filter
+     \param state the current state estimate from the IMU
    */
     void calculateControlResponse(Quaternion state);
+
+    /*!
+     \brief Uses a simple algorithm to control the speed only from gyro data
+
+     \param gyro Vector with the current angular rates
+    */
+    void controlFromGyro(Eigen::Vector3f gyro);
 
     /*!
      \brief For testing: sets the speed of a motor
