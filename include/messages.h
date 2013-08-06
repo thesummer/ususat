@@ -75,6 +75,7 @@ const uint8_t DEVICE_RESET                    = 0xFE; /*!< Device Reset (no repl
  the received binary data.
 
 */
+
 class GX3Packet
 {
 public:
@@ -94,22 +95,7 @@ public:
 
       \param os
      */
-     virtual void print(std::ostream &os) = 0;
-
-     /*!
-      \brief Implementation of the <<-operator for printinf for all GX3Packets
-
-      Calls the print function of the derived class.
-
-      \param os
-      \param packet
-      \return std::ostream &operator
-     */
-     std::ostream & operator << (std::ostream & os, const GX3Packet packet)
-     {
-        packet.print(os);
-        return os;
-     }
+     virtual void print(std::ostream &os) const = 0;
 
     /*!
      \brief Calculates the checksum of a received byte array
@@ -175,6 +161,23 @@ protected:
 };
 
 /*!
+ \brief Implementation of the <<-operator for printing the information for all GX3Packets
+
+ Calls the print function of the derived class.
+
+ \param os
+ \param packet
+ \return std::ostream &operator
+*/
+static std::ostream & operator << (std::ostream & os, const GX3Packet & packet)
+{
+   packet.print(os);
+   return os;
+}
+
+
+
+/*!
  \brief Representation for receiving (raw) acceleration & angular rate packets
 
  This class can be used with the commands for raw acceleration and angular rates
@@ -221,10 +224,10 @@ public:
 
      \param os
     */
-    virtual void print(std::ostream &os)
+    virtual void print(std::ostream &os) const
     {
-        os << timer << "," << acc[0]  << "," << acc[1] << ","  << acc[2]
-                    << "," << gyro[0] << "," << gyro[1] << "," << gyro[2];
+        os << timer << "," << acc(0)  << "," << acc(1) << ","  << acc(2)
+                    << "," << gyro(0) << "," << gyro(1) << "," << gyro(2);
     }
 
     vector acc; /*!< Vector containing the accelerometer data */
@@ -286,11 +289,11 @@ public:
 
      \param os
     */
-    virtual void print(std::ostream &os)
+    virtual void print(std::ostream &os) const
     {
-        os << timer << "," << acc[0]  << "," << acc[1]  << "," << acc[2]
-                    << "," << mag[0]  << "," << mag[1]  << "," << mag[2]
-                    << "," << gyro[0] << "," << gyro[1] << "," << gyro[2];
+        os << timer << "," << acc(0)  << "," << acc(1)  << "," << acc(2)
+                    << "," << mag(0)  << "," << mag(1)  << "," << mag(2)
+                    << "," << gyro(0) << "," << gyro(1) << "," << gyro(2);
     }
 
     vector acc; /*!< Vector containing the accelerometer data */
@@ -346,9 +349,9 @@ public:
 
      \param os
     */
-    virtual void print(std::ostream &os)
+    virtual void print(std::ostream &os) const
     {
-        os << timer << "," << quat[0]  << "," << quat[1] << "," << quat[2] << "," << quat[3];
+        os << timer << "," << quat.w()  << "," << quat.x() << "," << quat.y() << "," << quat.z();
     }
 
     quaternion quat; /*!< Eigen::Quaternionf representing the Orientation of the IMU*/
@@ -403,11 +406,11 @@ public:
 
      \param os
     */
-    virtual void print(std::ostream &os)
+    virtual void print(std::ostream &os) const
     {
-        os << timer << "," << acc[0]  << "," << acc[1]  << "," << acc[2]
-                    << "," << mag[0]  << "," << mag[1]  << "," << mag[2]
-                    << "," << gyro[0] << "," << gyro[1] << "," << gyro[2]
+        os << timer << "," << acc(0)  << "," << acc(1)  << "," << acc(2)
+                    << "," << mag(0)  << "," << mag(1)  << "," << mag(2)
+                    << "," << gyro(0) << "," << gyro(1) << "," << gyro(2)
                     << "," << orientation(0,0) << "," << orientation(0,1) << "," << orientation(0,1)
                     << "," << orientation(1,0) << "," << orientation(1,1) << "," << orientation(1,2)
                     << "," << orientation(2,0) << "," << orientation(2,1) << "," << orientation(2,2);
