@@ -29,7 +29,7 @@
 #define BEAGLE_GPIO_DEBUG
 #ifdef BEAGLE_GPIO_DEBUG
 	#define GPIO_PRINT(msg)	std::cout << "[GPIO] : " << msg << std::endl;
-	#define assert( condition ) 	\
+    #define gp_assert( condition ) 	\
 		if (!(condition))	\
 		{			\
 			GPIO_ERROR( "Assert Failed in file '" << __FILE__ << "' on line " << __LINE__ );	\
@@ -38,7 +38,7 @@
 
 #else
 	#define GPIO_PRINT(msg)
-	#define assert( condition )
+    #define gp_assert( condition )
 #endif
  
  
