@@ -11,10 +11,11 @@
 #ifndef LOCK_H
 #define LOCK_H
 
-namespace USU {
 #include <stdexcept>
-
+#include <string.h>
 #include <pthread.h>
+
+namespace USU {
 
 /*!
  \brief Wrapper class for pthread mutexes
@@ -39,9 +40,6 @@ public:
 
     void unlock(); /*!< Unlocks the mutex */
 };
-
-
-#include <stdio.h>
 
 inline
 Lock::Lock()
