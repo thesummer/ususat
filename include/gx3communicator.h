@@ -13,10 +13,10 @@
 #define GX3COMMUNICATOR_H
 
 #include<SerialPort.h>
+#include<memory>
 #include "RtThread.h"
 #include "sharedqueue.h"
 #include "messages.h"
-
 
 namespace USU
 {
@@ -34,6 +34,15 @@ namespace USU
  \ingroup 3dm
 
 */
+
+/*!
+ \brief Shared pointer for packages
+
+ In order to store any kind of a GX3Package in the queue a pointer must be used.
+ Shared pointer is used to avoid memory leaks.
+*/
+typedef std::shared_ptr<GX3Packet> packet_ptr;
+
 class GX3Communicator : public RtThread
 {
 public:
@@ -90,7 +99,7 @@ public:
 
      \return AccAngMag the first element
     */
-    GX3Packet &front() { return mQueue.front(); }
+    GX3Packet &front() { return *mQueue.front(); }
 
 private:
     GX3Communicator(const GX3Communicator& thread); /*!< Copy constructor made inaccessible by declaring it private */
@@ -98,7 +107,7 @@ private:
     GX3Communicator& operator=(const GX3Communicator& rhs); /*!< Assignment constructor made inaccessible by declaring it private */
 
     SerialPort mSerialPort; /*!< Handles the serial port communication */
-    SharedQueue<GX3Packet> mQueue;
+    SharedQueue<packet_ptr> mQueue;
 
     volatile bool mKeepRunning;  /*!< Indicates if the Thread should keep running. volatile to prevent optimizing */
 };

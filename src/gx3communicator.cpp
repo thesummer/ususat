@@ -80,8 +80,8 @@ void GX3Communicator::run()
 //    gettimeofday(&start, NULL);
     while(mKeepRunning)
     {
-        AccAngMag data;
-        if(data.readFromSerial(mSerialPort))
+        packet_ptr data(new AccAngMag);
+        if(data->readFromSerial(mSerialPort))
         {
             mQueue.push(data);
             //        gettimeofday(&now, NULL);
