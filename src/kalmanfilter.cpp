@@ -46,57 +46,23 @@ int timeval_subtract (struct timeval * result, struct timeval * x, struct timeva
 }
 
 KalmanFilter::KalmanFilter(int priority, unsigned int period_us, const char *i2cImu, const char *i2cMotor)
-    :PeriodicRtThread(priority, period_us), mImu(i2cImu),
+    :PeriodicRtThread(priority, period_us), mMode(CollectPololuData), mImu(i2cImu),
       mGX3(priority, "/dev/ttyO4"), mKeepRunning(false)
 {
 }
 
 void KalmanFilter::run()
 {
-    /// TODO: make different modes
-    vector acc, mag, gyro;
-    mKeepRunning = true;
-    struct timeval start, now, elapsed;
-
-    mImu.enable();
-
-    std::vector<Command>::const_iterator commandIt = mCommandList.begin();
-    mMotors.setSetValue(commandIt->angVel);
-    int countdown = commandIt->time;
-
-
-    gettimeofday(&start, NULL);
-    unsigned lastTime = 0;
-    waitPeriod();
-
-    while(mKeepRunning)
+    switch(mMode)
     {
-        gettimeofday(&now, NULL);
-
-        //Only use gyro at first
-//        acc  = mImu.readAcc();
-//        mag  = mImu.readMag();
-        gyro = mImu.readGyro();
-
-        timeval_subtract(&elapsed, &now, &start);
-        unsigned time = elapsed.tv_sec * 1000 + elapsed.tv_usec / 1000; // in ms since start
-        countdown -= time - lasttime;
-        lastTime = time;
-        if(countdown <=0)
-        {
-            commandIt++;
-            // if at the end of the commandList start again from the beginning
-            if(commandIt == mCommandList.end())
-                commandIt = mCommandList.begin();
-
-            countdown = commandIt->time;
-            mMotors.setSetValue(commandIt->angVel);
-        }
-
-        // Alwasy use mutex, when changing state
-         mMotors.controlFromGyro(gyro);
-
-        waitPeriod();
+    case SimpleControl:          runSimpleControl();
+                                 break;
+    case CollectPololuData:      runCollectPololu();
+                                 break;
+    case CollectMicroStrainData: runCollectMicroStrain();
+                                 break;
+    case CollectData:            runCollectBoth();
+                                 break;
     }
 
     std::cerr << "KALMANFILTER: Got signal to terminate" << std::endl;
@@ -142,5 +108,139 @@ void KalmanFilter::initializeModeSimpleControl(std::string trajFilename, float p
     }
     file.close();
 
+    cout << "Read " << mCommandList.size() << " commands." << endl;
+
     mMotors.setPGain(pgain);
 }
+
+void KalmanFilter::runSimpleControl()
+{
+    vector gyro;
+    mKeepRunning = true;
+    struct timeval start, now, elapsed;
+
+    if(mCommandList.empty())
+    {
+        std::cerr << "Error: No command list loaded. Terminating";
+        return;
+    }
+
+    mImu.enable();
+
+    std::vector<Command>::const_iterator commandIt = mCommandList.begin();
+    mMotors.setSetValue(commandIt->angVel);
+    int countdown = commandIt->time;
+
+
+    gettimeofday(&start, NULL);
+    unsigned lastTime = 0;
+    waitPeriod();
+
+    while(mKeepRunning)
+    {
+        gettimeofday(&now, NULL);
+
+        gyro = mImu.readGyro();
+
+        // Run countdown
+        timeval_subtract(&elapsed, &now, &start);
+        unsigned time = elapsed.tv_sec * 1000 + elapsed.tv_usec / 1000; // in ms since start
+        countdown -= time - lasttime;
+        lastTime = time;
+
+        // if countdown over execute next command from list
+        if(countdown <=0)
+        {
+            commandIt++;
+            // if at the end of the commandList start again from the beginning
+            if(commandIt == mCommandList.end())
+                commandIt = mCommandList.begin();
+
+            countdown = commandIt->time;
+            mMotors.setSetValue(commandIt->angVel);
+        }
+
+        // Alwasy use mutex, when changing state
+         mMotors.controlFromGyro(gyro);
+
+        waitPeriod();
+    }
+
+    std::cerr << "KALMANFILTER: Got signal to terminate" << std::endl;
+    std::cerr << "KALMANFILTER: Terminating now..." << std::endl;
+}
+
+void KalmanFilter::runCollectPololu()
+{
+    vector acc, mag, gyro;
+    mKeepRunning = true;
+    struct timeval start, now, elapsed;
+
+    mImu.enable();
+
+    gettimeofday(&start, NULL);
+    unsigned lastTime = 0;
+    waitPeriod();
+
+    while(mKeepRunning)
+    {
+        gettimeofday(&now, NULL);
+
+        acc  = mImu.readAcc();
+        mag  = mImu.readMag();
+        gyro = mImu.readGyro();
+
+        timeval_subtract(&elapsed, &now, &start);
+        unsigned time = elapsed.tv_sec * 1000 + elapsed.tv_usec / 1000; // in ms since start
+
+        // print data
+        cout << time << "," << acc << "," << mag << "," << gyro << endl;
+
+        waitPeriod();
+    }
+
+    std::cerr << "KALMANFILTER: Got signal to terminate" << std::endl;
+    std::cerr << "KALMANFILTER: Terminating now..." << std::endl;
+
+}
+
+void KalmanFilter::runCollectMicroStrain()
+{
+
+    mKeepRunning = true;
+
+    mGX3.start();
+    while(mKeepRunning)
+    {
+
+
+    }
+
+    std::cerr << "KALMANFILTER: Got signal to terminate" << std::endl;
+    std::cerr << "KALMANFILTER: Stopping Gx3-communicator..." << std::endl;
+    mGX3.stop();
+    if(mGX3.join() )
+    {
+        std::cerr << "KALMANFILTER: Gx3-communicator joined" << std::endl;
+    }
+    else
+    {
+        std::cerr << "KALMANFILTER: Joining Gx3-communicator failed" << std::endl;
+    }
+    std::cerr << "KALMANFILTER: Terminating now..." << std::endl;
+}
+
+void KalmanFilter::runCollectBoth()
+{
+  ///TODO: Implement
+}
+Mode KalmanFilter::getMode() const
+{
+    return mMode;
+}
+
+void KalmanFilter::setMode(const Mode &value)
+{
+    mMode = value;
+}
+

@@ -38,6 +38,14 @@ namespace USU
 class KalmanFilter : public PeriodicRtThread
 {
 public:
+    enum Mode
+    {
+        SimpleControl,
+        CollectPololuData,
+        CollectMicroStrainData,
+        CollectData
+    };
+
     /*!
      \brief Constructor of the class
 
@@ -84,7 +92,20 @@ public:
 
     void initializeModeSimpleControl(std::string trajFilename, float pgain);
 
+    Mode getMode() const;
+    void setMode(const Mode &value);
+
 private:
+    void runSimpleControl();
+
+    void runCollectPololu();
+
+    void runCollectMicroStrain();
+
+    void runCollectBoth();
+
+    Mode mMode;
+
     /*!
      \brief Struct representing a single command point
 

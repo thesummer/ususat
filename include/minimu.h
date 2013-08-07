@@ -11,6 +11,8 @@
 #ifndef MINIMU_H
 #define MINIMU_H
 
+#include <iostream>
+
 #include "IMU.h"
 #include "LSM303.h"
 #include "L3G.h"
@@ -18,6 +20,9 @@
 
 namespace USU
 {
+
+
+std::ostream & operator << (std::ostream & os, const vector & vec);
 
 /*!
  \brief Class to manage the communication to the Pololu MinIMU9

@@ -43,3 +43,9 @@ vector MinImu::readMag()
 
     return vector_from_ints(&compass.m);
 }
+
+
+std::ostream &operator <<(std::ostream &os, const vector &vec)
+{
+    return (os << vec(0) << "," << vec(1) << "," << vec(2));
+}
