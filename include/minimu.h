@@ -22,7 +22,6 @@ namespace USU
 {
 
 
-std::ostream & operator << (std::ostream & os, const vector & vec);
 
 /*!
  \brief Class to manage the communication to the Pololu MinIMU9

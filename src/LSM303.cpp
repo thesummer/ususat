@@ -22,30 +22,6 @@ LSM303DLHC has no SA0_A line
 LSM303::LSM303(const char * i2cDeviceName) :
   i2c_mag(i2cDeviceName), i2c_acc(i2cDeviceName)
 {
-    i2c_mag.addressSet(MAG_ADDRESS);
-
-    // Detect the accelerometer address and device.
-    i2c_acc.addressSet(ACC_ADDRESS_SA0_A_LOW);
-    bool sa0_a_high = i2c_acc.tryReadByte(LSM303_CTRL_REG1_A) == -1;
-    if (sa0_a_high)
-    {
-        i2c_acc.addressSet(ACC_ADDRESS_SA0_A_HIGH);
-        // Only the DLHC should be responding on the high address.
-        device = Device::LSM303DLHC;
-    }
-    else
-    {
-        // Only the DLM has a LSM303_WHO_AM_I_M register.
-        device = i2c_mag.tryReadByte(LSM303_WHO_AM_I_M) == 0x3C ? Device::LSM303DLM : Device::LSM303DLH;
-    }
-
-    // Make sure to throw an exception if we don't have the right address.
-    readAccReg(LSM303_CTRL_REG1_A);
-
-    if (readMagReg(LSM303_WHO_AM_I_M) != 0x3C)
-    {
-        throw std::runtime_error("LSM303: Error getting \"Who Am I\" register.\n");
-    }
 }
 
 uint8_t LSM303::readMagReg(uint8_t reg)
@@ -72,6 +48,31 @@ void LSM303::writeAccReg(uint8_t reg, uint8_t value)
 // mode.
 void LSM303::enable(void)
 {
+    i2c_mag.addressSet(MAG_ADDRESS);
+
+    // Detect the accelerometer address and device.
+    i2c_acc.addressSet(ACC_ADDRESS_SA0_A_LOW);
+    bool sa0_a_high = i2c_acc.tryReadByte(LSM303_CTRL_REG1_A) == -1;
+    if (sa0_a_high)
+    {
+        i2c_acc.addressSet(ACC_ADDRESS_SA0_A_HIGH);
+        // Only the DLHC should be responding on the high address.
+        device = Device::LSM303DLHC;
+    }
+    else
+    {
+        // Only the DLM has a LSM303_WHO_AM_I_M register.
+        device = i2c_mag.tryReadByte(LSM303_WHO_AM_I_M) == 0x3C ? Device::LSM303DLM : Device::LSM303DLH;
+    }
+
+    // Make sure to throw an exception if we don't have the right address.
+    readAccReg(LSM303_CTRL_REG1_A);
+
+    if (readMagReg(LSM303_WHO_AM_I_M) != 0x3C)
+    {
+        throw std::runtime_error("LSM303: Error getting \"Who Am I\" register.\n");
+    }
+
     // Enable accelerometer.
     if (device == Device::LSM303DLHC)
     {

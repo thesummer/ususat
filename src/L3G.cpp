@@ -8,7 +8,6 @@
 
 L3G::L3G(const char * i2cDeviceName) : i2c(i2cDeviceName)
 {
-    detectAddress();
 }
 
 void L3G::detectAddress()
@@ -28,6 +27,8 @@ void L3G::detectAddress()
 // Turns on the gyro and places it in normal mode.
 void L3G::enable()
 {
+    detectAddress();
+
     writeReg(L3G_CTRL_REG1, 0b00001111); // Normal power mode, all axes enabled
     writeReg(L3G_CTRL_REG4, 0b00000000); // 250 dps full scale
 }
