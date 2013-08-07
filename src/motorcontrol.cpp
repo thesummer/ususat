@@ -9,11 +9,14 @@
  *
  */
 
+#include <fstream>
+#include <stdexcept>
+
 #include "motorcontrol.h"
 using namespace USU;
 
 MotorControl::MotorControl(const char *i2cDevice)
-    :mPwm1(1), mPwm2(2), mAnalog(i2cDevice)
+    :mPwm1(1), mPwm2(2), mAnalog(i2cDevice), mPGain(1.0)
 {
     // Initizalize the four motors
     mMotor[0] = new Motor(mBeagleGpio, Beagle_GPIO::P8_31,Beagle_GPIO::P8_29, mPwm1, &cPWM::DutyA_percent);
@@ -44,7 +47,16 @@ void MotorControl::calculateControlResponse(Quaternion state)
 }
 
 void MotorControl::controlFromGyro(Eigen::Vector3f gyro)
-{
+{    
+    float speeds[4];
+    float currents[4];
+    getAnalogs(speeds, currents);
+
+    int speeds_input[4];
+    getDutyCycles(speeds_input);
+
+    // mPGain I already have this, do the math to go from speeds to rpms (or rad/s), then Eigen::Vector3f err = (gyro - mSetValue)
+    // From err to 4 * pwms
 
 }
 
@@ -78,3 +90,23 @@ void MotorControl::getDutyCycles(int *dc)
     dc[2] = mMotor[2]->getSpeed();
     dc[3] = mMotor[3]->getSpeed();
 }
+float MotorControl::getPGain() const
+{
+    return mPGain;
+}
+
+void MotorControl::setPGain(float value)
+{
+    mPGain = value;
+}
+Eigen::Vector3f MotorControl::getSetValue() const
+{
+    return mSetValue;
+}
+
+void MotorControl::setSetValue(const Eigen::Vector3f value)
+{
+    mSetValue = value;
+}
+
+

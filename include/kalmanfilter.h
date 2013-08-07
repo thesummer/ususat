@@ -82,10 +82,23 @@ public:
     */
     bool getState();
 
-private:
+    void initializeModeSimpleControl(std::string trajFilename, float pgain);
 
-    KalmanFilter(const KalmanFilter& thread); /*!< Copy constructor made inaccessible by declaring it private */
-    KalmanFilter& operator=(const KalmanFilter& rhs); /*!< Assignment constructor made inaccessible by declaring it private */
+private:
+    /*!
+     \brief Struct representing a single command point
+
+     At the point time the corresponding motor will be
+     set to the desired speed
+
+    */
+    struct Command
+    {
+        unsigned int time; /*!< Time (in ms)*/
+        Eigen::Vector3f angVel; /*!< The angular velocity set until the command is processed*/
+    };
+    std::vector<Command> mCommandList; /*!< The list with the commands*/
+
 
     MinImu mImu; /*!< Class for accessing the MinIMU9v2*/
     GX3Communicator mGX3;  /*!< Class for accessing the 3DM-GX3*/
@@ -95,6 +108,10 @@ private:
     bool mState; ///TODO: Actual representation of the state estimate /*!< TODO */
     Lock mStateLock; /*!< Mutex to access the State variable*/
     volatile bool mKeepRunning; /*!< Indicates if the Thread should keep running. volatile to prevent optimizing */
+
+
+    KalmanFilter(const KalmanFilter& thread); /*!< Copy constructor made inaccessible by declaring it private */
+    KalmanFilter& operator=(const KalmanFilter& rhs); /*!< Assignment constructor made inaccessible by declaring it private */
 };
 
 }

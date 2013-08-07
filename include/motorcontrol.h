@@ -12,6 +12,8 @@
 #ifndef MOTORCONTROL_H
 #define MOTORCONTROL_H
 
+#include <vector>
+
 #include "cPWM.h"
 #include "Beagle_GPIO.h"
 #include "motor.h"
@@ -99,7 +101,14 @@ public:
     */
     void getDutyCycles(int* dc);
 
+    float getPGain() const;
+    void setPGain(float value);
+
+    Eigen::Vector3f getSetValue() const;
+    void setSetValue(const Eigen::Vector3f value);
+
 private:
+
     cPWM mPwm1; /*!< First PWM module (has 2 channels) */
     cPWM mPwm2; /*!< Second PwM module (has 2 channels) */
 
@@ -107,6 +116,8 @@ private:
     Motor *mMotor[4]; /*!< Array of the 4 motors */
 
     Max127 mAnalog; /*!< Representation of the ADC for the motor feedback */
+    float mPGain;
+    Eigen::Vector3f mSetValue;
 
     MotorControl(const MotorControl& thread); /*!< Copy constructor made inaccessible by declaring it private */
 

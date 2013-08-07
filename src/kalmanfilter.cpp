@@ -53,25 +53,45 @@ KalmanFilter::KalmanFilter(int priority, unsigned int period_us, const char *i2c
 
 void KalmanFilter::run()
 {
-
+    /// TODO: make different modes
     vector acc, mag, gyro;
     mKeepRunning = true;
     struct timeval start, now, elapsed;
 
     mImu.enable();
 
+    std::vector<Command>::const_iterator commandIt = mCommandList.begin();
+    mMotors.setSetValue(commandIt->angVel);
+    int countdown = commandIt->time;
+
+
     gettimeofday(&start, NULL);
+    unsigned lastTime = 0;
+    waitPeriod();
+
     while(mKeepRunning)
     {
+        gettimeofday(&now, NULL);
 
         //Only use gyro at first
 //        acc  = mImu.readAcc();
 //        mag  = mImu.readMag();
         gyro = mImu.readGyro();
 
-        gettimeofday(&now, NULL);
         timeval_subtract(&elapsed, &now, &start);
-        unsigned long long timestamp = elapsed.tv_sec * 1000 + elapsed.tv_usec / 1000; // in ms since start
+        unsigned time = elapsed.tv_sec * 1000 + elapsed.tv_usec / 1000; // in ms since start
+        countdown -= time - lasttime;
+        lastTime = time;
+        if(countdown <=0)
+        {
+            commandIt++;
+            // if at the end of the commandList start again from the beginning
+            if(commandIt == mCommandList.end())
+                commandIt = mCommandList.begin();
+
+            countdown = commandIt->time;
+            mMotors.setSetValue(commandIt->angVel);
+        }
 
         // Alwasy use mutex, when changing state
          mMotors.controlFromGyro(gyro);
@@ -98,4 +118,29 @@ bool KalmanFilter::getState()
 {
     ScopedLock scLock(mStateLock);
     return mState;
+}
+
+void KalmanFilter::initializeModeSimpleControl(std::string trajFilename, float pgain)
+{
+    std::ifstream inFile;
+    inFile.open(filename);
+    if(!inFile.is_open())
+        throw std::runtime_error("MotorController: Could not open input file");
+
+    Command temp;
+    while(true)
+    {
+        file >> temp.time;
+
+        float x,y,z;
+        file >> x >> y >> z;
+        temp.angVel << x, y, z;
+
+        if(file.eof())
+            break;
+        mCommandList.push_back(temp);
+    }
+    file.close();
+
+    mMotors.setPGain(pgain);
 }
