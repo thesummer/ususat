@@ -97,6 +97,8 @@ public:
     /*!
      \brief Return the first element from the FIFO
 
+     TODO: Make a blocking version of it
+
      \return AccAngMag the first element
     */
     GX3Packet &front() { return *mQueue.front(); }

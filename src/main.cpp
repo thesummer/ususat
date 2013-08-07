@@ -56,9 +56,17 @@ int main(int argc, char **argv)
         // Evaluate command line options
         if(mode.getValue() == "simpleControl")
         {
-            KalmanFilter.initializeModeSimpleControl(trajFile.getValue(), pgain.getValue());
+            kalmanFilter.initializeModeSimpleControl(trajFile.getValue(), pgain.getValue());
+            kalmanFilter.setMode(KalmanFilter::SimpleControl);
         }
-        /// TODO add more modes here
+        else if(mode.getValue() == "pololu")
+        {
+            kalmanFilter.setMode(KalmanFilter::CollectPololuData);
+        }
+        else if(mode.getValue() == "microstrain")
+        {
+            kalmanFilter.setMode(KalmanFilter::CollectMicroStrainData);
+        }
         else
         {
             throw std::runtime_error("MAIN: Unknown mode selected. Terminating");

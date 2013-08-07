@@ -65,19 +65,7 @@ void KalmanFilter::run()
                                  break;
     }
 
-    std::cerr << "KALMANFILTER: Got signal to terminate" << std::endl;
-    std::cerr << "KALMANFILTER: Stopping Gx3-communicator..." << std::endl;
-    mGX3.stop();
-    if(mGX3.join() )
-    {
-        std::cerr << "KALMANFILTER: Gx3-communicator joined" << std::endl;
-    }
-    else
-    {
-        std::cerr << "KALMANFILTER: Joining Gx3-communicator failed" << std::endl;
-    }
     std::cerr << "KALMANFILTER: Terminating now..." << std::endl;
-
 }
 
 bool KalmanFilter::getState()
@@ -167,7 +155,6 @@ void KalmanFilter::runSimpleControl()
     }
 
     std::cerr << "KALMANFILTER: Got signal to terminate" << std::endl;
-    std::cerr << "KALMANFILTER: Terminating now..." << std::endl;
 }
 
 void KalmanFilter::runCollectPololu()
@@ -200,8 +187,6 @@ void KalmanFilter::runCollectPololu()
     }
 
     std::cerr << "KALMANFILTER: Got signal to terminate" << std::endl;
-    std::cerr << "KALMANFILTER: Terminating now..." << std::endl;
-
 }
 
 void KalmanFilter::runCollectMicroStrain()
@@ -212,8 +197,19 @@ void KalmanFilter::runCollectMicroStrain()
     mGX3.start();
     while(mKeepRunning)
     {
+        GX3Packet lastState;
 
+        if(mGX3.isEmpty() == false)
+        {
+            int length = mGX3.size()-1;
+            while(length>1)
+                mGX3.pop();
 
+            lastState = mGX3.front();
+            mGX3.pop();
+        }
+
+        cout << lastState << endl;
     }
 
     std::cerr << "KALMANFILTER: Got signal to terminate" << std::endl;
@@ -227,7 +223,6 @@ void KalmanFilter::runCollectMicroStrain()
     {
         std::cerr << "KALMANFILTER: Joining Gx3-communicator failed" << std::endl;
     }
-    std::cerr << "KALMANFILTER: Terminating now..." << std::endl;
 }
 
 void KalmanFilter::runCollectBoth()
