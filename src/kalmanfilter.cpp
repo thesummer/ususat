@@ -22,6 +22,7 @@ using std::endl;
 
 using namespace USU;
 
+
 int timeval_subtract (struct timeval * result, struct timeval * x, struct timeval * y)
 {
     /* Perform the carry for the later subtraction by updating y. */
@@ -77,24 +78,24 @@ bool KalmanFilter::getState()
 void KalmanFilter::initializeModeSimpleControl(std::string trajFilename, float pgain)
 {
     std::ifstream inFile;
-    inFile.open(filename);
+    inFile.open(trajFilename);
     if(!inFile.is_open())
         throw std::runtime_error("MotorController: Could not open input file");
 
     Command temp;
     while(true)
     {
-        file >> temp.time;
+        inFile >> temp.time;
 
         float x,y,z;
-        file >> x >> y >> z;
+        inFile >> x >> y >> z;
         temp.angVel << x, y, z;
 
-        if(file.eof())
+        if(inFile.eof())
             break;
         mCommandList.push_back(temp);
     }
-    file.close();
+    inFile.close();
 
     cout << "Read " << mCommandList.size() << " commands." << endl;
 
@@ -133,7 +134,7 @@ void KalmanFilter::runSimpleControl()
         // Run countdown
         timeval_subtract(&elapsed, &now, &start);
         unsigned time = elapsed.tv_sec * 1000 + elapsed.tv_usec / 1000; // in ms since start
-        countdown -= time - lasttime;
+        countdown -= time - lastTime;
         lastTime = time;
 
         // if countdown over execute next command from list
@@ -166,8 +167,10 @@ void KalmanFilter::runCollectPololu()
     mImu.enable();
 
     gettimeofday(&start, NULL);
-    unsigned lastTime = 0;
     waitPeriod();
+
+    // Create an object to set the output format for the vectors
+    Eigen::IOFormat csv(Eigen::StreamPrecision, Eigen::DontAlignCols, ", ", ", ");
 
     while(mKeepRunning)
     {
@@ -181,7 +184,7 @@ void KalmanFilter::runCollectPololu()
         unsigned time = elapsed.tv_sec * 1000 + elapsed.tv_usec / 1000; // in ms since start
 
         // print data
-        cout << time << "," << acc << "," << mag << "," << gyro << endl;
+        cout << time << ",\t" << acc.format(csv) << ",\t" << mag.format(csv) << ",\t" << gyro.format(csv) << endl;
 
         waitPeriod();
     }
@@ -198,19 +201,23 @@ void KalmanFilter::runCollectMicroStrain()
     mGX3.start();
     while(mKeepRunning)
     {
-        GX3Packet lastState;
+        packet_ptr lastState;
 
         if(mGX3.isEmpty() == false)
         {
-            int length = mGX3.size()-1;
-            while(length>1)
+            int length = mGX3.size();
+            while(length-->1)
+            {
                 mGX3.pop();
+            }
 
             lastState = mGX3.front();
             mGX3.pop();
+
+            cout << (*lastState) << endl;
         }
 
-        cout << lastState << endl;
+        waitPeriod();
     }
 
     std::cerr << "KALMANFILTER: Got signal to terminate" << std::endl;
@@ -228,9 +235,64 @@ void KalmanFilter::runCollectMicroStrain()
 
 void KalmanFilter::runCollectBoth()
 {
-  ///TODO: Implement
+    vector acc, mag, gyro;
+    mKeepRunning = true;
+    struct timeval start, now, elapsed;
+
+    mImu.enable();
+    mGX3.initialize();
+    mGX3.start();
+
+    gettimeofday(&start, NULL);
+    waitPeriod();
+
+    // Create an object to set the output format for the vectors
+    Eigen::IOFormat csv(Eigen::StreamPrecision, Eigen::DontAlignCols, ", ", ", ");
+
+    while(mKeepRunning)
+    {
+        gettimeofday(&now, NULL);
+
+        acc  = mImu.readAcc();
+        mag  = mImu.readMag();
+        gyro = mImu.readGyro();
+
+        timeval_subtract(&elapsed, &now, &start);
+        unsigned time = elapsed.tv_sec * 1000 + elapsed.tv_usec / 1000; // in ms since start
+
+        packet_ptr lastState;
+
+        if(mGX3.isEmpty() == false)
+        {
+            int length = mGX3.size();
+            while(length-->1)
+            {
+                mGX3.pop();
+            }
+
+            lastState = mGX3.front();
+            mGX3.pop();
+        }
+
+        // print data
+        cout << (*lastState) << "\t" << time << ",\t" << acc.format(csv) << ",\t" << mag.format(csv) << ",\t" << gyro.format(csv) << endl;
+
+        waitPeriod();
+    }
+
+    std::cerr << "KALMANFILTER: Got signal to terminate" << std::endl;
+    std::cerr << "KALMANFILTER: Stopping Gx3-communicator..." << std::endl;
+    mGX3.stop();
+    if(mGX3.join() )
+    {
+        std::cerr << "KALMANFILTER: Gx3-communicator joined" << std::endl;
+    }
+    else
+    {
+        std::cerr << "KALMANFILTER: Joining Gx3-communicator failed" << std::endl;
+    }
 }
-Mode KalmanFilter::getMode() const
+KalmanFilter::Mode KalmanFilter::getMode() const
 {
     return mMode;
 }

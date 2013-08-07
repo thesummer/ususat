@@ -226,8 +226,8 @@ public:
     */
     virtual void print(std::ostream &os) const
     {
-        os << timer << "," << acc(0)  << "," << acc(1) << ","  << acc(2)
-                    << "," << gyro(0) << "," << gyro(1) << "," << gyro(2);
+        os << timer/63 << ",\t" << acc(0)  << ", " << acc(1) << ", "  << acc(2)
+                    << ",\t" << gyro(0) << ", " << gyro(1) << ", " << gyro(2);
     }
 
     vector acc; /*!< Vector containing the accelerometer data */
@@ -258,9 +258,14 @@ public:
 
     bool readFromSerial(SerialPort &serialPort)
     {
+        unsigned count = 10;
         uint8_t buffer[size];
-        buffer[0] = serialPort.ReadByte();
-        if(buffer[0] != ACC_ANG_MAG_VEC)
+        do
+        {
+            buffer[0] = serialPort.ReadByte();
+        } while(--count && buffer[0] != ACC_ANG_MAG_VEC);
+
+        if(count == 0)
         {
             return false; //throw std::runtime_error("Wrong package identifier");
         }
@@ -291,9 +296,9 @@ public:
     */
     virtual void print(std::ostream &os) const
     {
-        os << timer << "," << acc(0)  << "," << acc(1)  << "," << acc(2)
-                    << "," << mag(0)  << "," << mag(1)  << "," << mag(2)
-                    << "," << gyro(0) << "," << gyro(1) << "," << gyro(2);
+        os << timer/63 << ",\t" << acc(0)  << ", " << acc(1)  << ", " << acc(2)
+                    << ",\t" << mag(0)  << ", " << mag(1)  << ", " << mag(2)
+                    << ",\t" << gyro(0) << ", " << gyro(1) << ", " << gyro(2);
     }
 
     vector acc; /*!< Vector containing the accelerometer data */
@@ -351,7 +356,7 @@ public:
     */
     virtual void print(std::ostream &os) const
     {
-        os << timer << "," << quat.w()  << "," << quat.x() << "," << quat.y() << "," << quat.z();
+        os << timer << ",\t" << quat.w()  << ", " << quat.x() << ", " << quat.y() << ", " << quat.z();
     }
 
     quaternion quat; /*!< Eigen::Quaternionf representing the Orientation of the IMU*/
@@ -408,12 +413,12 @@ public:
     */
     virtual void print(std::ostream &os) const
     {
-        os << timer << "," << acc(0)  << "," << acc(1)  << "," << acc(2)
-                    << "," << mag(0)  << "," << mag(1)  << "," << mag(2)
-                    << "," << gyro(0) << "," << gyro(1) << "," << gyro(2)
-                    << "," << orientation(0,0) << "," << orientation(0,1) << "," << orientation(0,1)
-                    << "," << orientation(1,0) << "," << orientation(1,1) << "," << orientation(1,2)
-                    << "," << orientation(2,0) << "," << orientation(2,1) << "," << orientation(2,2);
+        os << timer << ",\t" << acc(0)  << ", " << acc(1)  << ", " << acc(2)
+                    << ",\t" << mag(0)  << ", " << mag(1)  << ", " << mag(2)
+                    << ",\t" << gyro(0) << ", " << gyro(1) << ", " << gyro(2)
+                    << ",\t" << orientation(0,0) << ", " << orientation(0,1) << ", " << orientation(0,1)
+                    << ",\t" << orientation(1,0) << ", " << orientation(1,1) << ", " << orientation(1,2)
+                    << ",\t" << orientation(2,0) << ", " << orientation(2,1) << ", " << orientation(2,2);
 
     }
 

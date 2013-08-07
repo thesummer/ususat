@@ -89,7 +89,7 @@ int main(int argc, char **argv)
         }
     } catch (TCLAP::ArgException &e)  // catch any exceptions
     {
-        std::cerr << "error: " << e.error() << " for arg " << e.argId() << endl;
+        std::cerr << "error: " << e.error() << " for arg " << e.argId() << std::endl;
         return 1;
     }
 

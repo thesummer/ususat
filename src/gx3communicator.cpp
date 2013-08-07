@@ -45,7 +45,7 @@ using namespace USU;
 //}
 
 GX3Communicator::GX3Communicator(int priority, const char *serialDevice, SerialPort::BaudRate baudRate)
-    :RtThread(priority), mSerialPort(serialDevice), mKeepRunning(false), mBaudRate(baudRate)
+    :RtThread(priority), mSerialPort(serialDevice), mBaudRate(baudRate), mKeepRunning(false)
 {
 
 }
@@ -78,7 +78,7 @@ void GX3Communicator::run()
     // Activate Continuous mode
     SetCountinuousMode setCont(ACC_ANG_MAG_VEC);
     if(setCont.sendCommand(mSerialPort) == false)
-        ;/// TODO: Error
+        std::cerr << " Set continuous mode failed " << std::endl;/// TODO: Error
 
 //    struct timeval start, now, elapsed;
 
@@ -91,8 +91,8 @@ void GX3Communicator::run()
             mQueue.push(data);
             //        gettimeofday(&now, NULL);
             //        timeval_subtract(&elapsed, &now, &start);
-            //        unsigned long long timestamp = elapsed.tv_sec * 1000 + elapsed.tv_usec / 1000; // in ms since start
-            //        std::cout << timestamp << "\t" << data.timer/62 << std::endl;
+//                    unsigned long long timestamp = elapsed.tv_sec * 1000 + elapsed.tv_usec / 1000; // in ms since start
+//                    std::cout << (*data) << std::endl;
         }
         else
         {
