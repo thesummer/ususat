@@ -108,7 +108,7 @@ public:
 
      \return AccAngMag the first element
     */
-    GX3Packet &front() { return *mQueue.front(); }
+    packet_ptr &front() { return mQueue.front(); }
 
 private:
     GX3Communicator(const GX3Communicator& thread); /*!< Copy constructor made inaccessible by declaring it private */
@@ -117,6 +117,7 @@ private:
 
     SerialPort mSerialPort; /*!< Handles the serial port communication */
     SharedQueue<packet_ptr> mQueue;
+    SerialPort::BaudRate mBaudRate;
 
     volatile bool mKeepRunning;  /*!< Indicates if the Thread should keep running. volatile to prevent optimizing */
 };

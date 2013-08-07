@@ -45,14 +45,14 @@ using namespace USU;
 //}
 
 GX3Communicator::GX3Communicator(int priority, const char *serialDevice, SerialPort::BaudRate baudRate)
-    :RtThread(priority), mSerialPort(serialDevice), mKeepRunning(false)
+    :RtThread(priority), mSerialPort(serialDevice), mKeepRunning(false), mBaudRate(baudRate)
 {
 
 }
 
 void GX3Communicator::initialize()
 {
-    mSerialPort.Open(baudRate);
+    mSerialPort.Open(mBaudRate);
     if(mSerialPort.IsOpen() == false)
         throw std::runtime_error("Opening SerialPort failed");
 
