@@ -194,6 +194,7 @@ void KalmanFilter::runCollectMicroStrain()
 
     mKeepRunning = true;
 
+    mGX3.initialize();
     mGX3.start();
     while(mKeepRunning)
     {

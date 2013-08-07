@@ -47,6 +47,11 @@ using namespace USU;
 GX3Communicator::GX3Communicator(int priority, const char *serialDevice, SerialPort::BaudRate baudRate)
     :RtThread(priority), mSerialPort(serialDevice), mKeepRunning(false)
 {
+
+}
+
+void GX3Communicator::initialize()
+{
     mSerialPort.Open(baudRate);
     if(mSerialPort.IsOpen() == false)
         throw std::runtime_error("Opening SerialPort failed");
@@ -58,7 +63,7 @@ GX3Communicator::GX3Communicator(int priority, const char *serialDevice, SerialP
      */
     SamplingSettings initSettings(SamplingSettings::Change,  20,
                                   SamplingSettings::FlagDefault | SamplingSettings::FlagFloatLittleEndian
-                                                                | SamplingSettings::FlagEnableQuaternion);
+                                  | SamplingSettings::FlagEnableQuaternion);
 
     if(initSettings.sendCommand(mSerialPort) == false)
         throw std::runtime_error("Setting SamplingSettings failed");

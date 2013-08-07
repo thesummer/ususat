@@ -46,6 +46,7 @@ typedef std::shared_ptr<GX3Packet> packet_ptr;
 class GX3Communicator : public RtThread
 {
 public:
+
     /*!
      \brief Constructor of the class
 
@@ -57,6 +58,12 @@ public:
      */
     GX3Communicator(int priority, const char* serialDevice,
                     SerialPort::BaudRate baudRate = SerialPort::BAUD_115200);
+
+
+    /*!
+     \brief Initialize the SerialPort and the MicroStrain IMU
+    */
+    void initialize();
 
     /*!
      \brief Thread routine
