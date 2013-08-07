@@ -12,11 +12,17 @@ using namespace USU;
 
 // Parse the command line arguments
 // Define possible arguments
+const string modeText = string("Operation mode: \n\t") +
+                                 string("- pololu: Collect data from Pololu IMU and print it in csv format\n\t") +
+                                 string("- microstrain: Collect data from MicroStrain IMU and print it in csv format\n\t") +
+                                 string("- collect: Collect data from both IMUs and print it in csv format\n\t") +
+                                 string("- simpleControl: Run simple angular velocity control scheme");
+
 TCLAP::CmdLine cmd("Program for the attitude determination and control of the USU simulation table",' ', "0.1");
 
 TCLAP::ValueArg<string> trajFile("", "trajfile", "Input file for the trajectory the table should follow", false, "input.txt", "filename");
 TCLAP::ValueArg<float> pgain("", "pgain", "The P-Gain for the simple proportional speed controller", false, 1.0, "float");
-TCLAP::ValueArg<string> mode("", "mode", "Operation mode", true, string(), "mode name");
+TCLAP::ValueArg<string> mode("", "mode",  modeText , true, string(), "mode name");
 
 // Example for switching arg
 //TCLAP::SwitchArg stats("s", "stats", "Print statistics (number of spots, number of identified spots, ratio");
@@ -66,6 +72,10 @@ int main(int argc, char **argv)
         else if(mode.getValue() == "microstrain")
         {
             kalmanFilter.setMode(KalmanFilter::CollectMicroStrainData);
+        }
+        else if(mode.getValue() == "collect")
+        {
+            kalmanFilter.setMode(KalmanFilter::CollectData);
         }
         else
         {
