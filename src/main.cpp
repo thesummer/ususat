@@ -10,14 +10,15 @@ using std::string;
 #include "kalmanfilter.h"
 using namespace USU;
 
-// Parse the command line arguments
-// Define possible arguments
+// Text to explain the different modes (more elegant way to split strings over several lines?)
 const string modeText = string("Operation mode: \n\t") +
                                  string("- pololu: Collect data from Pololu IMU and print it in csv format\n\t") +
                                  string("- microstrain: Collect data from MicroStrain IMU and print it in csv format\n\t") +
                                  string("- collect: Collect data from both IMUs and print it in csv format\n\t") +
                                  string("- simpleControl: Run simple angular velocity control scheme");
 
+// Parse the command line arguments
+// Define possible arguments
 TCLAP::CmdLine cmd("Program for the attitude determination and control of the USU simulation table",' ', "0.1");
 
 TCLAP::ValueArg<string> trajFile("", "trajfile", "Input file for the trajectory the table should follow", false, "input.txt", "filename");
