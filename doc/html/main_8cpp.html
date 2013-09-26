@@ -108,13 +108,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &lt;iostream&gt;</code><br/>
 <code>#include &lt;string&gt;</code><br/>
 <code>#include &quot;tclap/CmdLine.h&quot;</code><br/>
-<code>#include &quot;<a class="el" href="kalmanfilter_8h_source.html">kalmanfilter.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="mainthread_8h_source.html">mainthread.h</a>&quot;</code><br/>
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for main.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp__incl.png" border="0" usemap="#src_2main_8cpp" alt=""/></div>
 <map name="src_2main_8cpp" id="src_2main_8cpp">
-<area shape="rect" id="node15" href="kalmanfilter_8h.html" title="kalmanfilter.h" alt="" coords="8464,83,8563,112"/><area shape="rect" id="node17" href="periodicrtthread_8h.html" title="periodicrtthread.h" alt="" coords="8601,160,8724,189"/><area shape="rect" id="node23" href="minimu_8h.html" title="minimu.h" alt="" coords="8800,160,8875,189"/><area shape="rect" id="node35" href="_lock_8h.html" title="Lock.h" alt="" coords="8527,315,8588,344"/><area shape="rect" id="node42" href="gx3communicator_8h.html" title="gx3communicator.h" alt="" coords="6325,160,6461,189"/><area shape="rect" id="node52" href="messages_8h.html" title="messages.h" alt="" coords="8433,237,8527,267"/><area shape="rect" id="node111" href="motorcontrol_8h.html" title="motorcontrol.h" alt="" coords="8372,160,8476,189"/><area shape="rect" id="node19" href="_rt_thread_8h.html" title="RtThread.h" alt="" coords="8601,237,8687,267"/><area shape="rect" id="node26" href="_i_m_u_8h.html" title="IMU.h" alt="" coords="8761,237,8820,267"/><area shape="rect" id="node28" href="vector_8h.html" title="vector.h" alt="" coords="8756,315,8825,344"/><area shape="rect" id="node30" href="_l_s_m303_8h.html" title="LSM303.h" alt="" coords="8844,237,8924,267"/><area shape="rect" id="node32" href="_l3_g_8h.html" title="L3G.h" alt="" coords="8948,237,9004,267"/><area shape="rect" id="node49" href="sharedqueue_8h.html" title="sharedqueue.h" alt="" coords="7639,237,7745,267"/></map>
+<area shape="rect" id="node15" href="mainthread_8h.html" title="mainthread.h" alt="" coords="8465,83,8561,112"/><area shape="rect" id="node17" href="periodicrtthread_8h.html" title="periodicrtthread.h" alt="" coords="8601,160,8724,189"/><area shape="rect" id="node23" href="minimu_8h.html" title="minimu.h" alt="" coords="8800,160,8875,189"/><area shape="rect" id="node35" href="_lock_8h.html" title="Lock.h" alt="" coords="8527,315,8588,344"/><area shape="rect" id="node42" href="gx3communicator_8h.html" title="gx3communicator.h" alt="" coords="6325,160,6461,189"/><area shape="rect" id="node52" href="messages_8h.html" title="messages.h" alt="" coords="8433,237,8527,267"/><area shape="rect" id="node111" href="motorcontrol_8h.html" title="motorcontrol.h" alt="" coords="8372,160,8476,189"/><area shape="rect" id="node19" href="_rt_thread_8h.html" title="RtThread.h" alt="" coords="8601,237,8687,267"/><area shape="rect" id="node26" href="_i_m_u_8h.html" title="IMU.h" alt="" coords="8761,237,8820,267"/><area shape="rect" id="node28" href="vector_8h.html" title="vector.h" alt="" coords="8756,315,8825,344"/><area shape="rect" id="node30" href="_l_s_m303_8h.html" title="LSM303.h" alt="" coords="8844,237,8924,267"/><area shape="rect" id="node32" href="_l3_g_8h.html" title="L3G.h" alt="" coords="8948,237,9004,267"/><area shape="rect" id="node49" href="sharedqueue_8h.html" title="sharedqueue.h" alt="" coords="7639,237,7745,267"/></map>
 </div>
 </div>
 <p><a href="main_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -130,7 +130,7 @@ Functions</h2></td></tr>
 <tr><td colspan="2"><h2><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#af96ded70650743059cda3d3754d8527e">modeText</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_u_s_u_1_1_kalman_filter.html">KalmanFilter</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#aa22d502c950f1bec2069cb43302986f2">kalmanFilter</a> (5, 20000,&quot;/dev/i2c-2&quot;,&quot;/dev/i2c-3&quot;)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_u_s_u_1_1_main_thread.html">MainThread</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a1939451ea621555527ed3d3000370829">kalmanFilter</a> (5, 20000,&quot;/dev/i2c-2&quot;,&quot;/dev/i2c-3&quot;)</td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
 <a class="anchor" id="a5ff6bf5435ea3c73173953178151d0d9"></a><!-- doxytag: member="main.cpp::cmd" ref="a5ff6bf5435ea3c73173953178151d0d9" args="(&quot;Program for the attitude determination and control of the USU simulation table&quot;,' ',&quot;0.1&quot;)" -->
@@ -368,12 +368,12 @@ Variables</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Variable Documentation</h2>
-<a class="anchor" id="aa22d502c950f1bec2069cb43302986f2"></a><!-- doxytag: member="main.cpp::kalmanFilter" ref="aa22d502c950f1bec2069cb43302986f2" args="(5, 20000,&quot;/dev/i2c&#45;2&quot;,&quot;/dev/i2c&#45;3&quot;)" -->
+<a class="anchor" id="a1939451ea621555527ed3d3000370829"></a><!-- doxytag: member="main.cpp::kalmanFilter" ref="a1939451ea621555527ed3d3000370829" args="(5, 20000,&quot;/dev/i2c&#45;2&quot;,&quot;/dev/i2c&#45;3&quot;)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_u_s_u_1_1_kalman_filter.html">KalmanFilter</a> <a class="el" href="main_8cpp.html#aa22d502c950f1bec2069cb43302986f2">kalmanFilter</a>(5, 20000,&quot;/dev/i2c-2&quot;,&quot;/dev/i2c-3&quot;)</td>
+          <td class="memname"><a class="el" href="class_u_s_u_1_1_main_thread.html">MainThread</a> <a class="el" href="main_8cpp.html#a1939451ea621555527ed3d3000370829">kalmanFilter</a>(5, 20000,&quot;/dev/i2c-2&quot;,&quot;/dev/i2c-3&quot;)</td>
         </tr>
       </table>
 </div>
@@ -421,7 +421,7 @@ Variables</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="main_8cpp.html">main.cpp</a>      </li>
 
-    <li class="footer">Generated on Fri Aug 9 2013 14:42:50 for U-BET by
+    <li class="footer">Generated on Thu Sep 26 2013 17:06:25 for U-BET by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

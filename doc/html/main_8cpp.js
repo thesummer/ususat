@@ -6,6 +6,6 @@ var main_8cpp =
     [ "mode", "main_8cpp.html#a83b8a2046fbea13f477dbc911111af18", null ],
     [ "pgain", "main_8cpp.html#a6570ed64e8a5f38d9e01122b85d550a9", null ],
     [ "trajFile", "main_8cpp.html#a47c81624fc567b10c92340b02469537b", null ],
-    [ "kalmanFilter", "main_8cpp.html#aa22d502c950f1bec2069cb43302986f2", null ],
+    [ "kalmanFilter", "main_8cpp.html#a1939451ea621555527ed3d3000370829", null ],
     [ "modeText", "main_8cpp.html#af96ded70650743059cda3d3754d8527e", null ]
 ];

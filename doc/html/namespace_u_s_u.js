@@ -1,9 +1,9 @@
 var namespace_u_s_u =
 [
     [ "GX3Communicator", "class_u_s_u_1_1_g_x3_communicator.html", null ],
-    [ "KalmanFilter", "class_u_s_u_1_1_kalman_filter.html", null ],
     [ "Lock", "class_u_s_u_1_1_lock.html", null ],
     [ "ScopedLock", "class_u_s_u_1_1_scoped_lock.html", null ],
+    [ "MainThread", "class_u_s_u_1_1_main_thread.html", null ],
     [ "Max127", "class_u_s_u_1_1_max127.html", null ],
     [ "GX3Packet", "class_u_s_u_1_1_g_x3_packet.html", null ],
     [ "RawAccAng", "class_u_s_u_1_1_raw_acc_ang.html", null ],

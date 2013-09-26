@@ -1,9 +1,6 @@
 var searchData=
 [
-  ['kalmanfilter',['KalmanFilter',['../class_u_s_u_1_1_kalman_filter.html',1,'USU']]],
-  ['kalmanfilter',['KalmanFilter',['../class_u_s_u_1_1_kalman_filter.html#a65e87c695dac9877015a2ace1471fdc2',1,'USU::KalmanFilter::KalmanFilter()'],['../main_8cpp.html#aa22d502c950f1bec2069cb43302986f2',1,'kalmanFilter():&#160;main.cpp']]],
-  ['kalmanfilter_2ecpp',['kalmanfilter.cpp',['../kalmanfilter_8cpp.html',1,'']]],
-  ['kalmanfilter_2eh',['kalmanfilter.h',['../kalmanfilter_8h.html',1,'']]],
+  ['kalmanfilter',['kalmanFilter',['../main_8cpp.html#a1939451ea621555527ed3d3000370829',1,'main.cpp']]],
   ['kcleardataout',['kCLEARDATAOUT',['../class_beagle___g_p_i_o.html#ac841d5ad729ca3eec9ddeda852086a28a90393fcfe5b4a4ca4ad891e20b23a74e',1,'Beagle_GPIO']]],
   ['kctrl',['kCTRL',['../class_beagle___g_p_i_o.html#ac841d5ad729ca3eec9ddeda852086a28ae7b28072958659da38e1ae39eebc65c6',1,'Beagle_GPIO']]],
   ['kdatain',['kDATAIN',['../class_beagle___g_p_i_o.html#ac841d5ad729ca3eec9ddeda852086a28a8a54ed3bad7cf86b31321c697538c1ca',1,'Beagle_GPIO']]],

@@ -118,8 +118,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_s_u_1_1_motor_control.html#a5bc78d24ed52a012a3f81cd3b62216f3">~MotorControl</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_s_u_1_1_motor_control.html#a40b7e40ce5bfb7fb0dea6c0a75d1eb5e">calculateControlResponse</a> (<a class="el" href="class_u_s_u_1_1_quaternion.html">Quaternion</a> state)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the control response from the current state estimate.  <a href="#a40b7e40ce5bfb7fb0dea6c0a75d1eb5e"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_s_u_1_1_motor_control.html#a644b231235aecaeea0d18ed2635da15c">controlFromGyro</a> (Eigen::Vector3f gyro)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses a simple algorithm to control the speed only from gyro data.  <a href="#a644b231235aecaeea0d18ed2635da15c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_s_u_1_1_motor_control.html#acd56c7bf602f8162edaa219e902b1937">controlFromGyro</a> (const Eigen::Vector3f &amp;gyro)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses a simple algorithm to control the speed only from gyro data.  <a href="#acd56c7bf602f8162edaa219e902b1937"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_s_u_1_1_motor_control.html#ad08369ed288a7816de1b3c423684f0da">setMotor</a> (int motor, int dutyCycle)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">For testing: sets the speed of a motor.  <a href="#ad08369ed288a7816de1b3c423684f0da"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_s_u_1_1_motor_control.html#a3304fd7022bf2468859a0d2edae0e2f0">getAnalog</a> (int motor, float &amp;aOut1, float &amp;aOut2)</td></tr>
@@ -217,14 +217,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a644b231235aecaeea0d18ed2635da15c"></a><!-- doxytag: member="USU::MotorControl::controlFromGyro" ref="a644b231235aecaeea0d18ed2635da15c" args="(Eigen::Vector3f gyro)" -->
+<a class="anchor" id="acd56c7bf602f8162edaa219e902b1937"></a><!-- doxytag: member="USU::MotorControl::controlFromGyro" ref="acd56c7bf602f8162edaa219e902b1937" args="(const Eigen::Vector3f &amp;gyro)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_u_s_u_1_1_motor_control.html#a644b231235aecaeea0d18ed2635da15c">MotorControl::controlFromGyro</a> </td>
+          <td class="memname">void <a class="el" href="class_u_s_u_1_1_motor_control.html#acd56c7bf602f8162edaa219e902b1937">MotorControl::controlFromGyro</a> </td>
           <td>(</td>
-          <td class="paramtype">Eigen::Vector3f&#160;</td>
+          <td class="paramtype">const Eigen::Vector3f &amp;&#160;</td>
           <td class="paramname"><em>gyro</em></td><td>)</td>
           <td></td>
         </tr>
@@ -285,7 +285,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="motorcontrol_8cpp_source.html#l00068">68</a> of file <a class="el" href="motorcontrol_8cpp_source.html">motorcontrol.cpp</a>.</p>
+<p>Definition at line <a class="el" href="motorcontrol_8cpp_source.html#l00074">74</a> of file <a class="el" href="motorcontrol_8cpp_source.html">motorcontrol.cpp</a>.</p>
 
 </div>
 </div>
@@ -323,7 +323,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="motorcontrol_8cpp_source.html#l00074">74</a> of file <a class="el" href="motorcontrol_8cpp_source.html">motorcontrol.cpp</a>.</p>
+<p>Definition at line <a class="el" href="motorcontrol_8cpp_source.html#l00080">80</a> of file <a class="el" href="motorcontrol_8cpp_source.html">motorcontrol.cpp</a>.</p>
 
 </div>
 </div>
@@ -350,7 +350,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="motorcontrol_8cpp_source.html#l00086">86</a> of file <a class="el" href="motorcontrol_8cpp_source.html">motorcontrol.cpp</a>.</p>
+<p>Definition at line <a class="el" href="motorcontrol_8cpp_source.html#l00092">92</a> of file <a class="el" href="motorcontrol_8cpp_source.html">motorcontrol.cpp</a>.</p>
 
 </div>
 </div>
@@ -368,7 +368,7 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="motorcontrol_8cpp_source.html#l00093">93</a> of file <a class="el" href="motorcontrol_8cpp_source.html">motorcontrol.cpp</a>.</p>
+<p>Definition at line <a class="el" href="motorcontrol_8cpp_source.html#l00099">99</a> of file <a class="el" href="motorcontrol_8cpp_source.html">motorcontrol.cpp</a>.</p>
 
 </div>
 </div>
@@ -386,7 +386,7 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="motorcontrol_8cpp_source.html#l00102">102</a> of file <a class="el" href="motorcontrol_8cpp_source.html">motorcontrol.cpp</a>.</p>
+<p>Definition at line <a class="el" href="motorcontrol_8cpp_source.html#l00108">108</a> of file <a class="el" href="motorcontrol_8cpp_source.html">motorcontrol.cpp</a>.</p>
 
 </div>
 </div>
@@ -424,7 +424,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="motorcontrol_8cpp_source.html#l00063">63</a> of file <a class="el" href="motorcontrol_8cpp_source.html">motorcontrol.cpp</a>.</p>
+<p>Definition at line <a class="el" href="motorcontrol_8cpp_source.html#l00069">69</a> of file <a class="el" href="motorcontrol_8cpp_source.html">motorcontrol.cpp</a>.</p>
 
 </div>
 </div>
@@ -443,7 +443,7 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="motorcontrol_8cpp_source.html#l00098">98</a> of file <a class="el" href="motorcontrol_8cpp_source.html">motorcontrol.cpp</a>.</p>
+<p>Definition at line <a class="el" href="motorcontrol_8cpp_source.html#l00104">104</a> of file <a class="el" href="motorcontrol_8cpp_source.html">motorcontrol.cpp</a>.</p>
 
 </div>
 </div>
@@ -462,7 +462,7 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="motorcontrol_8cpp_source.html#l00107">107</a> of file <a class="el" href="motorcontrol_8cpp_source.html">motorcontrol.cpp</a>.</p>
+<p>Definition at line <a class="el" href="motorcontrol_8cpp_source.html#l00113">113</a> of file <a class="el" href="motorcontrol_8cpp_source.html">motorcontrol.cpp</a>.</p>
 
 </div>
 </div>
@@ -491,7 +491,7 @@ Public Member Functions</h2></td></tr>
       <li class="navelem"><a class="el" href="namespace_u_s_u.html">USU</a>      </li>
       <li class="navelem"><a class="el" href="class_u_s_u_1_1_motor_control.html">MotorControl</a>      </li>
 
-    <li class="footer">Generated on Fri Aug 9 2013 14:42:50 for U-BET by
+    <li class="footer">Generated on Thu Sep 26 2013 17:06:26 for U-BET by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

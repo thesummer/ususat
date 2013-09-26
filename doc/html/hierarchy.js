@@ -30,7 +30,7 @@ var hierarchy =
         [ "DataCollector", "class_data_collector.html", null ],
         [ "DataCollector", "class_data_collector.html", null ],
         [ "MyThread", "class_my_thread.html", null ],
-        [ "USU::KalmanFilter", "class_u_s_u_1_1_kalman_filter.html", null ]
+        [ "USU::MainThread", "class_u_s_u_1_1_main_thread.html", null ]
       ] ]
     ] ],
     [ "USU::ScopedLock", "class_u_s_u_1_1_scoped_lock.html", null ],

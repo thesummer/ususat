@@ -6,7 +6,7 @@ var searchData=
   ['closespi',['closeSPI',['../class_beagle___g_p_i_o.html#a747aaea28330bc339002e43f0e04bb0c',1,'Beagle_GPIO']]],
   ['cmd',['cmd',['../main_8cpp.html#a5ff6bf5435ea3c73173953178151d0d9',1,'main.cpp']]],
   ['configurepin',['configurePin',['../class_beagle___g_p_i_o.html#abdcefa3029c653b16bdf11075601b1fa',1,'Beagle_GPIO']]],
-  ['controlfromgyro',['controlFromGyro',['../class_u_s_u_1_1_motor_control.html#a644b231235aecaeea0d18ed2635da15c',1,'USU::MotorControl']]],
+  ['controlfromgyro',['controlFromGyro',['../class_u_s_u_1_1_motor_control.html#acd56c7bf602f8162edaa219e902b1937',1,'USU::MotorControl']]],
   ['cpwm',['cPWM',['../classc_p_w_m.html#a03c79bd28b7eef4ee13b5130079cf8a4',1,'cPWM']]],
   ['creatematrix',['createMatrix',['../class_u_s_u_1_1_g_x3_packet.html#a67d3f4e076c52f8e46f0407fd994a94b',1,'USU::GX3Packet']]],
   ['createuint',['createUInt',['../class_u_s_u_1_1_g_x3_packet.html#a2f85a59ea80e3eede67faf51e5cfda92',1,'USU::GX3Packet']]],
