@@ -46,13 +46,13 @@ int timeval_subtract (struct timeval * result, struct timeval * x, struct timeva
     return x->tv_sec < y->tv_sec;
 }
 
-KalmanFilter::KalmanFilter(int priority, unsigned int period_us, const char *i2cImu, const char *i2cMotor)
+MainThread::MainThread(int priority, unsigned int period_us, const char *i2cImu, const char *i2cMotor)
     :PeriodicRtThread(priority, period_us), mMode(CollectPololuData), mImu(i2cImu),
       mGX3(priority, "/dev/ttyO4"), mKeepRunning(false)
 {
 }
 
-void KalmanFilter::run()
+void MainThread::run()
 {
     switch(mMode)
     {
@@ -69,13 +69,13 @@ void KalmanFilter::run()
     std::cerr << "KALMANFILTER: Terminating now..." << std::endl;
 }
 
-bool KalmanFilter::getState()
+bool MainThread::getState()
 {
     ScopedLock scLock(mStateLock);
     return mState;
 }
 
-void KalmanFilter::initializeModeSimpleControl(std::string trajFilename, float pgain)
+void MainThread::initializeModeSimpleControl(std::string trajFilename, float pgain)
 {
     std::ifstream inFile;
     inFile.open(trajFilename);
@@ -102,7 +102,7 @@ void KalmanFilter::initializeModeSimpleControl(std::string trajFilename, float p
     mMotors.setPGain(pgain);
 }
 
-void KalmanFilter::runSimpleControl()
+void MainThread::runSimpleControl()
 {
     vector gyro;
     mKeepRunning = true;
@@ -167,7 +167,7 @@ void KalmanFilter::runSimpleControl()
     std::cerr << "KALMANFILTER: Got signal to terminate" << std::endl;
 }
 
-void KalmanFilter::runCollectPololu()
+void MainThread::runCollectPololu()
 {
     vector acc, mag, gyro;
     mKeepRunning = true;
@@ -201,7 +201,7 @@ void KalmanFilter::runCollectPololu()
     std::cerr << "KALMANFILTER: Got signal to terminate" << std::endl;
 }
 
-void KalmanFilter::runCollectMicroStrain()
+void MainThread::runCollectMicroStrain()
 {
 
     mKeepRunning = true;
@@ -242,7 +242,7 @@ void KalmanFilter::runCollectMicroStrain()
     }
 }
 
-void KalmanFilter::runCollectBoth()
+void MainThread::runCollectBoth()
 {
     vector acc, mag, gyro;
     mKeepRunning = true;
@@ -301,12 +301,12 @@ void KalmanFilter::runCollectBoth()
         std::cerr << "KALMANFILTER: Joining Gx3-communicator failed" << std::endl;
     }
 }
-KalmanFilter::Mode KalmanFilter::getMode() const
+MainThread::Mode MainThread::getMode() const
 {
     return mMode;
 }
 
-void KalmanFilter::setMode(const Mode &value)
+void MainThread::setMode(const Mode &value)
 {
     mMode = value;
 }
