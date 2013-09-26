@@ -46,14 +46,20 @@ void MotorControl::calculateControlResponse(Quaternion state)
     /// [...]
 }
 
-void MotorControl::controlFromGyro(Eigen::Vector3f gyro)
+void MotorControl::controlFromGyro(const Eigen::Vector3f & gyro)
 {    
-    float speeds[4];
-    float currents[4];
-    getAnalogs(speeds, currents);
+//    float speeds[4];
+//    float currents[4];
+//    getAnalogs(speeds, currents);
 
-    int speeds_input[4];
-    getDutyCycles(speeds_input);
+//    int speeds_input[4];
+//    getDutyCycles(speeds_input);
+
+    int speed = (int) mSetValue(2);
+    mMotor[0]->setSpeed(speed);
+    mMotor[1]->setSpeed(speed);
+    mMotor[2]->setSpeed(speed);
+    mMotor[3]->setSpeed(speed);
 
     // mPGain I already have this, do the math to go from speeds to rpms (or rad/s), then Eigen::Vector3f err = (gyro - mSetValue)
     // From err to 4 * pwms

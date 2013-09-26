@@ -66,7 +66,7 @@ public:
 
      \param gyro Vector with the current angular rates
     */
-    void controlFromGyro(Eigen::Vector3f gyro);
+    void controlFromGyro(const Eigen::Vector3f &gyro);
 
     /*!
      \brief For testing: sets the speed of a motor

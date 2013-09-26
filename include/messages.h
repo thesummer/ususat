@@ -115,6 +115,7 @@ public:
         return (sum == temp );
     }
 
+
 protected:
     /*!
      \brief Creates a Eigen::Vector3f consisting of 3 floats from 12 sucessive bytes
