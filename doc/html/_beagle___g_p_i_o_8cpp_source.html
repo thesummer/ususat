@@ -286,8 +286,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00185"></a>00185         <span class="keywordflow">if</span> ( !m_active )
 <a name="l00186"></a>00186                 <span class="keywordflow">return</span> <a class="code" href="class_beagle___g_p_i_o.html#a40ebd672d74de41bbf5944109e1302eea115553a9517b306e3bf301889cfc8e8b">kFail</a>;
 <a name="l00187"></a>00187         
-<a name="l00188"></a>00188         <a class="code" href="_beagle___g_p_i_o_8h.html#acdcc5aaebf3f273c1762f24a6ece2e5e">assert</a>(<a class="code" href="class_beagle___g_p_i_o.html#ae7919c981429a17c48c601664a61d64a">GPIO_Pin_Bank</a>[_pin]&gt;=0);
-<a name="l00189"></a>00189         <a class="code" href="_beagle___g_p_i_o_8h.html#acdcc5aaebf3f273c1762f24a6ece2e5e">assert</a>(<a class="code" href="class_beagle___g_p_i_o.html#a9a48339b54de8e6c884ddad8629a3647">GPIO_Pin_Id</a>[_pin]&gt;=0);
+<a name="l00188"></a>00188     <a class="code" href="_beagle___g_p_i_o_8h.html#a63f9aec6bc46cc07613c0e8bb6571879">gp_assert</a>(<a class="code" href="class_beagle___g_p_i_o.html#ae7919c981429a17c48c601664a61d64a">GPIO_Pin_Bank</a>[_pin]&gt;=0);
+<a name="l00189"></a>00189     <a class="code" href="_beagle___g_p_i_o_8h.html#a63f9aec6bc46cc07613c0e8bb6571879">gp_assert</a>(<a class="code" href="class_beagle___g_p_i_o.html#a9a48339b54de8e6c884ddad8629a3647">GPIO_Pin_Id</a>[_pin]&gt;=0);
 <a name="l00190"></a>00190 
 <a name="l00191"></a>00191         <span class="comment">// Set Pin as GPIO on the pad control</span>
 <a name="l00192"></a>00192         m_controlModule[<a class="code" href="class_beagle___g_p_i_o.html#ae4a0a2a56a0ba31145a5f41eb3439886">GPIO_Pad_Control</a>[_pin]/4] |= 0x07;
@@ -319,8 +319,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00218"></a>00218         <span class="keywordflow">if</span> ( !m_active )
 <a name="l00219"></a>00219                 <span class="keywordflow">return</span> <a class="code" href="class_beagle___g_p_i_o.html#a40ebd672d74de41bbf5944109e1302eea115553a9517b306e3bf301889cfc8e8b">kFail</a>;
 <a name="l00220"></a>00220         
-<a name="l00221"></a>00221         <a class="code" href="_beagle___g_p_i_o_8h.html#acdcc5aaebf3f273c1762f24a6ece2e5e">assert</a>(<a class="code" href="class_beagle___g_p_i_o.html#ae7919c981429a17c48c601664a61d64a">GPIO_Pin_Bank</a>[_pin]&gt;=0);
-<a name="l00222"></a>00222         <a class="code" href="_beagle___g_p_i_o_8h.html#acdcc5aaebf3f273c1762f24a6ece2e5e">assert</a>(<a class="code" href="class_beagle___g_p_i_o.html#a9a48339b54de8e6c884ddad8629a3647">GPIO_Pin_Id</a>[_pin]&gt;=0);
+<a name="l00221"></a>00221     <a class="code" href="_beagle___g_p_i_o_8h.html#a63f9aec6bc46cc07613c0e8bb6571879">gp_assert</a>(<a class="code" href="class_beagle___g_p_i_o.html#ae7919c981429a17c48c601664a61d64a">GPIO_Pin_Bank</a>[_pin]&gt;=0);
+<a name="l00222"></a>00222     <a class="code" href="_beagle___g_p_i_o_8h.html#a63f9aec6bc46cc07613c0e8bb6571879">gp_assert</a>(<a class="code" href="class_beagle___g_p_i_o.html#a9a48339b54de8e6c884ddad8629a3647">GPIO_Pin_Id</a>[_pin]&gt;=0);
 <a name="l00223"></a>00223 
 <a name="l00224"></a>00224         <span class="comment">// Set Pin as GPIO on the pad control</span>
 <a name="l00225"></a>00225         m_controlModule[<a class="code" href="class_beagle___g_p_i_o.html#ae4a0a2a56a0ba31145a5f41eb3439886">GPIO_Pad_Control</a>[_pin]/4] |= 0x07;
@@ -348,8 +348,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00247"></a>00247 <span class="comment">// Write a value to a pin</span>
 <a name="l00248"></a><a class="code" href="class_beagle___g_p_i_o.html#a33d763b486233269f5e8045b69d9ec49">00248</a> <a class="code" href="class_beagle___g_p_i_o.html#a40ebd672d74de41bbf5944109e1302ee">Beagle_GPIO::Beagle_GPIO_Status</a> <a class="code" href="class_beagle___g_p_i_o.html#a33d763b486233269f5e8045b69d9ec49">Beagle_GPIO::writePin</a>( <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> _pin, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> _value )
 <a name="l00249"></a>00249 {
-<a name="l00250"></a>00250         <a class="code" href="_beagle___g_p_i_o_8h.html#acdcc5aaebf3f273c1762f24a6ece2e5e">assert</a>(<a class="code" href="class_beagle___g_p_i_o.html#ae7919c981429a17c48c601664a61d64a">GPIO_Pin_Bank</a>[_pin]&gt;=0);
-<a name="l00251"></a>00251         <a class="code" href="_beagle___g_p_i_o_8h.html#acdcc5aaebf3f273c1762f24a6ece2e5e">assert</a>(<a class="code" href="class_beagle___g_p_i_o.html#a9a48339b54de8e6c884ddad8629a3647">GPIO_Pin_Id</a>[_pin]&gt;=0);
+<a name="l00250"></a>00250     <a class="code" href="_beagle___g_p_i_o_8h.html#a63f9aec6bc46cc07613c0e8bb6571879">gp_assert</a>(<a class="code" href="class_beagle___g_p_i_o.html#ae7919c981429a17c48c601664a61d64a">GPIO_Pin_Bank</a>[_pin]&gt;=0);
+<a name="l00251"></a>00251     <a class="code" href="_beagle___g_p_i_o_8h.html#a63f9aec6bc46cc07613c0e8bb6571879">gp_assert</a>(<a class="code" href="class_beagle___g_p_i_o.html#a9a48339b54de8e6c884ddad8629a3647">GPIO_Pin_Id</a>[_pin]&gt;=0);
 <a name="l00252"></a>00252 
 <a name="l00253"></a>00253         <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> v = (_value &amp; 0x01) &lt;&lt; <a class="code" href="class_beagle___g_p_i_o.html#a9a48339b54de8e6c884ddad8629a3647">GPIO_Pin_Id</a>[_pin];
 <a name="l00254"></a>00254         <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> mask = 0x1 &lt;&lt; <a class="code" href="class_beagle___g_p_i_o.html#a9a48339b54de8e6c884ddad8629a3647">GPIO_Pin_Id</a>[_pin];
@@ -368,8 +368,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00267"></a>00267 <span class="comment">// Read a value from a pin</span>
 <a name="l00268"></a><a class="code" href="class_beagle___g_p_i_o.html#a698b1f9ef0e609f1b28d823a7d01a8d6">00268</a> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="class_beagle___g_p_i_o.html#a698b1f9ef0e609f1b28d823a7d01a8d6">Beagle_GPIO::readPin</a>( <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> _pin )
 <a name="l00269"></a>00269 {
-<a name="l00270"></a>00270         <a class="code" href="_beagle___g_p_i_o_8h.html#acdcc5aaebf3f273c1762f24a6ece2e5e">assert</a>(<a class="code" href="class_beagle___g_p_i_o.html#ae7919c981429a17c48c601664a61d64a">GPIO_Pin_Bank</a>[_pin]&gt;=0);
-<a name="l00271"></a>00271         <a class="code" href="_beagle___g_p_i_o_8h.html#acdcc5aaebf3f273c1762f24a6ece2e5e">assert</a>(<a class="code" href="class_beagle___g_p_i_o.html#a9a48339b54de8e6c884ddad8629a3647">GPIO_Pin_Id</a>[_pin]&gt;=0);
+<a name="l00270"></a>00270     <a class="code" href="_beagle___g_p_i_o_8h.html#a63f9aec6bc46cc07613c0e8bb6571879">gp_assert</a>(<a class="code" href="class_beagle___g_p_i_o.html#ae7919c981429a17c48c601664a61d64a">GPIO_Pin_Bank</a>[_pin]&gt;=0);
+<a name="l00271"></a>00271     <a class="code" href="_beagle___g_p_i_o_8h.html#a63f9aec6bc46cc07613c0e8bb6571879">gp_assert</a>(<a class="code" href="class_beagle___g_p_i_o.html#a9a48339b54de8e6c884ddad8629a3647">GPIO_Pin_Id</a>[_pin]&gt;=0);
 <a name="l00272"></a>00272 
 <a name="l00273"></a>00273         <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> bit = <a class="code" href="class_beagle___g_p_i_o.html#a9a48339b54de8e6c884ddad8629a3647">GPIO_Pin_Id</a>[_pin];
 <a name="l00274"></a>00274         <span class="keywordflow">return</span> (m_gpio[<a class="code" href="class_beagle___g_p_i_o.html#ae7919c981429a17c48c601664a61d64a">GPIO_Pin_Bank</a>[_pin]][<a class="code" href="class_beagle___g_p_i_o.html#ac841d5ad729ca3eec9ddeda852086a28a8a54ed3bad7cf86b31321c697538c1ca">kDATAIN</a>/4] &amp; (0x1 &lt;&lt; bit)) &gt;&gt; bit;
@@ -477,9 +477,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00376"></a>00376 <span class="comment">// Send SPI Buffer</span>
 <a name="l00377"></a><a class="code" href="class_beagle___g_p_i_o.html#a74e936b8da8c28a39a44707317059a01">00377</a> <span class="keywordtype">void</span> <a class="code" href="class_beagle___g_p_i_o.html#a74e936b8da8c28a39a44707317059a01">Beagle_GPIO::sendSPIBuffer</a>( <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> _buffer, <span class="keywordtype">int</span> _size )
 <a name="l00378"></a>00378 {
-<a name="l00379"></a>00379         <a class="code" href="_beagle___g_p_i_o_8h.html#acdcc5aaebf3f273c1762f24a6ece2e5e">assert</a>( m_spi_fd &gt;= 0 );
-<a name="l00380"></a>00380         <a class="code" href="_beagle___g_p_i_o_8h.html#acdcc5aaebf3f273c1762f24a6ece2e5e">assert</a>( _buffer &gt; 0 );
-<a name="l00381"></a>00381         <a class="code" href="_beagle___g_p_i_o_8h.html#acdcc5aaebf3f273c1762f24a6ece2e5e">assert</a>( _size &gt; 0 );
+<a name="l00379"></a>00379     <a class="code" href="_beagle___g_p_i_o_8h.html#a63f9aec6bc46cc07613c0e8bb6571879">gp_assert</a>( m_spi_fd &gt;= 0 );
+<a name="l00380"></a>00380     <a class="code" href="_beagle___g_p_i_o_8h.html#a63f9aec6bc46cc07613c0e8bb6571879">gp_assert</a>( _buffer &gt; 0 );
+<a name="l00381"></a>00381     <a class="code" href="_beagle___g_p_i_o_8h.html#a63f9aec6bc46cc07613c0e8bb6571879">gp_assert</a>( _size &gt; 0 );
 <a name="l00382"></a>00382 
 <a name="l00383"></a>00383         m_spi_ioc_tr.tx_buf = _buffer;
 <a name="l00384"></a>00384         m_spi_ioc_tr.rx_buf = (<span class="keywordtype">unsigned</span> long)(m_spi_buffer_rx);
@@ -519,7 +519,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="_beagle___g_p_i_o_8cpp.html">Beagle_GPIO.cpp</a>      </li>
 
-    <li class="footer">Generated on Fri Aug 2 2013 12:16:41 for U-BET by
+    <li class="footer">Generated on Fri Aug 9 2013 14:42:49 for U-BET by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

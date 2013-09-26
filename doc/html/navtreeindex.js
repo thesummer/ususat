@@ -10,6 +10,7 @@ var NAVTREEINDEX =
 "namespace_u_s_u.html":[1,0,0],
 "namespacemembers.html":[1,1,0],
 "namespacemembers_vars.html":[1,1,1],
+"namespacemembers_type.html":[1,1,2],
 "annotated.html":[2,0],
 "class_u_s_u_1_1_acc_ang_mag.html":[2,0,0],
 "class_u_s_u_1_1_acc_ang_mag_orientation_mat.html":[2,0,1],

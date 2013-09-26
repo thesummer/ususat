@@ -104,47 +104,108 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00003"></a>00003 <span class="preprocessor">#include&lt;unistd.h&gt;</span>
 <a name="l00004"></a>00004 
 <a name="l00005"></a>00005 <span class="preprocessor">#include &lt;iostream&gt;</span>
-<a name="l00006"></a>00006 
-<a name="l00007"></a>00007 <span class="preprocessor">#include &quot;<a class="code" href="kalmanfilter_8h.html">kalmanfilter.h</a>&quot;</span>
-<a name="l00008"></a>00008 <span class="keyword">using namespace </span>USU;
-<a name="l00009"></a>00009 
-<a name="l00010"></a>00010 <a class="code" href="class_u_s_u_1_1_kalman_filter.html" title="Represents the Periodic Thread class for state estimation.">KalmanFilter</a> <a class="code" href="main_8cpp.html#aa22d502c950f1bec2069cb43302986f2">kalmanFilter</a>(5, 20000 , <span class="stringliteral">&quot;/dev/i2c-2&quot;</span>, <span class="stringliteral">&quot;/dev/i2c-3&quot;</span>);
-<a name="l00011"></a>00011 <span class="comment">//bool run = true;</span>
+<a name="l00006"></a>00006 <span class="preprocessor">#include &lt;string&gt;</span>
+<a name="l00007"></a>00007 <span class="keyword">using</span> std::string;
+<a name="l00008"></a>00008 
+<a name="l00009"></a>00009 <span class="preprocessor">#include &quot;tclap/CmdLine.h&quot;</span>
+<a name="l00010"></a>00010 <span class="preprocessor">#include &quot;<a class="code" href="kalmanfilter_8h.html">kalmanfilter.h</a>&quot;</span>
+<a name="l00011"></a>00011 <span class="keyword">using namespace </span>USU;
 <a name="l00012"></a>00012 
-<a name="l00013"></a><a class="code" href="main_8cpp.html#a2b488c19fa697f1727760b3fd8f45837">00013</a> <span class="keywordtype">void</span> <a class="code" href="threading-example_8cpp.html#a2b488c19fa697f1727760b3fd8f45837">endProgram</a>(<span class="keywordtype">int</span> s)
-<a name="l00014"></a>00014 {
-<a name="l00015"></a>00015     std::cerr &lt;&lt; <span class="stringliteral">&quot;MAIN: Got signal for termination&quot;</span> &lt;&lt; std::endl;
-<a name="l00016"></a>00016     std::cerr &lt;&lt; <span class="stringliteral">&quot;MAIN: Stopping kalman filter thread...&quot;</span> &lt;&lt; std::endl;
-<a name="l00017"></a>00017     <a class="code" href="main_8cpp.html#aa22d502c950f1bec2069cb43302986f2">kalmanFilter</a>.<a class="code" href="class_u_s_u_1_1_kalman_filter.html#a3f8b3ce719dcb24745150f8c4ef361b8" title="Signals the thread to stop.">stop</a>();
-<a name="l00018"></a>00018 }
+<a name="l00013"></a>00013 <span class="comment">// Text to explain the different modes (more elegant way to split strings over several lines?)</span>
+<a name="l00014"></a><a class="code" href="main_8cpp.html#af96ded70650743059cda3d3754d8527e">00014</a> <span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="main_8cpp.html#af96ded70650743059cda3d3754d8527e">modeText</a> = string(<span class="stringliteral">&quot;Operation mode: \n\t&quot;</span>) +
+<a name="l00015"></a>00015                                  string(<span class="stringliteral">&quot;- pololu: Collect data from Pololu IMU and print it in csv format\n\t&quot;</span>) +
+<a name="l00016"></a>00016                                  string(<span class="stringliteral">&quot;- microstrain: Collect data from MicroStrain IMU and print it in csv format\n\t&quot;</span>) +
+<a name="l00017"></a>00017                                  string(<span class="stringliteral">&quot;- collect: Collect data from both IMUs and print it in csv format\n\t&quot;</span>) +
+<a name="l00018"></a>00018                                  string(<span class="stringliteral">&quot;- simpleControl: Run simple angular velocity control scheme&quot;</span>);
 <a name="l00019"></a>00019 
-<a name="l00020"></a>00020 
-<a name="l00021"></a><a class="code" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">00021</a> <span class="keywordtype">int</span> <a class="code" href="_c_make_c_compiler_id_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main</a>()
-<a name="l00022"></a>00022 {
-<a name="l00023"></a>00023     <span class="comment">// Register endProgram function as</span>
-<a name="l00024"></a>00024     <span class="comment">// signal handler for the kill signal (ctrl+c)</span>
-<a name="l00025"></a>00025     <span class="keyword">struct </span>sigaction sigIntHandler;
-<a name="l00026"></a>00026     sigIntHandler.sa_handler = <a class="code" href="threading-example_8cpp.html#a2b488c19fa697f1727760b3fd8f45837">endProgram</a>;
-<a name="l00027"></a>00027     sigemptyset(&amp;sigIntHandler.sa_mask);
-<a name="l00028"></a>00028     sigIntHandler.sa_flags = 0;
-<a name="l00029"></a>00029 
-<a name="l00030"></a>00030     sigaction(SIGINT, &amp;sigIntHandler, NULL);
+<a name="l00020"></a>00020 <span class="comment">// Parse the command line arguments</span>
+<a name="l00021"></a>00021 <span class="comment">// Define possible arguments</span>
+<a name="l00022"></a>00022 TCLAP::CmdLine <a class="code" href="main_8cpp.html#a5ff6bf5435ea3c73173953178151d0d9">cmd</a>(<span class="stringliteral">&quot;Program for the attitude determination and control of the USU simulation table&quot;</span>,<span class="charliteral">&#39; &#39;</span>, <span class="stringliteral">&quot;0.1&quot;</span>);
+<a name="l00023"></a>00023 
+<a name="l00024"></a>00024 TCLAP::ValueArg&lt;string&gt; <a class="code" href="main_8cpp.html#a47c81624fc567b10c92340b02469537b">trajFile</a>(<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;trajfile&quot;</span>, <span class="stringliteral">&quot;Input file for the trajectory the table should follow&quot;</span>, <span class="keyword">false</span>, <span class="stringliteral">&quot;input.txt&quot;</span>, <span class="stringliteral">&quot;filename&quot;</span>);
+<a name="l00025"></a>00025 TCLAP::ValueArg&lt;float&gt; <a class="code" href="main_8cpp.html#a6570ed64e8a5f38d9e01122b85d550a9">pgain</a>(<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;pgain&quot;</span>, <span class="stringliteral">&quot;The P-Gain for the simple proportional speed controller&quot;</span>, <span class="keyword">false</span>, 1.0, <span class="stringliteral">&quot;float&quot;</span>);
+<a name="l00026"></a>00026 TCLAP::ValueArg&lt;string&gt; <a class="code" href="main_8cpp.html#a83b8a2046fbea13f477dbc911111af18">mode</a>(<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;mode&quot;</span>,  <a class="code" href="main_8cpp.html#af96ded70650743059cda3d3754d8527e">modeText</a> , <span class="keyword">true</span>, <span class="keywordtype">string</span>(), <span class="stringliteral">&quot;mode name&quot;</span>);
+<a name="l00027"></a>00027 
+<a name="l00028"></a>00028 <span class="comment">// Example for switching arg</span>
+<a name="l00029"></a>00029 <span class="comment">//TCLAP::SwitchArg stats(&quot;s&quot;, &quot;stats&quot;, &quot;Print statistics (number of spots, number of identified spots, ratio&quot;);</span>
+<a name="l00030"></a>00030 
 <a name="l00031"></a>00031 
-<a name="l00032"></a>00032     <a class="code" href="main_8cpp.html#aa22d502c950f1bec2069cb43302986f2">kalmanFilter</a>.<a class="code" href="class_u_s_u_1_1_rt_thread.html#aadd18e02db9c71911671936247d0ac70" title="Creates and starts the pthread.">start</a>();
-<a name="l00033"></a>00033 
-<a name="l00034"></a>00034     <span class="keywordflow">if</span>(<a class="code" href="main_8cpp.html#aa22d502c950f1bec2069cb43302986f2">kalmanFilter</a>.<a class="code" href="class_u_s_u_1_1_rt_thread.html#a3e86cb1e51e7966a6aa9ce06b154b73e" title="Waits for the thread to join.">join</a>() )
-<a name="l00035"></a>00035     {
-<a name="l00036"></a>00036         std::cerr &lt;&lt; <span class="stringliteral">&quot;MAIN: Kalman filter thread joined&quot;</span> &lt;&lt; std::endl;
-<a name="l00037"></a>00037         std::cerr &lt;&lt; <span class="stringliteral">&quot;MAIN: Terminating now...&quot;</span> &lt;&lt; std::endl;
-<a name="l00038"></a>00038         <span class="keywordflow">return</span> 0;
-<a name="l00039"></a>00039     }
-<a name="l00040"></a>00040     <span class="keywordflow">else</span>
-<a name="l00041"></a>00041     {
-<a name="l00042"></a>00042         std::cerr &lt;&lt; <span class="stringliteral">&quot;MAIN: Joining Kalman filter thread failed&quot;</span> &lt;&lt; std::endl;
-<a name="l00043"></a>00043         std::cerr &lt;&lt; <span class="stringliteral">&quot;MAIN: Terminating now...&quot;</span> &lt;&lt; std::endl;
-<a name="l00044"></a>00044         <span class="keywordflow">return</span> 1;
-<a name="l00045"></a>00045     }
-<a name="l00046"></a>00046 }
+<a name="l00032"></a>00032 <a class="code" href="class_u_s_u_1_1_kalman_filter.html" title="Represents the Periodic Thread class for state estimation.">KalmanFilter</a> <a class="code" href="main_8cpp.html#aa22d502c950f1bec2069cb43302986f2">kalmanFilter</a>(5, 20000 , <span class="stringliteral">&quot;/dev/i2c-2&quot;</span>, <span class="stringliteral">&quot;/dev/i2c-3&quot;</span>);
+<a name="l00033"></a>00033 <span class="comment">//bool run = true;</span>
+<a name="l00034"></a>00034 
+<a name="l00035"></a><a class="code" href="main_8cpp.html#a2b488c19fa697f1727760b3fd8f45837">00035</a> <span class="keywordtype">void</span> <a class="code" href="threading-example_8cpp.html#a2b488c19fa697f1727760b3fd8f45837">endProgram</a>(<span class="keywordtype">int</span> s)
+<a name="l00036"></a>00036 {
+<a name="l00037"></a>00037     std::cerr &lt;&lt; <span class="stringliteral">&quot;MAIN: Got signal for termination&quot;</span> &lt;&lt; std::endl;
+<a name="l00038"></a>00038     std::cerr &lt;&lt; <span class="stringliteral">&quot;MAIN: Stopping kalman filter thread...&quot;</span> &lt;&lt; std::endl;
+<a name="l00039"></a>00039     <a class="code" href="main_8cpp.html#aa22d502c950f1bec2069cb43302986f2">kalmanFilter</a>.<a class="code" href="class_u_s_u_1_1_kalman_filter.html#a3f8b3ce719dcb24745150f8c4ef361b8" title="Signals the thread to stop.">stop</a>();
+<a name="l00040"></a>00040 }
+<a name="l00041"></a>00041 
+<a name="l00042"></a>00042 
+<a name="l00043"></a><a class="code" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">00043</a> <span class="keywordtype">int</span> <a class="code" href="_c_make_c_compiler_id_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv)
+<a name="l00044"></a>00044 {
+<a name="l00045"></a>00045     <span class="comment">// Register endProgram function as</span>
+<a name="l00046"></a>00046     <span class="comment">// signal handler for the kill signal (ctrl+c)</span>
+<a name="l00047"></a>00047     <span class="keyword">struct </span>sigaction sigIntHandler;
+<a name="l00048"></a>00048     sigIntHandler.sa_handler = <a class="code" href="threading-example_8cpp.html#a2b488c19fa697f1727760b3fd8f45837">endProgram</a>;
+<a name="l00049"></a>00049     sigemptyset(&amp;sigIntHandler.sa_mask);
+<a name="l00050"></a>00050     sigIntHandler.sa_flags = 0;
+<a name="l00051"></a>00051 
+<a name="l00052"></a>00052     sigaction(SIGINT, &amp;sigIntHandler, NULL);
+<a name="l00053"></a>00053 
+<a name="l00054"></a>00054     <span class="keywordflow">try</span>
+<a name="l00055"></a>00055     {
+<a name="l00056"></a>00056         <span class="comment">// Register commandline options to parser</span>
+<a name="l00057"></a>00057         <a class="code" href="main_8cpp.html#a5ff6bf5435ea3c73173953178151d0d9">cmd</a>.add(<a class="code" href="main_8cpp.html#a47c81624fc567b10c92340b02469537b">trajFile</a>);
+<a name="l00058"></a>00058         <a class="code" href="main_8cpp.html#a5ff6bf5435ea3c73173953178151d0d9">cmd</a>.add(<a class="code" href="main_8cpp.html#a6570ed64e8a5f38d9e01122b85d550a9">pgain</a>);
+<a name="l00059"></a>00059         <a class="code" href="main_8cpp.html#a5ff6bf5435ea3c73173953178151d0d9">cmd</a>.add(<a class="code" href="main_8cpp.html#a83b8a2046fbea13f477dbc911111af18">mode</a>);
+<a name="l00060"></a>00060 
+<a name="l00061"></a>00061         <a class="code" href="main_8cpp.html#a5ff6bf5435ea3c73173953178151d0d9">cmd</a>.parse(argc, argv);
+<a name="l00062"></a>00062 
+<a name="l00063"></a>00063         <span class="comment">// Evaluate command line options</span>
+<a name="l00064"></a>00064         <span class="keywordflow">if</span>(<a class="code" href="main_8cpp.html#a83b8a2046fbea13f477dbc911111af18">mode</a>.getValue() == <span class="stringliteral">&quot;simpleControl&quot;</span>)
+<a name="l00065"></a>00065         {
+<a name="l00066"></a>00066             <a class="code" href="main_8cpp.html#aa22d502c950f1bec2069cb43302986f2">kalmanFilter</a>.<a class="code" href="class_u_s_u_1_1_kalman_filter.html#a6c69033cc4bddf2b6bd109286e6accb5">initializeModeSimpleControl</a>(<a class="code" href="main_8cpp.html#a47c81624fc567b10c92340b02469537b">trajFile</a>.getValue(), <a class="code" href="main_8cpp.html#a6570ed64e8a5f38d9e01122b85d550a9">pgain</a>.getValue());
+<a name="l00067"></a>00067             <a class="code" href="main_8cpp.html#aa22d502c950f1bec2069cb43302986f2">kalmanFilter</a>.<a class="code" href="class_u_s_u_1_1_kalman_filter.html#a5e37575b2560b521fd3462a3f207e0e7">setMode</a>(<a class="code" href="class_u_s_u_1_1_kalman_filter.html#ab42b5998c23e20c32775873af96ce8c8abf30e92c798cd7c2a677f0dff63f8ea7">KalmanFilter::SimpleControl</a>);
+<a name="l00068"></a>00068         }
+<a name="l00069"></a>00069         <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code" href="main_8cpp.html#a83b8a2046fbea13f477dbc911111af18">mode</a>.getValue() == <span class="stringliteral">&quot;pololu&quot;</span>)
+<a name="l00070"></a>00070         {
+<a name="l00071"></a>00071             <a class="code" href="main_8cpp.html#aa22d502c950f1bec2069cb43302986f2">kalmanFilter</a>.<a class="code" href="class_u_s_u_1_1_kalman_filter.html#a5e37575b2560b521fd3462a3f207e0e7">setMode</a>(<a class="code" href="class_u_s_u_1_1_kalman_filter.html#ab42b5998c23e20c32775873af96ce8c8ae435c722d55e7dda8c82b0b5ce18f136">KalmanFilter::CollectPololuData</a>);
+<a name="l00072"></a>00072         }
+<a name="l00073"></a>00073         <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code" href="main_8cpp.html#a83b8a2046fbea13f477dbc911111af18">mode</a>.getValue() == <span class="stringliteral">&quot;microstrain&quot;</span>)
+<a name="l00074"></a>00074         {
+<a name="l00075"></a>00075             <a class="code" href="main_8cpp.html#aa22d502c950f1bec2069cb43302986f2">kalmanFilter</a>.<a class="code" href="class_u_s_u_1_1_kalman_filter.html#a5e37575b2560b521fd3462a3f207e0e7">setMode</a>(<a class="code" href="class_u_s_u_1_1_kalman_filter.html#ab42b5998c23e20c32775873af96ce8c8ae0a390c1eda0d057ba99b763bd863970">KalmanFilter::CollectMicroStrainData</a>);
+<a name="l00076"></a>00076         }
+<a name="l00077"></a>00077         <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code" href="main_8cpp.html#a83b8a2046fbea13f477dbc911111af18">mode</a>.getValue() == <span class="stringliteral">&quot;collect&quot;</span>)
+<a name="l00078"></a>00078         {
+<a name="l00079"></a>00079             <a class="code" href="main_8cpp.html#aa22d502c950f1bec2069cb43302986f2">kalmanFilter</a>.<a class="code" href="class_u_s_u_1_1_kalman_filter.html#a5e37575b2560b521fd3462a3f207e0e7">setMode</a>(<a class="code" href="class_u_s_u_1_1_kalman_filter.html#ab42b5998c23e20c32775873af96ce8c8a9d4c5f2021aefa7d0529670652be7a1a">KalmanFilter::CollectData</a>);
+<a name="l00080"></a>00080         }
+<a name="l00081"></a>00081         <span class="keywordflow">else</span>
+<a name="l00082"></a>00082         {
+<a name="l00083"></a>00083             <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;MAIN: Unknown mode selected. Terminating&quot;</span>);
+<a name="l00084"></a>00084             <span class="keywordflow">return</span> 1;
+<a name="l00085"></a>00085         }
+<a name="l00086"></a>00086 
+<a name="l00087"></a>00087         <a class="code" href="main_8cpp.html#aa22d502c950f1bec2069cb43302986f2">kalmanFilter</a>.<a class="code" href="class_u_s_u_1_1_rt_thread.html#aadd18e02db9c71911671936247d0ac70" title="Creates and starts the pthread.">start</a>();
+<a name="l00088"></a>00088 
+<a name="l00089"></a>00089         <span class="keywordflow">if</span>(<a class="code" href="main_8cpp.html#aa22d502c950f1bec2069cb43302986f2">kalmanFilter</a>.<a class="code" href="class_u_s_u_1_1_rt_thread.html#a3e86cb1e51e7966a6aa9ce06b154b73e" title="Waits for the thread to join.">join</a>() )
+<a name="l00090"></a>00090         {
+<a name="l00091"></a>00091             std::cerr &lt;&lt; <span class="stringliteral">&quot;MAIN: Kalman filter thread joined&quot;</span> &lt;&lt; std::endl;
+<a name="l00092"></a>00092             std::cerr &lt;&lt; <span class="stringliteral">&quot;MAIN: Terminating now...&quot;</span> &lt;&lt; std::endl;
+<a name="l00093"></a>00093             <span class="keywordflow">return</span> 0;
+<a name="l00094"></a>00094         }
+<a name="l00095"></a>00095         <span class="keywordflow">else</span>
+<a name="l00096"></a>00096         {
+<a name="l00097"></a>00097             std::cerr &lt;&lt; <span class="stringliteral">&quot;MAIN: Joining Kalman filter thread failed&quot;</span> &lt;&lt; std::endl;
+<a name="l00098"></a>00098             std::cerr &lt;&lt; <span class="stringliteral">&quot;MAIN: Terminating now...&quot;</span> &lt;&lt; std::endl;
+<a name="l00099"></a>00099             <span class="keywordflow">return</span> 1;
+<a name="l00100"></a>00100         }
+<a name="l00101"></a>00101     } <span class="keywordflow">catch</span> (TCLAP::ArgException &amp;e)  <span class="comment">// catch any exceptions</span>
+<a name="l00102"></a>00102     {
+<a name="l00103"></a>00103         std::cerr &lt;&lt; <span class="stringliteral">&quot;error: &quot;</span> &lt;&lt; e.error() &lt;&lt; <span class="stringliteral">&quot; for arg &quot;</span> &lt;&lt; e.argId() &lt;&lt; std::endl;
+<a name="l00104"></a>00104         <span class="keywordflow">return</span> 1;
+<a name="l00105"></a>00105     }
+<a name="l00106"></a>00106 
+<a name="l00107"></a>00107 }
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -165,7 +226,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="main_8cpp.html">main.cpp</a>      </li>
 
-    <li class="footer">Generated on Fri Aug 2 2013 12:16:41 for U-BET by
+    <li class="footer">Generated on Fri Aug 9 2013 14:42:49 for U-BET by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

@@ -13,7 +13,7 @@ var files =
     [ "include/cPWM.h", "c_p_w_m_8h.html", "c_p_w_m_8h" ],
     [ "include/doxygen.h", "doxygen_8h.html", null ],
     [ "include/exceptions.h", "exceptions_8h.html", "exceptions_8h" ],
-    [ "include/gx3communicator.h", "gx3communicator_8h.html", null ],
+    [ "include/gx3communicator.h", "gx3communicator_8h.html", "gx3communicator_8h" ],
     [ "include/I2CBus.h", "_i2_c_bus_8h.html", null ],
     [ "include/IMU.h", "_i_m_u_8h.html", null ],
     [ "include/kalmanfilter.h", "kalmanfilter_8h.html", null ],

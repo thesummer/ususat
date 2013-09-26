@@ -103,48 +103,62 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00012"></a>00012 <span class="preprocessor">#ifndef MOTORCONTROL_H</span>
 <a name="l00013"></a>00013 <span class="preprocessor"></span><span class="preprocessor">#define MOTORCONTROL_H</span>
 <a name="l00014"></a>00014 <span class="preprocessor"></span>
-<a name="l00015"></a>00015 <span class="preprocessor">#include &quot;<a class="code" href="c_p_w_m_8h.html">cPWM.h</a>&quot;</span>
-<a name="l00016"></a>00016 <span class="preprocessor">#include &quot;<a class="code" href="_beagle___g_p_i_o_8h.html">Beagle_GPIO.h</a>&quot;</span>
-<a name="l00017"></a>00017 <span class="preprocessor">#include &quot;<a class="code" href="motor_8h.html">motor.h</a>&quot;</span>
-<a name="l00018"></a>00018 <span class="preprocessor">#include &quot;<a class="code" href="max127_8h.html">max127.h</a>&quot;</span>
-<a name="l00019"></a>00019 <span class="preprocessor">#include &quot;<a class="code" href="messages_8h.html">messages.h</a>&quot;</span>
-<a name="l00020"></a>00020 
-<a name="l00021"></a>00021 <span class="keyword">namespace </span>USU
-<a name="l00022"></a>00022 {
-<a name="l00023"></a>00023 
-<a name="l00036"></a><a class="code" href="class_u_s_u_1_1_motor_control.html">00036</a> <span class="keyword">class </span><a class="code" href="class_u_s_u_1_1_motor_control.html" title="Represents the class for motor control.">MotorControl</a>
-<a name="l00037"></a>00037 {
-<a name="l00038"></a>00038 <span class="keyword">public</span>:
-<a name="l00039"></a>00039 
-<a name="l00040"></a>00040 
-<a name="l00049"></a>00049     <a class="code" href="class_u_s_u_1_1_motor_control.html#a85b6eed3bdd71d61a690395156999888" title="Constructor of the class.">MotorControl</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* i2cDevice=<span class="stringliteral">&quot;/dev/i2c-3&quot;</span>);
-<a name="l00050"></a>00050 
-<a name="l00051"></a>00051     <span class="keyword">virtual</span> <a class="code" href="class_u_s_u_1_1_motor_control.html#a5bc78d24ed52a012a3f81cd3b62216f3">~MotorControl</a>();
+<a name="l00015"></a>00015 <span class="preprocessor">#include &lt;vector&gt;</span>
+<a name="l00016"></a>00016 
+<a name="l00017"></a>00017 <span class="preprocessor">#include &quot;<a class="code" href="c_p_w_m_8h.html">cPWM.h</a>&quot;</span>
+<a name="l00018"></a>00018 <span class="preprocessor">#include &quot;<a class="code" href="_beagle___g_p_i_o_8h.html">Beagle_GPIO.h</a>&quot;</span>
+<a name="l00019"></a>00019 <span class="preprocessor">#include &quot;<a class="code" href="motor_8h.html">motor.h</a>&quot;</span>
+<a name="l00020"></a>00020 <span class="preprocessor">#include &quot;<a class="code" href="max127_8h.html">max127.h</a>&quot;</span>
+<a name="l00021"></a>00021 <span class="preprocessor">#include &quot;<a class="code" href="messages_8h.html">messages.h</a>&quot;</span>
+<a name="l00022"></a>00022 
+<a name="l00023"></a>00023 <span class="keyword">namespace </span>USU
+<a name="l00024"></a>00024 {
+<a name="l00025"></a>00025 
+<a name="l00038"></a><a class="code" href="class_u_s_u_1_1_motor_control.html">00038</a> <span class="keyword">class </span><a class="code" href="class_u_s_u_1_1_motor_control.html" title="Represents the class for motor control.">MotorControl</a>
+<a name="l00039"></a>00039 {
+<a name="l00040"></a>00040 <span class="keyword">public</span>:
+<a name="l00041"></a>00041 
+<a name="l00042"></a>00042 
+<a name="l00051"></a>00051     <a class="code" href="class_u_s_u_1_1_motor_control.html#a85b6eed3bdd71d61a690395156999888" title="Constructor of the class.">MotorControl</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* i2cDevice=<span class="stringliteral">&quot;/dev/i2c-3&quot;</span>);
 <a name="l00052"></a>00052 
-<a name="l00060"></a>00060     <span class="keywordtype">void</span> <a class="code" href="class_u_s_u_1_1_motor_control.html#a40b7e40ce5bfb7fb0dea6c0a75d1eb5e" title="Calculate the control response from the current state estimate.">calculateControlResponse</a>(<a class="code" href="class_u_s_u_1_1_quaternion.html" title="Representation for receiving the Quaternion representation from the IMU.">Quaternion</a> state);
-<a name="l00061"></a>00061 
-<a name="l00068"></a>00068     <span class="keywordtype">void</span> <a class="code" href="class_u_s_u_1_1_motor_control.html#ad08369ed288a7816de1b3c423684f0da" title="For testing: sets the speed of a motor.">setMotor</a>(<span class="keywordtype">int</span> motor, <span class="keywordtype">int</span> dutyCycle);
-<a name="l00069"></a>00069 
+<a name="l00053"></a>00053     <span class="keyword">virtual</span> <a class="code" href="class_u_s_u_1_1_motor_control.html#a5bc78d24ed52a012a3f81cd3b62216f3">~MotorControl</a>();
+<a name="l00054"></a>00054 
+<a name="l00062"></a>00062     <span class="keywordtype">void</span> <a class="code" href="class_u_s_u_1_1_motor_control.html#a40b7e40ce5bfb7fb0dea6c0a75d1eb5e" title="Calculate the control response from the current state estimate.">calculateControlResponse</a>(<a class="code" href="class_u_s_u_1_1_quaternion.html" title="Representation for receiving the Quaternion representation from the IMU.">Quaternion</a> state);
+<a name="l00063"></a>00063 
+<a name="l00069"></a>00069     <span class="keywordtype">void</span> <a class="code" href="class_u_s_u_1_1_motor_control.html#a644b231235aecaeea0d18ed2635da15c" title="Uses a simple algorithm to control the speed only from gyro data.">controlFromGyro</a>(Eigen::Vector3f gyro);
 <a name="l00070"></a>00070 
-<a name="l00078"></a>00078     <span class="keywordtype">void</span> <a class="code" href="class_u_s_u_1_1_motor_control.html#a3304fd7022bf2468859a0d2edae0e2f0" title="For testing: returns the Analog measurements of a motor.">getAnalog</a>(<span class="keywordtype">int</span> motor, <span class="keywordtype">float</span> &amp;aOut1, <span class="keywordtype">float</span> &amp;aOut2);
+<a name="l00077"></a>00077     <span class="keywordtype">void</span> <a class="code" href="class_u_s_u_1_1_motor_control.html#ad08369ed288a7816de1b3c423684f0da" title="For testing: sets the speed of a motor.">setMotor</a>(<span class="keywordtype">int</span> motor, <span class="keywordtype">int</span> dutyCycle);
+<a name="l00078"></a>00078 
 <a name="l00079"></a>00079 
-<a name="l00086"></a>00086     <span class="keywordtype">void</span> <a class="code" href="class_u_s_u_1_1_motor_control.html#a195cfcad9f3e9ca8cbde54340aad620c" title="For testing: returns the Analog measurements of all motors.">getAnalogs</a>(<span class="keywordtype">float</span> * aOut1, <span class="keywordtype">float</span>* aOut2);
-<a name="l00087"></a>00087 
-<a name="l00093"></a>00093     <span class="keywordtype">void</span> <a class="code" href="class_u_s_u_1_1_motor_control.html#a16a8f713f050fffc56321f82267bc7cc" title="For testing: returns the dutycycles of all motors.">getDutyCycles</a>(<span class="keywordtype">int</span>* dc);
-<a name="l00094"></a>00094 
-<a name="l00095"></a>00095 <span class="keyword">private</span>:
-<a name="l00096"></a>00096     <a class="code" href="classc_p_w_m.html" title="Wrapper class to access the PWM-devices of the BeagleBone.">cPWM</a> mPwm1; 
-<a name="l00097"></a>00097     <a class="code" href="classc_p_w_m.html" title="Wrapper class to access the PWM-devices of the BeagleBone.">cPWM</a> mPwm2; 
-<a name="l00099"></a>00099     <a class="code" href="class_beagle___g_p_i_o.html" title="Wrapper class to access the GPIOs of the BeagleBone.">Beagle_GPIO</a> mBeagleGpio; 
-<a name="l00100"></a>00100     <a class="code" href="class_u_s_u_1_1_motor.html" title="Class which represents a motor.">Motor</a> *mMotor[4]; 
-<a name="l00102"></a>00102     <a class="code" href="class_u_s_u_1_1_max127.html" title="Class representing the MAX127 ADC.">Max127</a> mAnalog; 
-<a name="l00104"></a>00104     <a class="code" href="class_u_s_u_1_1_motor_control.html#a85b6eed3bdd71d61a690395156999888" title="Constructor of the class.">MotorControl</a>(<span class="keyword">const</span> <a class="code" href="class_u_s_u_1_1_motor_control.html" title="Represents the class for motor control.">MotorControl</a>&amp; thread); 
-<a name="l00106"></a>00106     <a class="code" href="class_u_s_u_1_1_motor_control.html" title="Represents the class for motor control.">MotorControl</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="class_u_s_u_1_1_motor_control.html" title="Represents the class for motor control.">MotorControl</a>&amp; rhs); 
-<a name="l00107"></a>00107 };
-<a name="l00108"></a>00108 
-<a name="l00109"></a>00109 }
-<a name="l00110"></a>00110 
-<a name="l00111"></a>00111 <span class="preprocessor">#endif // MOTORCONTROL_H</span>
+<a name="l00087"></a>00087     <span class="keywordtype">void</span> <a class="code" href="class_u_s_u_1_1_motor_control.html#a3304fd7022bf2468859a0d2edae0e2f0" title="For testing: returns the Analog measurements of a motor.">getAnalog</a>(<span class="keywordtype">int</span> motor, <span class="keywordtype">float</span> &amp;aOut1, <span class="keywordtype">float</span> &amp;aOut2);
+<a name="l00088"></a>00088 
+<a name="l00095"></a>00095     <span class="keywordtype">void</span> <a class="code" href="class_u_s_u_1_1_motor_control.html#a195cfcad9f3e9ca8cbde54340aad620c" title="For testing: returns the Analog measurements of all motors.">getAnalogs</a>(<span class="keywordtype">float</span> * aOut1, <span class="keywordtype">float</span>* aOut2);
+<a name="l00096"></a>00096 
+<a name="l00102"></a>00102     <span class="keywordtype">void</span> <a class="code" href="class_u_s_u_1_1_motor_control.html#a16a8f713f050fffc56321f82267bc7cc" title="For testing: returns the dutycycles of all motors.">getDutyCycles</a>(<span class="keywordtype">int</span>* dc);
+<a name="l00103"></a>00103 
+<a name="l00104"></a>00104     <span class="keywordtype">float</span> <a class="code" href="class_u_s_u_1_1_motor_control.html#ad4cb1e34afc71cbd161c66d4794784cc">getPGain</a>() <span class="keyword">const</span>;
+<a name="l00105"></a>00105     <span class="keywordtype">void</span> <a class="code" href="class_u_s_u_1_1_motor_control.html#a0a959a8b3ab68e7ad095dcab4059d469">setPGain</a>(<span class="keywordtype">float</span> value);
+<a name="l00106"></a>00106 
+<a name="l00107"></a>00107     Eigen::Vector3f <a class="code" href="class_u_s_u_1_1_motor_control.html#a849e3f3b265777135492c2ebfc3fe814">getSetValue</a>() <span class="keyword">const</span>;
+<a name="l00108"></a>00108     <span class="keywordtype">void</span> <a class="code" href="class_u_s_u_1_1_motor_control.html#a9de3a4f1b2e39e1f4cfb3e822d5d74bc">setSetValue</a>(<span class="keyword">const</span> Eigen::Vector3f value);
+<a name="l00109"></a>00109 
+<a name="l00110"></a>00110 <span class="keyword">private</span>:
+<a name="l00111"></a>00111 
+<a name="l00112"></a>00112     <a class="code" href="classc_p_w_m.html" title="Wrapper class to access the PWM-devices of the BeagleBone.">cPWM</a> mPwm1; 
+<a name="l00113"></a>00113     <a class="code" href="classc_p_w_m.html" title="Wrapper class to access the PWM-devices of the BeagleBone.">cPWM</a> mPwm2; 
+<a name="l00115"></a>00115     <a class="code" href="class_beagle___g_p_i_o.html" title="Wrapper class to access the GPIOs of the BeagleBone.">Beagle_GPIO</a> mBeagleGpio; 
+<a name="l00116"></a>00116     <a class="code" href="class_u_s_u_1_1_motor.html" title="Class which represents a motor.">Motor</a> *mMotor[4]; 
+<a name="l00118"></a>00118     <a class="code" href="class_u_s_u_1_1_max127.html" title="Class representing the MAX127 ADC.">Max127</a> mAnalog; 
+<a name="l00119"></a>00119     <span class="keywordtype">float</span> mPGain;
+<a name="l00120"></a>00120     Eigen::Vector3f mSetValue;
+<a name="l00121"></a>00121 
+<a name="l00122"></a>00122     <a class="code" href="class_u_s_u_1_1_motor_control.html#a85b6eed3bdd71d61a690395156999888" title="Constructor of the class.">MotorControl</a>(<span class="keyword">const</span> <a class="code" href="class_u_s_u_1_1_motor_control.html" title="Represents the class for motor control.">MotorControl</a>&amp; thread); 
+<a name="l00124"></a>00124     <a class="code" href="class_u_s_u_1_1_motor_control.html" title="Represents the class for motor control.">MotorControl</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="class_u_s_u_1_1_motor_control.html" title="Represents the class for motor control.">MotorControl</a>&amp; rhs); 
+<a name="l00125"></a>00125 };
+<a name="l00126"></a>00126 
+<a name="l00127"></a>00127 }
+<a name="l00128"></a>00128 
+<a name="l00129"></a>00129 <span class="preprocessor">#endif // MOTORCONTROL_H</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -165,7 +179,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="motorcontrol_8h.html">motorcontrol.h</a>      </li>
 
-    <li class="footer">Generated on Fri Aug 2 2013 12:16:41 for U-BET by
+    <li class="footer">Generated on Fri Aug 9 2013 14:42:49 for U-BET by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

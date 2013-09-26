@@ -100,68 +100,105 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <a href="motorcontrol_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
-<a name="l00012"></a>00012 <span class="preprocessor">#include &quot;<a class="code" href="motorcontrol_8h.html">motorcontrol.h</a>&quot;</span>
-<a name="l00013"></a>00013 <span class="keyword">using namespace </span>USU;
+<a name="l00012"></a>00012 <span class="preprocessor">#include &lt;fstream&gt;</span>
+<a name="l00013"></a>00013 <span class="preprocessor">#include &lt;stdexcept&gt;</span>
 <a name="l00014"></a>00014 
-<a name="l00015"></a><a class="code" href="class_u_s_u_1_1_motor_control.html#a85b6eed3bdd71d61a690395156999888">00015</a> <a class="code" href="class_u_s_u_1_1_motor_control.html#a85b6eed3bdd71d61a690395156999888" title="Constructor of the class.">MotorControl::MotorControl</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *i2cDevice)
-<a name="l00016"></a>00016     :mPwm1(1), mPwm2(2), mAnalog(i2cDevice)
-<a name="l00017"></a>00017 {
-<a name="l00018"></a>00018     <span class="comment">// Initizalize the four motors</span>
-<a name="l00019"></a>00019     mMotor[0] = <span class="keyword">new</span> <a class="code" href="class_u_s_u_1_1_motor.html" title="Class which represents a motor.">Motor</a>(mBeagleGpio, <a class="code" href="class_beagle___g_p_i_o.html#a9b1fd560ea5d2d65898ac15c23055e58aed2ebbadd37e512b5d8726afb6770c83">Beagle_GPIO::P8_31</a>,<a class="code" href="class_beagle___g_p_i_o.html#a9b1fd560ea5d2d65898ac15c23055e58a5428753efdfe304809dfccfab8d5b8da">Beagle_GPIO::P8_29</a>, mPwm1, &amp;<a class="code" href="classc_p_w_m.html#a01ee225187750aca970472bfcbc0c78d">cPWM::DutyA_percent</a>);
-<a name="l00020"></a>00020     mMotor[1] = <span class="keyword">new</span> <a class="code" href="class_u_s_u_1_1_motor.html" title="Class which represents a motor.">Motor</a>(mBeagleGpio, <a class="code" href="class_beagle___g_p_i_o.html#a9b1fd560ea5d2d65898ac15c23055e58a8d20688601660cdf6c4185df228f0300">Beagle_GPIO::P8_27</a>,<a class="code" href="class_beagle___g_p_i_o.html#a9b1fd560ea5d2d65898ac15c23055e58afe1919887f82dd200f0bcf5492cdab89">Beagle_GPIO::P8_25</a>, mPwm1, &amp;<a class="code" href="classc_p_w_m.html#a411d83d46e5658239575cc3fd9b4bc8f">cPWM::DutyB_percent</a>);
-<a name="l00021"></a>00021     mMotor[2] = <span class="keyword">new</span> <a class="code" href="class_u_s_u_1_1_motor.html" title="Class which represents a motor.">Motor</a>(mBeagleGpio, <a class="code" href="class_beagle___g_p_i_o.html#a9b1fd560ea5d2d65898ac15c23055e58a458b8f2fc6017a728dd9853cff8ec36a">Beagle_GPIO::P8_23</a>,<a class="code" href="class_beagle___g_p_i_o.html#a9b1fd560ea5d2d65898ac15c23055e58ad6660d890eee1acdfe579d3f7d4ebf85">Beagle_GPIO::P8_21</a>, mPwm2, &amp;<a class="code" href="classc_p_w_m.html#a01ee225187750aca970472bfcbc0c78d">cPWM::DutyA_percent</a>);
-<a name="l00022"></a>00022     mMotor[3] = <span class="keyword">new</span> <a class="code" href="class_u_s_u_1_1_motor.html" title="Class which represents a motor.">Motor</a>(mBeagleGpio, <a class="code" href="class_beagle___g_p_i_o.html#a9b1fd560ea5d2d65898ac15c23055e58a7c07c183d33cf451cd34dfb88a1a96de">Beagle_GPIO::P8_18</a>,<a class="code" href="class_beagle___g_p_i_o.html#a9b1fd560ea5d2d65898ac15c23055e58a9e6674b9c107794146dc7bd1b5d8a659">Beagle_GPIO::P8_17</a>, mPwm2, &amp;<a class="code" href="classc_p_w_m.html#a411d83d46e5658239575cc3fd9b4bc8f">cPWM::DutyB_percent</a>);
-<a name="l00023"></a>00023     mPwm1.<a class="code" href="classc_p_w_m.html#a1b2b93cf10a31cd169bbfd0ddbe5e743">Period_freq</a>(100);
-<a name="l00024"></a>00024     mPwm2.<a class="code" href="classc_p_w_m.html#a1b2b93cf10a31cd169bbfd0ddbe5e743">Period_freq</a>(100);
-<a name="l00025"></a>00025     mPwm1.<a class="code" href="classc_p_w_m.html#a9a0ca9c423dcf337c37cd0a41ef48f70">RunA</a>();
-<a name="l00026"></a>00026     mPwm1.<a class="code" href="classc_p_w_m.html#a4f9a302cfd62c5ab845093c62667f91f">RunB</a>();
-<a name="l00027"></a>00027     mPwm2.<a class="code" href="classc_p_w_m.html#a9a0ca9c423dcf337c37cd0a41ef48f70">RunA</a>();
-<a name="l00028"></a>00028     mPwm2.<a class="code" href="classc_p_w_m.html#a4f9a302cfd62c5ab845093c62667f91f">RunB</a>();
-<a name="l00029"></a>00029 }
-<a name="l00030"></a>00030 
-<a name="l00031"></a><a class="code" href="class_u_s_u_1_1_motor_control.html#a5bc78d24ed52a012a3f81cd3b62216f3">00031</a> <a class="code" href="class_u_s_u_1_1_motor_control.html#a5bc78d24ed52a012a3f81cd3b62216f3">MotorControl::~MotorControl</a>()
-<a name="l00032"></a>00032 {
-<a name="l00033"></a>00033     mPwm1.<a class="code" href="classc_p_w_m.html#a2fffee066d83200b808edff0a08987fd">StopA</a>();
-<a name="l00034"></a>00034     mPwm1.<a class="code" href="classc_p_w_m.html#a69227099073031294d20d8d4d3eae116">StopB</a>();
-<a name="l00035"></a>00035     mPwm2.<a class="code" href="classc_p_w_m.html#a2fffee066d83200b808edff0a08987fd">StopA</a>();
-<a name="l00036"></a>00036     mPwm2.<a class="code" href="classc_p_w_m.html#a69227099073031294d20d8d4d3eae116">StopB</a>();
-<a name="l00037"></a>00037 }
-<a name="l00038"></a>00038 
-<a name="l00039"></a><a class="code" href="class_u_s_u_1_1_motor_control.html#a40b7e40ce5bfb7fb0dea6c0a75d1eb5e">00039</a> <span class="keywordtype">void</span> <a class="code" href="class_u_s_u_1_1_motor_control.html#a40b7e40ce5bfb7fb0dea6c0a75d1eb5e" title="Calculate the control response from the current state estimate.">MotorControl::calculateControlResponse</a>(<a class="code" href="class_u_s_u_1_1_quaternion.html" title="Representation for receiving the Quaternion representation from the IMU.">Quaternion</a> state)
-<a name="l00040"></a>00040 {
-<a name="l00042"></a>00042 <span class="comment">//    mMotor[0]-&gt;setSpeed(20);</span>
-<a name="l00044"></a>00044 <span class="comment"></span>}
-<a name="l00045"></a>00045 
-<a name="l00046"></a><a class="code" href="class_u_s_u_1_1_motor_control.html#ad08369ed288a7816de1b3c423684f0da">00046</a> <span class="keywordtype">void</span> <a class="code" href="class_u_s_u_1_1_motor_control.html#ad08369ed288a7816de1b3c423684f0da" title="For testing: sets the speed of a motor.">MotorControl::setMotor</a>(<span class="keywordtype">int</span> motor, <span class="keywordtype">int</span> dutyCycle)
-<a name="l00047"></a>00047 {
-<a name="l00048"></a>00048     mMotor[motor]-&gt;<a class="code" href="class_u_s_u_1_1_motor.html#aa58cbc26a0da87389dd208367d0fa407" title="Set the speed of the motor in percent.">setSpeed</a>(dutyCycle);
-<a name="l00049"></a>00049 }
-<a name="l00050"></a>00050 
-<a name="l00051"></a><a class="code" href="class_u_s_u_1_1_motor_control.html#a3304fd7022bf2468859a0d2edae0e2f0">00051</a> <span class="keywordtype">void</span> <a class="code" href="class_u_s_u_1_1_motor_control.html#a3304fd7022bf2468859a0d2edae0e2f0" title="For testing: returns the Analog measurements of a motor.">MotorControl::getAnalog</a>(<span class="keywordtype">int</span> motor, <span class="keywordtype">float</span>&amp; aOut1, <span class="keywordtype">float</span>&amp; aOut2)
-<a name="l00052"></a>00052 {
-<a name="l00053"></a>00053     aOut1 =  mAnalog.<a class="code" href="class_u_s_u_1_1_max127.html#ae8ab83072e2fc6d1637580b5a17b3ace" title="Returns the measurement of the selected channel in volts.">readVoltage</a>(motor*2);
-<a name="l00054"></a>00054     aOut2 =  mAnalog.<a class="code" href="class_u_s_u_1_1_max127.html#ae8ab83072e2fc6d1637580b5a17b3ace" title="Returns the measurement of the selected channel in volts.">readVoltage</a>(motor*2 + 1);
-<a name="l00055"></a>00055 }
-<a name="l00056"></a>00056 
-<a name="l00057"></a><a class="code" href="class_u_s_u_1_1_motor_control.html#a195cfcad9f3e9ca8cbde54340aad620c">00057</a> <span class="keywordtype">void</span> <a class="code" href="class_u_s_u_1_1_motor_control.html#a195cfcad9f3e9ca8cbde54340aad620c" title="For testing: returns the Analog measurements of all motors.">MotorControl::getAnalogs</a>(<span class="keywordtype">float</span> *aOut1, <span class="keywordtype">float</span> *aOut2)
-<a name="l00058"></a>00058 {
-<a name="l00059"></a>00059     aOut1[0] =  mAnalog.<a class="code" href="class_u_s_u_1_1_max127.html#ae8ab83072e2fc6d1637580b5a17b3ace" title="Returns the measurement of the selected channel in volts.">readVoltage</a>(0);
-<a name="l00060"></a>00060     aOut2[0] =  mAnalog.<a class="code" href="class_u_s_u_1_1_max127.html#ae8ab83072e2fc6d1637580b5a17b3ace" title="Returns the measurement of the selected channel in volts.">readVoltage</a>(1);
-<a name="l00061"></a>00061     aOut1[1] =  mAnalog.<a class="code" href="class_u_s_u_1_1_max127.html#ae8ab83072e2fc6d1637580b5a17b3ace" title="Returns the measurement of the selected channel in volts.">readVoltage</a>(2);
-<a name="l00062"></a>00062     aOut2[1] =  mAnalog.<a class="code" href="class_u_s_u_1_1_max127.html#ae8ab83072e2fc6d1637580b5a17b3ace" title="Returns the measurement of the selected channel in volts.">readVoltage</a>(3);
-<a name="l00063"></a>00063     aOut1[2] =  mAnalog.<a class="code" href="class_u_s_u_1_1_max127.html#ae8ab83072e2fc6d1637580b5a17b3ace" title="Returns the measurement of the selected channel in volts.">readVoltage</a>(4);
-<a name="l00064"></a>00064     aOut2[2] =  mAnalog.<a class="code" href="class_u_s_u_1_1_max127.html#ae8ab83072e2fc6d1637580b5a17b3ace" title="Returns the measurement of the selected channel in volts.">readVoltage</a>(5);
-<a name="l00065"></a>00065     aOut1[3] =  mAnalog.<a class="code" href="class_u_s_u_1_1_max127.html#ae8ab83072e2fc6d1637580b5a17b3ace" title="Returns the measurement of the selected channel in volts.">readVoltage</a>(6);
-<a name="l00066"></a>00066     aOut2[3] =  mAnalog.<a class="code" href="class_u_s_u_1_1_max127.html#ae8ab83072e2fc6d1637580b5a17b3ace" title="Returns the measurement of the selected channel in volts.">readVoltage</a>(7);
-<a name="l00067"></a>00067 }
-<a name="l00068"></a>00068 
-<a name="l00069"></a><a class="code" href="class_u_s_u_1_1_motor_control.html#a16a8f713f050fffc56321f82267bc7cc">00069</a> <span class="keywordtype">void</span> <a class="code" href="class_u_s_u_1_1_motor_control.html#a16a8f713f050fffc56321f82267bc7cc" title="For testing: returns the dutycycles of all motors.">MotorControl::getDutyCycles</a>(<span class="keywordtype">int</span> *dc)
-<a name="l00070"></a>00070 {
-<a name="l00071"></a>00071     dc[0] = mMotor[0]-&gt;<a class="code" href="class_u_s_u_1_1_motor.html#a98d4c98ddc30e00485712f55b4a91211" title="Return the current speed of the motor.">getSpeed</a>();
-<a name="l00072"></a>00072     dc[1] = mMotor[1]-&gt;<a class="code" href="class_u_s_u_1_1_motor.html#a98d4c98ddc30e00485712f55b4a91211" title="Return the current speed of the motor.">getSpeed</a>();
-<a name="l00073"></a>00073     dc[2] = mMotor[2]-&gt;<a class="code" href="class_u_s_u_1_1_motor.html#a98d4c98ddc30e00485712f55b4a91211" title="Return the current speed of the motor.">getSpeed</a>();
-<a name="l00074"></a>00074     dc[3] = mMotor[3]-&gt;<a class="code" href="class_u_s_u_1_1_motor.html#a98d4c98ddc30e00485712f55b4a91211" title="Return the current speed of the motor.">getSpeed</a>();
-<a name="l00075"></a>00075 }
+<a name="l00015"></a>00015 <span class="preprocessor">#include &quot;<a class="code" href="motorcontrol_8h.html">motorcontrol.h</a>&quot;</span>
+<a name="l00016"></a>00016 <span class="keyword">using namespace </span>USU;
+<a name="l00017"></a>00017 
+<a name="l00018"></a><a class="code" href="class_u_s_u_1_1_motor_control.html#a85b6eed3bdd71d61a690395156999888">00018</a> <a class="code" href="class_u_s_u_1_1_motor_control.html#a85b6eed3bdd71d61a690395156999888" title="Constructor of the class.">MotorControl::MotorControl</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *i2cDevice)
+<a name="l00019"></a>00019     :mPwm1(1), mPwm2(2), mAnalog(i2cDevice), mPGain(1.0)
+<a name="l00020"></a>00020 {
+<a name="l00021"></a>00021     <span class="comment">// Initizalize the four motors</span>
+<a name="l00022"></a>00022     mMotor[0] = <span class="keyword">new</span> <a class="code" href="class_u_s_u_1_1_motor.html" title="Class which represents a motor.">Motor</a>(mBeagleGpio, <a class="code" href="class_beagle___g_p_i_o.html#a9b1fd560ea5d2d65898ac15c23055e58aed2ebbadd37e512b5d8726afb6770c83">Beagle_GPIO::P8_31</a>,<a class="code" href="class_beagle___g_p_i_o.html#a9b1fd560ea5d2d65898ac15c23055e58a5428753efdfe304809dfccfab8d5b8da">Beagle_GPIO::P8_29</a>, mPwm1, &amp;<a class="code" href="classc_p_w_m.html#a01ee225187750aca970472bfcbc0c78d">cPWM::DutyA_percent</a>);
+<a name="l00023"></a>00023     mMotor[1] = <span class="keyword">new</span> <a class="code" href="class_u_s_u_1_1_motor.html" title="Class which represents a motor.">Motor</a>(mBeagleGpio, <a class="code" href="class_beagle___g_p_i_o.html#a9b1fd560ea5d2d65898ac15c23055e58a8d20688601660cdf6c4185df228f0300">Beagle_GPIO::P8_27</a>,<a class="code" href="class_beagle___g_p_i_o.html#a9b1fd560ea5d2d65898ac15c23055e58afe1919887f82dd200f0bcf5492cdab89">Beagle_GPIO::P8_25</a>, mPwm1, &amp;<a class="code" href="classc_p_w_m.html#a411d83d46e5658239575cc3fd9b4bc8f">cPWM::DutyB_percent</a>);
+<a name="l00024"></a>00024     mMotor[2] = <span class="keyword">new</span> <a class="code" href="class_u_s_u_1_1_motor.html" title="Class which represents a motor.">Motor</a>(mBeagleGpio, <a class="code" href="class_beagle___g_p_i_o.html#a9b1fd560ea5d2d65898ac15c23055e58a458b8f2fc6017a728dd9853cff8ec36a">Beagle_GPIO::P8_23</a>,<a class="code" href="class_beagle___g_p_i_o.html#a9b1fd560ea5d2d65898ac15c23055e58ad6660d890eee1acdfe579d3f7d4ebf85">Beagle_GPIO::P8_21</a>, mPwm2, &amp;<a class="code" href="classc_p_w_m.html#a01ee225187750aca970472bfcbc0c78d">cPWM::DutyA_percent</a>);
+<a name="l00025"></a>00025     mMotor[3] = <span class="keyword">new</span> <a class="code" href="class_u_s_u_1_1_motor.html" title="Class which represents a motor.">Motor</a>(mBeagleGpio, <a class="code" href="class_beagle___g_p_i_o.html#a9b1fd560ea5d2d65898ac15c23055e58a7c07c183d33cf451cd34dfb88a1a96de">Beagle_GPIO::P8_18</a>,<a class="code" href="class_beagle___g_p_i_o.html#a9b1fd560ea5d2d65898ac15c23055e58a9e6674b9c107794146dc7bd1b5d8a659">Beagle_GPIO::P8_17</a>, mPwm2, &amp;<a class="code" href="classc_p_w_m.html#a411d83d46e5658239575cc3fd9b4bc8f">cPWM::DutyB_percent</a>);
+<a name="l00026"></a>00026     mPwm1.<a class="code" href="classc_p_w_m.html#a1b2b93cf10a31cd169bbfd0ddbe5e743">Period_freq</a>(100);
+<a name="l00027"></a>00027     mPwm2.<a class="code" href="classc_p_w_m.html#a1b2b93cf10a31cd169bbfd0ddbe5e743">Period_freq</a>(100);
+<a name="l00028"></a>00028     mPwm1.<a class="code" href="classc_p_w_m.html#a9a0ca9c423dcf337c37cd0a41ef48f70">RunA</a>();
+<a name="l00029"></a>00029     mPwm1.<a class="code" href="classc_p_w_m.html#a4f9a302cfd62c5ab845093c62667f91f">RunB</a>();
+<a name="l00030"></a>00030     mPwm2.<a class="code" href="classc_p_w_m.html#a9a0ca9c423dcf337c37cd0a41ef48f70">RunA</a>();
+<a name="l00031"></a>00031     mPwm2.<a class="code" href="classc_p_w_m.html#a4f9a302cfd62c5ab845093c62667f91f">RunB</a>();
+<a name="l00032"></a>00032 }
+<a name="l00033"></a>00033 
+<a name="l00034"></a><a class="code" href="class_u_s_u_1_1_motor_control.html#a5bc78d24ed52a012a3f81cd3b62216f3">00034</a> <a class="code" href="class_u_s_u_1_1_motor_control.html#a5bc78d24ed52a012a3f81cd3b62216f3">MotorControl::~MotorControl</a>()
+<a name="l00035"></a>00035 {
+<a name="l00036"></a>00036     mPwm1.<a class="code" href="classc_p_w_m.html#a2fffee066d83200b808edff0a08987fd">StopA</a>();
+<a name="l00037"></a>00037     mPwm1.<a class="code" href="classc_p_w_m.html#a69227099073031294d20d8d4d3eae116">StopB</a>();
+<a name="l00038"></a>00038     mPwm2.<a class="code" href="classc_p_w_m.html#a2fffee066d83200b808edff0a08987fd">StopA</a>();
+<a name="l00039"></a>00039     mPwm2.<a class="code" href="classc_p_w_m.html#a69227099073031294d20d8d4d3eae116">StopB</a>();
+<a name="l00040"></a>00040 }
+<a name="l00041"></a>00041 
+<a name="l00042"></a><a class="code" href="class_u_s_u_1_1_motor_control.html#a40b7e40ce5bfb7fb0dea6c0a75d1eb5e">00042</a> <span class="keywordtype">void</span> <a class="code" href="class_u_s_u_1_1_motor_control.html#a40b7e40ce5bfb7fb0dea6c0a75d1eb5e" title="Calculate the control response from the current state estimate.">MotorControl::calculateControlResponse</a>(<a class="code" href="class_u_s_u_1_1_quaternion.html" title="Representation for receiving the Quaternion representation from the IMU.">Quaternion</a> state)
+<a name="l00043"></a>00043 {
+<a name="l00045"></a>00045 <span class="comment">//    mMotor[0]-&gt;setSpeed(20);</span>
+<a name="l00047"></a>00047 <span class="comment"></span>}
+<a name="l00048"></a>00048 
+<a name="l00049"></a><a class="code" href="class_u_s_u_1_1_motor_control.html#a644b231235aecaeea0d18ed2635da15c">00049</a> <span class="keywordtype">void</span> <a class="code" href="class_u_s_u_1_1_motor_control.html#a644b231235aecaeea0d18ed2635da15c" title="Uses a simple algorithm to control the speed only from gyro data.">MotorControl::controlFromGyro</a>(Eigen::Vector3f gyro)
+<a name="l00050"></a>00050 {    
+<a name="l00051"></a>00051     <span class="keywordtype">float</span> speeds[4];
+<a name="l00052"></a>00052     <span class="keywordtype">float</span> currents[4];
+<a name="l00053"></a>00053     <a class="code" href="class_u_s_u_1_1_motor_control.html#a195cfcad9f3e9ca8cbde54340aad620c" title="For testing: returns the Analog measurements of all motors.">getAnalogs</a>(speeds, currents);
+<a name="l00054"></a>00054 
+<a name="l00055"></a>00055     <span class="keywordtype">int</span> speeds_input[4];
+<a name="l00056"></a>00056     <a class="code" href="class_u_s_u_1_1_motor_control.html#a16a8f713f050fffc56321f82267bc7cc" title="For testing: returns the dutycycles of all motors.">getDutyCycles</a>(speeds_input);
+<a name="l00057"></a>00057 
+<a name="l00058"></a>00058     <span class="comment">// mPGain I already have this, do the math to go from speeds to rpms (or rad/s), then Eigen::Vector3f err = (gyro - mSetValue)</span>
+<a name="l00059"></a>00059     <span class="comment">// From err to 4 * pwms</span>
+<a name="l00060"></a>00060 
+<a name="l00061"></a>00061 }
+<a name="l00062"></a>00062 
+<a name="l00063"></a><a class="code" href="class_u_s_u_1_1_motor_control.html#ad08369ed288a7816de1b3c423684f0da">00063</a> <span class="keywordtype">void</span> <a class="code" href="class_u_s_u_1_1_motor_control.html#ad08369ed288a7816de1b3c423684f0da" title="For testing: sets the speed of a motor.">MotorControl::setMotor</a>(<span class="keywordtype">int</span> motor, <span class="keywordtype">int</span> dutyCycle)
+<a name="l00064"></a>00064 {
+<a name="l00065"></a>00065     mMotor[motor]-&gt;<a class="code" href="class_u_s_u_1_1_motor.html#aa58cbc26a0da87389dd208367d0fa407" title="Set the speed of the motor in percent.">setSpeed</a>(dutyCycle);
+<a name="l00066"></a>00066 }
+<a name="l00067"></a>00067 
+<a name="l00068"></a><a class="code" href="class_u_s_u_1_1_motor_control.html#a3304fd7022bf2468859a0d2edae0e2f0">00068</a> <span class="keywordtype">void</span> <a class="code" href="class_u_s_u_1_1_motor_control.html#a3304fd7022bf2468859a0d2edae0e2f0" title="For testing: returns the Analog measurements of a motor.">MotorControl::getAnalog</a>(<span class="keywordtype">int</span> motor, <span class="keywordtype">float</span>&amp; aOut1, <span class="keywordtype">float</span>&amp; aOut2)
+<a name="l00069"></a>00069 {
+<a name="l00070"></a>00070     aOut1 =  mAnalog.<a class="code" href="class_u_s_u_1_1_max127.html#ae8ab83072e2fc6d1637580b5a17b3ace" title="Returns the measurement of the selected channel in volts.">readVoltage</a>(motor*2);
+<a name="l00071"></a>00071     aOut2 =  mAnalog.<a class="code" href="class_u_s_u_1_1_max127.html#ae8ab83072e2fc6d1637580b5a17b3ace" title="Returns the measurement of the selected channel in volts.">readVoltage</a>(motor*2 + 1);
+<a name="l00072"></a>00072 }
+<a name="l00073"></a>00073 
+<a name="l00074"></a><a class="code" href="class_u_s_u_1_1_motor_control.html#a195cfcad9f3e9ca8cbde54340aad620c">00074</a> <span class="keywordtype">void</span> <a class="code" href="class_u_s_u_1_1_motor_control.html#a195cfcad9f3e9ca8cbde54340aad620c" title="For testing: returns the Analog measurements of all motors.">MotorControl::getAnalogs</a>(<span class="keywordtype">float</span> *aOut1, <span class="keywordtype">float</span> *aOut2)
+<a name="l00075"></a>00075 {
+<a name="l00076"></a>00076     aOut1[0] =  mAnalog.<a class="code" href="class_u_s_u_1_1_max127.html#ae8ab83072e2fc6d1637580b5a17b3ace" title="Returns the measurement of the selected channel in volts.">readVoltage</a>(0);
+<a name="l00077"></a>00077     aOut2[0] =  mAnalog.<a class="code" href="class_u_s_u_1_1_max127.html#ae8ab83072e2fc6d1637580b5a17b3ace" title="Returns the measurement of the selected channel in volts.">readVoltage</a>(1);
+<a name="l00078"></a>00078     aOut1[1] =  mAnalog.<a class="code" href="class_u_s_u_1_1_max127.html#ae8ab83072e2fc6d1637580b5a17b3ace" title="Returns the measurement of the selected channel in volts.">readVoltage</a>(2);
+<a name="l00079"></a>00079     aOut2[1] =  mAnalog.<a class="code" href="class_u_s_u_1_1_max127.html#ae8ab83072e2fc6d1637580b5a17b3ace" title="Returns the measurement of the selected channel in volts.">readVoltage</a>(3);
+<a name="l00080"></a>00080     aOut1[2] =  mAnalog.<a class="code" href="class_u_s_u_1_1_max127.html#ae8ab83072e2fc6d1637580b5a17b3ace" title="Returns the measurement of the selected channel in volts.">readVoltage</a>(4);
+<a name="l00081"></a>00081     aOut2[2] =  mAnalog.<a class="code" href="class_u_s_u_1_1_max127.html#ae8ab83072e2fc6d1637580b5a17b3ace" title="Returns the measurement of the selected channel in volts.">readVoltage</a>(5);
+<a name="l00082"></a>00082     aOut1[3] =  mAnalog.<a class="code" href="class_u_s_u_1_1_max127.html#ae8ab83072e2fc6d1637580b5a17b3ace" title="Returns the measurement of the selected channel in volts.">readVoltage</a>(6);
+<a name="l00083"></a>00083     aOut2[3] =  mAnalog.<a class="code" href="class_u_s_u_1_1_max127.html#ae8ab83072e2fc6d1637580b5a17b3ace" title="Returns the measurement of the selected channel in volts.">readVoltage</a>(7);
+<a name="l00084"></a>00084 }
+<a name="l00085"></a>00085 
+<a name="l00086"></a><a class="code" href="class_u_s_u_1_1_motor_control.html#a16a8f713f050fffc56321f82267bc7cc">00086</a> <span class="keywordtype">void</span> <a class="code" href="class_u_s_u_1_1_motor_control.html#a16a8f713f050fffc56321f82267bc7cc" title="For testing: returns the dutycycles of all motors.">MotorControl::getDutyCycles</a>(<span class="keywordtype">int</span> *dc)
+<a name="l00087"></a>00087 {
+<a name="l00088"></a>00088     dc[0] = mMotor[0]-&gt;<a class="code" href="class_u_s_u_1_1_motor.html#a98d4c98ddc30e00485712f55b4a91211" title="Return the current speed of the motor.">getSpeed</a>();
+<a name="l00089"></a>00089     dc[1] = mMotor[1]-&gt;<a class="code" href="class_u_s_u_1_1_motor.html#a98d4c98ddc30e00485712f55b4a91211" title="Return the current speed of the motor.">getSpeed</a>();
+<a name="l00090"></a>00090     dc[2] = mMotor[2]-&gt;<a class="code" href="class_u_s_u_1_1_motor.html#a98d4c98ddc30e00485712f55b4a91211" title="Return the current speed of the motor.">getSpeed</a>();
+<a name="l00091"></a>00091     dc[3] = mMotor[3]-&gt;<a class="code" href="class_u_s_u_1_1_motor.html#a98d4c98ddc30e00485712f55b4a91211" title="Return the current speed of the motor.">getSpeed</a>();
+<a name="l00092"></a>00092 }
+<a name="l00093"></a><a class="code" href="class_u_s_u_1_1_motor_control.html#ad4cb1e34afc71cbd161c66d4794784cc">00093</a> <span class="keywordtype">float</span> <a class="code" href="class_u_s_u_1_1_motor_control.html#ad4cb1e34afc71cbd161c66d4794784cc">MotorControl::getPGain</a>()<span class="keyword"> const</span>
+<a name="l00094"></a>00094 <span class="keyword"></span>{
+<a name="l00095"></a>00095     <span class="keywordflow">return</span> mPGain;
+<a name="l00096"></a>00096 }
+<a name="l00097"></a>00097 
+<a name="l00098"></a><a class="code" href="class_u_s_u_1_1_motor_control.html#a0a959a8b3ab68e7ad095dcab4059d469">00098</a> <span class="keywordtype">void</span> <a class="code" href="class_u_s_u_1_1_motor_control.html#a0a959a8b3ab68e7ad095dcab4059d469">MotorControl::setPGain</a>(<span class="keywordtype">float</span> value)
+<a name="l00099"></a>00099 {
+<a name="l00100"></a>00100     mPGain = value;
+<a name="l00101"></a>00101 }
+<a name="l00102"></a><a class="code" href="class_u_s_u_1_1_motor_control.html#a849e3f3b265777135492c2ebfc3fe814">00102</a> Eigen::Vector3f <a class="code" href="class_u_s_u_1_1_motor_control.html#a849e3f3b265777135492c2ebfc3fe814">MotorControl::getSetValue</a>()<span class="keyword"> const</span>
+<a name="l00103"></a>00103 <span class="keyword"></span>{
+<a name="l00104"></a>00104     <span class="keywordflow">return</span> mSetValue;
+<a name="l00105"></a>00105 }
+<a name="l00106"></a>00106 
+<a name="l00107"></a><a class="code" href="class_u_s_u_1_1_motor_control.html#a9de3a4f1b2e39e1f4cfb3e822d5d74bc">00107</a> <span class="keywordtype">void</span> <a class="code" href="class_u_s_u_1_1_motor_control.html#a9de3a4f1b2e39e1f4cfb3e822d5d74bc">MotorControl::setSetValue</a>(<span class="keyword">const</span> Eigen::Vector3f value)
+<a name="l00108"></a>00108 {
+<a name="l00109"></a>00109     mSetValue = value;
+<a name="l00110"></a>00110 }
+<a name="l00111"></a>00111 
+<a name="l00112"></a>00112 
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -182,7 +219,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="motorcontrol_8cpp.html">motorcontrol.cpp</a>      </li>
 
-    <li class="footer">Generated on Fri Aug 2 2013 12:16:41 for U-BET by
+    <li class="footer">Generated on Fri Aug 9 2013 14:42:49 for U-BET by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

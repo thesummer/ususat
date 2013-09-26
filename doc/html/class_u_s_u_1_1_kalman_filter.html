@@ -98,6 +98,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="doc-content">
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a>  </div>
   <div class="headertitle">
 <div class="title">USU::KalmanFilter Class Reference</div>  </div>
@@ -125,6 +127,17 @@ Collaboration diagram for USU::KalmanFilter:</div>
 
 <p><a href="class_u_s_u_1_1_kalman_filter-members.html">List of all members.</a></p>
 <table class="memberdecls">
+<tr><td colspan="2"><h2><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><b>Command</b></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct representing a single command point. <br/></td></tr>
+<tr><td colspan="2"><h2><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_s_u_1_1_kalman_filter.html#ab42b5998c23e20c32775873af96ce8c8">Mode</a> { <a class="el" href="class_u_s_u_1_1_kalman_filter.html#ab42b5998c23e20c32775873af96ce8c8abf30e92c798cd7c2a677f0dff63f8ea7">SimpleControl</a>, 
+<a class="el" href="class_u_s_u_1_1_kalman_filter.html#ab42b5998c23e20c32775873af96ce8c8ae435c722d55e7dda8c82b0b5ce18f136">CollectPololuData</a>, 
+<a class="el" href="class_u_s_u_1_1_kalman_filter.html#ab42b5998c23e20c32775873af96ce8c8ae0a390c1eda0d057ba99b763bd863970">CollectMicroStrainData</a>, 
+<a class="el" href="class_u_s_u_1_1_kalman_filter.html#ab42b5998c23e20c32775873af96ce8c8a9d4c5f2021aefa7d0529670652be7a1a">CollectData</a>
+ }</td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_s_u_1_1_kalman_filter.html#a65e87c695dac9877015a2ace1471fdc2">KalmanFilter</a> (int priority, unsigned int period_us, const char *i2cImu, const char *i2cMotor)</td></tr>
@@ -135,6 +148,9 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Signals the thread to stop.  <a href="#a3f8b3ce719dcb24745150f8c4ef361b8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_s_u_1_1_kalman_filter.html#a3ed1c15b5301f0840f6a7a3d7696fb0a">getState</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current system state estimate.  <a href="#a3ed1c15b5301f0840f6a7a3d7696fb0a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_s_u_1_1_kalman_filter.html#a6c69033cc4bddf2b6bd109286e6accb5">initializeModeSimpleControl</a> (std::string trajFilename, float <a class="el" href="main_8cpp.html#a6570ed64e8a5f38d9e01122b85d550a9">pgain</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_u_s_u_1_1_kalman_filter.html#ab42b5998c23e20c32775873af96ce8c8">Mode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_s_u_1_1_kalman_filter.html#a12bf3159b91b38c82aebf139f1fa0497">getMode</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_s_u_1_1_kalman_filter.html#a5e37575b2560b521fd3462a3f207e0e7">setMode</a> (const <a class="el" href="class_u_s_u_1_1_kalman_filter.html#ab42b5998c23e20c32775873af96ce8c8">Mode</a> &amp;value)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Represents the Periodic Thread class for state estimation. </p>
@@ -146,7 +162,35 @@ Public Member Functions</h2></td></tr>
 </ul>
 
 <p>Definition at line <a class="el" href="kalmanfilter_8h_source.html#l00038">38</a> of file <a class="el" href="kalmanfilter_8h_source.html">kalmanfilter.h</a>.</p>
-</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+</div><hr/><h2>Member Enumeration Documentation</h2>
+<a class="anchor" id="ab42b5998c23e20c32775873af96ce8c8"></a><!-- doxytag: member="USU::KalmanFilter::Mode" ref="ab42b5998c23e20c32775873af96ce8c8" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_u_s_u_1_1_kalman_filter.html#ab42b5998c23e20c32775873af96ce8c8">USU::KalmanFilter::Mode</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="ab42b5998c23e20c32775873af96ce8c8abf30e92c798cd7c2a677f0dff63f8ea7"></a><!-- doxytag: member="SimpleControl" ref="ab42b5998c23e20c32775873af96ce8c8abf30e92c798cd7c2a677f0dff63f8ea7" args="" -->SimpleControl</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ab42b5998c23e20c32775873af96ce8c8ae435c722d55e7dda8c82b0b5ce18f136"></a><!-- doxytag: member="CollectPololuData" ref="ab42b5998c23e20c32775873af96ce8c8ae435c722d55e7dda8c82b0b5ce18f136" args="" -->CollectPololuData</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ab42b5998c23e20c32775873af96ce8c8ae0a390c1eda0d057ba99b763bd863970"></a><!-- doxytag: member="CollectMicroStrainData" ref="ab42b5998c23e20c32775873af96ce8c8ae0a390c1eda0d057ba99b763bd863970" args="" -->CollectMicroStrainData</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ab42b5998c23e20c32775873af96ce8c8a9d4c5f2021aefa7d0529670652be7a1a"></a><!-- doxytag: member="CollectData" ref="ab42b5998c23e20c32775873af96ce8c8a9d4c5f2021aefa7d0529670652be7a1a" args="" -->CollectData</em>&nbsp;</td><td>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+<p>Definition at line <a class="el" href="kalmanfilter_8h_source.html#l00041">41</a> of file <a class="el" href="kalmanfilter_8h_source.html">kalmanfilter.h</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a65e87c695dac9877015a2ace1471fdc2"></a><!-- doxytag: member="USU::KalmanFilter::KalmanFilter" ref="a65e87c695dac9877015a2ace1471fdc2" args="(int priority, unsigned int period_us, const char *i2cImu, const char *i2cMotor)" -->
 <div class="memitem">
 <div class="memproto">
@@ -196,11 +240,29 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="kalmanfilter_8cpp_source.html#l00048">48</a> of file <a class="el" href="kalmanfilter_8cpp_source.html">kalmanfilter.cpp</a>.</p>
+<p>Definition at line <a class="el" href="kalmanfilter_8cpp_source.html#l00049">49</a> of file <a class="el" href="kalmanfilter_8cpp_source.html">kalmanfilter.cpp</a>.</p>
 
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a12bf3159b91b38c82aebf139f1fa0497"></a><!-- doxytag: member="USU::KalmanFilter::getMode" ref="a12bf3159b91b38c82aebf139f1fa0497" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_u_s_u_1_1_kalman_filter.html#ab42b5998c23e20c32775873af96ce8c8">KalmanFilter::Mode</a> <a class="el" href="class_u_s_u_1_1_kalman_filter.html#a12bf3159b91b38c82aebf139f1fa0497">KalmanFilter::getMode</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="kalmanfilter_8cpp_source.html#l00295">295</a> of file <a class="el" href="kalmanfilter_8cpp_source.html">kalmanfilter.cpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a3ed1c15b5301f0840f6a7a3d7696fb0a"></a><!-- doxytag: member="USU::KalmanFilter::getState" ref="a3ed1c15b5301f0840f6a7a3d7696fb0a" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -219,7 +281,36 @@ Public Member Functions</h2></td></tr>
 <p>Copies the current system state estimate. Acquires mutex before acessing the internal variable to avoid read/write-conflicts.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>bool Current system state TODO: Currently only dummy variable. Replace with actual state representation (quaternion?) Probably not necessary anymore </dd></dl>
 
-<p>Definition at line <a class="el" href="kalmanfilter_8cpp_source.html#l00141">141</a> of file <a class="el" href="kalmanfilter_8cpp_source.html">kalmanfilter.cpp</a>.</p>
+<p>Definition at line <a class="el" href="kalmanfilter_8cpp_source.html#l00072">72</a> of file <a class="el" href="kalmanfilter_8cpp_source.html">kalmanfilter.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6c69033cc4bddf2b6bd109286e6accb5"></a><!-- doxytag: member="USU::KalmanFilter::initializeModeSimpleControl" ref="a6c69033cc4bddf2b6bd109286e6accb5" args="(std::string trajFilename, float pgain)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_u_s_u_1_1_kalman_filter.html#a6c69033cc4bddf2b6bd109286e6accb5">KalmanFilter::initializeModeSimpleControl</a> </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>trajFilename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>pgain</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="kalmanfilter_8cpp_source.html#l00078">78</a> of file <a class="el" href="kalmanfilter_8cpp_source.html">kalmanfilter.cpp</a>.</p>
 
 </div>
 </div>
@@ -244,12 +335,29 @@ Public Member Functions</h2></td></tr>
 <li>Hand this state estimate to the motor controller.</li>
 </ul>
 <p>TODO: Develop scenario using Kalman-Filter </p>
-<p>TODO: Do some Kalman-Filtering magic here</p>
-<p>TODO: some more magic </p>
 
 <p>Implements <a class="el" href="class_u_s_u_1_1_periodic_rt_thread.html#ac9146b3088a9b268594ce41d002d020a">USU::PeriodicRtThread</a>.</p>
 
-<p>Definition at line <a class="el" href="kalmanfilter_8cpp_source.html#l00054">54</a> of file <a class="el" href="kalmanfilter_8cpp_source.html">kalmanfilter.cpp</a>.</p>
+<p>Definition at line <a class="el" href="kalmanfilter_8cpp_source.html#l00055">55</a> of file <a class="el" href="kalmanfilter_8cpp_source.html">kalmanfilter.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5e37575b2560b521fd3462a3f207e0e7"></a><!-- doxytag: member="USU::KalmanFilter::setMode" ref="a5e37575b2560b521fd3462a3f207e0e7" args="(const Mode &amp;value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_u_s_u_1_1_kalman_filter.html#a5e37575b2560b521fd3462a3f207e0e7">KalmanFilter::setMode</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_u_s_u_1_1_kalman_filter.html#ab42b5998c23e20c32775873af96ce8c8">Mode</a> &amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="kalmanfilter_8cpp_source.html#l00300">300</a> of file <a class="el" href="kalmanfilter_8cpp_source.html">kalmanfilter.cpp</a>.</p>
 
 </div>
 </div>
@@ -269,7 +377,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Signals the thread to stop. </p>
 
-<p>Definition at line <a class="el" href="kalmanfilter_8h_source.html#l00070">70</a> of file <a class="el" href="kalmanfilter_8h_source.html">kalmanfilter.h</a>.</p>
+<p>Definition at line <a class="el" href="kalmanfilter_8h_source.html#l00078">78</a> of file <a class="el" href="kalmanfilter_8h_source.html">kalmanfilter.h</a>.</p>
 
 </div>
 </div>
@@ -298,7 +406,7 @@ Public Member Functions</h2></td></tr>
       <li class="navelem"><a class="el" href="namespace_u_s_u.html">USU</a>      </li>
       <li class="navelem"><a class="el" href="class_u_s_u_1_1_kalman_filter.html">KalmanFilter</a>      </li>
 
-    <li class="footer">Generated on Fri Aug 2 2013 12:16:41 for U-BET by
+    <li class="footer">Generated on Fri Aug 9 2013 14:42:50 for U-BET by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

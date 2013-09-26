@@ -92,12 +92,14 @@ var searchData=
   ['p9_5f7',['P9_7',['../class_beagle___g_p_i_o.html#a9b1fd560ea5d2d65898ac15c23055e58a02df8d1e455952555cda67c72b173989',1,'Beagle_GPIO']]],
   ['p9_5f8',['P9_8',['../class_beagle___g_p_i_o.html#a9b1fd560ea5d2d65898ac15c23055e58a6db0bb32f089839f18c815f436c0f81c',1,'Beagle_GPIO']]],
   ['p9_5f9',['P9_9',['../class_beagle___g_p_i_o.html#a9b1fd560ea5d2d65898ac15c23055e58a813ba5c5aa73d57b8371df9f1e017b66',1,'Beagle_GPIO']]],
+  ['packet_5fptr',['packet_ptr',['../group__dm.html#ga182171f405c2878c86261aab0de61bf5',1,'USU']]],
   ['period_5ffreq',['Period_freq',['../classc_p_w_m.html#a1b2b93cf10a31cd169bbfd0ddbe5e743',1,'cPWM']]],
   ['period_5fns',['Period_ns',['../classc_p_w_m.html#a5260adb0d5302e4f35a29d0f20e41e03',1,'cPWM']]],
   ['periodicrtthread',['PeriodicRtThread',['../class_u_s_u_1_1_periodic_rt_thread.html',1,'USU']]],
   ['periodicrtthread',['PeriodicRtThread',['../class_u_s_u_1_1_periodic_rt_thread.html#a1106f9ea06df9739369c5994be340624',1,'USU::PeriodicRtThread']]],
   ['periodicrtthread_2ecpp',['periodicrtthread.cpp',['../periodicrtthread_8cpp.html',1,'']]],
   ['periodicrtthread_2eh',['periodicrtthread.h',['../periodicrtthread_8h.html',1,'']]],
+  ['pgain',['pgain',['../main_8cpp.html#a6570ed64e8a5f38d9e01122b85d550a9',1,'main.cpp']]],
   ['pins',['Pins',['../class_beagle___g_p_i_o.html#a9b1fd560ea5d2d65898ac15c23055e58',1,'Beagle_GPIO']]],
   ['platform_5fid',['PLATFORM_ID',['../_c_make_c_compiler_id_8c.html#adbc5372f40838899018fadbc89bd588b',1,'PLATFORM_ID():&#160;CMakeCCompilerId.c'],['../_c_make_c_x_x_compiler_id_8cpp.html#adbc5372f40838899018fadbc89bd588b',1,'PLATFORM_ID():&#160;CMakeCXXCompilerId.cpp']]],
   ['polarity',['Polarity',['../classc_p_w_m.html#a4e92531076ad9cf56c1df16b1028ce64',1,'cPWM']]],
@@ -105,5 +107,6 @@ var searchData=
   ['polarityb',['PolarityB',['../classc_p_w_m.html#adf98ffdf180320ab9c81b675b03adc79',1,'cPWM']]],
   ['pop',['pop',['../class_u_s_u_1_1_g_x3_communicator.html#a0e0e9432c1bf8daf9d63f3c1cbe9feb4',1,'USU::GX3Communicator::pop()'],['../class_u_s_u_1_1_shared_queue.html#a93afe08ba3846e7b939a5f4b3c9d52e0',1,'USU::SharedQueue::pop()']]],
   ['post',['post',['../class_u_s_u_1_1_semaphore.html#a30db893557f60ec42b569b8768df10df',1,'USU::Semaphore']]],
+  ['print',['print',['../class_u_s_u_1_1_g_x3_packet.html#a21d355c432642dc2b87b73352d4c6bd6',1,'USU::GX3Packet::print()'],['../class_u_s_u_1_1_raw_acc_ang.html#abfccb38ac05c28dec6cec091f3b16e3e',1,'USU::RawAccAng::print()'],['../class_u_s_u_1_1_acc_ang_mag.html#ae1443cbed3bbcf2a93c759d89f4463d5',1,'USU::AccAngMag::print()'],['../class_u_s_u_1_1_quaternion.html#a0a55852a828f7ac6877076fd9d229e98',1,'USU::Quaternion::print()'],['../class_u_s_u_1_1_acc_ang_mag_orientation_mat.html#adb8bc06d7a39be9f34cc4f7eed7835a8',1,'USU::AccAngMagOrientationMat::print()']]],
   ['push',['push',['../class_u_s_u_1_1_shared_queue.html#aa022284c06365797ef191b92a273f2e8',1,'USU::SharedQueue']]]
 ];

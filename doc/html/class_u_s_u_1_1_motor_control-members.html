@@ -103,11 +103,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 This is the complete list of members for <a class="el" href="class_u_s_u_1_1_motor_control.html">USU::MotorControl</a>, including all inherited members.<table>
   <tr class="memlist"><td><a class="el" href="class_u_s_u_1_1_motor_control.html#a40b7e40ce5bfb7fb0dea6c0a75d1eb5e">calculateControlResponse</a>(Quaternion state)</td><td><a class="el" href="class_u_s_u_1_1_motor_control.html">USU::MotorControl</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_u_s_u_1_1_motor_control.html#a644b231235aecaeea0d18ed2635da15c">controlFromGyro</a>(Eigen::Vector3f gyro)</td><td><a class="el" href="class_u_s_u_1_1_motor_control.html">USU::MotorControl</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_u_s_u_1_1_motor_control.html#a3304fd7022bf2468859a0d2edae0e2f0">getAnalog</a>(int motor, float &amp;aOut1, float &amp;aOut2)</td><td><a class="el" href="class_u_s_u_1_1_motor_control.html">USU::MotorControl</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_u_s_u_1_1_motor_control.html#a195cfcad9f3e9ca8cbde54340aad620c">getAnalogs</a>(float *aOut1, float *aOut2)</td><td><a class="el" href="class_u_s_u_1_1_motor_control.html">USU::MotorControl</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_u_s_u_1_1_motor_control.html#a16a8f713f050fffc56321f82267bc7cc">getDutyCycles</a>(int *dc)</td><td><a class="el" href="class_u_s_u_1_1_motor_control.html">USU::MotorControl</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_u_s_u_1_1_motor_control.html#ad4cb1e34afc71cbd161c66d4794784cc">getPGain</a>() const </td><td><a class="el" href="class_u_s_u_1_1_motor_control.html">USU::MotorControl</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_u_s_u_1_1_motor_control.html#a849e3f3b265777135492c2ebfc3fe814">getSetValue</a>() const </td><td><a class="el" href="class_u_s_u_1_1_motor_control.html">USU::MotorControl</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_u_s_u_1_1_motor_control.html#a85b6eed3bdd71d61a690395156999888">MotorControl</a>(const char *i2cDevice=&quot;/dev/i2c-3&quot;)</td><td><a class="el" href="class_u_s_u_1_1_motor_control.html">USU::MotorControl</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_u_s_u_1_1_motor_control.html#ad08369ed288a7816de1b3c423684f0da">setMotor</a>(int motor, int dutyCycle)</td><td><a class="el" href="class_u_s_u_1_1_motor_control.html">USU::MotorControl</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_u_s_u_1_1_motor_control.html#a0a959a8b3ab68e7ad095dcab4059d469">setPGain</a>(float value)</td><td><a class="el" href="class_u_s_u_1_1_motor_control.html">USU::MotorControl</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_u_s_u_1_1_motor_control.html#a9de3a4f1b2e39e1f4cfb3e822d5d74bc">setSetValue</a>(const Eigen::Vector3f value)</td><td><a class="el" href="class_u_s_u_1_1_motor_control.html">USU::MotorControl</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_u_s_u_1_1_motor_control.html#a5bc78d24ed52a012a3f81cd3b62216f3">~MotorControl</a>()</td><td><a class="el" href="class_u_s_u_1_1_motor_control.html">USU::MotorControl</a></td><td><code> [virtual]</code></td></tr>
 </table></div><!-- contents -->
 <!-- window showing the filter options -->
@@ -128,7 +133,7 @@ This is the complete list of members for <a class="el" href="class_u_s_u_1_1_mot
   <div id="nav-path" class="navpath">
     <ul>
 
-    <li class="footer">Generated on Fri Aug 2 2013 12:16:42 for U-BET by
+    <li class="footer">Generated on Fri Aug 9 2013 14:42:50 for U-BET by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

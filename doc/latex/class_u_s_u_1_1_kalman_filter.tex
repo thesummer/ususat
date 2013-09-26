@@ -28,6 +28,20 @@
 \includegraphics[width=200pt]{class_u_s_u_1_1_kalman_filter__coll__graph}
 \end{center}
 \end{figure}
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bfseries \-Command}
+\begin{DoxyCompactList}\small\item\em \-Struct representing a single command point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Public \-Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_u_s_u_1_1_kalman_filter_ab42b5998c23e20c32775873af96ce8c8}{\-Mode} \{ \hyperlink{class_u_s_u_1_1_kalman_filter_ab42b5998c23e20c32775873af96ce8c8abf30e92c798cd7c2a677f0dff63f8ea7}{\-Simple\-Control}, 
+\hyperlink{class_u_s_u_1_1_kalman_filter_ab42b5998c23e20c32775873af96ce8c8ae435c722d55e7dda8c82b0b5ce18f136}{\-Collect\-Pololu\-Data}, 
+\hyperlink{class_u_s_u_1_1_kalman_filter_ab42b5998c23e20c32775873af96ce8c8ae0a390c1eda0d057ba99b763bd863970}{\-Collect\-Micro\-Strain\-Data}, 
+\hyperlink{class_u_s_u_1_1_kalman_filter_ab42b5998c23e20c32775873af96ce8c8a9d4c5f2021aefa7d0529670652be7a1a}{\-Collect\-Data}
+ \}
+\end{DoxyCompactItemize}
 \subsection*{\-Public \-Member \-Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -38,7 +52,13 @@ virtual void \hyperlink{class_u_s_u_1_1_kalman_filter_a47cc7f620b57b25133289e61d
 void \hyperlink{class_u_s_u_1_1_kalman_filter_a3f8b3ce719dcb24745150f8c4ef361b8}{stop} ()
 \begin{DoxyCompactList}\small\item\em \-Signals the thread to stop. \end{DoxyCompactList}\item 
 bool \hyperlink{class_u_s_u_1_1_kalman_filter_a3ed1c15b5301f0840f6a7a3d7696fb0a}{get\-State} ()
-\begin{DoxyCompactList}\small\item\em \-Returns the current system state estimate. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \-Returns the current system state estimate. \end{DoxyCompactList}\item 
+void \hyperlink{class_u_s_u_1_1_kalman_filter_a6c69033cc4bddf2b6bd109286e6accb5}{initialize\-Mode\-Simple\-Control} (std\-::string traj\-Filename, float \hyperlink{main_8cpp_a6570ed64e8a5f38d9e01122b85d550a9}{pgain})
+\item 
+\hyperlink{class_u_s_u_1_1_kalman_filter_ab42b5998c23e20c32775873af96ce8c8}{\-Mode} \hyperlink{class_u_s_u_1_1_kalman_filter_a12bf3159b91b38c82aebf139f1fa0497}{get\-Mode} () const 
+\item 
+void \hyperlink{class_u_s_u_1_1_kalman_filter_a5e37575b2560b521fd3462a3f207e0e7}{set\-Mode} (const \hyperlink{class_u_s_u_1_1_kalman_filter_ab42b5998c23e20c32775873af96ce8c8}{\-Mode} \&value)
+\end{DoxyCompactItemize}
 
 
 \subsection{\-Detailed \-Description}
@@ -53,6 +73,30 @@ bool \hyperlink{class_u_s_u_1_1_kalman_filter_a3ed1c15b5301f0840f6a7a3d7696fb0a}
 \end{DoxyItemize}
 
 \-Definition at line 38 of file kalmanfilter.\-h.
+
+
+
+\subsection{\-Member \-Enumeration \-Documentation}
+\hypertarget{class_u_s_u_1_1_kalman_filter_ab42b5998c23e20c32775873af96ce8c8}{\index{\-U\-S\-U\-::\-Kalman\-Filter@{\-U\-S\-U\-::\-Kalman\-Filter}!\-Mode@{\-Mode}}
+\index{\-Mode@{\-Mode}!USU::KalmanFilter@{\-U\-S\-U\-::\-Kalman\-Filter}}
+\subsubsection[{\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \-U\-S\-U\-::\-Kalman\-Filter\-::\-Mode}}}\label{class_u_s_u_1_1_kalman_filter_ab42b5998c23e20c32775873af96ce8c8}
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-Simple\-Control@{\-Simple\-Control}!\-U\-S\-U\-::\-Kalman\-Filter@{\-U\-S\-U\-::\-Kalman\-Filter}}\index{\-U\-S\-U\-::\-Kalman\-Filter@{\-U\-S\-U\-::\-Kalman\-Filter}!\-Simple\-Control@{\-Simple\-Control}}\item[{\em 
+\hypertarget{class_u_s_u_1_1_kalman_filter_ab42b5998c23e20c32775873af96ce8c8abf30e92c798cd7c2a677f0dff63f8ea7}{\-Simple\-Control}\label{class_u_s_u_1_1_kalman_filter_ab42b5998c23e20c32775873af96ce8c8abf30e92c798cd7c2a677f0dff63f8ea7}
+}]\index{\-Collect\-Pololu\-Data@{\-Collect\-Pololu\-Data}!\-U\-S\-U\-::\-Kalman\-Filter@{\-U\-S\-U\-::\-Kalman\-Filter}}\index{\-U\-S\-U\-::\-Kalman\-Filter@{\-U\-S\-U\-::\-Kalman\-Filter}!\-Collect\-Pololu\-Data@{\-Collect\-Pololu\-Data}}\item[{\em 
+\hypertarget{class_u_s_u_1_1_kalman_filter_ab42b5998c23e20c32775873af96ce8c8ae435c722d55e7dda8c82b0b5ce18f136}{\-Collect\-Pololu\-Data}\label{class_u_s_u_1_1_kalman_filter_ab42b5998c23e20c32775873af96ce8c8ae435c722d55e7dda8c82b0b5ce18f136}
+}]\index{\-Collect\-Micro\-Strain\-Data@{\-Collect\-Micro\-Strain\-Data}!\-U\-S\-U\-::\-Kalman\-Filter@{\-U\-S\-U\-::\-Kalman\-Filter}}\index{\-U\-S\-U\-::\-Kalman\-Filter@{\-U\-S\-U\-::\-Kalman\-Filter}!\-Collect\-Micro\-Strain\-Data@{\-Collect\-Micro\-Strain\-Data}}\item[{\em 
+\hypertarget{class_u_s_u_1_1_kalman_filter_ab42b5998c23e20c32775873af96ce8c8ae0a390c1eda0d057ba99b763bd863970}{\-Collect\-Micro\-Strain\-Data}\label{class_u_s_u_1_1_kalman_filter_ab42b5998c23e20c32775873af96ce8c8ae0a390c1eda0d057ba99b763bd863970}
+}]\index{\-Collect\-Data@{\-Collect\-Data}!\-U\-S\-U\-::\-Kalman\-Filter@{\-U\-S\-U\-::\-Kalman\-Filter}}\index{\-U\-S\-U\-::\-Kalman\-Filter@{\-U\-S\-U\-::\-Kalman\-Filter}!\-Collect\-Data@{\-Collect\-Data}}\item[{\em 
+\hypertarget{class_u_s_u_1_1_kalman_filter_ab42b5998c23e20c32775873af96ce8c8a9d4c5f2021aefa7d0529670652be7a1a}{\-Collect\-Data}\label{class_u_s_u_1_1_kalman_filter_ab42b5998c23e20c32775873af96ce8c8a9d4c5f2021aefa7d0529670652be7a1a}
+}]\end{description}
+\end{Desc}
+
+
+
+\-Definition at line 41 of file kalmanfilter.\-h.
 
 
 
@@ -86,11 +130,22 @@ bool \hyperlink{class_u_s_u_1_1_kalman_filter_a3ed1c15b5301f0840f6a7a3d7696fb0a}
 \end{DoxyParams}
 
 
-\-Definition at line 48 of file kalmanfilter.\-cpp.
+\-Definition at line 49 of file kalmanfilter.\-cpp.
 
 
 
 \subsection{\-Member \-Function \-Documentation}
+\hypertarget{class_u_s_u_1_1_kalman_filter_a12bf3159b91b38c82aebf139f1fa0497}{\index{\-U\-S\-U\-::\-Kalman\-Filter@{\-U\-S\-U\-::\-Kalman\-Filter}!get\-Mode@{get\-Mode}}
+\index{get\-Mode@{get\-Mode}!USU::KalmanFilter@{\-U\-S\-U\-::\-Kalman\-Filter}}
+\subsubsection[{get\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Kalman\-Filter\-::\-Mode} {\bf \-Kalman\-Filter\-::get\-Mode} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_u_s_u_1_1_kalman_filter_a12bf3159b91b38c82aebf139f1fa0497}
+
+
+\-Definition at line 295 of file kalmanfilter.\-cpp.
+
 \hypertarget{class_u_s_u_1_1_kalman_filter_a3ed1c15b5301f0840f6a7a3d7696fb0a}{\index{\-U\-S\-U\-::\-Kalman\-Filter@{\-U\-S\-U\-::\-Kalman\-Filter}!get\-State@{get\-State}}
 \index{get\-State@{get\-State}!USU::KalmanFilter@{\-U\-S\-U\-::\-Kalman\-Filter}}
 \subsubsection[{get\-State}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Kalman\-Filter\-::get\-State} (
@@ -109,7 +164,19 @@ bool \-Current system state \-T\-O\-D\-O\-: \-Currently only dummy variable. \-R
 \end{DoxyReturn}
 
 
-\-Definition at line 141 of file kalmanfilter.\-cpp.
+\-Definition at line 72 of file kalmanfilter.\-cpp.
+
+\hypertarget{class_u_s_u_1_1_kalman_filter_a6c69033cc4bddf2b6bd109286e6accb5}{\index{\-U\-S\-U\-::\-Kalman\-Filter@{\-U\-S\-U\-::\-Kalman\-Filter}!initialize\-Mode\-Simple\-Control@{initialize\-Mode\-Simple\-Control}}
+\index{initialize\-Mode\-Simple\-Control@{initialize\-Mode\-Simple\-Control}!USU::KalmanFilter@{\-U\-S\-U\-::\-Kalman\-Filter}}
+\subsubsection[{initialize\-Mode\-Simple\-Control}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Kalman\-Filter\-::initialize\-Mode\-Simple\-Control} (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{traj\-Filename, }
+\item[{float}]{pgain}
+\end{DoxyParamCaption}
+)}}\label{class_u_s_u_1_1_kalman_filter_a6c69033cc4bddf2b6bd109286e6accb5}
+
+
+\-Definition at line 78 of file kalmanfilter.\-cpp.
 
 \hypertarget{class_u_s_u_1_1_kalman_filter_a47cc7f620b57b25133289e61dbf2a7be}{\index{\-U\-S\-U\-::\-Kalman\-Filter@{\-U\-S\-U\-::\-Kalman\-Filter}!run@{run}}
 \index{run@{run}!USU::KalmanFilter@{\-U\-S\-U\-::\-Kalman\-Filter}}
@@ -128,15 +195,24 @@ bool \-Current system state \-T\-O\-D\-O\-: \-Currently only dummy variable. \-R
 \item \-Hand this state estimate to the motor controller.
 \end{DoxyItemize}
 
-\-T\-O\-D\-O\-: \-Develop scenario using \-Kalman-\/\-Filter \-T\-O\-D\-O\-: \-Do some \-Kalman-\/\-Filtering magic here
-
-\-T\-O\-D\-O\-: some more magic 
+\-T\-O\-D\-O\-: \-Develop scenario using \-Kalman-\/\-Filter 
 
 \-Implements \hyperlink{class_u_s_u_1_1_periodic_rt_thread_ac9146b3088a9b268594ce41d002d020a}{\-U\-S\-U\-::\-Periodic\-Rt\-Thread}.
 
 
 
-\-Definition at line 54 of file kalmanfilter.\-cpp.
+\-Definition at line 55 of file kalmanfilter.\-cpp.
+
+\hypertarget{class_u_s_u_1_1_kalman_filter_a5e37575b2560b521fd3462a3f207e0e7}{\index{\-U\-S\-U\-::\-Kalman\-Filter@{\-U\-S\-U\-::\-Kalman\-Filter}!set\-Mode@{set\-Mode}}
+\index{set\-Mode@{set\-Mode}!USU::KalmanFilter@{\-U\-S\-U\-::\-Kalman\-Filter}}
+\subsubsection[{set\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Kalman\-Filter\-::set\-Mode} (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Mode} \&}]{value}
+\end{DoxyParamCaption}
+)}}\label{class_u_s_u_1_1_kalman_filter_a5e37575b2560b521fd3462a3f207e0e7}
+
+
+\-Definition at line 300 of file kalmanfilter.\-cpp.
 
 \hypertarget{class_u_s_u_1_1_kalman_filter_a3f8b3ce719dcb24745150f8c4ef361b8}{\index{\-U\-S\-U\-::\-Kalman\-Filter@{\-U\-S\-U\-::\-Kalman\-Filter}!stop@{stop}}
 \index{stop@{stop}!USU::KalmanFilter@{\-U\-S\-U\-::\-Kalman\-Filter}}
@@ -151,7 +227,7 @@ bool \-Current system state \-T\-O\-D\-O\-: \-Currently only dummy variable. \-R
 
 
 
-\-Definition at line 70 of file kalmanfilter.\-h.
+\-Definition at line 78 of file kalmanfilter.\-h.
 
 
 

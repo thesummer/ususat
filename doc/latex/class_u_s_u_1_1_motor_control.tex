@@ -19,6 +19,8 @@ virtual \hyperlink{class_u_s_u_1_1_motor_control_a5bc78d24ed52a012a3f81cd3b62216
 \item 
 void \hyperlink{class_u_s_u_1_1_motor_control_a40b7e40ce5bfb7fb0dea6c0a75d1eb5e}{calculate\-Control\-Response} (\hyperlink{class_u_s_u_1_1_quaternion}{\-Quaternion} state)
 \begin{DoxyCompactList}\small\item\em \-Calculate the control response from the current state estimate. \end{DoxyCompactList}\item 
+void \hyperlink{class_u_s_u_1_1_motor_control_a644b231235aecaeea0d18ed2635da15c}{control\-From\-Gyro} (\-Eigen\-::\-Vector3f gyro)
+\begin{DoxyCompactList}\small\item\em \-Uses a simple algorithm to control the speed only from gyro data. \end{DoxyCompactList}\item 
 void \hyperlink{class_u_s_u_1_1_motor_control_ad08369ed288a7816de1b3c423684f0da}{set\-Motor} (int motor, int duty\-Cycle)
 \begin{DoxyCompactList}\small\item\em \-For testing\-: sets the speed of a motor. \end{DoxyCompactList}\item 
 void \hyperlink{class_u_s_u_1_1_motor_control_a3304fd7022bf2468859a0d2edae0e2f0}{get\-Analog} (int motor, float \&a\-Out1, float \&a\-Out2)
@@ -26,7 +28,15 @@ void \hyperlink{class_u_s_u_1_1_motor_control_a3304fd7022bf2468859a0d2edae0e2f0}
 void \hyperlink{class_u_s_u_1_1_motor_control_a195cfcad9f3e9ca8cbde54340aad620c}{get\-Analogs} (float $\ast$a\-Out1, float $\ast$a\-Out2)
 \begin{DoxyCompactList}\small\item\em \-For testing\-: returns the \-Analog measurements of all motors. \end{DoxyCompactList}\item 
 void \hyperlink{class_u_s_u_1_1_motor_control_a16a8f713f050fffc56321f82267bc7cc}{get\-Duty\-Cycles} (int $\ast$dc)
-\begin{DoxyCompactList}\small\item\em \-For testing\-: returns the dutycycles of all motors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \-For testing\-: returns the dutycycles of all motors. \end{DoxyCompactList}\item 
+float \hyperlink{class_u_s_u_1_1_motor_control_ad4cb1e34afc71cbd161c66d4794784cc}{get\-P\-Gain} () const 
+\item 
+void \hyperlink{class_u_s_u_1_1_motor_control_a0a959a8b3ab68e7ad095dcab4059d469}{set\-P\-Gain} (float value)
+\item 
+\-Eigen\-::\-Vector3f \hyperlink{class_u_s_u_1_1_motor_control_a849e3f3b265777135492c2ebfc3fe814}{get\-Set\-Value} () const 
+\item 
+void \hyperlink{class_u_s_u_1_1_motor_control_a9de3a4f1b2e39e1f4cfb3e822d5d74bc}{set\-Set\-Value} (const \-Eigen\-::\-Vector3f value)
+\end{DoxyCompactItemize}
 
 
 \subsection{\-Detailed \-Description}
@@ -36,7 +46,7 @@ void \hyperlink{class_u_s_u_1_1_motor_control_a16a8f713f050fffc56321f82267bc7cc}
 
 \-T\-O\-D\-O\-: \-Get the desired state from ground station to calculate the control response. 
 
-\-Definition at line 36 of file motorcontrol.\-h.
+\-Definition at line 38 of file motorcontrol.\-h.
 
 
 
@@ -61,7 +71,7 @@ void \hyperlink{class_u_s_u_1_1_motor_control_a16a8f713f050fffc56321f82267bc7cc}
 \end{DoxyParams}
 
 
-\-Definition at line 15 of file motorcontrol.\-cpp.
+\-Definition at line 18 of file motorcontrol.\-cpp.
 
 \hypertarget{class_u_s_u_1_1_motor_control_a5bc78d24ed52a012a3f81cd3b62216f3}{\index{\-U\-S\-U\-::\-Motor\-Control@{\-U\-S\-U\-::\-Motor\-Control}!$\sim$\-Motor\-Control@{$\sim$\-Motor\-Control}}
 \index{$\sim$\-Motor\-Control@{$\sim$\-Motor\-Control}!USU::MotorControl@{\-U\-S\-U\-::\-Motor\-Control}}
@@ -72,7 +82,7 @@ void \hyperlink{class_u_s_u_1_1_motor_control_a16a8f713f050fffc56321f82267bc7cc}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{class_u_s_u_1_1_motor_control_a5bc78d24ed52a012a3f81cd3b62216f3}
 
 
-\-Definition at line 31 of file motorcontrol.\-cpp.
+\-Definition at line 34 of file motorcontrol.\-cpp.
 
 
 
@@ -92,14 +102,34 @@ void \hyperlink{class_u_s_u_1_1_motor_control_a16a8f713f050fffc56321f82267bc7cc}
 
 
 \begin{DoxyParams}{\-Parameters}
-{\em state} & the current state estimate from the \-Kalman filter \\
+{\em state} & the current state estimate from the \hyperlink{class_i_m_u}{\-I\-M\-U} \\
 \hline
 \end{DoxyParams}
 \-T\-O\-D\-O\-: \-Make some control magic
 
 \mbox{[}...\mbox{]} 
 
-\-Definition at line 39 of file motorcontrol.\-cpp.
+\-Definition at line 42 of file motorcontrol.\-cpp.
+
+\hypertarget{class_u_s_u_1_1_motor_control_a644b231235aecaeea0d18ed2635da15c}{\index{\-U\-S\-U\-::\-Motor\-Control@{\-U\-S\-U\-::\-Motor\-Control}!control\-From\-Gyro@{control\-From\-Gyro}}
+\index{control\-From\-Gyro@{control\-From\-Gyro}!USU::MotorControl@{\-U\-S\-U\-::\-Motor\-Control}}
+\subsubsection[{control\-From\-Gyro}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Motor\-Control\-::control\-From\-Gyro} (
+\begin{DoxyParamCaption}
+\item[{\-Eigen\-::\-Vector3f}]{gyro}
+\end{DoxyParamCaption}
+)}}\label{class_u_s_u_1_1_motor_control_a644b231235aecaeea0d18ed2635da15c}
+
+
+\-Uses a simple algorithm to control the speed only from gyro data. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em gyro} & \-Vector with the current angular rates \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 49 of file motorcontrol.\-cpp.
 
 \hypertarget{class_u_s_u_1_1_motor_control_a3304fd7022bf2468859a0d2edae0e2f0}{\index{\-U\-S\-U\-::\-Motor\-Control@{\-U\-S\-U\-::\-Motor\-Control}!get\-Analog@{get\-Analog}}
 \index{get\-Analog@{get\-Analog}!USU::MotorControl@{\-U\-S\-U\-::\-Motor\-Control}}
@@ -125,7 +155,7 @@ void \hyperlink{class_u_s_u_1_1_motor_control_a16a8f713f050fffc56321f82267bc7cc}
 \end{DoxyParams}
 
 
-\-Definition at line 51 of file motorcontrol.\-cpp.
+\-Definition at line 68 of file motorcontrol.\-cpp.
 
 \hypertarget{class_u_s_u_1_1_motor_control_a195cfcad9f3e9ca8cbde54340aad620c}{\index{\-U\-S\-U\-::\-Motor\-Control@{\-U\-S\-U\-::\-Motor\-Control}!get\-Analogs@{get\-Analogs}}
 \index{get\-Analogs@{get\-Analogs}!USU::MotorControl@{\-U\-S\-U\-::\-Motor\-Control}}
@@ -148,7 +178,7 @@ void \hyperlink{class_u_s_u_1_1_motor_control_a16a8f713f050fffc56321f82267bc7cc}
 \end{DoxyParams}
 
 
-\-Definition at line 57 of file motorcontrol.\-cpp.
+\-Definition at line 74 of file motorcontrol.\-cpp.
 
 \hypertarget{class_u_s_u_1_1_motor_control_a16a8f713f050fffc56321f82267bc7cc}{\index{\-U\-S\-U\-::\-Motor\-Control@{\-U\-S\-U\-::\-Motor\-Control}!get\-Duty\-Cycles@{get\-Duty\-Cycles}}
 \index{get\-Duty\-Cycles@{get\-Duty\-Cycles}!USU::MotorControl@{\-U\-S\-U\-::\-Motor\-Control}}
@@ -168,7 +198,29 @@ void \hyperlink{class_u_s_u_1_1_motor_control_a16a8f713f050fffc56321f82267bc7cc}
 \end{DoxyParams}
 
 
-\-Definition at line 69 of file motorcontrol.\-cpp.
+\-Definition at line 86 of file motorcontrol.\-cpp.
+
+\hypertarget{class_u_s_u_1_1_motor_control_ad4cb1e34afc71cbd161c66d4794784cc}{\index{\-U\-S\-U\-::\-Motor\-Control@{\-U\-S\-U\-::\-Motor\-Control}!get\-P\-Gain@{get\-P\-Gain}}
+\index{get\-P\-Gain@{get\-P\-Gain}!USU::MotorControl@{\-U\-S\-U\-::\-Motor\-Control}}
+\subsubsection[{get\-P\-Gain}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf \-Motor\-Control\-::get\-P\-Gain} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_u_s_u_1_1_motor_control_ad4cb1e34afc71cbd161c66d4794784cc}
+
+
+\-Definition at line 93 of file motorcontrol.\-cpp.
+
+\hypertarget{class_u_s_u_1_1_motor_control_a849e3f3b265777135492c2ebfc3fe814}{\index{\-U\-S\-U\-::\-Motor\-Control@{\-U\-S\-U\-::\-Motor\-Control}!get\-Set\-Value@{get\-Set\-Value}}
+\index{get\-Set\-Value@{get\-Set\-Value}!USU::MotorControl@{\-U\-S\-U\-::\-Motor\-Control}}
+\subsubsection[{get\-Set\-Value}]{\setlength{\rightskip}{0pt plus 5cm}\-Eigen\-::\-Vector3f {\bf \-Motor\-Control\-::get\-Set\-Value} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_u_s_u_1_1_motor_control_a849e3f3b265777135492c2ebfc3fe814}
+
+
+\-Definition at line 102 of file motorcontrol.\-cpp.
 
 \hypertarget{class_u_s_u_1_1_motor_control_ad08369ed288a7816de1b3c423684f0da}{\index{\-U\-S\-U\-::\-Motor\-Control@{\-U\-S\-U\-::\-Motor\-Control}!set\-Motor@{set\-Motor}}
 \index{set\-Motor@{set\-Motor}!USU::MotorControl@{\-U\-S\-U\-::\-Motor\-Control}}
@@ -191,7 +243,29 @@ void \hyperlink{class_u_s_u_1_1_motor_control_a16a8f713f050fffc56321f82267bc7cc}
 \end{DoxyParams}
 
 
-\-Definition at line 46 of file motorcontrol.\-cpp.
+\-Definition at line 63 of file motorcontrol.\-cpp.
+
+\hypertarget{class_u_s_u_1_1_motor_control_a0a959a8b3ab68e7ad095dcab4059d469}{\index{\-U\-S\-U\-::\-Motor\-Control@{\-U\-S\-U\-::\-Motor\-Control}!set\-P\-Gain@{set\-P\-Gain}}
+\index{set\-P\-Gain@{set\-P\-Gain}!USU::MotorControl@{\-U\-S\-U\-::\-Motor\-Control}}
+\subsubsection[{set\-P\-Gain}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Motor\-Control\-::set\-P\-Gain} (
+\begin{DoxyParamCaption}
+\item[{float}]{value}
+\end{DoxyParamCaption}
+)}}\label{class_u_s_u_1_1_motor_control_a0a959a8b3ab68e7ad095dcab4059d469}
+
+
+\-Definition at line 98 of file motorcontrol.\-cpp.
+
+\hypertarget{class_u_s_u_1_1_motor_control_a9de3a4f1b2e39e1f4cfb3e822d5d74bc}{\index{\-U\-S\-U\-::\-Motor\-Control@{\-U\-S\-U\-::\-Motor\-Control}!set\-Set\-Value@{set\-Set\-Value}}
+\index{set\-Set\-Value@{set\-Set\-Value}!USU::MotorControl@{\-U\-S\-U\-::\-Motor\-Control}}
+\subsubsection[{set\-Set\-Value}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Motor\-Control\-::set\-Set\-Value} (
+\begin{DoxyParamCaption}
+\item[{const \-Eigen\-::\-Vector3f}]{value}
+\end{DoxyParamCaption}
+)}}\label{class_u_s_u_1_1_motor_control_a9de3a4f1b2e39e1f4cfb3e822d5d74bc}
+
+
+\-Definition at line 107 of file motorcontrol.\-cpp.
 
 
 

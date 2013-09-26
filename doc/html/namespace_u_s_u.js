@@ -20,6 +20,8 @@ var namespace_u_s_u =
     [ "RtThread", "class_u_s_u_1_1_rt_thread.html", null ],
     [ "Semaphore", "class_u_s_u_1_1_semaphore.html", null ],
     [ "SharedQueue", "class_u_s_u_1_1_shared_queue.html", null ],
+    [ "packet_ptr", "group__dm.html#ga182171f405c2878c86261aab0de61bf5", null ],
+    [ "operator<<", "group__dm.html#ga4b75ff85a8a203542e1b99db19f7e17a", null ],
     [ "ACC_ANG", "namespace_u_s_u.html#a0517f100ec98a93fb28d4ae52a943b19", null ],
     [ "ACC_ANG_MAG_VEC", "namespace_u_s_u.html#ad03e7c0f41fd47a68a9f33abde73932a", null ],
     [ "ACC_ANG_MAG_VEC_ORIENTATION_MAT", "namespace_u_s_u.html#adb9724de65ce9a212dd8611f69d241f0", null ],
