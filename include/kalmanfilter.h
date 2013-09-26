@@ -35,7 +35,7 @@ namespace USU
     - Implement kalman filter for state estimate
     - change name to something more meaningful?
 */
-class KalmanFilter : public PeriodicRtThread
+class MainThread : public PeriodicRtThread
 {
 public:
     enum Mode
@@ -58,7 +58,7 @@ public:
      \param i2cImu      name of the I2C-device for the IMU (e.g. /dev/i2c-1)
      \param i2cMotor    name of the I2C-device for the Motors (e.g. /dev/i2c-2)
     */
-    KalmanFilter(int priority, unsigned int period_us, const char* i2cImu, const char *i2cMotor);
+    MainThread(int priority, unsigned int period_us, const char* i2cImu, const char *i2cMotor);
 
     /*!
      \brief Thread routine
@@ -131,8 +131,8 @@ private:
     volatile bool mKeepRunning; /*!< Indicates if the Thread should keep running. volatile to prevent optimizing */
 
 
-    KalmanFilter(const KalmanFilter& thread); /*!< Copy constructor made inaccessible by declaring it private */
-    KalmanFilter& operator=(const KalmanFilter& rhs); /*!< Assignment constructor made inaccessible by declaring it private */
+    MainThread(const MainThread& thread); /*!< Copy constructor made inaccessible by declaring it private */
+    MainThread& operator=(const MainThread& rhs); /*!< Assignment constructor made inaccessible by declaring it private */
 };
 
 }

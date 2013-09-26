@@ -29,7 +29,7 @@ TCLAP::ValueArg<string> mode("", "mode",  modeText , true, string(), "mode name"
 //TCLAP::SwitchArg stats("s", "stats", "Print statistics (number of spots, number of identified spots, ratio");
 
 
-KalmanFilter kalmanFilter(5, 20000 , "/dev/i2c-2", "/dev/i2c-3");
+MainThread kalmanFilter(5, 20000 , "/dev/i2c-2", "/dev/i2c-3");
 //bool run = true;
 
 void endProgram(int s)
@@ -64,19 +64,19 @@ int main(int argc, char **argv)
         if(mode.getValue() == "simpleControl")
         {
             kalmanFilter.initializeModeSimpleControl(trajFile.getValue(), pgain.getValue());
-            kalmanFilter.setMode(KalmanFilter::SimpleControl);
+            kalmanFilter.setMode(MainThread::SimpleControl);
         }
         else if(mode.getValue() == "pololu")
         {
-            kalmanFilter.setMode(KalmanFilter::CollectPololuData);
+            kalmanFilter.setMode(MainThread::CollectPololuData);
         }
         else if(mode.getValue() == "microstrain")
         {
-            kalmanFilter.setMode(KalmanFilter::CollectMicroStrainData);
+            kalmanFilter.setMode(MainThread::CollectMicroStrainData);
         }
         else if(mode.getValue() == "collect")
         {
-            kalmanFilter.setMode(KalmanFilter::CollectData);
+            kalmanFilter.setMode(MainThread::CollectData);
         }
         else
         {

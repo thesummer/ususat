@@ -114,7 +114,7 @@ void KalmanFilter::runSimpleControl()
         return;
     }
 
-    mImu.enable();
+//    mImu.enable();
 
     std::vector<Command>::const_iterator commandIt = mCommandList.begin();
     mMotors.setSetValue(commandIt->angVel);
@@ -125,11 +125,12 @@ void KalmanFilter::runSimpleControl()
     unsigned lastTime = 0;
     waitPeriod();
 
+
     while(mKeepRunning)
     {
         gettimeofday(&now, NULL);
 
-        gyro = mImu.readGyro();
+//        gyro = mImu.readGyro();
 
         // Run countdown
         timeval_subtract(&elapsed, &now, &start);
@@ -154,6 +155,14 @@ void KalmanFilter::runSimpleControl()
 
         waitPeriod();
     }
+
+    gyro(2) = 1;
+    mMotors.setSetValue(gyro);
+    mMotors.controlFromGyro(gyro);
+    waitPeriod();
+    gyro(2) = 0;
+    mMotors.setSetValue(gyro);
+    mMotors.controlFromGyro(gyro);
 
     std::cerr << "KALMANFILTER: Got signal to terminate" << std::endl;
 }
@@ -199,9 +208,9 @@ void KalmanFilter::runCollectMicroStrain()
 
     mGX3.initialize();
     mGX3.start();
+    packet_ptr lastState;
     while(mKeepRunning)
     {
-        packet_ptr lastState;
 
         if(mGX3.isEmpty() == false)
         {
@@ -214,9 +223,9 @@ void KalmanFilter::runCollectMicroStrain()
             lastState = mGX3.front();
             mGX3.pop();
 
-            cout << (*lastState) << endl;
         }
 
+        cout << (*lastState) << endl;
         waitPeriod();
     }
 
