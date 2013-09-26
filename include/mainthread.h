@@ -1,5 +1,5 @@
 /**
- * @file kalmanfilter.h
+ * @file mainthread.h
  *
  * C++ class for the sensor fusion and state estimated.
  * Based on the PeriodicRtThread class.
@@ -11,8 +11,8 @@
 
 
 
-#ifndef KALMANFILTER_H
-#define KALMANFILTER_H
+#ifndef MAINTHREAD_H
+#define MAINTHREAD_H
 
 #include "periodicrtthread.h"
 #include "minimu.h"
@@ -137,4 +137,4 @@ private:
 
 }
 
-#endif // KALMANFILTER_H
+#endif // MAINTHREAD_H

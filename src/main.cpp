@@ -7,7 +7,7 @@
 using std::string;
 
 #include "tclap/CmdLine.h"
-#include "kalmanfilter.h"
+#include "mainthread.h"
 using namespace USU;
 
 // Text to explain the different modes (more elegant way to split strings over several lines?)

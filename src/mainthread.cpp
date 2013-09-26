@@ -1,5 +1,5 @@
 /**
- * @file kalmanfilter.cpp
+ * @file mainthread.cpp
  *
  * C++ class for the sensor fusion and stated estimated.
  * Based on the PeriodicRtThread class.
@@ -17,7 +17,7 @@ using std::endl;
 #include <unistd.h>
 
 
-#include "kalmanfilter.h"
+#include "mainthread.h"
 #include "vector.h"
 
 using namespace USU;
