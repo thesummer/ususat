@@ -92,7 +92,7 @@ public:
      \param aOut1 Float array to store the first analog measurement of each motor
      \param aOut2 Float array to store the second analog measurement of each motor
     */
-    void getAnalogs(float * aOut1, float* aOut2);
+    void getAnalogs(Eigen::Vector4f &aOut1, Eigen::Vector4f &aOut2);
 
     /*!
      \brief For testing: returns the dutycycles of all motors
