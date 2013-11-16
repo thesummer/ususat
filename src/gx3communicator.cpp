@@ -76,28 +76,21 @@ void GX3Communicator::run()
     mKeepRunning = true;
 
     // Activate Continuous mode
-    SetCountinuousMode setCont(ACC_ANG_MAG_VEC);
+    SetCountinuousMode setCont(ACC_ANG_ORIENTATION_MAT);
     if(setCont.sendCommand(mSerialPort) == false)
         std::cerr << " Set continuous mode failed " << std::endl;/// TODO: Error
 
-//    struct timeval start, now, elapsed;
-
-//    gettimeofday(&start, NULL);
     while(mKeepRunning)
     {
-        packet_ptr data(new AccAngMag);
+        packet_ptr data(new AccAngOrientationMat);
         if(data->readFromSerial(mSerialPort))
         {
             mQueue.push(data);
-            //        gettimeofday(&now, NULL);
-            //        timeval_subtract(&elapsed, &now, &start);
-//                    unsigned long long timestamp = elapsed.tv_sec * 1000 + elapsed.tv_usec / 1000; // in ms since start
-//                    std::cout << (*data) << std::endl;
         }
         else
         {
 //            std::cout << "readFromSerial failed" << std::endl;
-            //            throw std::runtime_error("Getting PackageData failed"); /// TODO: Error?
+//            throw std::runtime_error("Getting PackageData failed"); /// TODO: Error?
 
         }
     }
