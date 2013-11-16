@@ -472,7 +472,7 @@ public:
      \brief Print the stored information to ostream object
 
      Format:
-        timestamp,accX,accY,accZ,magX,magY,magZ,gyroX,gyroY,gyroZ,mat(0,[0..2]),mat(1,[0..2]),mat(2,[0..2])
+        timestamp,accX,accY,accZ,gyroX,gyroY,gyroZ,mat(0,[0..2]),mat(1,[0..2]),mat(2,[0..2])
 
      \param os
     */
@@ -492,7 +492,7 @@ public:
     matrix orientation; /*!< 3x3 Matrix containing the orientation */
     unsigned int timer; /*!< The value of the timestamp for the package */
 
-    enum {size = 67}; /*!< Size of the package (enum to avoid complications with static consts) */
+    enum {size = 67};   /*!< Size of the package (enum to avoid complications with static consts) */
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
