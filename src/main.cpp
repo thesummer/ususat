@@ -29,14 +29,14 @@ TCLAP::ValueArg<string> mode("", "mode",  modeText , true, string(), "mode name"
 //TCLAP::SwitchArg stats("s", "stats", "Print statistics (number of spots, number of identified spots, ratio");
 
 
-MainThread kalmanFilter(5, 20000 , "/dev/i2c-2", "/dev/i2c-3");
+MainThread mainThread(5, 20000 , "/dev/i2c-2", "/dev/i2c-3");
 //bool run = true;
 
 void endProgram(int s)
 {
     std::cerr << "MAIN: Got signal for termination" << std::endl;
     std::cerr << "MAIN: Stopping kalman filter thread..." << std::endl;
-    kalmanFilter.stop();
+    mainThread.stop();
 }
 
 
@@ -63,24 +63,24 @@ int main(int argc, char **argv)
         // Evaluate command line options
         if(mode.getValue() == "simpleControl")
         {
-            kalmanFilter.initializeModeSimpleControl(trajFile.getValue(), pgain.getValue());
-            kalmanFilter.setMode(MainThread::SimpleControl);
+            mainThread.initializeModeSimpleControl(trajFile.getValue(), pgain.getValue());
+            mainThread.setMode(MainThread::SimpleControl);
         }
         else if (mode.getValue() == "control")
         {
-            kalmanFilter.setMode(MainThread::Control);
+            mainThread.setMode(MainThread::Control);
         }
         else if(mode.getValue() == "pololu")
         {
-            kalmanFilter.setMode(MainThread::CollectPololuData);
+            mainThread.setMode(MainThread::CollectPololuData);
         }
         else if(mode.getValue() == "microstrain")
         {
-            kalmanFilter.setMode(MainThread::CollectMicroStrainData);
+            mainThread.setMode(MainThread::CollectMicroStrainData);
         }
         else if(mode.getValue() == "collect")
         {
-            kalmanFilter.setMode(MainThread::CollectData);
+            mainThread.setMode(MainThread::CollectData);
         }
         else
         {
@@ -88,9 +88,9 @@ int main(int argc, char **argv)
             return 1;
         }
 
-        kalmanFilter.start();
+        mainThread.start();
 
-        if(kalmanFilter.join() )
+        if(mainThread.join() )
         {
             std::cerr << "MAIN: Kalman filter thread joined" << std::endl;
             std::cerr << "MAIN: Terminating now..." << std::endl;
