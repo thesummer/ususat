@@ -39,8 +39,14 @@ MotorControl::~MotorControl()
     mPwm2.StopB();
 }
 
-void MotorControl::calculateControlResponse(Eigen::Matrix3f &orientation, Eigen::Vector3f &gyro, Eigen::Vector4f &ch1, Eigen::Vector4f &ch2)
+void MotorControl::calculateControlResponse(Eigen::Matrix3f &orientation, Eigen::Vector3f &gyro)
 {
+    // Get Analog readings
+    Eigen::Vector4f ch1, ch2;
+    getAnalogs(ch1, ch2);
+
+
+
     /// TODO: Make some control magic
 //    mMotor[0]->setSpeed(20);
     /// [...]
