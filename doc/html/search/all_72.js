@@ -30,7 +30,7 @@ var searchData=
   ['rtthread',['RtThread',['../class_u_s_u_1_1_rt_thread.html',1,'USU']]],
   ['rtthread_2ecpp',['RtThread.cpp',['../_rt_thread_8cpp.html',1,'']]],
   ['rtthread_2eh',['RtThread.h',['../_rt_thread_8h.html',1,'']]],
-  ['run',['run',['../class_data_collector.html#aa6735ae7b21378ec0f2e2aa28c295c87',1,'DataCollector::run()'],['../class_data_collector.html#acb6910eac48d5992e2bd9c43cfcd8ca5',1,'DataCollector::run()'],['../class_motor_programmer.html#add5000a22f85e3ce067f06c0ce4279e2',1,'MotorProgrammer::run()'],['../class_my_thread.html#a48f2e366e852087c53705f64e1ee65c2',1,'MyThread::run()'],['../class_u_s_u_1_1_g_x3_communicator.html#ae7e5cf4c792ca270826dea243abbc5aa',1,'USU::GX3Communicator::run()'],['../class_u_s_u_1_1_main_thread.html#a643a8c48e69df621adb50258a16a0a29',1,'USU::MainThread::run()'],['../class_u_s_u_1_1_periodic_rt_thread.html#ac9146b3088a9b268594ce41d002d020a',1,'USU::PeriodicRtThread::run()'],['../class_u_s_u_1_1_rt_thread.html#a858a5d475ed5b61759889b6608ff4372',1,'USU::RtThread::run()']]],
+  ['run',['run',['../class_u_s_u_1_1_g_x3_communicator.html#ae7e5cf4c792ca270826dea243abbc5aa',1,'USU::GX3Communicator::run()'],['../class_u_s_u_1_1_main_thread.html#a643a8c48e69df621adb50258a16a0a29',1,'USU::MainThread::run()'],['../class_u_s_u_1_1_periodic_rt_thread.html#ac9146b3088a9b268594ce41d002d020a',1,'USU::PeriodicRtThread::run()'],['../class_u_s_u_1_1_rt_thread.html#a858a5d475ed5b61759889b6608ff4372',1,'USU::RtThread::run()']]],
   ['runa',['RunA',['../classc_p_w_m.html#a9a0ca9c423dcf337c37cd0a41ef48f70',1,'cPWM']]],
   ['runb',['RunB',['../classc_p_w_m.html#a4f9a302cfd62c5ab845093c62667f91f',1,'cPWM']]]
 ];

@@ -1,14 +1,5 @@
 var files =
 [
-    [ "bb-build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c", "_c_make_c_compiler_id_8c.html", "_c_make_c_compiler_id_8c" ],
-    [ "bb-build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp", "_c_make_c_x_x_compiler_id_8cpp.html", "_c_make_c_x_x_compiler_id_8cpp" ],
-    [ "examples/dac-example.cpp", "dac-example_8cpp.html", "dac-example_8cpp" ],
-    [ "examples/datacollector.hpp", "datacollector_8hpp.html", null ],
-    [ "examples/gx3-example.cpp", "gx3-example_8cpp.html", "gx3-example_8cpp" ],
-    [ "examples/minimu-example.cpp", "minimu-example_8cpp.html", "minimu-example_8cpp" ],
-    [ "examples/motor-example.cpp", "motor-example_8cpp.html", "motor-example_8cpp" ],
-    [ "examples/motorprogrammer.hpp", "motorprogrammer_8hpp.html", null ],
-    [ "examples/threading-example.cpp", "threading-example_8cpp.html", "threading-example_8cpp" ],
     [ "include/Beagle_GPIO.h", "_beagle___g_p_i_o_8h.html", "_beagle___g_p_i_o_8h" ],
     [ "include/cPWM.h", "c_p_w_m_8h.html", "c_p_w_m_8h" ],
     [ "include/doxygen.h", "doxygen_8h.html", null ],

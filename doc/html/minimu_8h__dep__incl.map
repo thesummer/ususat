@@ -1,7 +1,6 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$minimu-example_8cpp.html" title="examples/minimu&#45;example.cpp" alt="" coords="5,83,208,112"/>
-<area shape="rect" id="node5" href="$mainthread_8h.html" title="include/mainthread.h" alt="" coords="232,83,373,112"/>
-<area shape="rect" id="node11" href="$minimu_8cpp.html" title="src/minimu.cpp" alt="" coords="397,83,507,112"/>
-<area shape="rect" id="node7" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="185,160,281,189"/>
-<area shape="rect" id="node9" href="$mainthread_8cpp.html" title="src/mainthread.cpp" alt="" coords="305,160,439,189"/>
+<area shape="rect" id="node3" href="$minimu_8cpp.html" title="src/minimu.cpp" alt="" coords="5,83,115,112"/>
+<area shape="rect" id="node5" href="$mainthread_8h.html" title="include/mainthread.h" alt="" coords="139,83,280,112"/>
+<area shape="rect" id="node7" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="92,160,188,189"/>
+<area shape="rect" id="node9" href="$mainthread_8cpp.html" title="src/mainthread.cpp" alt="" coords="212,160,345,189"/>
 </map>

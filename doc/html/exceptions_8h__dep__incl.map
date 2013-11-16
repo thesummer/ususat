@@ -1,22 +1,17 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$_i2_c_bus_8h.html" title="include/I2CBus.h" alt="" coords="449,83,572,112"/>
-<area shape="rect" id="node5" href="$_l3_g_8h.html" title="include/L3G.h" alt="" coords="231,160,332,189"/>
-<area shape="rect" id="node21" href="$_l_s_m303_8h.html" title="include/LSM303.h" alt="" coords="361,160,487,189"/>
-<area shape="rect" id="node26" href="$max127_8h.html" title="include/max127.h" alt="" coords="536,160,659,189"/>
-<area shape="rect" id="node44" href="$_i2_c_bus_8cpp.html" title="src/I2CBus.cpp" alt="" coords="683,160,795,189"/>
-<area shape="rect" id="node7" href="$minimu_8h.html" title="include/minimu.h" alt="" coords="221,237,341,267"/>
-<area shape="rect" id="node19" href="$_l3_g_8cpp.html" title="src/L3G.cpp" alt="" coords="104,237,197,267"/>
-<area shape="rect" id="node9" href="$minimu-example_8cpp.html" title="examples/minimu&#45;example.cpp" alt="" coords="5,315,208,344"/>
-<area shape="rect" id="node11" href="$mainthread_8h.html" title="include/mainthread.h" alt="" coords="381,315,523,344"/>
-<area shape="rect" id="node17" href="$minimu_8cpp.html" title="src/minimu.cpp" alt="" coords="232,315,341,344"/>
-<area shape="rect" id="node13" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="271,392,367,421"/>
-<area shape="rect" id="node15" href="$mainthread_8cpp.html" title="src/mainthread.cpp" alt="" coords="391,392,524,421"/>
-<area shape="rect" id="node24" href="$_l_s_m303_8cpp.html" title="src/LSM303.cpp" alt="" coords="365,237,483,267"/>
-<area shape="rect" id="node28" href="$dac-example_8cpp.html" title="examples/dac&#45;example.cpp" alt="" coords="507,237,688,267"/>
-<area shape="rect" id="node30" href="$motorcontrol_8h.html" title="include/motorcontrol.h" alt="" coords="712,237,861,267"/>
-<area shape="rect" id="node42" href="$max127_8cpp.html" title="src/max127.cpp" alt="" coords="885,237,1000,267"/>
-<area shape="rect" id="node32" href="$datacollector_8hpp.html" title="examples/datacollector.hpp" alt="" coords="568,315,749,344"/>
-<area shape="rect" id="node34" href="$motorprogrammer_8hpp.html" title="examples/motorprogrammer.hpp" alt="" coords="559,392,767,421"/>
-<area shape="rect" id="node40" href="$motorcontrol_8cpp.html" title="src/motorcontrol.cpp" alt="" coords="824,315,965,344"/>
-<area shape="rect" id="node36" href="$motor-example_8cpp.html" title="examples/motor&#45;example.cpp" alt="" coords="567,469,759,499"/>
+<area shape="rect" id="node3" href="$_i2_c_bus_8h.html" title="include/I2CBus.h" alt="" coords="199,83,321,112"/>
+<area shape="rect" id="node5" href="$_i2_c_bus_8cpp.html" title="src/I2CBus.cpp" alt="" coords="5,160,117,189"/>
+<area shape="rect" id="node7" href="$_l3_g_8h.html" title="include/L3G.h" alt="" coords="141,160,243,189"/>
+<area shape="rect" id="node21" href="$_l_s_m303_8h.html" title="include/LSM303.h" alt="" coords="267,160,392,189"/>
+<area shape="rect" id="node26" href="$max127_8h.html" title="include/max127.h" alt="" coords="416,160,539,189"/>
+<area shape="rect" id="node9" href="$_l3_g_8cpp.html" title="src/L3G.cpp" alt="" coords="16,237,109,267"/>
+<area shape="rect" id="node11" href="$minimu_8h.html" title="include/minimu.h" alt="" coords="133,237,253,267"/>
+<area shape="rect" id="node13" href="$minimu_8cpp.html" title="src/minimu.cpp" alt="" coords="139,315,248,344"/>
+<area shape="rect" id="node15" href="$mainthread_8h.html" title="include/mainthread.h" alt="" coords="333,315,475,344"/>
+<area shape="rect" id="node17" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="287,392,383,421"/>
+<area shape="rect" id="node19" href="$mainthread_8cpp.html" title="src/mainthread.cpp" alt="" coords="407,392,540,421"/>
+<area shape="rect" id="node23" href="$_l_s_m303_8cpp.html" title="src/LSM303.cpp" alt="" coords="277,237,395,267"/>
+<area shape="rect" id="node28" href="$max127_8cpp.html" title="src/max127.cpp" alt="" coords="419,237,533,267"/>
+<area shape="rect" id="node30" href="$motorcontrol_8h.html" title="include/motorcontrol.h" alt="" coords="557,237,707,267"/>
+<area shape="rect" id="node32" href="$motorcontrol_8cpp.html" title="src/motorcontrol.cpp" alt="" coords="561,315,703,344"/>
 </map>

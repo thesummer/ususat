@@ -6,10 +6,8 @@ var searchData=
   ['margs',['mArgs',['../class_u_s_u_1_1_rt_thread.html#a5213699b8def7e9e2af0add4648b8b40',1,'USU::RtThread']]],
   ['mcommand',['mCommand',['../class_u_s_u_1_1_set_countinuous_mode.html#ab7ea6cc07c81629a26c2dd24dd58664f',1,'USU::SetCountinuousMode::mCommand()'],['../class_u_s_u_1_1_sampling_settings.html#aa4f8fd4e9f49a1714a6bb598c5cd0b9e',1,'USU::SamplingSettings::mCommand()']]],
   ['mid',['mId',['../class_u_s_u_1_1_rt_thread.html#afe45711f791a727426c6b0e23add03a8',1,'USU::RtThread']]],
-  ['mkeeprunning',['mKeepRunning',['../class_data_collector.html#a5f49011ba389d7548cb3c962c38ee57d',1,'DataCollector::mKeepRunning()'],['../class_motor_programmer.html#a9ce3a5d98bd5e70a63386c07ee668d37',1,'MotorProgrammer::mKeepRunning()']]],
   ['mode',['MODE',['../namespace_u_s_u.html#afb689aa4352de24daaa765fd9e625ae3',1,'USU']]],
   ['mode_5fpreset',['MODE_PRESET',['../namespace_u_s_u.html#afc9a1298a3210c69931db151aaf35de7',1,'USU']]],
   ['modetext',['modeText',['../main_8cpp.html#af96ded70650743059cda3d3754d8527e',1,'main.cpp']]],
-  ['motor',['motor',['../struct_motor_programmer_1_1_command.html#ae9b30b7cce608a914eedddf631216dcd',1,'MotorProgrammer::Command']]],
   ['mstarted',['mStarted',['../class_u_s_u_1_1_rt_thread.html#a990cc76b2f9541a6dbafdfa6be5fd367',1,'USU::RtThread']]]
 ];

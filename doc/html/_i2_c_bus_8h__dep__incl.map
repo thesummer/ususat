@@ -1,21 +1,16 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$_l3_g_8h.html" title="include/L3G.h" alt="" coords="231,83,332,112"/>
-<area shape="rect" id="node19" href="$_l_s_m303_8h.html" title="include/LSM303.h" alt="" coords="361,83,487,112"/>
-<area shape="rect" id="node24" href="$max127_8h.html" title="include/max127.h" alt="" coords="536,83,659,112"/>
-<area shape="rect" id="node42" href="$_i2_c_bus_8cpp.html" title="src/I2CBus.cpp" alt="" coords="683,83,795,112"/>
-<area shape="rect" id="node5" href="$minimu_8h.html" title="include/minimu.h" alt="" coords="221,160,341,189"/>
-<area shape="rect" id="node17" href="$_l3_g_8cpp.html" title="src/L3G.cpp" alt="" coords="104,160,197,189"/>
-<area shape="rect" id="node7" href="$minimu-example_8cpp.html" title="examples/minimu&#45;example.cpp" alt="" coords="5,237,208,267"/>
-<area shape="rect" id="node9" href="$mainthread_8h.html" title="include/mainthread.h" alt="" coords="381,237,523,267"/>
-<area shape="rect" id="node15" href="$minimu_8cpp.html" title="src/minimu.cpp" alt="" coords="232,237,341,267"/>
-<area shape="rect" id="node11" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="271,315,367,344"/>
-<area shape="rect" id="node13" href="$mainthread_8cpp.html" title="src/mainthread.cpp" alt="" coords="391,315,524,344"/>
-<area shape="rect" id="node22" href="$_l_s_m303_8cpp.html" title="src/LSM303.cpp" alt="" coords="365,160,483,189"/>
-<area shape="rect" id="node26" href="$dac-example_8cpp.html" title="examples/dac&#45;example.cpp" alt="" coords="507,160,688,189"/>
-<area shape="rect" id="node28" href="$motorcontrol_8h.html" title="include/motorcontrol.h" alt="" coords="712,160,861,189"/>
-<area shape="rect" id="node40" href="$max127_8cpp.html" title="src/max127.cpp" alt="" coords="885,160,1000,189"/>
-<area shape="rect" id="node30" href="$datacollector_8hpp.html" title="examples/datacollector.hpp" alt="" coords="568,237,749,267"/>
-<area shape="rect" id="node32" href="$motorprogrammer_8hpp.html" title="examples/motorprogrammer.hpp" alt="" coords="559,315,767,344"/>
-<area shape="rect" id="node38" href="$motorcontrol_8cpp.html" title="src/motorcontrol.cpp" alt="" coords="824,237,965,267"/>
-<area shape="rect" id="node34" href="$motor-example_8cpp.html" title="examples/motor&#45;example.cpp" alt="" coords="567,392,759,421"/>
+<area shape="rect" id="node3" href="$_i2_c_bus_8cpp.html" title="src/I2CBus.cpp" alt="" coords="5,83,117,112"/>
+<area shape="rect" id="node5" href="$_l3_g_8h.html" title="include/L3G.h" alt="" coords="141,83,243,112"/>
+<area shape="rect" id="node19" href="$_l_s_m303_8h.html" title="include/LSM303.h" alt="" coords="267,83,392,112"/>
+<area shape="rect" id="node24" href="$max127_8h.html" title="include/max127.h" alt="" coords="416,83,539,112"/>
+<area shape="rect" id="node7" href="$_l3_g_8cpp.html" title="src/L3G.cpp" alt="" coords="16,160,109,189"/>
+<area shape="rect" id="node9" href="$minimu_8h.html" title="include/minimu.h" alt="" coords="133,160,253,189"/>
+<area shape="rect" id="node11" href="$minimu_8cpp.html" title="src/minimu.cpp" alt="" coords="139,237,248,267"/>
+<area shape="rect" id="node13" href="$mainthread_8h.html" title="include/mainthread.h" alt="" coords="333,237,475,267"/>
+<area shape="rect" id="node15" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="287,315,383,344"/>
+<area shape="rect" id="node17" href="$mainthread_8cpp.html" title="src/mainthread.cpp" alt="" coords="407,315,540,344"/>
+<area shape="rect" id="node21" href="$_l_s_m303_8cpp.html" title="src/LSM303.cpp" alt="" coords="277,160,395,189"/>
+<area shape="rect" id="node26" href="$max127_8cpp.html" title="src/max127.cpp" alt="" coords="419,160,533,189"/>
+<area shape="rect" id="node28" href="$motorcontrol_8h.html" title="include/motorcontrol.h" alt="" coords="557,160,707,189"/>
+<area shape="rect" id="node30" href="$motorcontrol_8cpp.html" title="src/motorcontrol.cpp" alt="" coords="561,237,703,267"/>
 </map>

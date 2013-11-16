@@ -1,15 +1,10 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$motorprogrammer_8hpp.html" title="examples/motorprogrammer.hpp" alt="" coords="50,237,258,267"/>
-<area shape="rect" id="node7" href="$gx3communicator_8h.html" title="include/gx3communicator.h" alt="" coords="305,83,486,112"/>
-<area shape="rect" id="node17" href="$periodicrtthread_8h.html" title="include/periodicrtthread.h" alt="" coords="510,83,675,112"/>
-<area shape="rect" id="node29" href="$_rt_thread_8cpp.html" title="src/RtThread.cpp" alt="" coords="699,83,822,112"/>
-<area shape="rect" id="node5" href="$motor-example_8cpp.html" title="examples/motor&#45;example.cpp" alt="" coords="58,315,250,344"/>
-<area shape="rect" id="node9" href="$mainthread_8h.html" title="include/mainthread.h" alt="" coords="425,160,566,189"/>
-<area shape="rect" id="node15" href="$gx3communicator_8cpp.html" title="src/gx3communicator.cpp" alt="" coords="25,160,195,189"/>
-<area shape="rect" id="node11" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="378,237,474,267"/>
-<area shape="rect" id="node13" href="$mainthread_8cpp.html" title="src/mainthread.cpp" alt="" coords="498,237,631,267"/>
-<area shape="rect" id="node19" href="$datacollector_8hpp.html" title="examples/datacollector.hpp" alt="" coords="219,160,401,189"/>
-<area shape="rect" id="node22" href="$minimu-example_8cpp.html" title="examples/minimu&#45;example.cpp" alt="" coords="590,160,793,189"/>
-<area shape="rect" id="node24" href="$threading-example_8cpp.html" title="examples/threading&#45;example.cpp" alt="" coords="817,160,1030,189"/>
-<area shape="rect" id="node27" href="$periodicrtthread_8cpp.html" title="src/periodicrtthread.cpp" alt="" coords="1054,160,1211,189"/>
+<area shape="rect" id="node3" href="$_rt_thread_8cpp.html" title="src/RtThread.cpp" alt="" coords="5,83,128,112"/>
+<area shape="rect" id="node5" href="$gx3communicator_8h.html" title="include/gx3communicator.h" alt="" coords="152,83,333,112"/>
+<area shape="rect" id="node15" href="$periodicrtthread_8h.html" title="include/periodicrtthread.h" alt="" coords="357,83,523,112"/>
+<area shape="rect" id="node7" href="$gx3communicator_8cpp.html" title="src/gx3communicator.cpp" alt="" coords="79,160,249,189"/>
+<area shape="rect" id="node9" href="$mainthread_8h.html" title="include/mainthread.h" alt="" coords="273,160,415,189"/>
+<area shape="rect" id="node11" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="227,237,323,267"/>
+<area shape="rect" id="node13" href="$mainthread_8cpp.html" title="src/mainthread.cpp" alt="" coords="347,237,480,267"/>
+<area shape="rect" id="node17" href="$periodicrtthread_8cpp.html" title="src/periodicrtthread.cpp" alt="" coords="439,160,596,189"/>
 </map>

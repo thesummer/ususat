@@ -8,12 +8,11 @@ var searchData=
   ['acc_5fang_5fmag_5fvec',['ACC_ANG_MAG_VEC',['../namespace_u_s_u.html#ad03e7c0f41fd47a68a9f33abde73932a',1,'USU']]],
   ['acc_5fang_5fmag_5fvec_5forientation_5fmat',['ACC_ANG_MAG_VEC_ORIENTATION_MAT',['../namespace_u_s_u.html#adb9724de65ce9a212dd8611f69d241f0',1,'USU']]],
   ['acc_5fang_5forientation_5fmat',['ACC_ANG_ORIENTATION_MAT',['../namespace_u_s_u.html#a13f66b9f78d1a3e9778bce391ab41b5e',1,'USU']]],
-  ['accangmag',['AccAngMag',['../class_u_s_u_1_1_acc_ang_mag.html#ada4e3f66b155ec27cb8844958e617bdd',1,'USU::AccAngMag']]],
   ['accangmag',['AccAngMag',['../class_u_s_u_1_1_acc_ang_mag.html',1,'USU']]],
+  ['accangmag',['AccAngMag',['../class_u_s_u_1_1_acc_ang_mag.html#ada4e3f66b155ec27cb8844958e617bdd',1,'USU::AccAngMag']]],
   ['accangmagorientationmat',['AccAngMagOrientationMat',['../class_u_s_u_1_1_acc_ang_mag_orientation_mat.html',1,'USU']]],
   ['accangmagorientationmat',['AccAngMagOrientationMat',['../class_u_s_u_1_1_acc_ang_mag_orientation_mat.html#a9ce049c7c640ae7199c63a8df0c1629d',1,'USU::AccAngMagOrientationMat']]],
   ['activehigh',['ActiveHigh',['../classc_p_w_m.html#a4e92531076ad9cf56c1df16b1028ce64ae92ac1e728039ef28b065c617d793058',1,'cPWM']]],
   ['activelow',['ActiveLow',['../classc_p_w_m.html#a4e92531076ad9cf56c1df16b1028ce64ad35a0e12428b4c290597f1621a061718',1,'cPWM']]],
-  ['addressset',['addressSet',['../class_i2_c_bus.html#a3df26769808e1e948dda57cd02680c3d',1,'I2CBus']]],
-  ['architecture_5fid',['ARCHITECTURE_ID',['../_c_make_c_compiler_id_8c.html#aba35d0d200deaeb06aee95ca297acb28',1,'ARCHITECTURE_ID():&#160;CMakeCCompilerId.c'],['../_c_make_c_x_x_compiler_id_8cpp.html#aba35d0d200deaeb06aee95ca297acb28',1,'ARCHITECTURE_ID():&#160;CMakeCXXCompilerId.cpp']]]
+  ['addressset',['addressSet',['../class_i2_c_bus.html#a3df26769808e1e948dda57cd02680c3d',1,'I2CBus']]]
 ];

@@ -1,7 +1,6 @@
 var hierarchy =
 [
     [ "Beagle_GPIO", "class_beagle___g_p_i_o.html", null ],
-    [ "MotorProgrammer::Command", "struct_motor_programmer_1_1_command.html", null ],
     [ "cPWM", "classc_p_w_m.html", null ],
     [ "USU::GX3Command", "class_u_s_u_1_1_g_x3_command.html", [
       [ "USU::SamplingSettings", "class_u_s_u_1_1_sampling_settings.html", null ],
@@ -24,17 +23,12 @@ var hierarchy =
     [ "USU::Motor", "class_u_s_u_1_1_motor.html", null ],
     [ "USU::MotorControl", "class_u_s_u_1_1_motor_control.html", null ],
     [ "USU::RtThread", "class_u_s_u_1_1_rt_thread.html", [
-      [ "MotorProgrammer", "class_motor_programmer.html", null ],
       [ "USU::GX3Communicator", "class_u_s_u_1_1_g_x3_communicator.html", null ],
       [ "USU::PeriodicRtThread", "class_u_s_u_1_1_periodic_rt_thread.html", [
-        [ "DataCollector", "class_data_collector.html", null ],
-        [ "DataCollector", "class_data_collector.html", null ],
-        [ "MyThread", "class_my_thread.html", null ],
         [ "USU::MainThread", "class_u_s_u_1_1_main_thread.html", null ]
       ] ]
     ] ],
     [ "USU::ScopedLock", "class_u_s_u_1_1_scoped_lock.html", null ],
     [ "USU::Semaphore", "class_u_s_u_1_1_semaphore.html", null ],
-    [ "SharedObject", "class_shared_object.html", null ],
     [ "USU::SharedQueue< T >", "class_u_s_u_1_1_shared_queue.html", null ]
 ];

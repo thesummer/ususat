@@ -1,6 +1,6 @@
 var NAVTREE =
 [
-  [ "U-BET", "index.html", [
+  [ "SimTab", "index.html", [
     [ "Modules", "modules.html", "modules" ],
     [ "Namespaces", null, [
       [ "Namespace List", "namespaces.html", "namespaces" ],

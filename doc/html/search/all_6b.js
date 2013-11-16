@@ -7,7 +7,6 @@ var searchData=
   ['kdataout',['kDATAOUT',['../class_beagle___g_p_i_o.html#ac841d5ad729ca3eec9ddeda852086a28a4d14ea955e1d839f5f09d92e01f57d82',1,'Beagle_GPIO']]],
   ['kdebounceenable',['kDEBOUNCEENABLE',['../class_beagle___g_p_i_o.html#ac841d5ad729ca3eec9ddeda852086a28a869e222e8f4c07c51cb5c31eb81942ae',1,'Beagle_GPIO']]],
   ['kdebouncingtime',['kDEBOUNCINGTIME',['../class_beagle___g_p_i_o.html#ac841d5ad729ca3eec9ddeda852086a28a57219b535e5afc8cedaee6a791b0d1b9',1,'Beagle_GPIO']]],
-  ['keeprunning',['keepRunning',['../class_my_thread.html#a859f6f17a8247964afb67c024556423b',1,'MyThread']]],
   ['kfail',['kFail',['../class_beagle___g_p_i_o.html#a40ebd672d74de41bbf5944109e1302eea115553a9517b306e3bf301889cfc8e8b',1,'Beagle_GPIO']]],
   ['kfallingdetect',['kFALLINGDETECT',['../class_beagle___g_p_i_o.html#ac841d5ad729ca3eec9ddeda852086a28a2df68044a6c4514e4cacdedfd5b37d70',1,'Beagle_GPIO']]],
   ['kinput',['kINPUT',['../class_beagle___g_p_i_o.html#abf8efba9f6a4f6b552d1c15c99100765aeb0e864df1ecec16d6c75e611c85cf6b',1,'Beagle_GPIO']]],

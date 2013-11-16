@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>U-BET: include/cPWM.h Source File</title>
+<title>SimTab: include/cPWM.h Source File</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -32,7 +32,7 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">U-BET
+   <div id="projectname">SimTab
    
    </div>
    
@@ -127,9 +127,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00041"></a>00041     <span class="keywordtype">int</span> runA;
 <a name="l00042"></a>00042     <span class="keywordtype">int</span> runB;
 <a name="l00043"></a>00043     <span class="comment">/*****************************************</span>
-<a name="l00044"></a>00044 <span class="comment">         *</span>
-<a name="l00045"></a>00045 <span class="comment">         * sysfs tree:</span>
-<a name="l00046"></a>00046 <span class="comment">         *</span>
+<a name="l00044"></a>00044 <span class="comment">                *</span>
+<a name="l00045"></a>00045 <span class="comment">                * sysfs tree:</span>
+<a name="l00046"></a>00046 <span class="comment">                *</span>
 <a name="l00047"></a>00047 <span class="comment">ehrpwm.0:0</span>
 <a name="l00048"></a>00048 <span class="comment">│   ├── duty_ns</span>
 <a name="l00049"></a>00049 <span class="comment">│   ├── period_ns</span>
@@ -142,21 +142,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00056"></a>00056 <span class="comment">│   ├── polarity</span>
 <a name="l00057"></a>00057 <span class="comment">│   ├── request</span>
 <a name="l00058"></a>00058 <span class="comment">│   ├── run</span>
-<a name="l00059"></a>00059 <span class="comment">         *</span>
+<a name="l00059"></a>00059 <span class="comment">                *</span>
 <a name="l00060"></a>00060 <span class="comment">std::stringstream sysfs_file;</span>
 <a name="l00061"></a>00061 <span class="comment"></span>
 <a name="l00062"></a>00062 <span class="comment">Define files to match sysfs tree:</span>
-<a name="l00063"></a>00063 <span class="comment">         */</span>
-<a name="l00064"></a><a class="code" href="c_p_w_m_8h.html#a1ba5819c7195dec86e01a33333f73727">00064</a> <span class="preprocessor">                #define SYSFS_EHRPWM_PREFIX &quot;/sys/class/pwm/ehrpwm.&quot;</span>
-<a name="l00065"></a><a class="code" href="c_p_w_m_8h.html#a77695d0078bb8734c092fea1153789b8">00065</a> <span class="preprocessor"></span><span class="preprocessor">                #define SYSFS_EHRPWM_SUFFIX_A &quot;:0&quot;</span>
-<a name="l00066"></a><a class="code" href="c_p_w_m_8h.html#a7c349d0a2ba14e6a0c0d78f354939bb2">00066</a> <span class="preprocessor"></span><span class="preprocessor">                #define SYSFS_EHRPWM_SUFFIX_B &quot;:1&quot;</span>
+<a name="l00063"></a>00063 <span class="comment">                */</span>
+<a name="l00064"></a><a class="code" href="c_p_w_m_8h.html#a1ba5819c7195dec86e01a33333f73727">00064</a> <span class="preprocessor">                              #define SYSFS_EHRPWM_PREFIX &quot;/sys/class/pwm/ehrpwm.&quot;</span>
+<a name="l00065"></a><a class="code" href="c_p_w_m_8h.html#a77695d0078bb8734c092fea1153789b8">00065</a> <span class="preprocessor"></span><span class="preprocessor">                              #define SYSFS_EHRPWM_SUFFIX_A &quot;:0&quot;</span>
+<a name="l00066"></a><a class="code" href="c_p_w_m_8h.html#a7c349d0a2ba14e6a0c0d78f354939bb2">00066</a> <span class="preprocessor"></span><span class="preprocessor">                              #define SYSFS_EHRPWM_SUFFIX_B &quot;:1&quot;</span>
 <a name="l00067"></a><a class="code" href="c_p_w_m_8h.html#a3ae008f737a3f27bd780490363c2267a">00067</a> <span class="preprocessor"></span><span class="preprocessor">        #define SYSFS_EHRPWM_DUTY_NS &quot;duty_ns&quot;</span>
 <a name="l00068"></a><a class="code" href="c_p_w_m_8h.html#afd2b94988d056d78a4e2c75acc7e454e">00068</a> <span class="preprocessor"></span><span class="preprocessor">        #define SYSFS_EHRPWM_DUTY_PERCENT &quot;duty_percent&quot;</span>
 <a name="l00069"></a><a class="code" href="c_p_w_m_8h.html#add4a08ceb1db2a1062f7cedfaf73cc6d">00069</a> <span class="preprocessor"></span><span class="preprocessor">        #define SYSFS_EHRPWM_PERIOD_NS &quot;period_ns&quot;</span>
 <a name="l00070"></a><a class="code" href="c_p_w_m_8h.html#ad5ab3e891281e210991cb39cdcc24cc9">00070</a> <span class="preprocessor"></span><span class="preprocessor">        #define SYSFS_EHRPWM_PERIOD_FREQ &quot;period_freq&quot;</span>
-<a name="l00071"></a><a class="code" href="c_p_w_m_8h.html#aab1aacedee5d8dce03422d0f09639f88">00071</a> <span class="preprocessor"></span><span class="preprocessor">                #define SYSFS_EHRPWM_POLARITY &quot;polarity&quot;</span>
-<a name="l00072"></a><a class="code" href="c_p_w_m_8h.html#a06034030a73c0ad8350269c15651b0fa">00072</a> <span class="preprocessor"></span><span class="preprocessor">                #define SYSFS_EHRPWM_RUN &quot;run&quot;</span>
-<a name="l00073"></a><a class="code" href="c_p_w_m_8h.html#a1aaf5e488c97bc29107020383b0a0cac">00073</a> <span class="preprocessor"></span><span class="preprocessor">                #define SYSFS_EHRPWM_REQUEST &quot;request&quot;</span>
+<a name="l00071"></a><a class="code" href="c_p_w_m_8h.html#aab1aacedee5d8dce03422d0f09639f88">00071</a> <span class="preprocessor"></span><span class="preprocessor">                              #define SYSFS_EHRPWM_POLARITY &quot;polarity&quot;</span>
+<a name="l00072"></a><a class="code" href="c_p_w_m_8h.html#a06034030a73c0ad8350269c15651b0fa">00072</a> <span class="preprocessor"></span><span class="preprocessor">                              #define SYSFS_EHRPWM_RUN &quot;run&quot;</span>
+<a name="l00073"></a><a class="code" href="c_p_w_m_8h.html#a1aaf5e488c97bc29107020383b0a0cac">00073</a> <span class="preprocessor"></span><span class="preprocessor">                              #define SYSFS_EHRPWM_REQUEST &quot;request&quot;</span>
 <a name="l00074"></a>00074 <span class="preprocessor"></span>
 <a name="l00075"></a>00075         std::ofstream sysfsfid_dutyA_ns;
 <a name="l00076"></a>00076         std::ofstream sysfsfid_dutyA_percent;
@@ -164,16 +164,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00078"></a>00078         std::ofstream sysfsfid_dutyB_percent;
 <a name="l00079"></a>00079         std::ofstream sysfsfid_period_ns;
 <a name="l00080"></a>00080         std::ofstream sysfsfid_period_freq;
-<a name="l00081"></a>00081                 std::ofstream sysfsfid_polarityA;
-<a name="l00082"></a>00082                 std::ofstream sysfsfid_runA;
-<a name="l00083"></a>00083                 std::ofstream sysfsfid_requestA;
-<a name="l00084"></a>00084                 std::ofstream sysfsfid_polarityB;
-<a name="l00085"></a>00085                 std::ofstream sysfsfid_runB;
-<a name="l00086"></a>00086                 std::ofstream sysfsfid_requestB;
+<a name="l00081"></a>00081                               std::ofstream sysfsfid_polarityA;
+<a name="l00082"></a>00082                               std::ofstream sysfsfid_runA;
+<a name="l00083"></a>00083                               std::ofstream sysfsfid_requestA;
+<a name="l00084"></a>00084                               std::ofstream sysfsfid_polarityB;
+<a name="l00085"></a>00085                               std::ofstream sysfsfid_runB;
+<a name="l00086"></a>00086                               std::ofstream sysfsfid_requestB;
 <a name="l00087"></a>00087 
 <a name="l00088"></a>00088 <span class="keyword">public</span>:
 <a name="l00089"></a>00089 
-<a name="l00090"></a>00090         <a class="code" href="classc_p_w_m.html#a03c79bd28b7eef4ee13b5130079cf8a4" title="Simple C++ class wrapper for beaglebone PWM eHRPWM interface.">cPWM</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>);
+<a name="l00090"></a>00090                <a class="code" href="classc_p_w_m.html#a03c79bd28b7eef4ee13b5130079cf8a4" title="Simple C++ class wrapper for beaglebone PWM eHRPWM interface.">cPWM</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>);
 <a name="l00091"></a>00091     <span class="keyword">virtual</span> <a class="code" href="classc_p_w_m.html#a90137dc6aed95732b11e98bb4fb2615d">~cPWM</a>();
 <a name="l00092"></a>00092 
 <a name="l00093"></a>00093     <span class="keywordtype">void</span> <a class="code" href="classc_p_w_m.html#a6992b609c8ff5918bb0be124a587f242">DutyA_ns</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nanoseconds);
@@ -214,7 +214,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="c_p_w_m_8h.html">cPWM.h</a>      </li>
 
-    <li class="footer">Generated on Thu Sep 26 2013 17:06:24 for U-BET by
+    <li class="footer">Generated on Tue Oct 22 2013 21:16:42 for SimTab by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>
