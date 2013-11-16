@@ -66,6 +66,10 @@ int main(int argc, char **argv)
             kalmanFilter.initializeModeSimpleControl(trajFile.getValue(), pgain.getValue());
             kalmanFilter.setMode(MainThread::SimpleControl);
         }
+        else if (mode.getValue() == "control")
+        {
+            kalmanFilter.setMode(MainThread::Control);
+        }
         else if(mode.getValue() == "pololu")
         {
             kalmanFilter.setMode(MainThread::CollectPololuData);
