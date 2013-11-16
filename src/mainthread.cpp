@@ -58,6 +58,8 @@ void MainThread::run()
     {
     case SimpleControl:          runSimpleControl();
                                  break;
+    case Control:                runControl();
+                                 break;
     case CollectPololuData:      runCollectPololu();
                                  break;
     case CollectMicroStrainData: runCollectMicroStrain();
@@ -165,6 +167,53 @@ void MainThread::runSimpleControl()
     mMotors.controlFromGyro(gyro);
 
     std::cerr << "KALMANFILTER: Got signal to terminate" << std::endl;
+}
+
+void MainThread::runControl()
+{
+    mKeepRunning = true;
+
+    mGX3.initialize();
+    mGX3.start();
+    packet_ptr lastState;
+    while(mKeepRunning)
+    {
+
+        if(mGX3.isEmpty() == false)
+        {
+            int length = mGX3.size();
+            while(length-->1)
+            {
+                mGX3.pop();
+            }
+
+            lastState = mGX3.front();
+            mGX3.pop();
+
+        }
+
+        // cast last state back to the type it actually is
+        // so we can access its members.
+        std::shared_ptr<AccAngOrientationMat> packet;
+        packet = std::static_pointer_cast<AccAngOrientationMat>(lastState);
+
+        // Call the control function
+        mMotors.calculateControlResponse(packet->orientation, packet->gyro);
+
+        waitPeriod();
+    }
+
+    std::cerr << "KALMANFILTER: Got signal to terminate" << std::endl;
+    std::cerr << "KALMANFILTER: Stopping Gx3-communicator..." << std::endl;
+    mGX3.stop();
+    if(mGX3.join() )
+    {
+        std::cerr << "KALMANFILTER: Gx3-communicator joined" << std::endl;
+    }
+    else
+    {
+        std::cerr << "KALMANFILTER: Joining Gx3-communicator failed" << std::endl;
+    }
 }
 
 void MainThread::runCollectPololu()

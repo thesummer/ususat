@@ -41,6 +41,7 @@ public:
     enum Mode
     {
         SimpleControl,
+        Control,
         CollectPololuData,
         CollectMicroStrainData,
         CollectData
@@ -97,6 +98,8 @@ public:
 
 private:
     void runSimpleControl();
+
+    void runControl();
 
     void runCollectPololu();
 
