@@ -433,6 +433,68 @@ public:
     enum {size = 79}; /*!< Size of the package (enum to avoid complications with static consts) */
 };
 
+
+/*!
+ \brief Representation for packets containing the 3 sensor vectors and orientation matrix
+  This class can be used with the commands which return 3 Vectors and a 3x3 Matrix.
+  The units are:
+    - acceleration: g
+    - angular rate: rad/s
+*/
+class AccAngOrientationMat : public GX3Packet
+{
+public:
+    /*!
+     \brief Creates an empty packet object
+     */
+    AccAngOrientationMat() {}
+
+    bool readFromSerial(SerialPort &serialPort)
+    {
+        uint8_t buffer[size];
+        buffer[0] = serialPort.ReadByte();
+        if(buffer[0] != ACC_ANG_ORIENTATION_MAT) return false;
+
+        serialPort.ReadRaw(&buffer[1], size-1);
+        if(GX3Packet::calculateChecksum(buffer, size) == false) return false;
+
+        acc  = createVector(&buffer[1]);
+        gyro = createVector(&buffer[13]);
+
+        createMatrix(&buffer[21], orientation);
+        timer = createUInt(&buffer[61]);
+
+        return true;
+    }
+
+
+    /*!
+     \brief Print the stored information to ostream object
+
+     Format:
+        timestamp,accX,accY,accZ,magX,magY,magZ,gyroX,gyroY,gyroZ,mat(0,[0..2]),mat(1,[0..2]),mat(2,[0..2])
+
+     \param os
+    */
+    virtual void print(std::ostream &os) const
+    {
+        os << timer << ",\t" << acc(0)  << ", " << acc(1)  << ", " << acc(2)
+                    << ",\t" << gyro(0) << ", " << gyro(1) << ", " << gyro(2)
+                    << ",\t" << orientation(0,0) << ", " << orientation(0,1) << ", " << orientation(0,1)
+                    << ",\t" << orientation(1,0) << ", " << orientation(1,1) << ", " << orientation(1,2)
+                    << ",\t" << orientation(2,0) << ", " << orientation(2,1) << ", " << orientation(2,2);
+
+    }
+
+    vector acc; /*!< Vector containing the accelerometer data */
+    vector gyro; /*!< Vector containing the gyroscope (angular rate) data */
+
+    matrix orientation; /*!< 3x3 Matrix containing the orientation */
+    unsigned int timer; /*!< The value of the timestamp for the package */
+
+    enum {size = 67}; /*!< Size of the package (enum to avoid complications with static consts) */
+};
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /*!
