@@ -59,7 +59,7 @@ public:
 
      \param state the current state estimate from the IMU
    */
-    void calculateControlResponse(Quaternion state);
+    void calculateControlResponse(Eigen::Matrix3f &orientation, Eigen::Vector3f &gyro, Eigen::Vector4f &ch1, Eigen::Vector4f &ch2);
 
     /*!
      \brief Uses a simple algorithm to control the speed only from gyro data

@@ -39,7 +39,7 @@ MotorControl::~MotorControl()
     mPwm2.StopB();
 }
 
-void MotorControl::calculateControlResponse(Quaternion state)
+void MotorControl::calculateControlResponse(Eigen::Matrix3f &orientation, Eigen::Vector3f &gyro, Eigen::Vector4f &ch1, Eigen::Vector4f &ch2)
 {
     /// TODO: Make some control magic
 //    mMotor[0]->setSpeed(20);
